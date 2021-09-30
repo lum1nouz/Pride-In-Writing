@@ -19,10 +19,11 @@ class testPage extends React.Component<props, state> {
     render(){
         return (
             <div>
-                <Header> </Header>
-                <Paper variant="outlined" elevation={5}>
+                <Header></Header>
+                <Paper elevation={4} style={{position: 'relative', marginTop: 100, marginLeft: 30, marginRight: 30, height: 300 }}>
+                    
                     <Button variant="text" size="large">Text</Button>
-                </Paper> 
+                </Paper>  
                 
             </div>
         )
