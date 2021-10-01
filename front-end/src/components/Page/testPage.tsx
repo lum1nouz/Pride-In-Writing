@@ -38,14 +38,13 @@ class testPage extends React.Component<props, state> {
                 <Header></Header>
                 <Parallax bgImage={bgPhoto} strength = {500} style={styles.parrallaxCont}>
                     <div style={{}}>
-                        <Paper elevation={4} style={styles.paperCont}>
-                            
-
-                            {/*     INSERT ELEMETS HERE (DETETE BRACKETS)       */}
-                            <Button variant="text" size="large">Text</Button>
-
-
-                        </Paper>  
+                    <Paper elevation={4} style={{textAlign:'center', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', marginTop: 100, marginLeft: 30, marginRight: 30, height: 150 }}>
+                    <div> 
+                    <h1> Welcome to Pride in Writing! </h1> 
+                    <p>Our mission is to spotlight book authors in the LGBTQ Community</p>
+                    </div>
+                    
+                </Paper>  
                     </div>
                 </Parallax>
             </div>
