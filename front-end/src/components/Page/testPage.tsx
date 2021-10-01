@@ -8,7 +8,7 @@ import { Parallax, Background } from 'react-parallax';
 const styles = {
         parrallaxCont: {
             margintop: 100, 
-            height: 1500
+            height: 1000
         },
         paperCont: { 
             marginTop: 200, 
