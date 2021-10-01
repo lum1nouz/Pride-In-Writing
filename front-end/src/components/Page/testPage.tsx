@@ -1,6 +1,7 @@
 import React from 'react';
 import { Paper, Button } from '@material-ui/core'
 import Header from '../Header/Header';
+import css from './test.module.css';
     
 
 type props = {
@@ -20,8 +21,7 @@ class testPage extends React.Component<props, state> {
         return (
             <div>
                 <Header></Header>
-                <Paper elevation={4} style={{position: 'relative', marginTop: 100, marginLeft: 30, marginRight: 30, height: 300 }}>
-                    
+                <Paper className={css.paperStyle} elevation={4}>
                     <Button variant="text" size="large">Text</Button>
                 </Paper>  
                 
