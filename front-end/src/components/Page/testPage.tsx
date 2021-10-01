@@ -5,20 +5,6 @@ import css from './test.module.css';
 import bgPhoto from '../../Assets/bgPhoto.jpg'
 import { Parallax, Background } from 'react-parallax';
 
-const styles = {
-        parrallaxCont: {
-            margintop: 100, 
-            height: 1500
-        },
-        paperCont: { 
-            marginTop: 200, 
-            marginLeft: 80, 
-            marginRight: 80, 
-            height: 1200 
-        }
-    } 
-    
-
 type props = {
 
 }
@@ -36,9 +22,9 @@ class testPage extends React.Component<props, state> {
         return (
             <div>
                 <Header></Header>
-                <Parallax bgImage={bgPhoto} strength = {500} style={styles.parrallaxCont}>
+                <Parallax bgImage={bgPhoto} strength = {500} className={css.parrallaxCont}>
                     <div style={{}}>
-                        <Paper elevation={4} style={styles.paperCont}>
+                        <Paper elevation={4} className={css.paperCont}>
                             
 
                             {/*     INSERT ELEMETS HERE (DETETE BRACKETS)       */}
