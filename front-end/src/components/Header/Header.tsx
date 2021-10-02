@@ -1,6 +1,8 @@
 import React from 'react';
 import { AppBar, Toolbar, List, ListItem, Button } from '@material-ui/core'
 import './Header.css'
+import { Link } from 'react-router-dom';
+
 
     // list: {
     //   ...defaultFont,
@@ -91,7 +93,7 @@ class Header extends React.Component<props, state> {
                         </ListItem>
                         <ListItem>
                             <Button
-                            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+                            component={Link} to="/AboutUs"
                             target="_blank"
                             style={{width: 140}}
                             >
