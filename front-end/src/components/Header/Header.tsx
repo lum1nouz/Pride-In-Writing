@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, List, ListItem, Button } from '@material-ui/core'
+import './Header.css'
 
     // list: {
     //   ...defaultFont,
@@ -51,24 +52,22 @@ class Header extends React.Component<props, state> {
 
     render(){
         return (
-            <AppBar style={{height: 60}}>
+            <AppBar className="app-bar">
                 <Toolbar>
-                    <List style={{ display: 'flex', flexDirection: 'row', padding: 0 }}>
-                        <ListItem style={{width: 500}}>
+                    <List className="heading left">
+                        <ListItem>
                             <Button
-                            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+                            href="/"
                             target="_blank"
                             >
                             Pride In Writing
                             </Button>
                         </ListItem>
-                        <ListItem>
-                        </ListItem>
                     </List>
-                    <List style={{ display: 'flex', flexDirection: 'row', padding: 0 }}>
+                    <List className="heading">
                         <ListItem>
                             <Button
-                            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+                            href="/listPage"
                             target="_blank"
                             >
                             Authors
@@ -90,7 +89,7 @@ class Header extends React.Component<props, state> {
                             Publishers
                             </Button>
                         </ListItem>
-                        <ListItem style={{width: 140}}>
+                        <ListItem>
                             <Button
                             href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
                             target="_blank"
