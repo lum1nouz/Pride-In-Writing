@@ -7,6 +7,7 @@ import { Parallax, Background } from 'react-parallax';
 import MaterialTable from 'material-table';
 import internal from 'stream';
 import { Link } from 'react-router-dom';
+import { createAssignment } from 'typescript';
 
 type props = {
 
@@ -25,11 +26,13 @@ class ListPage extends React.Component<props, state> {
         return (
             <div>
                 <Header/>
-                <Parallax bgImage={bgPhoto} strength = {500} className={css.parrallaxCont}>
-                    <div style={{}}>
-                        <div className={css.titleText}> Books </div>
-                    </div>
-                </Parallax>
+                <div className={css.background}>
+                  <Parallax strength = {500} className={css.parrallaxCont}>
+                      <div style={{}}>
+                          <div className={css.titleText}> Books </div>
+                      </div>
+                  </Parallax>
+                </div>
             </div>
         )
     }

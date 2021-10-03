@@ -22,16 +22,18 @@ class testPage extends React.Component<props, state> {
         return (
             <div>
                 <Header></Header>
-                <Parallax bgImage={bgPhoto} strength = {500} className={css.parrallaxCont}>
-                    <div style={{}}>
-                    <Paper elevation={4} className={css.paperCont}>
-                        <div> 
-                            <h1> Welcome to Pride in Writing! </h1> 
-                            <p>Our mission is to spotlight book authors in the LGBTQ Community</p>
+                <div className={css.background}>
+                    <Parallax strength = {500} className={css.parrallaxCont}>
+                        <div style={{}}>
+                        <Paper elevation={4} className={css.paperCont}>
+                            <div> 
+                                <h1> Welcome to Pride in Writing! </h1> 
+                                <p>Our mission is to spotlight book authors in the LGBTQ Community</p>
+                            </div>
+                        </Paper>  
                         </div>
-                    </Paper>  
-                    </div>
-                </Parallax>
+                    </Parallax>
+                </div>
             </div>
         )
     }

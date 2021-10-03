@@ -25,11 +25,13 @@ class ListPage extends React.Component<props, state> {
         return (
             <div>
                 <Header/>
-                <Parallax bgImage={bgPhoto} strength = {500} className={css.parrallaxCont}>
-                    <div style={{}}>
-                        <div className={css.titleText}> Publishers </div>
-                    </div>
-                </Parallax>
+                <div className={css.background}>
+                  <Parallax strength = {500} className={css.parrallaxCont}>
+                      <div style={{}}>
+                          <div className={css.titleText}> Publishers </div>
+                      </div>
+                  </Parallax>
+                </div>
             </div>
         )
     }

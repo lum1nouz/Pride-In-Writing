@@ -43,46 +43,48 @@ class ListPage extends React.Component<props, state> {
         return (
             <div>
                 <Header></Header>
-                <Parallax bgImage={bgPhoto} strength = {500} className={css.parrallaxCont}>
-                    <div style={{}}>
-                        <div className={css.titleText}> Authors </div>
-                        <Paper elevation={4} className={css.paperCont}>
-                            <MaterialTable style={{marginTop: 50, marginLeft: 20, marginRight: 20}}
-                                columns ={[
-                                    {title: "Name", field: "name", type: "string"},
-                                    {title: "Year Born", field: "yearBorn", type: "numeric"},
-                                    {title: "Nationality", field: "nationality", type: "string"},
-                                    {title: "Gender", field: "gender", type: "string"},
-                                    {title: "Lifespan", field: "lifespan", type: "numeric"}
-                                ]}
-                                data={dataStore}
-                                title =""
-                                actions={[
-                                    {
-                                      icon: () => <div>Here</div>,
-                                      tooltip: "Save User",
-                                      onClick: (event, rowData?) => alert("You saved " + (rowData as rowdata).name)
-                                    }
-                                ]}
-                                components={{
-                                    Action: (props) => (
-                                        // <Button
-                                        // onClick={(event) => props.action.onClick(event, props.data)}
-                                        // color="primary"
-                                        // variant="text"
-                                        // style={{ textTransform: "none" }}
-                                        // size="small"
-                                        // >
-                                        // Save
-                                        // </Button>
-                                        <Link to="/page"> Here</Link>
-                                    )
-                                }}/>
+                <div className={css.background}>
+                    <Parallax strength = {500} className={css.parrallaxCont}>
+                        <div style={{}}>
+                            <div className={css.titleText}> Authors </div>
+                            <Paper elevation={4} className={css.paperCont}>
+                                <MaterialTable style={{marginTop: 50, marginLeft: 20, marginRight: 20}}
+                                    columns ={[
+                                        {title: "Name", field: "name", type: "string"},
+                                        {title: "Year Born", field: "yearBorn", type: "numeric"},
+                                        {title: "Nationality", field: "nationality", type: "string"},
+                                        {title: "Gender", field: "gender", type: "string"},
+                                        {title: "Lifespan", field: "lifespan", type: "numeric"}
+                                    ]}
+                                    data={dataStore}
+                                    title =""
+                                    actions={[
+                                        {
+                                        icon: () => <div>Here</div>,
+                                        tooltip: "Save User",
+                                        onClick: (event, rowData?) => alert("You saved " + (rowData as rowdata).name)
+                                        }
+                                    ]}
+                                    components={{
+                                        Action: (props) => (
+                                            // <Button
+                                            // onClick={(event) => props.action.onClick(event, props.data)}
+                                            // color="primary"
+                                            // variant="text"
+                                            // style={{ textTransform: "none" }}
+                                            // size="small"
+                                            // >
+                                            // Save
+                                            // </Button>
+                                            <Link to="/page"> Here</Link>
+                                        )
+                                    }}/>
 
 
-                        </Paper>  
-                    </div>
-                </Parallax>
+                            </Paper>  
+                        </div>
+                    </Parallax>
+                </div>
             </div>
         )
     }
