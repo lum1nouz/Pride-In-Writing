@@ -7,7 +7,6 @@ import { Parallax, Background } from 'react-parallax';
 import MaterialTable from 'material-table';
 import internal from 'stream';
 import { Link } from 'react-router-dom';
-import { createAssignment, NumericLiteral } from 'typescript';
 
 type rowdata ={
   book: string,
@@ -89,8 +88,6 @@ class ListPage extends React.Component<props, state> {
                                             <Link to="/page"> Here</Link>
                                         )
                                     }}/>
-
-
                             </Paper>
                       </div>
                   </Parallax>

@@ -18,3 +18,11 @@
   background-size: cover;
   height: 100%; 
 }
+
+.paperCont{ 
+  margin-top: 50px;
+  margin-left: 80px;
+  margin-right: 80px; 
+  /* TODO: Change this height to a % of the table selector */
+  height: 1200px;
+}
