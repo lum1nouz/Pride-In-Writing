@@ -1,2 +1,4 @@
-# CS373 Project 2
+Group Members (GitLab ID, EID)
 
+
+GIT SHA

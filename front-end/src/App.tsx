@@ -11,6 +11,8 @@ import Publishers from './components/Publishers/Publishers';
 import Putnam from './components/Publishers/GPPutnam';
 import Authors from './components/Authors/Authors';
 import PatriciaHighsmith from './components/Authors/PatriciaHighsmith';
+import MichaelCunningham from './components/Authors/MichaelCunningham';
+import SarahWaters from './components/Authors/SarahWaters';
 import { Route, Link, Switch } from 'react-router-dom';
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         <Route exact path="/diogenes-verlag" component={Putnam}/>
         <Route exact path="/Authors" component={Authors}/>
         <Route exact path="/patricia-highsmith" component={PatriciaHighsmith}/>
+        <Route exact path="/michael-cunningham" component={MichaelCunningham}/>
+        <Route exact path="/sarah-waters" component={SarahWaters}/>
     </div>
   );
 }
