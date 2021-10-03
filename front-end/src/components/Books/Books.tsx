@@ -7,7 +7,30 @@ import { Parallax, Background } from 'react-parallax';
 import MaterialTable from 'material-table';
 import internal from 'stream';
 import { Link } from 'react-router-dom';
-import { createAssignment } from 'typescript';
+
+type rowdata ={
+  book: string,
+  author: string,
+  genre: string,
+  publisher: string,
+  yearPublished: number,
+  rating: number,
+  pages: number,
+  price: number
+}
+
+const dataStore = [
+  {
+      book: "Kinflicks", 
+      author: "Lisa Alther",
+      "genre": "Fiction",
+      "publisher": "Knopf",
+      "yearPublished": 1975,
+      "rating": 3.76,
+      "pages": 503,
+      "price": 12
+  }
+];
 
 type props = {
 
@@ -30,6 +53,42 @@ class ListPage extends React.Component<props, state> {
                   <Parallax strength = {500} className={css.parrallaxCont}>
                       <div style={{}}>
                           <div className={css.titleText}> Books </div>
+                          <Paper elevation={4} className={css.paperCont}>
+                                <MaterialTable style={{marginTop: 50, marginLeft: 20, marginRight: 20}}
+                                    columns ={[
+                                        {title: "Book", field: "book", type: "string"},
+                                        {title: "Author", field: "author", type: "string"},
+                                        {title: "Genre", field: "genre", type: "string"},
+                                        {title: "Publisher", field: "publisher", type: "string"},
+                                        {title: "Year Published", field: "yearPublished", type: "numeric"},
+                                        {title: "Rating", field: "rating", type: "numeric"},
+                                        {title: "Pages", field: "pages", type: "numeric"},
+                                        {title: "Price", field: "price", type: "currency"}
+                                    ]}
+                                    data={dataStore}
+                                    title =""
+                                    actions={[
+                                        {
+                                        icon: () => <div>Here</div>,
+                                        tooltip: "Save User",
+                                        onClick: (event, rowData?) => alert("You saved " + (rowData as rowdata).book)
+                                        }
+                                    ]}
+                                    components={{
+                                        Action: (props) => (
+                                            // <Button
+                                            // onClick={(event) => props.action.onClick(event, props.data)}
+                                            // color="primary"
+                                            // variant="text"
+                                            // style={{ textTransform: "none" }}
+                                            // size="small"
+                                            // >
+                                            // Save
+                                            // </Button>
+                                            <Link to="/page"> Here</Link>
+                                        )
+                                    }}/>
+                            </Paper>
                       </div>
                   </Parallax>
                 </div>
