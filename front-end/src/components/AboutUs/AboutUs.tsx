@@ -7,6 +7,8 @@ import bgPhoto from '../../Assets/bgPhoto.jpg'
 import Card from "@material-ui/core/Card";
 import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";
+import pamelaImg from '../../Assets/pamela-pic.jpg'
+import rodrigoImg from '../../Assets/rodrigo-pic.jpg'
 
 const styles = {
     parrallaxCont: {
@@ -61,9 +63,9 @@ class AboutUs extends React.Component<props, state> {
                             <CardContent style={{backgroundColor: "pink"}}> 
                                 <h2>Pamela Vazquez</h2>
                                 <CardMedia 
+                                src={pamelaImg}
                                 component="img"
-                                height= "140"
-                                image= "pride-in-writing/front-end/src/Assets/IMG_9697.jpg"
+                                height= "400"
                                 alt="picture of pamela"
                                 />
                                 <p>Pamela is a Senior at UT Austin, studying Computer Science.</p>
@@ -96,9 +98,9 @@ class AboutUs extends React.Component<props, state> {
                             <CardContent style={{backgroundColor: "pink"}}> 
                                 <h2>Rodrigo Estrella</h2>
                                 <CardMedia 
+                                src={rodrigoImg}
                                 component="img"
-                                height= "140"
-                                image= "pride-in-writing/front-end/src/Assets/IMG_9697.jpg"
+                                height= "400"
                                 alt="picture of rodrigo"
                                 />
                                 <p>Rodrigo is a Senior at UT Austin, studying Computer Science.</p>
