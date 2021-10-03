@@ -1,5 +1,8 @@
 import React from 'react';
 import { AppBar, Toolbar, List, ListItem, Button } from '@material-ui/core'
+import './Header.css'
+import { Link } from 'react-router-dom';
+
 
     // list: {
     //   ...defaultFont,
@@ -51,49 +54,47 @@ class Header extends React.Component<props, state> {
 
     render(){
         return (
-            <AppBar style={{height: 60}}>
+            <AppBar className="app-bar">
                 <Toolbar>
-                    <List style={{ display: 'flex', flexDirection: 'row', padding: 0 }}>
-                        <ListItem style={{width: 500}}>
+                    <List className="heading left">
+                        <ListItem>
                             <Button
-                            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-                            target="_blank"
+                            component={Link}
+                            to="/"
                             >
                             Pride In Writing
                             </Button>
                         </ListItem>
-                        <ListItem>
-                        </ListItem>
                     </List>
-                    <List style={{ display: 'flex', flexDirection: 'row', padding: 0 }}>
+                    <List className="heading">
                         <ListItem>
                             <Button
-                            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-                            target="_blank"
+                            component={Link}
+                            to="/Authors"
                             >
                             Authors
                             </Button>
                         </ListItem>
                         <ListItem>
                             <Button
-                            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-                            target="_blank"
+                            component={Link}
+                            to="/Books"
                             >
                             Books
                             </Button>
                         </ListItem>
                         <ListItem>
                             <Button
-                            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-                            target="_blank"
+                            component={Link}
+                            to="/Publishers"
                             >
                             Publishers
                             </Button>
                         </ListItem>
-                        <ListItem style={{width: 140}}>
+                        <ListItem>
                             <Button
-                            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
-                            target="_blank"
+                            component={Link} 
+                            to="/AboutUs"
                             style={{width: 140}}
                             >
                             About Us
