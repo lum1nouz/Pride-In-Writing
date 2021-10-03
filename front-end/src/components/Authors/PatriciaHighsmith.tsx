@@ -1,19 +1,13 @@
 import React from 'react';
 import { Paper, Button } from '@material-ui/core'
 import Header from '../Header/Header';
-import css from './test.module.css';
-import bgPhoto from '../../Assets/bgPhoto.jpg'
-import patricia from '../../Assets/patricia-highsmith.jpg'
-import { Parallax, Background } from 'react-parallax';
+import css from './Authors.module.css';
+import patricia from '../../Assets/patricia_highsmith.jpg'
+import { Parallax } from 'react-parallax';
 import Card from "@material-ui/core/Card";
-import Grid from "@material-ui/core/Grid";
 import { CardContent } from '@material-ui/core'
 import CardMedia from "@material-ui/core/CardMedia";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-
-    
+import { Link } from 'react-router-dom';
 
 type props = {
 
@@ -21,6 +15,16 @@ type props = {
 
 type state = {
    
+}
+
+const styles = {
+    media: {
+        width: 400,
+        height: 500,
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center' 
+    },
 }
 
 class Page extends React.Component<props, state> {
@@ -31,49 +35,65 @@ class Page extends React.Component<props, state> {
     render(){
         return (
             <div>
-                <Header></Header>
-                <Parallax bgImage={bgPhoto} strength = {500}>
-                    <div style={{}}>
-                    <Paper elevation={4} style={{textAlign:'center', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', marginTop: 100, marginLeft: 30, marginRight: 30, height: 150 }}>
-                        <div> 
-                        <h1>Patricia Highsmith </h1> 
-                        </div>
-                    </Paper>  
-                    </div>
-                    
-                    <div style={{}}>
-                        <Paper elevation={4} style={{textAlign:'center', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', marginTop: 100, marginLeft: 30, marginRight: 30, height: 1800 }}>
-
-                            <div>
-                                <h1>Meet the Team</h1>
-
-                                <Grid container spacing={3}> 
-
-                                    <Grid item xs={6}>
-                                        <Card> 
-                                            <CardContent style={{backgroundColor: "pink"}}> 
-                                                <h2>Pamela Vazquez</h2>
-                                                <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
-                                                <CardMedia 
+                <Header/>
+                <div className={css.background}>
+                    <Parallax strength = {500} className={css.parrallaxCont}>
+                        <div style={{}}>
+                            <div className={css.titleText}> Patricia Highsmith </div>
+                            <Paper elevation={4} className={css.paperCont}>
+                                <Card> 
+                                    <CardContent style={{backgroundColor: "pink", width: 'fit-content', marginLeft: 975}}> 
+                                        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
+                                            <CardMedia
                                                 style={styles.media}
                                                 src={patricia}
                                                 component="img"
-                                                height= "140"
-                                                alt="picture of pamela"
-                                                />
-                                                </div>
-                                                <p>Pamela is a Senior at UT Austin, studying Computer Science.</p>
-                                                <p>She will be grauating Fall 2021 and will start her Product Management Career in February.</p>
-                                                <p>Her major responsibilities fall within the front-end team.</p>
-                                            </CardContent>
-                                        </Card>
-                                    </Grid>
-                                </Grid>
-                            </div>    
-                        </Paper>
-                    </div>
-                </Parallax>
+                                                alt="Picture of Patrica Highsmith" />
+                                        </div>
+                                        <p style={{textAlign: 'center'}}>
+                                            Born: January 19, 1921 <br/>
+                                            Died: February 4, 1995 <br/>
+                                        </p>    
+                                    </CardContent>
+                                </Card>
 
+                                <div style={{textAlign: 'center'}}>
+                                    <h2>
+                                        Biography <br/>
+                                    </h2> 
+                                    <p>
+                                        Born in Fort Worth, Texas, Patricia Highsmith was an American novelist known for her psychological thrillers and romances.
+                                    </p>
+
+                                    <h2>
+                                        Books
+                                    </h2> 
+                                    <p>
+                                        <Button
+                                            component={Link}
+                                            to="/the-price-of-salt"
+                                            >
+                                            The Price of Salt (1952)
+                                        </Button>  
+                                    </p>
+
+                                    <h2>
+                                        Publishers
+                                    </h2> 
+                                    <p>
+                                        <Button
+                                            component={Link}
+                                            to="/g-p-putman's-sons"
+                                            >
+                                            G. P. Putman's Sons
+                                        </Button>  
+                                    </p>
+
+                                </div>
+                            </Paper>
+                        </div>
+                    </Parallax>
+                </div>
             </div>
         )
     }
