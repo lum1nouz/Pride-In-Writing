@@ -70,7 +70,7 @@ class Header extends React.Component<props, state> {
                         <ListItem>
                             <Button
                             component={Link}
-                            to="/listPage"
+                            to="/Authors"
                             >
                             Authors
                             </Button>

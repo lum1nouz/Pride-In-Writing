@@ -1,7 +1,7 @@
 import React from 'react';
 import { Paper, Button} from '@material-ui/core'
 import Header from '../Header/Header';
-import css from './Publishers.module.css';
+import css from './Authors.module.css';
 import bgPhoto from '../../Assets/bgPhoto.jpg'
 import { Parallax, Background } from 'react-parallax';
 import MaterialTable from 'material-table';
@@ -9,20 +9,22 @@ import internal from 'stream';
 import { Link } from 'react-router-dom';
 
 type rowdata ={
-  publisher: string,
-  country: string,
-  types: string,
-  authorsPublished: string,
-  founded: number
+  author: string,
+  yearBorn: number,
+  nationality: string,
+  sexuality: string,
+  gender: string,
+  books_Published: number
 }
 
 const dataStore = [
-  {
-      publisher: "G. P. Putnam's Sons",
-      "country": "United States",
-      "types": "Books",
-      "authorsPublished": "N/A",
-      "founded": 1838
+  { 
+    author: "Patricia Highsmith",
+    yearBorn: 1921,
+    nationality: "American",
+    sexuality: "Homosexual",
+    gender: "Female",
+    books_Published: 22
   }
 ];
 
@@ -46,15 +48,16 @@ class ListPage extends React.Component<props, state> {
                 <div className={css.background}>
                   <Parallax strength = {500} className={css.parrallaxCont}>
                       <div style={{}}>
-                          <div className={css.titleText}> Publishers </div>
+                          <div className={css.titleText}> Books </div>
                           <Paper elevation={4} className={css.paperCont}>
                                 <MaterialTable style={{marginTop: 50, marginLeft: 20, marginRight: 20}}
                                     columns ={[
-                                        {title: "Publisher", field: "publisher", type: "string"},
-                                        {title: "Country of Origin", field: "country", type: "string"},
-                                        {title: "Publication Types", field: "types", type: "string"},
-                                        {title: "Authors Published", field: "authorsPublished", type: "numeric"},
-                                        {title: "Year Founded", field: "founded", type: "numeric"}
+                                        {title: "Author", field: "author", type: "string"},
+                                        {title: "Year Born", field: "yearborn", type: "numeric"},
+                                        {title: "Nationality", field: "nationality", type: "string"},
+                                        {title: "Sexuality", field: "sexuality", type: "string"},
+                                        {title: "Gender", field: "gender", type: "string"},
+                                        {title: "Books Published", field: "books_Published", type: "numeric"},
                                     ]}
                                     data={dataStore}
                                     title =""
@@ -62,7 +65,7 @@ class ListPage extends React.Component<props, state> {
                                         {
                                         icon: () => <div>Here</div>,
                                         tooltip: "Save User",
-                                        onClick: (event, rowData?) => alert("You saved " + (rowData as rowdata).publisher)
+                                        onClick: (event, rowData?) => alert("You saved " + (rowData as rowdata).author)
                                         }
                                     ]}
                                     components={{
@@ -76,11 +79,9 @@ class ListPage extends React.Component<props, state> {
                                             // >
                                             // Save
                                             // </Button>
-                                            <Link to="/diogenes-verlag"> Here</Link>
+                                            <Link to="/patricia-highsmith"> Here</Link>
                                         )
                                     }}/>
-
-
                             </Paper>
                       </div>
                   </Parallax>
