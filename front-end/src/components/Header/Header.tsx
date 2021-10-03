@@ -77,7 +77,7 @@ class Header extends React.Component<props, state> {
                         </ListItem>
                         <ListItem>
                             <Button
-                            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+                            href="/Books"
                             target="_blank"
                             >
                             Books
@@ -85,7 +85,7 @@ class Header extends React.Component<props, state> {
                         </ListItem>
                         <ListItem>
                             <Button
-                            href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
+                            href="/Publishers"
                             target="_blank"
                             >
                             Publishers
