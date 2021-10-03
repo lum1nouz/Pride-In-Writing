@@ -1,0 +1,28 @@
+.parrallaxCont{
+  margin-top: 50px;
+  height: 1450px;
+}
+
+.titleText{
+  margin-top: 75px;
+  font-size: 72px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px black;
+}
+
+.background{
+  background-image: url('../../Assets/bgPhoto.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%; 
+}
+
+.paperCont{ 
+  margin-top: 50px;
+  margin-left: 80px;
+  margin-right: 80px; 
+  /* TODO: Change this height to a % of the table selector */
+  height: 1200px;
+}
