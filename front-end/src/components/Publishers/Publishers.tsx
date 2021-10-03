@@ -12,17 +12,17 @@ type rowdata ={
   publisher: string,
   country: string,
   types: string,
-  authorsPublished: number,
+  authorsPublished: string,
   founded: number
 }
 
 const dataStore = [
   {
-      publisher: "Knopf",
-      "country": "United States of America",
-      "types": "Literature",
-      "authorsPublished": 1,
-      "founded": 1915
+      publisher: "G. P. Putnam's Sons",
+      "country": "United States",
+      "types": "Books",
+      "authorsPublished": "N/A",
+      "founded": 1838
   }
 ];
 
@@ -76,7 +76,7 @@ class ListPage extends React.Component<props, state> {
                                             // >
                                             // Save
                                             // </Button>
-                                            <Link to="/page"> Here</Link>
+                                            <Link to="/diogenes-verlag"> Here</Link>
                                         )
                                     }}/>
 

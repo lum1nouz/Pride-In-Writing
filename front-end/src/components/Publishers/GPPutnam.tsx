@@ -1,9 +1,10 @@
 import React from 'react';
 import { Paper, Button } from '@material-ui/core'
 import Header from '../Header/Header';
-import css from './Authors.module.css';
-import patricia from '../../Assets/patricia_highsmith.jpg'
+import css from './Publishers.module.css';
+import putnam from '../../Assets/putnam-logo.jpg'
 import { Parallax } from 'react-parallax';
+import Card from "@material-ui/core/Card";
 import { CardContent } from '@material-ui/core'
 import CardMedia from "@material-ui/core/CardMedia";
 import { Link } from 'react-router-dom';
@@ -18,7 +19,7 @@ type state = {
 
 const styles = {
     media: {
-        width: 400,
+        width: 1400,
         height: 500,
         display: 'flex', 
         justifyContent: 'center', 
@@ -38,28 +39,41 @@ class Page extends React.Component<props, state> {
                 <div className={css.background}>
                     <Parallax strength = {500} className={css.parrallaxCont}>
                         <div style={{}}>
-                            <div className={css.titleText}> Patricia Highsmith </div>
+                            <div className={css.titleText}> G. P. Putnam's Sons </div>
                             <Paper elevation={4} className={css.paperCont}>
-                                    <CardContent style={{backgroundColor: "pink", width: 'fit-content', marginLeft: 975}}> 
+                                    <CardContent style={{backgroundColor: "pink", width: 'fit-content', marginLeft: 500}}> 
                                         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
                                             <CardMedia
                                                 style={styles.media}
-                                                src={patricia}
+                                                src={putnam}
                                                 component="img"
                                                 alt="Picture of Patrica Highsmith" />
                                         </div>
                                         <p style={{textAlign: 'center'}}>
-                                            Born: January 19, 1921 <br/>
-                                            Died: February 4, 1995 <br/>
+                                            Parent Company: Penguin Group <br/>
+                                            Founder: George Palmer Putnam <br/>
+                                            Website: <a href="https://www.penguin.com/publishers/gpputnamssons/">G. P. Putnam's Sons' Website</a>
                                         </p>    
                                     </CardContent>
 
                                 <div style={{textAlign: 'center'}}>
                                     <h2>
-                                        Biography <br/>
+                                        About <br/>
                                     </h2> 
                                     <p>
-                                        Born in Fort Worth, Texas, Patricia Highsmith was an American novelist known for her psychological thrillers and romances.
+                                        United States publisher based in New York City, New York.
+                                    </p>
+
+                                    <h2>
+                                        Authors
+                                    </h2> 
+                                    <p>
+                                        <Button
+                                            component={Link}
+                                            to="/patricia-highsmith"
+                                            >
+                                            Patricia Highsmith
+                                        </Button>  
                                     </p>
 
                                     <h2>
@@ -74,17 +88,6 @@ class Page extends React.Component<props, state> {
                                         </Button>  
                                     </p>
 
-                                    <h2>
-                                        Publishers
-                                    </h2> 
-                                    <p>
-                                        <Button
-                                            component={Link}
-                                            to="/putnam"
-                                            >
-                                            G. P. Putnam's Sons
-                                        </Button>  
-                                    </p>
 
                                 </div>
                             </Paper>
