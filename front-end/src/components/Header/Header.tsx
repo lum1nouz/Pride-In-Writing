@@ -59,8 +59,8 @@ class Header extends React.Component<props, state> {
                     <List className="heading left">
                         <ListItem>
                             <Button
-                            href="/"
-                            target="_blank"
+                            component={Link}
+                            to="/"
                             >
                             Pride In Writing
                             </Button>
@@ -69,32 +69,32 @@ class Header extends React.Component<props, state> {
                     <List className="heading">
                         <ListItem>
                             <Button
-                            href="/listPage"
-                            target="_blank"
+                            component={Link}
+                            to="/listPage"
                             >
                             Authors
                             </Button>
                         </ListItem>
                         <ListItem>
                             <Button
-                            href="/Books"
-                            target="_blank"
+                            component={Link}
+                            to="/Books"
                             >
                             Books
                             </Button>
                         </ListItem>
                         <ListItem>
                             <Button
-                            href="/Publishers"
-                            target="_blank"
+                            component={Link}
+                            to="/Publishers"
                             >
                             Publishers
                             </Button>
                         </ListItem>
                         <ListItem>
                             <Button
-                            component={Link} to="/AboutUs"
-                            target="_blank"
+                            component={Link} 
+                            to="/AboutUs"
                             style={{width: 140}}
                             >
                             About Us
