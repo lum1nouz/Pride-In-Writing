@@ -2,7 +2,7 @@ import React from 'react';
 import { Paper, Button } from '@material-ui/core'
 import Header from '../Header/Header';
 import css from './Publishers.module.css';
-import putnam from '../../Assets/putnam-logo.jpg'
+import virago from '../../Assets/virago-logo.jpg'
 import { Parallax } from 'react-parallax';
 import Card from "@material-ui/core/Card";
 import { CardContent } from '@material-ui/core'
@@ -39,20 +39,20 @@ class Page extends React.Component<props, state> {
                 <div className={css.background}>
                     <Parallax strength = {500} className={css.parrallaxCont}>
                         <div style={{}}>
-                            <div className={css.titleText}> G. P. Putnam's Sons </div>
+                            <div className={css.titleText}> Virago Press</div>
                             <Paper elevation={4} className={css.paperCont}>
                                     <CardContent style={{backgroundColor: "pink", width: 'fit-content', marginLeft: 500}}> 
                                         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
                                             <CardMedia
                                                 style={styles.media}
-                                                src={putnam}
+                                                src={virago}
                                                 component="img"
-                                                alt="G. P. Gutman's Sons Logo" />
+                                                alt="Picture of Patrica Highsmith" />
                                         </div>
                                         <p style={{textAlign: 'center'}}>
-                                            Parent Company: Penguin Group <br/>
-                                            Founder: George Palmer Putnam <br/>
-                                            Website: <a href="https://www.penguin.com/publishers/gpputnamssons/">G. P. Putnam's Sons' Website</a>
+                                            Parent Company: Hachette Livre <br/>
+                                            Founder: Carmen Callil <br/>
+                                            Website: <a href="https://www.virago.co.uk/">Virago Press' Website</a>
                                         </p>    
                                     </CardContent>
 
@@ -61,7 +61,7 @@ class Page extends React.Component<props, state> {
                                         About <br/>
                                     </h2> 
                                     <p>
-                                        United States publisher based in New York City, New York.
+                                        British publisher of women's writing and books on feminist topics based in the United Kingdom.
                                     </p>
 
                                     <h2>
@@ -70,9 +70,9 @@ class Page extends React.Component<props, state> {
                                     <p>
                                         <Button
                                             component={Link}
-                                            to="/patricia-highsmith"
+                                            to="/sarah-waters"
                                             >
-                                            Patricia Highsmith
+                                            Sarah Waters
                                         </Button>  
                                     </p>
 
@@ -82,9 +82,9 @@ class Page extends React.Component<props, state> {
                                     <p>
                                         <Button
                                             component={Link}
-                                            to="/the-price-of-salt"
+                                            to="/fingersmith"
                                             >
-                                            The Price of Salt (1952)
+                                            Fingersmith (2002)
                                         </Button>  
                                     </p>
 

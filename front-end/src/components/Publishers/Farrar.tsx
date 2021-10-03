@@ -2,7 +2,7 @@ import React from 'react';
 import { Paper, Button } from '@material-ui/core'
 import Header from '../Header/Header';
 import css from './Publishers.module.css';
-import putnam from '../../Assets/putnam-logo.jpg'
+import farrar from '../../Assets/farrar-logo.jpg'
 import { Parallax } from 'react-parallax';
 import Card from "@material-ui/core/Card";
 import { CardContent } from '@material-ui/core'
@@ -39,20 +39,20 @@ class Page extends React.Component<props, state> {
                 <div className={css.background}>
                     <Parallax strength = {500} className={css.parrallaxCont}>
                         <div style={{}}>
-                            <div className={css.titleText}> G. P. Putnam's Sons </div>
+                            <div className={css.titleText}> Farrar, Straus and Giroux </div>
                             <Paper elevation={4} className={css.paperCont}>
                                     <CardContent style={{backgroundColor: "pink", width: 'fit-content', marginLeft: 500}}> 
                                         <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
                                             <CardMedia
                                                 style={styles.media}
-                                                src={putnam}
+                                                src={farrar}
                                                 component="img"
-                                                alt="G. P. Gutman's Sons Logo" />
+                                                alt="Farrar, Straus and Giroux Logo" />
                                         </div>
                                         <p style={{textAlign: 'center'}}>
-                                            Parent Company: Penguin Group <br/>
-                                            Founder: George Palmer Putnam <br/>
-                                            Website: <a href="https://www.penguin.com/publishers/gpputnamssons/">G. P. Putnam's Sons' Website</a>
+                                            Parent Company: Macmillan Publishers <br/>
+                                            Founder: John C. Farrar, Roger W. Straus Jr., Robert Giroux <br/>
+                                            Website: <a href="https://us.macmillan.com/fsg/">Farrar, Straus and Giroux'sWebsite</a>
                                         </p>    
                                     </CardContent>
 
@@ -61,7 +61,7 @@ class Page extends React.Component<props, state> {
                                         About <br/>
                                     </h2> 
                                     <p>
-                                        United States publisher based in New York City, New York.
+                                        United States publisher based in New York City, New York. Founded in 1946.
                                     </p>
 
                                     <h2>
@@ -70,9 +70,9 @@ class Page extends React.Component<props, state> {
                                     <p>
                                         <Button
                                             component={Link}
-                                            to="/patricia-highsmith"
+                                            to="/michael-cunningham"
                                             >
-                                            Patricia Highsmith
+                                            Michael Cunningham
                                         </Button>  
                                     </p>
 
@@ -84,7 +84,7 @@ class Page extends React.Component<props, state> {
                                             component={Link}
                                             to="/the-price-of-salt"
                                             >
-                                            The Price of Salt (1952)
+                                            The Hours (1998)
                                         </Button>  
                                     </p>
 

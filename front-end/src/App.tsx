@@ -9,6 +9,8 @@ import AboutUs from './components/AboutUs/AboutUs';
 import Books from './components/Books/Books'
 import Publishers from './components/Publishers/Publishers';
 import Putnam from './components/Publishers/GPPutnam';
+import Farrar from './components/Publishers/Farrar';
+import ViragoPress from './components/Publishers/ViragoPress';
 import Authors from './components/Authors/Authors';
 import PatriciaHighsmith from './components/Authors/PatriciaHighsmith';
 import MichaelCunningham from './components/Authors/MichaelCunningham';
@@ -25,6 +27,8 @@ function App() {
         <Route exact path="/Books" component={Books}/>
         <Route exact path="/Publishers" component={Publishers}/>
         <Route exact path="/diogenes-verlag" component={Putnam}/>
+        <Route exact path="/farrar" component={Farrar}/>
+        <Route exact path="/virago-press" component={ViragoPress}/>
         <Route exact path="/Authors" component={Authors}/>
         <Route exact path="/patricia-highsmith" component={PatriciaHighsmith}/>
         <Route exact path="/michael-cunningham" component={MichaelCunningham}/>
