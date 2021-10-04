@@ -19,7 +19,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 const styles = {
     parrallaxCont: {
         margintop: 100, 
-        height: 3000
+        height: 3500
     },
     paperCont: { 
         marginTop: 200, 
@@ -212,7 +212,56 @@ class AboutUs extends React.Component<props, state> {
                         </div>
                     </Paper>
 
+                    <Paper elevation={4} style={{ textAlign: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', marginTop: 100, marginLeft: 30, marginRight: 30, height: 650 }}>
 
+                    <div>
+                    <h1> Tools Used </h1>
+                    <List>
+                        <ListItem>
+                            <ListItemText><p>React: used to build our web app</p></ListItemText>
+                        </ListItem>
+
+                        <ListItem>
+                            <ListItemText><p>Material UI: used to create the user interface in our React application</p></ListItemText>
+                        </ListItem>
+
+                        <ListItem>
+                            <ListItemText>
+                            <p>AWSAmplify: used to deploy our web application</p>
+                            </ListItemText>
+                        </ListItem>
+
+                        <ListItem>
+                            <ListItemText>
+                            <p>Postman: used to design our Restful API</p>
+                            </ListItemText>
+                        </ListItem>
+
+                        <ListItem>
+                            <ListItemText>
+                            <p>GitLab: used for our project repository and for development across team members</p>
+                            </ListItemText>
+                        </ListItem>
+
+
+                        <ListItem>
+                            <ListItemText>
+                            <p>NameCheap: used to register the Pride in Writing domain name</p>
+                            </ListItemText>
+                        </ListItem>
+
+
+                        <ListItem>
+                            <ListItemText>
+                            <p>Restful APIs and Data Sources: used to scrape information that will be displayed in our web application</p>
+                            </ListItemText>
+                        </ListItem>
+
+                        </List>
+
+                        </div>
+
+                    </Paper>
 
                 </Parallax></>
         )
