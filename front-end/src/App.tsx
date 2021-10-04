@@ -26,7 +26,7 @@ function App() {
         <Route exact path="/page" component={Page}/>
         <Route exact path="/Books" component={Books}/>
         <Route exact path="/Publishers" component={Publishers}/>
-        <Route exact path="/diogenes-verlag" component={Putnam}/>
+        <Route exact path="/putnam" component={Putnam}/>
         <Route exact path="/farrar" component={Farrar}/>
         <Route exact path="/virago-press" component={ViragoPress}/>
         <Route exact path="/Authors" component={Authors}/>

@@ -76,7 +76,7 @@ class ListPage extends React.Component<props, state> {
                                             // >
                                             // Save
                                             // </Button>
-                                            <Link to="/diogenes-verlag"> Here</Link>
+                                            <Link to="/putnam"> Here</Link>
                                         )
                                     }}/>
 
