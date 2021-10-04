@@ -20,8 +20,8 @@ type state = {
 
 const styles = {
     media: {
-        width: 600,
-        height: 200,
+        width: 300,
+        height: 400,
         display: 'flex', 
         justifyContent: 'center', 
         alignItems: 'center' 
@@ -50,8 +50,8 @@ class Page extends React.Component<props, state> {
                                         <CardContent style={{backgroundColor: "pink", width: 'fit-content'}}>
                                             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
                                                     <CardMedia
+                                                        style={styles.media}
                                                         src={thehours}
-                                                        style={{height: "20%", width: "20%"}}
                                                         component="img"
                                                         alt="The Hours Book" />
                                             </div>
