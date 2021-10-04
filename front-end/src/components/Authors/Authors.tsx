@@ -48,7 +48,7 @@ class ListPage extends React.Component<props, state> {
                 <div className={css.background}>
                   <Parallax strength = {500} className={css.parrallaxCont}>
                       <div style={{}}>
-                          <div className={css.titleText}> Books </div>
+                          <div className={css.titleText}> Authors </div>
                           <Paper elevation={4} className={css.paperCont}>
                                 <MaterialTable style={{marginTop: 50, marginLeft: 20, marginRight: 20}}
                                     columns ={[
