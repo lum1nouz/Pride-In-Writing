@@ -21,14 +21,14 @@ type rowdata ={
 
 const dataStore = [
   {
-      book: "Kinflicks", 
-      author: "Lisa Alther",
+      book: "The Hours", 
+      author: "Michael Cunningham",
       "genre": "Fiction",
-      "publisher": "Knopf",
-      "yearPublished": 1975,
-      "rating": 3.76,
-      "pages": 503,
-      "price": 12
+      "publisher": "Farrar",
+      "yearPublished": 1988,
+      "rating": 4.4,
+      "pages": 230,
+      "price": 11.79
   }
 ];
 

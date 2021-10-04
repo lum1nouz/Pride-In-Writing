@@ -2,7 +2,7 @@ import React from 'react';
 import { Paper, Button } from '@material-ui/core'
 import Header from '../Header/Header';
 import css from './Books.module.css';
-import kinflicks from '../../Assets/kinflicks.jpg'
+import priceofsalt from '../../Assets/price-of-salt.jpg'
 import { Parallax } from 'react-parallax';
 import Card from "@material-ui/core/Card";
 import { CardContent } from '@material-ui/core'
@@ -40,22 +40,24 @@ class Page extends React.Component<props, state> {
                 <div className={css.background}>
                     <Parallax strength = {500} className={css.parrallaxCont}>
                         <div style={{}}>
-                            <div className={css.titleText}> Kinflicks </div>
+                            <div className={css.titleText}> The Hours </div>
                             <Paper elevation={4} className={css.paperCont}>
                                 <Grid container spacing={0}
                                     direction="column"
                                     alignItems="center"
                                     justify="center">
                                     <Grid item xs={12}>
-                                        <CardContent style={{backgroundColor: "pink", width: 'fit-content'}}> 
-                                            <CardMedia
-                                                src={kinflicks}
-                                                component="img"
-                                                alt="Kinflicks Book" />
+                                        <CardContent style={{backgroundColor: "pink", width: 'fit-content'}}>
+                                            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
+                                                    <CardMedia
+                                                        src={priceofsalt}
+                                                        component="img"
+                                                        alt="The Price of Salt" />
+                                            </div>
                                             <p style={{textAlign: 'center'}}>
-                                                Rating: 3.76 <br/>
-                                                Pages: 503 <br/>
-                                                Price: $12.00
+                                                Rating: 4.5 <br/>
+                                                Pages: 304 <br/>
+                                                Price: $13.69
                                             </p>
                                         </CardContent>
                                     </Grid>
@@ -64,9 +66,12 @@ class Page extends React.Component<props, state> {
                                     <h2>
                                         Author <br/>
                                     </h2> 
-                                    <p>
-                                        Lisa Alther
-                                    </p>
+                                    <Button
+                                            component={Link}
+                                            to="/patricia-highsmith"
+                                            >
+                                            Patricia Highsmith
+                                    </Button>  
 
                                     <h2>
                                         Genre
@@ -78,14 +83,17 @@ class Page extends React.Component<props, state> {
                                     <h2>
                                         Publisher
                                     </h2> 
-                                    <p>
-                                        Knopf
-                                    </p>
+                                    <Button
+                                            component={Link}
+                                            to="/putnam"
+                                            >
+                                            GP Putnam
+                                    </Button>
                                     <h2>
                                         Year Published
                                     </h2> 
                                     <p>
-                                        1975
+                                        1952
                                     </p>
 
                                 </div>
