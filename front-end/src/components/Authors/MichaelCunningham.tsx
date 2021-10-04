@@ -6,6 +6,7 @@ import michael from '../../Assets/michael-cunningham.jpg'
 import { Parallax } from 'react-parallax';
 import { CardContent } from '@material-ui/core'
 import CardMedia from "@material-ui/core/CardMedia";
+import Grid from "@material-ui/core/Grid";
 import { Link } from 'react-router-dom';
 
 type props = {
@@ -40,19 +41,25 @@ class Page extends React.Component<props, state> {
                         <div style={{}}>
                             <div className={css.titleText}> Michael Cunningham </div>
                             <Paper elevation={4} className={css.paperCont}>
-                                    <CardContent style={{backgroundColor: "pink", width: 'fit-content', marginLeft: 975}}> 
-                                        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
-                                            <CardMedia
-                                                style={styles.media}
-                                                src={michael}
-                                                component="img"
-                                                alt="Picture of Michael Cunningham" />
-                                        </div>
-                                        <p style={{textAlign: 'center'}}>
-                                            Born: November 6, 1952
-                                        </p>    
-                                    </CardContent>
-
+                                <Grid container spacing={0}
+                                    direction="column"
+                                    alignItems="center"
+                                    justify="center">
+                                    <Grid item xs={12}>
+                                        <CardContent style={{backgroundColor: "pink", width: 'fit-content'}}> 
+                                            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
+                                                <CardMedia
+                                                    style={styles.media}
+                                                    src={michael}
+                                                    component="img"
+                                                    alt="Picture of Michael Cunningham" />
+                                            </div>
+                                            <p style={{textAlign: 'center'}}>
+                                                Born: November 6, 1952
+                                            </p>    
+                                        </CardContent>
+                                    </Grid>
+                                </Grid>
                                 <div style={{textAlign: 'center'}}>
                                     <h2>
                                         Biography <br/>

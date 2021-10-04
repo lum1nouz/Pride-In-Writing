@@ -7,6 +7,7 @@ import { Parallax } from 'react-parallax';
 import Card from "@material-ui/core/Card";
 import { CardContent } from '@material-ui/core'
 import CardMedia from "@material-ui/core/CardMedia";
+import Grid from "@material-ui/core/Grid";
 import { Link } from 'react-router-dom';
 
 type props = {
@@ -19,8 +20,8 @@ type state = {
 
 const styles = {
     media: {
-        width: 1400,
-        height: 500,
+        width: 600,
+        height: 200,
         display: 'flex', 
         justifyContent: 'center', 
         alignItems: 'center' 
@@ -41,21 +42,27 @@ class Page extends React.Component<props, state> {
                         <div style={{}}>
                             <div className={css.titleText}> G. P. Putnam's Sons </div>
                             <Paper elevation={4} className={css.paperCont}>
-                                    <CardContent style={{backgroundColor: "pink", width: 'fit-content', marginLeft: 500}}> 
-                                        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
-                                            <CardMedia
-                                                style={styles.media}
-                                                src={putnam}
-                                                component="img"
-                                                alt="G. P. Gutman's Sons Logo" />
-                                        </div>
-                                        <p style={{textAlign: 'center'}}>
-                                            Parent Company: Penguin Group <br/>
-                                            Founder: George Palmer Putnam <br/>
-                                            Website: <a href="https://www.penguin.com/publishers/gpputnamssons/">G. P. Putnam's Sons' Website</a>
-                                        </p>    
-                                    </CardContent>
-
+                                <Grid container spacing={0}
+                                    direction="column"
+                                    alignItems="center"
+                                    justify="center">
+                                    <Grid item xs={12}>
+                                        <CardContent style={{backgroundColor: "pink", width: 'fit-content'}}> 
+                                            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
+                                                <CardMedia
+                                                    style={styles.media}
+                                                    src={putnam}
+                                                    component="img"
+                                                    alt="G. P. Gutman's Sons Logo" />
+                                            </div>
+                                            <p style={{textAlign: 'center'}}>
+                                                Parent Company: Penguin Group <br/>
+                                                Founder: George Palmer Putnam <br/>
+                                                Website: <a href="https://www.penguin.com/publishers/gpputnamssons/">G. P. Putnam's Sons' Website</a>
+                                            </p>    
+                                        </CardContent>
+                                    </Grid>
+                                </Grid>
                                 <div style={{textAlign: 'center'}}>
                                     <h2>
                                         About <br/>
