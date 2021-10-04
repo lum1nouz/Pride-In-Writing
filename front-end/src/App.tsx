@@ -9,6 +9,7 @@ import AboutUs from './components/AboutUs/AboutUs';
 import Books from './components/Books/Books'
 import Publishers from './components/Publishers/Publishers';
 import Putnam from './components/Publishers/GPPutnam';
+import Kinflicks from './components/Books/BookInstanceStatic';
 import Farrar from './components/Publishers/Farrar';
 import ViragoPress from './components/Publishers/ViragoPress';
 import Authors from './components/Authors/Authors';
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/Books" component={Books}/>
         <Route exact path="/Publishers" component={Publishers}/>
         <Route exact path="/putnam" component={Putnam}/>
+        <Route exact path="/kinflicks" component={Kinflicks}/>
         <Route exact path="/farrar" component={Farrar}/>
         <Route exact path="/virago-press" component={ViragoPress}/>
         <Route exact path="/Authors" component={Authors}/>

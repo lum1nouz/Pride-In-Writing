@@ -163,8 +163,8 @@ class AboutUs extends React.Component<props, state> {
                                                         alt="picture of shyam" />
                                                 </div>
                                                 <p>Shyam is a Senior at UT Austin, studying Computer Science.</p>
-                                                <p>He will be grauating Spring 2022 and blank</p>
-                                                <p>His major responsibilities fall within the blank team.</p>
+                                                <p>He will be grauating Spring 2022 and starting at Optiver as a graduate quantitative trader</p>
+                                                <p>His major responsibilities fall within the front end team, as of now.</p>
                                             </CardContent>
                                         </Card>
                                     </Grid>
