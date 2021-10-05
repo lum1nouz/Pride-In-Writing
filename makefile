@@ -16,3 +16,6 @@ front-install:
 
 run:
 		cd front-end/ && yarn start
+
+format:
+		cd front-end/ && yarn prettier --write .
