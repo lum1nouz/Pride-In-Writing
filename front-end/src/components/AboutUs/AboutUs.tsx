@@ -279,7 +279,7 @@ class AboutUs extends React.Component<props, state> {
                 marginTop: 100,
                 marginLeft: 30,
                 marginRight: 30,
-                height: 1800,
+                height: 2100,
               }}
             >
               <div>
