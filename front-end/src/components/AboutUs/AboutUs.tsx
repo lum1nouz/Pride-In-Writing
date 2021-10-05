@@ -20,7 +20,7 @@ import axios from "axios";
 const styles = {
   parrallaxCont: {
     margintop: 100,
-    height: 3500,
+    height: 4500,
   },
   paperCont: {
     marginTop: 200,
@@ -352,7 +352,7 @@ class AboutUs extends React.Component<props, state> {
                           Science.
                         </p>
                         <p>
-                          He will be grauating Spring 2023 and he likes swimming
+                          He will be graduating Spring 2023 and he likes swimming
                         </p>
                         <p>
                           His major responsibilities fall within the front-end
@@ -431,7 +431,7 @@ class AboutUs extends React.Component<props, state> {
                           Science.
                         </p>
                         <p>
-                          He will be grauating Spring 2023 and he likes tennis
+                          He will be graduating Spring 2023 and he likes tennis
                         </p>
                         <p>
                           His major responsibilities fall within the blank team.
@@ -468,7 +468,7 @@ class AboutUs extends React.Component<props, state> {
                           Science.
                         </p>
                         <p>
-                          He will be grauating Spring 2022 and he likes video
+                          He will be graduating Spring 2022 and he likes video
                           games
                         </p>
                         <p>
