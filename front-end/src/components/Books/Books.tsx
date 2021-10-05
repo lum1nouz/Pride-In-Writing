@@ -9,7 +9,7 @@ import internal from 'stream';
 import { Link } from 'react-router-dom';
 
 type rowdata ={
-  book: string,
+  book: Link,
   author: string,
   genre: string,
   publisher: string,
@@ -20,16 +20,36 @@ type rowdata ={
 }
 
 const dataStore = [
-  {
-      book: "The Hours", 
-      author: "Michael Cunningham",
-      "genre": "Fiction",
-      "publisher": "Farrar",
-      "yearPublished": 1988,
-      "rating": 4.4,
-      "pages": 230,
-      "price": 11.79
-  }
+    {
+        book: <a href="/the-hours">The Hours</a>, 
+        author: "Michael Cunningham",
+        "genre": "Fiction",
+        "publisher": "Farrar",
+        "yearPublished": 1988,
+        "rating": 4.4,
+        "pages": 230,
+        "price": 11.79
+    },
+    {
+        book: <a href="/fingersmith">Fingersmith</a>, 
+        author: "Sarah Waters",
+        "genre": "Fiction",
+        "publisher": "Virago Press",
+        "yearPublished": 2002,
+        "rating": 4,
+        "pages": 596,
+        "price": 16.89
+    },
+    {
+        book: <a href="/the-price-of-salt">The Price of Salt</a>, 
+        author: "Patricia Highsmith",
+        "genre": "Fiction",
+        "publisher": "G. P. Putnam's Sons",
+        "yearPublished": 1952,
+        "rating": 4.5,
+        "pages": 304,
+        "price": 13.69
+    }
 ];
 
 type props = {
@@ -66,28 +86,7 @@ class ListPage extends React.Component<props, state> {
                                         {title: "Price", field: "price", type: "currency"}
                                     ]}
                                     data={dataStore}
-                                    title =""
-                                    actions={[
-                                        {
-                                        icon: () => <div>Here</div>,
-                                        tooltip: "Save User",
-                                        onClick: (event, rowData?) => alert("You saved " + (rowData as rowdata).book)
-                                        }
-                                    ]}
-                                    components={{
-                                        Action: (props) => (
-                                            // <Button
-                                            // onClick={(event) => props.action.onClick(event, props.data)}
-                                            // color="primary"
-                                            // variant="text"
-                                            // style={{ textTransform: "none" }}
-                                            // size="small"
-                                            // >
-                                            // Save
-                                            // </Button>
-                                            <Link to="/kinflicks"> Here</Link>
-                                        )
-                                    }}/>
+                                    title =""/>
                             </Paper>
                       </div>
                   </Parallax>

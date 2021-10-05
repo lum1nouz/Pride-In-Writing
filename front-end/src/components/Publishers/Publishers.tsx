@@ -9,7 +9,7 @@ import internal from 'stream';
 import { Link } from 'react-router-dom';
 
 type rowdata ={
-  publisher: string,
+  publisher: Link,
   country: string,
   types: string,
   authorsPublished: string,
@@ -17,13 +17,27 @@ type rowdata ={
 }
 
 const dataStore = [
-  {
-      publisher: "G. P. Putnam's Sons",
-      "country": "United States",
-      "types": "Books",
-      "authorsPublished": "N/A",
-      "founded": 1838
-  }
+    {
+        "publisher": <a href="/putnam">G. P. Putnam's Sons</a>,
+        "country": "United States",
+        "types": "Books",
+        "authorsPublished": "29+",
+        "founded": 1838
+    },
+    {
+        "publisher": <a href="/farrar">Farrar, Straus and Giroux</a>,
+        "country": "United States",
+        "types": "Books",
+        "authorsPublished": "27+",
+        "founded": 1946
+    },
+    {
+        "publisher": <a href="/putnam">Virago Press</a>,
+        "country": "United Kingdom",
+        "types": "Books, Women's Writing",
+        "authorsPublished": "20+",
+        "founded": 1973
+    }
 ];
 
 type props = {
@@ -53,32 +67,11 @@ class ListPage extends React.Component<props, state> {
                                         {title: "Publisher", field: "publisher", type: "string"},
                                         {title: "Country of Origin", field: "country", type: "string"},
                                         {title: "Publication Types", field: "types", type: "string"},
-                                        {title: "Authors Published", field: "authorsPublished", type: "numeric"},
+                                        {title: "Authors Published", field: "authorsPublished", type: "string"},
                                         {title: "Year Founded", field: "founded", type: "numeric"}
                                     ]}
                                     data={dataStore}
-                                    title =""
-                                    actions={[
-                                        {
-                                        icon: () => <div>Here</div>,
-                                        tooltip: "Save User",
-                                        onClick: (event, rowData?) => alert("You saved " + (rowData as rowdata).publisher)
-                                        }
-                                    ]}
-                                    components={{
-                                        Action: (props) => (
-                                            // <Button
-                                            // onClick={(event) => props.action.onClick(event, props.data)}
-                                            // color="primary"
-                                            // variant="text"
-                                            // style={{ textTransform: "none" }}
-                                            // size="small"
-                                            // >
-                                            // Save
-                                            // </Button>
-                                            <Link to="/putnam"> Here</Link>
-                                        )
-                                    }}/>
+                                    title =""/>
 
 
                             </Paper>

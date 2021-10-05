@@ -40,7 +40,7 @@ class Page extends React.Component<props, state> {
                 <div className={css.background}>
                     <Parallax strength = {500} className={css.parrallaxCont}>
                         <div style={{}}>
-                            <div className={css.titleText}> The Hours </div>
+                            <div className={css.titleText}> The Price of Salt </div>
                             <Paper elevation={4} className={css.paperCont}>
                                 <Grid container spacing={0}
                                     direction="column"

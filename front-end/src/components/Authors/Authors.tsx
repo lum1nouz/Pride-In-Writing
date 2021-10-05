@@ -9,7 +9,7 @@ import internal from 'stream';
 import { Link } from 'react-router-dom';
 
 type rowdata ={
-  author: string,
+  author: Link,
   yearBorn: number,
   nationality: string,
   sexuality: string,
@@ -19,12 +19,28 @@ type rowdata ={
 
 const dataStore = [
   { 
-    author: "Patricia Highsmith",
+    author: <a href="/patricia-highsmith">Patricia Highsmith</a>,
     yearBorn: 1921,
     nationality: "American",
     sexuality: "Homosexual",
     gender: "Female",
-    books_Published: 22
+    books_Published: 297
+  },
+  { 
+    author: <a href="/michael-cunningham">Michael Cunningham</a>,
+    yearBorn: 1952,
+    nationality: "American",
+    sexuality: "Homosexual",
+    gender: "Male",
+    books_Published: 48
+  },
+  { 
+    author: <a href="/sarah-waters">Sarah Waters</a>,
+    yearBorn: 1966,
+    nationality: "Welsh",
+    sexuality: "Homosexual",
+    gender: "Female",
+    books_Published: 31
   }
 ];
 
@@ -53,35 +69,14 @@ class ListPage extends React.Component<props, state> {
                                 <MaterialTable style={{marginTop: 50, marginLeft: 20, marginRight: 20}}
                                     columns ={[
                                         {title: "Author", field: "author", type: "string"},
-                                        {title: "Year Born", field: "yearborn", type: "numeric"},
+                                        {title: "Year Born", field: "yearBorn", type: "numeric"},
                                         {title: "Nationality", field: "nationality", type: "string"},
                                         {title: "Sexuality", field: "sexuality", type: "string"},
                                         {title: "Gender", field: "gender", type: "string"},
-                                        {title: "Books Published", field: "books_Published", type: "numeric"},
+                                        {title: "Books Written", field: "books_Published", type: "numeric"},
                                     ]}
                                     data={dataStore}
-                                    title =""
-                                    actions={[
-                                        {
-                                        icon: () => <div>Here</div>,
-                                        tooltip: "Save User",
-                                        onClick: (event, rowData?) => alert("You saved " + (rowData as rowdata).author)
-                                        }
-                                    ]}
-                                    components={{
-                                        Action: (props) => (
-                                            // <Button
-                                            // onClick={(event) => props.action.onClick(event, props.data)}
-                                            // color="primary"
-                                            // variant="text"
-                                            // style={{ textTransform: "none" }}
-                                            // size="small"
-                                            // >
-                                            // Save
-                                            // </Button>
-                                            <Link to="/patricia-highsmith"> Here</Link>
-                                        )
-                                    }}/>
+                                    title =""/>
                             </Paper>
                       </div>
                   </Parallax>
