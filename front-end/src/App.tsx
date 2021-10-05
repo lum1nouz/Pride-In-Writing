@@ -39,7 +39,6 @@ function App() {
         <Route exact path="/the-hours" component={TheHours}/>
         <Route exact path="/the-price-of-salt" component={ThePriceOfSalt}/>
         <Route exact path="/fingersmith" component={Fingersmith}/>
-
     </div>
   );
 }
