@@ -106,7 +106,7 @@ class AboutUs extends React.Component<props, state> {
             this.commitData[2] += 1
         } else if (data.author_email === "pamvazquez1@gmail.com") {
             this.commitData[3] += 1
-        } else if (data.author_email === "shyamp1204@gmail.com") {
+        } else if (data.author_email === "you@example.com") {
             this.commitData[4] += 1
         }     
     }
@@ -211,9 +211,9 @@ class AboutUs extends React.Component<props, state> {
                                                         alt="picture of pamela" />
                                                 </div>
                                                 <p>Pamela is a Senior at UT Austin, studying Computer Science.</p>
-                                                <p>She will be grauating Fall 2021 and will start her Product Management Career in February.</p>
+                                                <p>She will be graduating Fall 2022 and will start her Product Management Career in February.</p>
                                                 <p>Her major responsibilities fall within the front-end team.</p>
-                                                <p>Number of closed isses: {this.state.pamelaIssues}</p>
+                                                <p>Number of closed issues: {this.state.pamelaIssues}</p>
                                                 <p>Number of commits: {this.state.pamelaCommits}</p>
                                                 <p>Number of Unit Tests: 0</p>
                                             </CardContent>
@@ -233,9 +233,9 @@ class AboutUs extends React.Component<props, state> {
                                                         alt="picture of greg" />
                                                 </div>
                                                 <p>Greg is a Senior at UT Austin, studying Computer Science.</p>
-                                                <p>He will be grauating Spring 2022 and blank</p>
+                                                <p>He will be grauating Spring 2023 and he likes swimming</p>
                                                 <p>His major responsibilities fall within the front-end team.</p>
-                                                <p>Number of closed isses: {this.state.gregIssues}</p>
+                                                <p>Number of closed issues: {this.state.gregIssues}</p>
                                                 <p>Number of commits: {this.state.gregCommits}</p>
                                                 <p>Number of Unit Tests: 0</p>
                                             </CardContent>
@@ -258,7 +258,7 @@ class AboutUs extends React.Component<props, state> {
                                                 <p>Rodrigo is a Senior at UT Austin, studying Computer Science.</p>
                                                 <p>He will be grauating Spring 2022 and blank</p>
                                                 <p>His major responsibilities fall within the blank team.</p>
-                                                <p>Number of closed isses: {this.state.rodrigoIssues}</p>
+                                                <p>Number of closed issues: {this.state.rodrigoIssues}</p>
                                                 <p>Number of commits: {this.state.rodrigoCommits}</p>
                                                 <p>Number of Unit Tests: 0</p>
                                             </CardContent>
@@ -278,9 +278,9 @@ class AboutUs extends React.Component<props, state> {
                                                         alt="picture of cliff" />
                                                 </div>
                                                 <p>Cliff is a Senior at UT Austin, studying Computer Science.</p>
-                                                <p>He will be grauating Spring 2022 and blank</p>
+                                                <p>He will be grauating Spring 2023 and he likes tennis</p>
                                                 <p>His major responsibilities fall within the blank team.</p>
-                                                <p>Number of closed isses: {this.state.cliffIssues}</p>
+                                                <p>Number of closed issues: {this.state.cliffIssues}</p>
                                                 <p>Number of commits: {this.state.cliffCommits}</p>
                                                 <p>Number of Unit Tests: 0</p>
                                             </CardContent>
@@ -300,9 +300,9 @@ class AboutUs extends React.Component<props, state> {
                                                         alt="picture of shyam" />
                                                 </div>
                                                 <p>Shyam is a Senior at UT Austin, studying Computer Science.</p>
-                                                <p>He will be grauating Spring 2022 and blank</p>
+                                                <p>He will be grauating Spring 2022 and he likes video games</p>
                                                 <p>His major responsibilities fall within the blank team.</p>
-                                                <p>Number of closed isses: {this.state.shyamIssues}</p>
+                                                <p>Number of closed issues: {this.state.shyamIssues}</p>
                                                 <p>Number of commits: {this.state.shyamCommits}</p>
                                                 <p>Number of Unit Tests: 0</p>
                                             </CardContent>
