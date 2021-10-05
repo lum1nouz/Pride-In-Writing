@@ -21,9 +21,9 @@ Estimated completion time for each member:
 - Shyam Patel:                 15 hours
 
 Actual completion time for each member:
-- Gregory Raper:               x hours
-- Rodrigo Estrella:            x hours
-- Cliff Xu:                    x hours
-- Pamela Vazquez De La Cruz:   x hours
-- Shyam Patel:                 x hours
+- Gregory Raper:               20 hours
+- Rodrigo Estrella:            20 hours
+- Cliff Xu:                    20 hours
+- Pamela Vazquez De La Cruz:   20 hours
+- Shyam Patel:                 20 hours
 
