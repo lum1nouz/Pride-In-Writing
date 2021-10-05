@@ -256,8 +256,8 @@ class AboutUs extends React.Component<props, state> {
                                                         alt="picture of rodrigo" />
                                                 </div>
                                                 <p>Rodrigo is a Senior at UT Austin, studying Computer Science.</p>
-                                                <p>He will be grauating Spring 2022 and blank</p>
-                                                <p>His major responsibilities fall within the blank team.</p>
+                                                <p>He will be graduating Spring 2022 and will start his full-stack Software Engineer Career in September.</p>
+                                                <p>His major responsibilities fall within the front-end and back-end team.</p>
                                                 <p>Number of closed issues: {this.state.rodrigoIssues}</p>
                                                 <p>Number of commits: {this.state.rodrigoCommits}</p>
                                                 <p>Number of Unit Tests: 0</p>
