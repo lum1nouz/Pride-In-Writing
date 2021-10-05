@@ -1,39 +1,39 @@
-.paperStyle{
-    position: 'relative';
-    margin-top: 100px;
-    margin-left: 30px;
-    margin-right: 30px;
-    height: 300px;
+.paperStyle {
+  position: "relative";
+  margin-top: 100px;
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 300px;
 }
 
-.parrallaxCont{
-    margin-top: 50px;
-    height: 1450px;
+.parrallaxCont {
+  margin-top: 50px;
+  height: 1450px;
 }
 
-.titleText{
-    margin-top: 75px;
-    font-size: 72px;
-    text-align: center;
-    color: white;
-    text-shadow: 1px 1px black;
+.titleText {
+  margin-top: 75px;
+  font-size: 72px;
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px black;
 }
 
-.background{
-    background-image: url('../../Assets/bgPhoto.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%; 
+.background {
+  background-image: url("../../Assets/bgPhoto.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }
 
-.materialTable{
-    margin-top: 20px;
+.materialTable {
+  margin-top: 20px;
 }
 
-.paperCont{ 
-    margin-top: 50px;
-    margin-left: 80px;
-    margin-right: 80px; 
-    height: 1200px;
+.paperCont {
+  margin-top: 50px;
+  margin-left: 80px;
+  margin-right: 80px;
+  height: 1200px;
 }
