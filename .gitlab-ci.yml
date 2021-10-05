@@ -16,3 +16,12 @@ pages:
       - public
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+build_front_end:
+  stage: build
+  image: node:latest
+  script: 
+    - cd front-end
+    - yarn install
+    - CI=false npm run build
+    - echo "Build complete."

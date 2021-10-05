@@ -6,6 +6,7 @@ import sarah from '../../Assets/sarah-waters.jpg'
 import { Parallax } from 'react-parallax';
 import { CardContent } from '@material-ui/core'
 import CardMedia from "@material-ui/core/CardMedia";
+import Grid from "@material-ui/core/Grid";
 import { Link } from 'react-router-dom';
 
 type props = {
@@ -26,6 +27,7 @@ const styles = {
     },
 }
 
+
 class Page extends React.Component<props, state> {
     state: state = {
         
@@ -40,19 +42,25 @@ class Page extends React.Component<props, state> {
                         <div style={{}}>
                             <div className={css.titleText}> Sarah Waters </div>
                             <Paper elevation={4} className={css.paperCont}>
-                                    <CardContent style={{backgroundColor: "pink", width: 'fit-content', marginLeft: 975}}> 
-                                        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
-                                            <CardMedia
-                                                style={styles.media}
-                                                src={sarah}
-                                                component="img"
-                                                alt="Picture of Sarah Waters" />
-                                        </div>
-                                        <p style={{textAlign: 'center'}}>
-                                            Born: July 21, 1966
-                                        </p>    
-                                    </CardContent>
-
+                                <Grid container spacing={0}
+                                    direction="column"
+                                    alignItems="center"
+                                    justify="center">
+                                    <Grid item xs={12}>
+                                        <CardContent style={{backgroundColor: "pink", width: 'fit-content', alignSelf: 'center'}}> 
+                                            <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
+                                                <CardMedia
+                                                    style={styles.media}
+                                                    src={sarah}
+                                                    component="img"
+                                                    alt="Picture of Sarah Waters" />
+                                            </div>
+                                            <p style={{textAlign: 'center'}}>
+                                                Born: July 21, 1966
+                                            </p>    
+                                        </CardContent>
+                                    </Grid>
+                                </Grid>
                                 <div style={{textAlign: 'center'}}>
                                     <h2>
                                         Biography <br/>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Paper, Button } from '@material-ui/core'
 import Header from '../Header/Header';
-import css from './Authors.module.css';
-import michael from '../../Assets/michael-cunningham.jpg'
+import css from './Books.module.css';
+import fingersmith from '../../Assets/fingersmith.jpg'
 import { Parallax } from 'react-parallax';
+import Card from "@material-ui/core/Card";
 import { CardContent } from '@material-ui/core'
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
@@ -19,8 +20,8 @@ type state = {
 
 const styles = {
     media: {
-        width: 400,
-        height: 500,
+        width: 300,
+        height: 400,
         display: 'flex', 
         justifyContent: 'center', 
         alignItems: 'center' 
@@ -39,57 +40,61 @@ class Page extends React.Component<props, state> {
                 <div className={css.background}>
                     <Parallax strength = {500} className={css.parrallaxCont}>
                         <div style={{}}>
-                            <div className={css.titleText}> Michael Cunningham </div>
+                            <div className={css.titleText}> Fingersmith </div>
                             <Paper elevation={4} className={css.paperCont}>
                                 <Grid container spacing={0}
                                     direction="column"
                                     alignItems="center"
                                     justify="center">
                                     <Grid item xs={12}>
-                                        <CardContent style={{backgroundColor: "pink", width: 'fit-content'}}> 
+                                        <CardContent style={{backgroundColor: "pink", width: 'fit-content'}}>
                                             <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', position:'relative'}}>
-                                                <CardMedia
-                                                    style={styles.media}
-                                                    src={michael}
-                                                    component="img"
-                                                    alt="Picture of Michael Cunningham" />
+                                                    <CardMedia
+                                                        style={styles.media}
+                                                        src={fingersmith}
+                                                        component="img"
+                                                        alt="Fingersmith" />
                                             </div>
                                             <p style={{textAlign: 'center'}}>
-                                                Born: November 6, 1952
-                                            </p>    
+                                                Rating: 4 <br/>
+                                                Pages: 596 <br/>
+                                                Price: $16.89
+                                            </p>
                                         </CardContent>
                                     </Grid>
                                 </Grid>
                                 <div style={{textAlign: 'center'}}>
                                     <h2>
-                                        Biography <br/>
+                                        Author <br/>
+                                    </h2> 
+                                    <Button
+                                            component={Link}
+                                            to="/sarah-waters"
+                                            >
+                                            Sarah Waters
+                                    </Button>  
+
+                                    <h2>
+                                        Genre
                                     </h2> 
                                     <p>
-                                        Born in Cincinnati, Ohio, Michael Cunningham grew up in Pasadena, California. He is an American novelist that studied English literature at Stanford University.
+                                        Fiction
                                     </p>
 
                                     <h2>
-                                        Books
+                                        Publisher
                                     </h2> 
-                                    <p>
-                                        <Button
+                                    <Button
                                             component={Link}
-                                            to="/the-hours"
+                                            to="/virago-press"
                                             >
-                                            The Hours (1998)
-                                        </Button>  
-                                    </p>
-
+                                            Virago Press
+                                    </Button>
                                     <h2>
-                                        Publishers
+                                        Year Published
                                     </h2> 
                                     <p>
-                                        <Button
-                                            component={Link}
-                                            to="/farrar"
-                                            >
-                                            Farrar, Straus and Giroux
-                                        </Button>  
+                                        2002
                                     </p>
 
                                 </div>
