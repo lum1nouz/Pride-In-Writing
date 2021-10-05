@@ -352,7 +352,8 @@ class AboutUs extends React.Component<props, state> {
                           Science.
                         </p>
                         <p>
-                          He will be graduating Spring 2023 and he likes swimming
+                          He will be graduating Spring 2023 and he likes
+                          swimming
                         </p>
                         <p>
                           His major responsibilities fall within the front-end
