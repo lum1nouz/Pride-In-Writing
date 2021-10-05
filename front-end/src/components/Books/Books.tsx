@@ -94,7 +94,6 @@ class ListPage extends React.Component<props, state> {
             </div>
         )
     }
-
 }
 
 export default ListPage
