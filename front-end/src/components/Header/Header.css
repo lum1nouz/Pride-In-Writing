@@ -1,20 +1,20 @@
-.app-bar{
+.app-bar {
   height: 60px;
 }
 
-.headingOne{
+.headingOne {
   display: flex;
   flex-direction: row;
   padding: 0;
   flex-grow: 1;
 }
 
-.heading{
+.heading {
   display: flex;
   flex-direction: row;
   padding: 0;
 }
 
-.heading.left{
+.heading.left {
   flex-grow: 1;
 }

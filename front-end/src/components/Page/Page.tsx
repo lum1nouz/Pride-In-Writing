@@ -1,29 +1,17 @@
-import React from 'react';
-import { } from '@material-ui/core'
-import Header from '../Header/Header';
-    
+import React from "react";
+import {} from "@material-ui/core";
+import Header from "../Header/Header";
 
-type props = {
+type props = {};
 
-}
-
-type state = {
-   
-}
+type state = {};
 
 class Page extends React.Component<props, state> {
-    state: state = {
-        
-    }
+  state: state = {};
 
-    render(){
-        return (
-            <div>
-                HEELLLLOOOOO
-            </div>
-        )
-    }
-
+  render() {
+    return <div>HEELLLLOOOOO</div>;
+  }
 }
 
-export default Page
+export default Page;
