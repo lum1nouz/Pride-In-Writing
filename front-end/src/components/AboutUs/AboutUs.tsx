@@ -232,7 +232,7 @@ class AboutUs extends React.Component<props, state> {
                                                         height="140"
                                                         alt="picture of greg" />
                                                 </div>
-                                                <p>Greg is a Senior at UT Austin, studying Computer Science.</p>
+                                                <p>Greg is a Junior at UT Austin, studying Computer Science.</p>
                                                 <p>He will be grauating Spring 2023 and he likes swimming</p>
                                                 <p>His major responsibilities fall within the front-end team.</p>
                                                 <p>Number of closed issues: {this.state.gregIssues}</p>
@@ -277,9 +277,10 @@ class AboutUs extends React.Component<props, state> {
                                                         height="140"
                                                         alt="picture of cliff" />
                                                 </div>
-                                                <p>Cliff is a Senior at UT Austin, studying Computer Science.</p>
-                                                <p>He will be grauating Spring 2023 and he likes tennis</p>
-                                                <p>His major responsibilities fall within the blank team.</p>
+                                                <p>Cliff is a Junior at UT Austin, studying Computer Science.</p>
+                                                <p>He will be grauating Spring 2023.</p>
+                                                <p>He was born and raised in Katy, Texas and like tennis and video games.</p>
+                                                <p>His major responsibilities fall within the back-end team.</p>
                                                 <p>Number of closed issues: {this.state.cliffIssues}</p>
                                                 <p>Number of commits: {this.state.cliffCommits}</p>
                                                 <p>Number of Unit Tests: 0</p>
@@ -301,7 +302,7 @@ class AboutUs extends React.Component<props, state> {
                                                 </div>
                                                 <p>Shyam is a Senior at UT Austin, studying Computer Science.</p>
                                                 <p>He will be grauating Spring 2022 and he likes video games</p>
-                                                <p>His major responsibilities fall within the blank team.</p>
+                                                <p>His major responsibilities fall within the front-end team.</p>
                                                 <p>Number of closed issues: {this.state.shyamIssues}</p>
                                                 <p>Number of commits: {this.state.shyamCommits}</p>
                                                 <p>Number of Unit Tests: 0</p>
