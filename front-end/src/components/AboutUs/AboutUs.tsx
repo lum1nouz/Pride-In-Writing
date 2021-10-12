@@ -70,6 +70,8 @@ type state = {
   rodrigoCommits: number;
   shyamCommits: number;
   cliffCommits: number;
+  pageNum: number;
+  oldPageNum: number
 };
 
 class AboutUs extends React.Component<props, state> {
@@ -88,13 +90,43 @@ class AboutUs extends React.Component<props, state> {
       rodrigoCommits: 0,
       shyamCommits: 0,
       cliffCommits: 0,
+      pageNum: 1,
+      oldPageNum: 0
     };
   }
 
   commitData: number[] = [0, 0, 0, 0, 0];
 
-  async checkCommitAuthor(data: commitResponse, length: number) {
-    if (data.author_email === "gjraper@Gregs-1s--0s.attlocal.net") {
+  async updatePageNum(data: commitResponse[]) {
+    let len = data.length;
+    data.forEach((element) => this.checkCommitAuthor(element));
+
+    let tempPageNum = this.state.pageNum
+    if (len >= (this.state.pageNum * 100)) {
+      tempPageNum = this.state.pageNum + 1     
+    }
+
+    this.setState({
+      totalCommits: this.state.totalCommits + len,
+      totalIssues: this.state.totalIssues,
+      gregIssues: this.state.gregIssues,
+      gregCommits: this.commitData[0],
+      pamelaCommits: this.commitData[3],
+      pamelaIssues: this.state.pamelaIssues,
+      cliffCommits: this.commitData[2],
+      cliffIssues: this.state.cliffIssues,
+      rodrigoCommits: this.commitData[1],
+      rodrigoIssues: this.state.rodrigoIssues,
+      shyamCommits: this.commitData[4],
+      shyamIssues: this.state.shyamIssues,
+      pageNum: tempPageNum,
+      oldPageNum: this.state.pageNum
+    });
+
+  }
+
+  async checkCommitAuthor(data: commitResponse) {
+    if (data.author_email === "gjraper@Gregs-1s--0s.attlocal.net" || data.author_email === "gjraper@gmail.com") {
       this.commitData[0] += 1;
     } else if (data.author_email === "restrella@outlook.com") {
       this.commitData[1] += 1;
@@ -102,8 +134,8 @@ class AboutUs extends React.Component<props, state> {
       this.commitData[2] += 1;
     } else if (data.author_email === "pamvazquez1@gmail.com") {
       this.commitData[3] += 1;
-    } else if (data.author_email === "you@example.com") {
-      this.commitData[4] += 1;
+    } else if (data.author_email === "you@example.com" || data.author_email === "shyamp1204@gmail.com" || data.author_email === "shyamp1204@utexas.edu") {
+      this.commitData[4] += 1; 
     }
   }
 
@@ -117,7 +149,12 @@ class AboutUs extends React.Component<props, state> {
     sIssues: number
   ) {
     let len = data.length;
-    data.forEach((element) => this.checkCommitAuthor(element, len));
+    data.forEach((element) => this.checkCommitAuthor(element));
+
+    let tempPageNum = this.state.pageNum
+    if (len >= (this.state.pageNum * 100)) {
+      tempPageNum = this.state.pageNum + 1     
+    }
 
     this.setState({
       totalCommits: len,
@@ -132,6 +169,7 @@ class AboutUs extends React.Component<props, state> {
       rodrigoIssues: rIssues,
       shyamCommits: this.commitData[4],
       shyamIssues: sIssues,
+      pageNum: tempPageNum
     });
   }
 
@@ -188,10 +226,10 @@ class AboutUs extends React.Component<props, state> {
 
     await axios
       .get(
-        `https://gitlab.com/api/v4/projects/29826417/repository/commits?type=all&per_page=100&page=1`
+        `https://gitlab.com/api/v4/projects/29826417/repository/commits?type=all&per_page=100&page=1` 
       )
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data)
         this.getCommitInfo(
           res.data as commitResponse[],
           tIssues,
@@ -203,6 +241,22 @@ class AboutUs extends React.Component<props, state> {
         );
       });
   }
+  
+  async componentDidUpdate() {
+    if( this.state.pageNum > this.state.oldPageNum) {
+      await axios
+        .get(
+          `https://gitlab.com/api/v4/projects/29826417/repository/commits?type=all&per_page=100&page=${this.state.pageNum}` 
+        )
+        .then((res) => {
+          console.log(res.data)
+          this.updatePageNum(
+            res.data as commitResponse[]
+          );
+        });
+      }
+  }
+
 
   render() {
     return (
