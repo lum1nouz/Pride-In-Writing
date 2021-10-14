@@ -592,13 +592,12 @@ class AboutUs extends React.Component<props, state> {
                     <p>AWSAmplify: used to deploy our web application</p>
                   </ListItemText>
                 </ListItem>
-
-                <ListItem>
-                  <ListItemText>
-                    <p>Postman: used to design our Restful API</p>
-                    <p>The link to access Postman: https://documenter.getpostman.com/view/17727241/UUy1f71j</p>
-                    
-                  </ListItemText>
+                <ListItem
+                  button
+                  component="a"
+                  href="https://documenter.getpostman.com/view/17727241/UUy1f71j"
+                >
+                  <ListItemText primary="Postman: used to design our Restful API. Click here to access Postman link" />
                 </ListItem>
 
                 <ListItem>
