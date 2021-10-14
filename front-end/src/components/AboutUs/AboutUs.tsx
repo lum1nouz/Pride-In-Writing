@@ -596,6 +596,8 @@ class AboutUs extends React.Component<props, state> {
                 <ListItem>
                   <ListItemText>
                     <p>Postman: used to design our Restful API</p>
+                    <p>The link to access Postman: https://documenter.getpostman.com/view/17727241/UUy1f71j</p>
+                    
                   </ListItemText>
                 </ListItem>
 
