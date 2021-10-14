@@ -14,6 +14,8 @@ GitLab Pipelines: https://gitlab.com/JunLum/pride-in-writing/-/pipelines
 
 Website: https://www.prideinwriting.me/
 
+Postman: https://documenter.getpostman.com/view/17727241/UUy1f71j
+
 Estimated completion time for each member:
 - Gregory Raper:               15 hours
 - Rodrigo Estrella:            15 hours
