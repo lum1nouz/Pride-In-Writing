@@ -53,7 +53,7 @@ class Header extends React.Component<props, state> {
 
     render(){
         return (
-            <AppBar style={{height: 60}}>
+            <AppBar style={{height: 60, position: 'relative', backgroundColor:'white'}}>
                 <Toolbar>
                     <List style={{ display: 'flex', flexDirection: 'row', padding: 0 }}>
                         <ListItem style={{width: 500}}>
@@ -61,7 +61,7 @@ class Header extends React.Component<props, state> {
                             href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
                             target="_blank"
                             >
-                            Pride In Writing
+                            <div style={{fontWeight:'bold'}}><p>Pride In Writing</p></div>
                             </Button>
                         </ListItem>
                         <ListItem>
@@ -73,7 +73,7 @@ class Header extends React.Component<props, state> {
                             href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
                             target="_blank"
                             >
-                            Authors
+                            <div style={{fontWeight:'bold'}}><p>Authors</p></div>
                             </Button>
                         </ListItem>
                         <ListItem>
@@ -81,7 +81,7 @@ class Header extends React.Component<props, state> {
                             href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
                             target="_blank"
                             >
-                            Books
+                            <div style={{fontWeight:'bold'}}><p>Books</p></div>
                             </Button>
                         </ListItem>
                         <ListItem>
@@ -89,7 +89,7 @@ class Header extends React.Component<props, state> {
                             href="https://www.creative-tim.com/product/material-kit-react?ref=mkr-navbar"
                             target="_blank"
                             >
-                            Publishers
+                            <div style={{fontWeight:'bold'}}><p>Publishers</p></div>
                             </Button>
                         </ListItem>
                         <ListItem style={{width: 140}}>
@@ -98,7 +98,7 @@ class Header extends React.Component<props, state> {
                             target="_blank"
                             style={{width: 140}}
                             >
-                            About Us
+                            <div style={{fontWeight:'bold'}}><p>About Us</p></div>
                             </Button>
                         </ListItem>
                     </List>

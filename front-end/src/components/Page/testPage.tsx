@@ -3,7 +3,15 @@ import { Paper, Button } from '@material-ui/core'
 import Header from '../Header/Header';
 import css from './test.module.css';
 import bgPhoto from '../../Assets/bgPhoto.jpg'
+import pride_colorful from '../../Assets/pride_colorful.png'
+import pride from '../../Assets/pride.svg'
+import test from '../../Assets/test.svg';
+import bookLover from '../../Assets/bookLover.svg';
+import booksPics from '../../Assets/booksPic.png';
 import { Parallax, Background } from 'react-parallax';
+import Grid from "@material-ui/core/Grid";
+
+
 
 const styles = {
         parrallaxCont: {
@@ -15,6 +23,15 @@ const styles = {
             marginLeft: 80, 
             marginRight: 80, 
             height: 1200 
+        },
+
+        pride: {
+            fontSize: '50px'
+            
+        },
+
+        mission: {
+            fontSize: '30px'
         }
     } 
     
@@ -35,18 +52,24 @@ class testPage extends React.Component<props, state> {
     render(){
         return (
             <div>
+                <div>
                 <Header></Header>
-                <Parallax bgImage={bgPhoto} strength = {500} style={styles.parrallaxCont}>
-                    <div style={{}}>
-                    <Paper elevation={4} style={{textAlign:'center', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative', marginTop: 100, marginLeft: 30, marginRight: 30, height: 150 }}>
-                    <div> 
-                    <h1> Welcome to Pride in Writing! </h1> 
-                    <p>Our mission is to spotlight book authors in the LGBTQ Community</p>
-                    </div>
-                    
-                </Paper>  
-                    </div>
-                </Parallax>
+                </div>
+
+                <div> 
+                <Grid container spacing={2} style={{position: 'relative'}}>
+                    <Grid item xs={7} style={{backgroundColor: 'white', height: '600px', textAlign:'center', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative'}}>
+                         <div className="pride">
+                             <h1>Pride in Writing</h1>
+                             <div className="mission"><p>Our mission is to spotlight book authors in the LGBTQ Community</p></div>
+                             </div>
+                    </Grid>
+                    <Grid item xs={5} style={{backgroundColor: 'white', height: '600px', display: 'flex', justifyContent:'center', alignItems: 'center', position:'relative'}}>
+                    <img src={booksPics} style={{objectFit:'cover'}}></img>
+                    </Grid>
+                    </Grid>
+                </div>
+       
             </div>
         )
     }
