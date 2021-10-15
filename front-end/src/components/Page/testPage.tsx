@@ -4,9 +4,6 @@ import Header from '../Header/Header';
 import css from './test.module.css';
 import bgPhoto from '../../Assets/bgPhoto.jpg'
 import pride_colorful from '../../Assets/pride_colorful.png'
-import pride from '../../Assets/pride.svg'
-import test from '../../Assets/test.svg';
-import bookLover from '../../Assets/bookLover.svg';
 import booksPics from '../../Assets/booksPic.png';
 import { Parallax, Background } from 'react-parallax';
 import Grid from "@material-ui/core/Grid";
