@@ -46,34 +46,34 @@ class Header extends React.Component<props, state> {
 
   render() {
     return (
-      <AppBar className="app-bar">
+      <AppBar className="app-bar" style={{backgroundColor: "white", position: 'relative'}}>
         <Toolbar>
           <List className="heading left">
             <ListItem>
               <Button component={Link} to="/">
-                Pride In Writing
+              <div style={{fontWeight:'bold'}}><p>Pride In Writing</p></div>
               </Button>
             </ListItem>
           </List>
           <List className="heading">
             <ListItem>
               <Button component={Link} to="/Authors">
-                Authors
+              <div style={{fontWeight:'bold'}}><p>Authors</p></div>
               </Button>
             </ListItem>
             <ListItem>
               <Button component={Link} to="/Books">
-                Books
+              <div style={{fontWeight:'bold'}}><p>Books</p></div>
               </Button>
             </ListItem>
             <ListItem>
               <Button component={Link} to="/Publishers">
-                Publishers
+              <div style={{fontWeight:'bold'}}><p>Publishers</p></div>
               </Button>
             </ListItem>
             <ListItem>
               <Button component={Link} to="/AboutUs" style={{ width: 140 }}>
-                About Us
+              <div style={{fontWeight:'bold'}}><p>About Us</p></div>
               </Button>
             </ListItem>
           </List>
