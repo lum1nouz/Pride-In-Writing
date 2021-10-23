@@ -102,7 +102,7 @@ class Books extends React.Component<props, state> {
         <div className={css.background}>
           <Parallax strength={500} className={css.parrallaxCont}>
             <div style={{}}>
-              <div className={css.titleText}> Books </div>
+              <div id="books-title" className={css.titleText}> Books </div>
               <Paper elevation={4} className={css.paperCont} data-testid = "books">
                 <MaterialTable
                   icons={tableIcons}

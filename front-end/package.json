@@ -39,6 +39,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest --no-cache",
+    "gui_test": "python3 guitests.py",
     "eject": "react-scripts eject",
     "clear_jest": "jest --clearCache"
   },
