@@ -353,7 +353,7 @@ class AboutUs extends React.Component<props, state> {
                 height: 1600,
               }}
             >
-              <div style={{padding: 10}}>
+              <div style={{padding: 30}}>
                 <h1>Meet the Team</h1>
 
                 <Grid container spacing={3}>
@@ -571,7 +571,7 @@ class AboutUs extends React.Component<props, state> {
               height: 400,
             }}
           >
-            <div>
+            <div style={{paddingLeft: 90}}>
               <h1>APIs Used</h1>
 
               <Grid container spacing={1}>
@@ -641,7 +641,7 @@ class AboutUs extends React.Component<props, state> {
               backgroundColor: 'white'
             }}
           >
-            <div style={{padding: 10}}>
+            <div style={{padding: 30}}>
               <h1> Tools Used </h1>
               <Grid container spacing={1}>
                   <Grid item xs={4}>
