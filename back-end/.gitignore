@@ -1,9 +1,4 @@
-front-end/node_modules
-front-end/yarn.lock
-node_modules
-yarn.lock
-node_modules/.yarn-integrity
-.DS_Store
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
