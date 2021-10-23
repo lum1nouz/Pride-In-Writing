@@ -94,7 +94,7 @@ class Authors extends React.Component<props, state> {
         <div className={css.background}>
           <Parallax strength={500} className={css.parrallaxCont}>
             <div style={{}}>
-              <div className={css.titleText}> Authors </div>
+              <div id="authors-title" className={css.titleText}> Authors </div>
               <Paper elevation={4} className={css.paperCont} data-testid = "authors">
                 <MaterialTable
                   icons={tableIcons}

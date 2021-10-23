@@ -90,7 +90,7 @@ class Publishers extends React.Component<props, state> {
         <div className={css.background}>
           <Parallax strength={500} className={css.parrallaxCont}>
             <div style={{}}>
-              <div className={css.titleText}> Publishers </div>
+              <div id="publishers-title" className={css.titleText}> Publishers </div>
               <Paper elevation={4} className={css.paperCont} data-testid = "publishers">
                 <MaterialTable
                   icons={tableIcons}
