@@ -1,11 +1,6 @@
 import React from 'react';
-import { Paper, Button } from '@material-ui/core'
 import Header from '../Header/Header';
-import css from './test.module.css';
-import bgPhoto from '../../Assets/bgPhoto.jpg'
-import pride_colorful from '../../Assets/pride_colorful.png'
 import booksPics from '../../Assets/booksPic.png';
-import { Parallax, Background } from 'react-parallax';
 import Grid from "@material-ui/core/Grid";
 
 
@@ -41,7 +36,7 @@ type state = {
    
 }
 
-class testPage extends React.Component<props, state> {
+class HomePage extends React.Component<props, state> {
     state: state = {
         
     }
@@ -56,7 +51,7 @@ class testPage extends React.Component<props, state> {
                 <div> 
                 <Grid container spacing={2} style={{position: 'relative'}}>
                     <Grid item xs={7} style={{backgroundColor: 'white', height: '600px', textAlign:'center', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative'}}>
-                         <div className="pride">
+                         <div className="pride" data-testid="pride">
                              <h1>Pride in Writing</h1>
                              <div className="mission"><p>Our mission is to spotlight book authors in the LGBTQ Community</p></div>
                              </div>
@@ -73,4 +68,4 @@ class testPage extends React.Component<props, state> {
 
 }
 
-export default testPage
+export default HomePage

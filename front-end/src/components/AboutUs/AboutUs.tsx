@@ -342,7 +342,7 @@ class AboutUs extends React.Component<props, state> {
                 <Grid container spacing={3}>
                   <Grid item xs={6}>
                     <Card>
-                      <CardContent style={{ backgroundColor: "pink" }}>
+                      <CardContent data-testid="pamela" style={{ backgroundColor: "pink" }}>
                         <h2>Pamela Vazquez</h2>
                         <div
                           style={{
@@ -383,7 +383,7 @@ class AboutUs extends React.Component<props, state> {
 
                   <Grid item xs={6}>
                     <Card>
-                      <CardContent style={{ backgroundColor: "pink" }}>
+                      <CardContent data-testid="gregory" style={{ backgroundColor: "pink" }}>
                         <h2>Gregory Raper</h2>
                         <div
                           style={{
@@ -422,7 +422,7 @@ class AboutUs extends React.Component<props, state> {
 
                   <Grid item xs={6}>
                     <Card>
-                      <CardContent style={{ backgroundColor: "pink" }}>
+                      <CardContent data-testid="rodrigo" style={{ backgroundColor: "pink" }}>
                         <h2>Rodrigo Estrella</h2>
                         <div
                           style={{
@@ -463,7 +463,7 @@ class AboutUs extends React.Component<props, state> {
 
                   <Grid item xs={6}>
                     <Card>
-                      <CardContent style={{ backgroundColor: "pink" }}>
+                      <CardContent data-testid="cliff" style={{ backgroundColor: "pink" }}>
                         <h2>Cliff Xu</h2>
                         <div
                           style={{
@@ -500,7 +500,7 @@ class AboutUs extends React.Component<props, state> {
 
                   <Grid item xs={6}>
                     <Card>
-                      <CardContent style={{ backgroundColor: "pink" }}>
+                      <CardContent data-testid="shyam" style={{ backgroundColor: "pink" }}>
                         <h2>Shyam Patel</h2>
                         <div
                           style={{

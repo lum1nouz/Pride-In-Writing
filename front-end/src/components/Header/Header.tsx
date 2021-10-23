@@ -1,6 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, List, ListItem, Button } from "@material-ui/core";
-import "./Header.css";
+import css from "./Header.module.css";
 import { Link } from "react-router-dom";
 
 // list: {
@@ -46,16 +46,16 @@ class Header extends React.Component<props, state> {
 
   render() {
     return (
-      <AppBar className="app-bar" style={{backgroundColor: "white", position: 'relative'}}>
+      <AppBar className={css.appbar} style={{backgroundColor: "white", position: 'relative'}}>
         <Toolbar>
-          <List className="heading left">
+          <List className={css.headingLeft}>
             <ListItem>
               <Button component={Link} to="/">
               <div style={{fontWeight:'bold'}}><p>Pride In Writing</p></div>
               </Button>
             </ListItem>
           </List>
-          <List className="heading">
+          <List className={css.heading}>
             <ListItem>
               <Button component={Link} to="/Authors">
               <div style={{fontWeight:'bold'}}><p>Authors</p></div>
