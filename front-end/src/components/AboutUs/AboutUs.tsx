@@ -359,7 +359,7 @@ class AboutUs extends React.Component<props, state> {
                 <Grid container spacing={3}>
                   <Grid item xs={4}>
                     <Card variant="outlined">
-                      <CardContent style={{ backgroundColor: "white" }}>
+                      <CardContent data-testid = "pamela" style={{ backgroundColor: "white" }}>
                         <h2>Pamela Vazquez</h2>
                         <div
                           style={{
@@ -400,7 +400,7 @@ class AboutUs extends React.Component<props, state> {
 
                   <Grid item xs={4}>
                     <Card variant="outlined">
-                      <CardContent style={{ backgroundColor: "white" }}>
+                      <CardContent data-testid = "gregory" style={{ backgroundColor: "white" }}>
                         <h2>Gregory Raper</h2>
                         <div
                           style={{
@@ -439,7 +439,7 @@ class AboutUs extends React.Component<props, state> {
 
                   <Grid item xs={4}>
                     <Card variant="outlined">
-                      <CardContent style={{ backgroundColor: "white" }}>
+                      <CardContent data-testid = "rodrigo" style={{ backgroundColor: "white" }}>
                         <h2>Rodrigo Estrella</h2>
                         <div
                           style={{
@@ -480,7 +480,7 @@ class AboutUs extends React.Component<props, state> {
 
                   <Grid item xs={4}>
                     <Card variant="outlined">
-                      <CardContent style={{ backgroundColor: "white" }}>
+                      <CardContent data-testid = "cliff" style={{ backgroundColor: "white" }}>
                         <h2>Cliff Xu</h2>
                         <div
                           style={{
@@ -517,7 +517,7 @@ class AboutUs extends React.Component<props, state> {
 
                   <Grid item xs={4}>
                     <Card variant="outlined">
-                      <CardContent style={{ backgroundColor: "white" }}>
+                      <CardContent data-testid = "shyam" style={{ backgroundColor: "white" }}>
                         <h2>Shyam Patel</h2>
                         <div
                           style={{
