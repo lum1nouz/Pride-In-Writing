@@ -87,10 +87,21 @@ class Publishers extends React.Component<props, state> {
     return (
       <div>
         <Header />
-        <div className={css.background}>
+        <div>
           <Parallax strength={500} className={css.parrallaxCont}>
-            <div style={{}}>
-              <div className={css.titleText}> Publishers </div>
+            <div style={{fontWeight:'bold'}}>
+              <div className={css.titleText}> 
+                <span style={{color: "#FF555E"}}>P</span>
+                <span style={{color: "#FF8650"}}>u</span>
+                <span style={{color: "#F6BE00"}}>b</span>
+                <span style={{color: "#77C66E"}}>l</span>
+                <span style={{color: "#83B2FF"}}>i</span>
+                <span style={{color: "#9B6EF3"}}>s</span>
+                <span style={{color: "#FC6C85"}}>h</span>
+                <span style={{color: "#1167b1"}}>e</span>
+                <span style={{color: "#FF555E"}}>r</span>
+                <span style={{color: "#FF8650"}}>s</span>
+              </div>
               <Paper elevation={4} className={css.paperCont} data-testid = "publishers">
                 <MaterialTable
                   icons={tableIcons}

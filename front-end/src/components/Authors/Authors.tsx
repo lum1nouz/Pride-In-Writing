@@ -91,10 +91,18 @@ class Authors extends React.Component<props, state> {
     return (
       <div>
         <Header />
-        <div className={css.background}>
+        <div>
           <Parallax strength={500} className={css.parrallaxCont}>
-            <div style={{}}>
-              <div className={css.titleText}> Authors </div>
+            <div style={{fontWeight:'bold'}}>
+              <div className={css.titleText}> 
+                <span style={{color: "#FF555E"}}>A</span>
+                <span style={{color: "#FF8650"}}>u</span>
+                <span style={{color: "#F6BE00"}}>t</span>
+                <span style={{color: "#77C66E"}}>h</span>
+                <span style={{color: "#83B2FF"}}>o</span>
+                <span style={{color: "#9B6EF3"}}>r</span>
+                <span style={{color: "#FC6C85"}}>s</span>
+               </div>
               <Paper elevation={4} className={css.paperCont} data-testid = "authors">
                 <MaterialTable
                   icons={tableIcons}

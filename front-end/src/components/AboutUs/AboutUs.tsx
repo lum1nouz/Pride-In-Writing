@@ -27,6 +27,7 @@ const styles = {
   parrallaxCont: {
     margintop: 100,
     height: 3800,
+    backgroundColor: "white"
   },
   paperCont: {
     marginTop: 200,
@@ -281,7 +282,7 @@ class AboutUs extends React.Component<props, state> {
         <div>
           <Header></Header>
         </div>
-        <Parallax bgImage={bgPhoto} strength={500} style={styles.parrallaxCont}>
+        <Parallax strength={500} style={styles.parrallaxCont}>
           <div style={{}}>
             <Paper
               elevation={4}
@@ -298,7 +299,15 @@ class AboutUs extends React.Component<props, state> {
               }}
             >
               <div>
-                <h1> About Us </h1>
+                <h1 style={{textShadow: '1px 1px black'}}> 
+                <span style={{color: "#FF555E"}}>A</span>
+                <span style={{color: "#FF8650"}}>b</span>
+                <span style={{color: "#F6BE00"}}>o</span>
+                <span style={{color: "#77C66E"}}>u</span>
+                <span style={{color: "#83B2FF"}}>t </span>
+                <span style={{color: "#9B6EF3"}}>U</span>
+                <span style={{color: "#FC6C85"}}>s</span>
+                </h1>
                 <p>
                   Pride in Writing aims to highlight the work of LGBTQ Authors
                   and show the Publishers that support them.
@@ -327,7 +336,19 @@ class AboutUs extends React.Component<props, state> {
               }}
             >
               <div>
-                <h1> Gitlab Stats </h1>
+                <h1 style={{textShadow: '1px 1px black'}}> 
+                <span style={{color: "#FF555E"}}>G</span>
+                <span style={{color: "#FF8650"}}>i</span>
+                <span style={{color: "#F6BE00"}}>t</span>
+                <span style={{color: "#77C66E"}}>l</span>
+                <span style={{color: "#83B2FF"}}>a</span>
+                <span style={{color: "#9B6EF3"}}>b </span>
+                <span style={{color: "#FC6C85"}}>S</span>
+                <span style={{color: "#1167b1"}}>t</span>
+                <span style={{color: "#FF555E"}}>a</span>
+                <span style={{color: "#77C66E"}}>t</span>
+                <span style={{color: "#F6BE00"}}>s</span>
+                </h1>
                 <p>
                   Pride in Writing aims to highlight the work of LGBTQ Authors
                   and show the Publishers that support them.
@@ -354,7 +375,20 @@ class AboutUs extends React.Component<props, state> {
               }}
             >
               <div style={{padding: 30}}>
-                <h1>Meet the Team</h1>
+                <h1 style={{textShadow: '1px 1px black'}}>
+
+                <span style={{color: "#FF555E"}}>M</span>
+                <span style={{color: "#FF8650"}}>e</span>
+                <span style={{color: "#F6BE00"}}>e</span>
+                <span style={{color: "#77C66E"}}>t </span>
+                <span style={{color: "#83B2FF"}}>t</span>
+                <span style={{color: "#9B6EF3"}}>h</span>
+                <span style={{color: "#FC6C85"}}>e </span>
+                <span style={{color: "#1167b1"}}>T</span>
+                <span style={{color: "#FF555E"}}>e</span>
+                <span style={{color: "#77C66E"}}>a</span>
+                <span style={{color: "#F6BE00"}}>m</span>
+                </h1>
 
                 <Grid container spacing={3}>
                   <Grid item xs={4}>
@@ -572,7 +606,17 @@ class AboutUs extends React.Component<props, state> {
             }}
           >
             <div style={{paddingLeft: 90}}>
-              <h1>APIs Used</h1>
+              <h1 style={{textShadow: '1px 1px black'}}>
+              
+              <span style={{color: "#FF555E"}}>A</span>
+              <span style={{color: "#FF8650"}}>P</span>
+              <span style={{color: "#F6BE00"}}>I</span>
+              <span style={{color: "#77C66E"}}>s </span>
+              <span style={{color: "#83B2FF"}}>U</span>
+              <span style={{color: "#9B6EF3"}}>s</span>
+              <span style={{color: "#FC6C85"}}>e</span>
+              <span style={{color: "#1167b1"}}>d</span>
+              </h1>
 
               <Grid container spacing={1}>
                   <Grid item xs={4}>
@@ -642,7 +686,17 @@ class AboutUs extends React.Component<props, state> {
             }}
           >
             <div style={{padding: 30}}>
-              <h1> Tools Used </h1>
+              <h1 style={{textShadow: '1px 1px black'}}> 
+              <span style={{color: "#FF555E"}}>T</span>
+              <span style={{color: "#FF8650"}}>o</span>
+              <span style={{color: "#F6BE00"}}>o</span>
+              <span style={{color: "#77C66E"}}>l</span>
+              <span style={{color: "#83B2FF"}}>s </span>
+              <span style={{color: "#9B6EF3"}}>U</span>
+              <span style={{color: "#FC6C85"}}>s</span>
+              <span style={{color: "#1167b1"}}>e</span>
+              <span style={{color: "#FF555E"}}>d</span>
+              </h1>
               <Grid container spacing={1}>
                   <Grid item xs={4}>
                     <Card variant="outlined">
