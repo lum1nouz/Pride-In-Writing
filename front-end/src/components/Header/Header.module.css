@@ -1,4 +1,4 @@
-.app-bar {
+.appbar {
   height: 60px;
   background-color: white;
   position: 'relative';
@@ -17,6 +17,9 @@
   padding: 0;
 }
 
-.heading.left {
+.headingLeft {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
   flex-grow: 1;
 }
