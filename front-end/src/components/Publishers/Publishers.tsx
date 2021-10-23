@@ -80,7 +80,7 @@ type props = {};
 
 type state = {};
 
-class ListPage extends React.Component<props, state> {
+class Publishers extends React.Component<props, state> {
   state: state = {};
 
   render() {
@@ -91,7 +91,7 @@ class ListPage extends React.Component<props, state> {
           <Parallax strength={500} className={css.parrallaxCont}>
             <div style={{}}>
               <div className={css.titleText}> Publishers </div>
-              <Paper elevation={4} className={css.paperCont}>
+              <Paper elevation={4} className={css.paperCont} data-testid = "publishers">
                 <MaterialTable
                   icons={tableIcons}
                   style={{ marginTop: 50, marginLeft: 20, marginRight: 20 }}
@@ -130,4 +130,4 @@ class ListPage extends React.Component<props, state> {
   }
 }
 
-export default ListPage;
+export default Publishers;
