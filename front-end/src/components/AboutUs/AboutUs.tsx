@@ -12,6 +12,12 @@ import rodrigoImg from "../../Assets/rodrigo-pic.jpg";
 import cliffImg from "../../Assets/cliff-pic.jpg";
 import gregImg from "../../Assets/greg-pic.jpg";
 import shyamImg from "../../Assets/shyam-pic.jpg";
+import awsLogo from "../../Assets/awsAmplifyLogo.png";
+import gitLogo from "../../Assets/gitlabLogo.png";
+import materialLogo from "../../Assets/materialUILogo.png";
+import nameCheapLogo from "../../Assets/nameCheapLogo.jpg";
+import postmanLogo from "../../Assets/postmanLogo.png";
+import reactLogo from "../../Assets/reactLogo.png";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -20,7 +26,7 @@ import axios from "axios";
 const styles = {
   parrallaxCont: {
     margintop: 100,
-    height: 4500,
+    height: 3800,
   },
   paperCont: {
     marginTop: 200,
@@ -28,9 +34,20 @@ const styles = {
     marginRight: 80,
     height: 1200,
   },
-  media: {
+  peopleMedia: {
     width: 200,
     height: 300,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  cardContent: {
+    backgroundColor: "white", 
+    height: 250,
+  },
+  media: {
+    maxWidth: 100,
+    maxHeight: 100,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -333,16 +350,16 @@ class AboutUs extends React.Component<props, state> {
                 marginTop: 100,
                 marginLeft: 30,
                 marginRight: 30,
-                height: 2100,
+                height: 1600,
               }}
             >
-              <div>
+              <div style={{padding: 30}}>
                 <h1>Meet the Team</h1>
 
                 <Grid container spacing={3}>
-                  <Grid item xs={6}>
-                    <Card>
-                      <CardContent data-testid="pamela" style={{ backgroundColor: "pink" }}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={{ backgroundColor: "white" }}>
                         <h2>Pamela Vazquez</h2>
                         <div
                           style={{
@@ -353,10 +370,10 @@ class AboutUs extends React.Component<props, state> {
                           }}
                         >
                           <CardMedia
-                            style={styles.media}
+                            style={styles.peopleMedia}
                             src={pamelaImg}
                             component="img"
-                            height="140"
+                            height="194"
                             alt="picture of pamela"
                           />
                         </div>
@@ -381,9 +398,9 @@ class AboutUs extends React.Component<props, state> {
                     </Card>
                   </Grid>
 
-                  <Grid item xs={6}>
-                    <Card>
-                      <CardContent data-testid="gregory" style={{ backgroundColor: "pink" }}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={{ backgroundColor: "white" }}>
                         <h2>Gregory Raper</h2>
                         <div
                           style={{
@@ -394,7 +411,7 @@ class AboutUs extends React.Component<props, state> {
                           }}
                         >
                           <CardMedia
-                            style={styles.media}
+                            style={styles.peopleMedia}
                             src={gregImg}
                             component="img"
                             height="140"
@@ -420,9 +437,9 @@ class AboutUs extends React.Component<props, state> {
                     </Card>
                   </Grid>
 
-                  <Grid item xs={6}>
-                    <Card>
-                      <CardContent data-testid="rodrigo" style={{ backgroundColor: "pink" }}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={{ backgroundColor: "white" }}>
                         <h2>Rodrigo Estrella</h2>
                         <div
                           style={{
@@ -433,7 +450,7 @@ class AboutUs extends React.Component<props, state> {
                           }}
                         >
                           <CardMedia
-                            style={styles.media}
+                            style={styles.peopleMedia}
                             src={rodrigoImg}
                             component="img"
                             height="400"
@@ -461,9 +478,9 @@ class AboutUs extends React.Component<props, state> {
                     </Card>
                   </Grid>
 
-                  <Grid item xs={6}>
-                    <Card>
-                      <CardContent data-testid="cliff" style={{ backgroundColor: "pink" }}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={{ backgroundColor: "white" }}>
                         <h2>Cliff Xu</h2>
                         <div
                           style={{
@@ -474,7 +491,7 @@ class AboutUs extends React.Component<props, state> {
                           }}
                         >
                           <CardMedia
-                            style={styles.media}
+                            style={styles.peopleMedia}
                             src={cliffImg}
                             component="img"
                             height="140"
@@ -498,9 +515,9 @@ class AboutUs extends React.Component<props, state> {
                     </Card>
                   </Grid>
 
-                  <Grid item xs={6}>
-                    <Card>
-                      <CardContent data-testid="shyam" style={{ backgroundColor: "pink" }}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={{ backgroundColor: "white" }}>
                         <h2>Shyam Patel</h2>
                         <div
                           style={{
@@ -511,7 +528,7 @@ class AboutUs extends React.Component<props, state> {
                           }}
                         >
                           <CardMedia
-                            style={styles.media}
+                            style={styles.peopleMedia}
                             src={shyamImg}
                             component="img"
                             height="140"
@@ -551,61 +568,61 @@ class AboutUs extends React.Component<props, state> {
               marginTop: 100,
               marginLeft: 30,
               marginRight: 30,
-              height: 375,
+              height: 400,
             }}
           >
-            <div>
+            <div style={{paddingLeft: 90}}>
               <h1>APIs Used</h1>
 
-              <List>
-                <ListItem
-                  button
-                  component="a"
-                  href="https://www.goodreads.com/api/"
-                >
-                  <ListItemText primary="Goodreads API" />
-                </ListItem>
+              <Grid container spacing={1}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="https://reactjs.org/">Goodreads API</a></h2>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem
-                  button
-                  component="a"
-                  href="https://developers.google.com/books/docs/overview/"
-                >
-                  <ListItemText primary="Google Books API" />
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="https://developers.google.com/books/docs/overview/">Google Books API</a></h2>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem
-                  button
-                  component="a"
-                  href="https://openlibrary.org/developers/api "
-                >
-                  <ListItemText primary="Open Library API" />
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="https://openlibrary.org/developers/api">Open Library API</a></h2>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem
-                  button
-                  component="a"
-                  href="https://en.wikipedia.org/wiki/List_of_LGBT_writers "
-                >
-                  <ListItemText primary="List of LGBTQ Writers Data Source" />
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="https://en.wikipedia.org/wiki/List_of_LGBT_writers">List of LGBTQ Writers Data Source</a></h2>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem
-                  button
-                  component="a"
-                  href="https://en.wikipedia.org/wiki/List_of_English-language_book_publishing_companies"
-                >
-                  <ListItemText primary="List of Book Publishing Companies Data Source" />
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="https://en.wikipedia.org/wiki/List_of_English-language_book_publishing_companies">List of Book Publishing Companies Data Source</a></h2>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem
-                  button
-                  component="a"
-                  href="https://www.tckpublishing.com/list-of-book-publishers/"
-                >
-                  <ListItemText primary="List of Book Publishers Data Source" />
-                </ListItem>
-              </List>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="https://www.tckpublishing.com/list-of-book-publishers/">List of Book Publishers Data Source</a></h2>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+              </Grid>
             </div>
           </Paper>
 
@@ -620,68 +637,178 @@ class AboutUs extends React.Component<props, state> {
               marginTop: 100,
               marginLeft: 30,
               marginRight: 30,
-              height: 650,
+              height: 750,
+              backgroundColor: 'white'
             }}
           >
-            <div>
+            <div style={{padding: 30}}>
               <h1> Tools Used </h1>
-              <List>
-                <ListItem>
-                  <ListItemText>
-                    <p>React: used to build our web app</p>
-                  </ListItemText>
-                </ListItem>
+              <Grid container spacing={1}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={styles.cardContent}>
+                        <h2><a href="https://reactjs.org/">React</a></h2>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative",
+                          }}
+                        >
+                          <CardMedia
+                            style={styles.media}
+                            src={reactLogo}
+                            component="img"
+                            height="140"
+                            alt="picture of react logo"
+                          />
+                        </div>
+                        <p>
+                        A front-end JavaScript library for building user interfaces or UI components
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem>
-                  <ListItemText>
-                    <p>
-                      Material UI: used to create the user interface in our
-                      React application
-                    </p>
-                  </ListItemText>
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={styles.cardContent}>
+                        <h2><a href="https://mui.com/">Material UI</a></h2>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative",
+                          }}
+                        >
+                          <CardMedia
+                            style={styles.media}
+                            src={materialLogo}
+                            component="img"
+                            height="140"
+                            alt="picture of MaterialUI logo"
+                          />
+                        </div>
+                        <p>
+                        An open-source, front-end framework for React components
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={styles.cardContent}>
+                        <h2><a href="https://aws.amazon.com/amplify/">AWSAmplify</a></h2>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative",
+                          }}
+                        >
+                          <CardMedia
+                            style={styles.media}
+                            src={awsLogo}
+                            component="img"
+                            height="140"
+                            alt="picture of Aws Amplify logo"
+                          />
+                        </div>
+                        <p>
+                        Cloud computing and hosting platform
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem>
-                  <ListItemText>
-                    <p>AWSAmplify: used to deploy our web application</p>
-                  </ListItemText>
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={styles.cardContent}>
+                        <h2><a href="https://www.postman.com/">Postman</a></h2>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative",
+                          }}
+                        >
+                          <CardMedia
+                            style={styles.media}
+                            src={postmanLogo}
+                            component="img"
+                            height="140"
+                            alt="picture of Postman logo"
+                          />
+                        </div>
+                        <p>
+                        API platform for building and using APIs
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem>
-                  <ListItemText>
-                    <p>Postman: used to design our Restful API</p>
-                  </ListItemText>
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={styles.cardContent}>
+                        <h2><a href="https://about.gitlab.com/">GitLab</a></h2>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative",
+                          }}
+                        >
+                          <CardMedia
+                            style={styles.media}
+                            src={gitLogo}
+                            component="img"
+                            height="140"
+                            alt="picture of GitLab logo"
+                          />
+                        </div>
+                        <p>
+                        Repository Manager with issue tracking and CI/CD pipeline
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem>
-                  <ListItemText>
-                    <p>
-                      GitLab: used for our project repository and for
-                      development across team members
-                    </p>
-                  </ListItemText>
-                </ListItem>
-
-                <ListItem>
-                  <ListItemText>
-                    <p>
-                      NameCheap: used to register the Pride in Writing domain
-                      name
-                    </p>
-                  </ListItemText>
-                </ListItem>
-
-                <ListItem>
-                  <ListItemText>
-                    <p>
-                      Restful APIs and Data Sources: used to scrape information
-                      that will be displayed in our web application
-                    </p>
-                  </ListItemText>
-                </ListItem>
-              </List>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={styles.cardContent}>
+                        <h2><a href="https://www.namecheap.com/">NameCheap</a></h2>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative",
+                          }}
+                        >
+                          <CardMedia
+                            style={styles.media}
+                            src={nameCheapLogo}
+                            component="img"
+                            height="140"
+                            alt="picture of NameCheap logo"
+                          />
+                        </div>
+                        <p>
+                        Domain name registrar
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                  </Grid>
             </div>
           </Paper>
+
         </Parallax>
       </>
     );
