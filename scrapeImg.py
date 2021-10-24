@@ -3,12 +3,15 @@ from bs4 import BeautifulSoup
 import random
 
 response = requests.get(
-    url="https://en.wikipedia.org/wiki/Abrams_Books",
+    url="https://en.wikipedia.org/wiki/University_of_Nebraska_Press",
 )
 soup = BeautifulSoup(response.content, 'html.parser')
 
 # Retrieve the list of all the publishers
 sections = soup.find("tbody")
+image = sections.find("img")
+print(image["src"])
+print()
 
 for section in sections:
   # print(section.prettify())
@@ -33,6 +36,8 @@ for section in sections:
     data = dataUnparsed
     print(data.text)
 
+  print()
+
   # print(section.find("th"))
   # print(section.find("td"))
   # print()
@@ -41,7 +46,7 @@ for section in sections:
   # else:
   #   print(False)
 
-  print()
+  # print()
   # if(section.find("img")):
   #   image = section.find("img")
   #   print(image)
