@@ -26,9 +26,6 @@ build_front_end:
     - CI=false npm run build
     - echo "Build complete."
 
-stages:
-  - deploy
-
 deploy_production:
   image: python:3.6-stretch
   only:
