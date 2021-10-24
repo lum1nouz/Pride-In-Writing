@@ -26,7 +26,7 @@ import axios from "axios";
 const styles = {
   parrallaxCont: {
     margintop: 100,
-    height: 3800,
+    height: 4000,
     backgroundColor: "white"
   },
   paperCont: {
@@ -44,7 +44,7 @@ const styles = {
   },
   cardContent: {
     backgroundColor: "white", 
-    height: 250,
+    height: 275,
   },
   media: {
     maxWidth: 100,
@@ -349,10 +349,7 @@ class AboutUs extends React.Component<props, state> {
                 <span style={{color: "#77C66E"}}>t</span>
                 <span style={{color: "#F6BE00"}}>s</span>
                 </h1>
-                <p>
-                  Pride in Writing aims to highlight the work of LGBTQ Authors
-                  and show the Publishers that support them.
-                </p>
+                <p><a style={{fontWeight:'bold'}} href="https://gitlab.com/JunLum/pride-in-writing">GitLab Repo</a></p> 
                 <p>Total commits: {this.state.totalCommits} </p>
                 <p>Total issues: {this.state.totalIssues}</p>
                 <p>Total unit tests: 0</p>
@@ -578,7 +575,7 @@ class AboutUs extends React.Component<props, state> {
                           games
                         </p>
                         <p>
-                          His major responsibilities fall within the blank team.
+                          His major responsibilities fall within the back-end team.
                         </p>
                         <p>Number of closed issues: {this.state.shyamIssues}</p>
                         <p>Number of commits: {this.state.shyamCommits}</p>
@@ -718,9 +715,8 @@ class AboutUs extends React.Component<props, state> {
                             alt="picture of react logo"
                           />
                         </div>
-                        <p>
-                        A front-end JavaScript library for building user interfaces or UI components
-                        </p>
+                        <p>A front-end JavaScript library for building user interfaces or UI components</p>
+                        <p>Used to build our web app</p>
                       </CardContent>
                     </Card>
                   </Grid>
@@ -748,6 +744,7 @@ class AboutUs extends React.Component<props, state> {
                         <p>
                         An open-source, front-end framework for React components
                         </p>
+                        <p>Used to create the user interface of our React application</p>
                       </CardContent>
                     </Card>
                   </Grid>
@@ -775,6 +772,7 @@ class AboutUs extends React.Component<props, state> {
                         <p>
                         Cloud computing and hosting platform
                         </p>
+                        <p>Used to deploy our web application</p>
                       </CardContent>
                     </Card>
                   </Grid>
@@ -802,6 +800,7 @@ class AboutUs extends React.Component<props, state> {
                         <p>
                         API platform for building and using APIs
                         </p>
+                        <p>Used to design our Restful API</p>
                       </CardContent>
                     </Card>
                   </Grid>
@@ -829,6 +828,7 @@ class AboutUs extends React.Component<props, state> {
                         <p>
                         Repository Manager with issue tracking and CI/CD pipeline
                         </p>
+                        <p>Used for our project repository and development across team members</p>
                       </CardContent>
                     </Card>
                   </Grid>
@@ -856,12 +856,49 @@ class AboutUs extends React.Component<props, state> {
                         <p>
                         Domain name registrar
                         </p>
+                        <p>Used to register the Pride in Writing domain name</p>
                       </CardContent>
                     </Card>
                   </Grid>
                   </Grid>
             </div>
           </Paper>
+
+          <Paper
+              elevation={4}
+              style={{
+                textAlign: "center",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative",
+                marginTop: 100,
+                marginLeft: 30,
+                marginRight: 30,
+                height: 150,
+              }}
+            >
+              <div>
+                <h1 style={{textShadow: '1px 1px black'}}> 
+                <span style={{color: "#FF555E"}}>I</span>
+                <span style={{color: "#FF8650"}}>m</span>
+                <span style={{color: "#F6BE00"}}>p</span>
+                <span style={{color: "#77C66E"}}>o</span>
+                <span style={{color: "#83B2FF"}}>r</span>
+                <span style={{color: "#9B6EF3"}}>t</span>
+                <span style={{color: "#FC6C85"}}>a</span>
+                <span style={{color: "#1167b1"}}>n</span>
+                <span style={{color: "#FF555E"}}>t </span>
+                <span style={{color: "#77C66E"}}>L</span>
+                <span style={{color: "#F6BE00"}}>i</span>
+                <span style={{color: "#77C66E"}}>n</span>
+                <span style={{color: "#83B2FF"}}>k</span>
+                <span style={{color: "#9B6EF3"}}>s</span>
+                </h1>
+                <p><a style={{fontWeight:'bold'}} href="https://gitlab.com/JunLum/pride-in-writing">GitLab Repo</a></p>
+                <p><a style={{fontWeight:'bold'}} href="https://documenter.getpostman.com/view/17727241/UUy1f71j">Postman Documentation</a></p>
+              </div>
+            </Paper>
 
         </Parallax>
       </>
