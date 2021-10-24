@@ -25,3 +25,19 @@ build_front_end:
     - yarn install
     - CI=false npm run build
     - echo "Build complete."
+
+stages:
+  - deploy
+
+deploy_production:
+  image: python:3.6-stretch
+  only:
+    variables:
+      - $CI_COMMIT_BRANCH == "main"
+  stage: deploy
+  before_script:
+    - pip install awsebcli --upgrade --user
+    - git checkout main
+  script:
+    - cd back-end
+    - /root/.local/bin/eb deploy test-api-prod
