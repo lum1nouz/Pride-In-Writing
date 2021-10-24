@@ -99,10 +99,16 @@ class Books extends React.Component<props, state> {
     return (
       <div>
         <Header />
-        <div className={css.background}>
+        <div>
           <Parallax strength={500} className={css.parrallaxCont}>
-            <div style={{}}>
-              <div id="books-title" className={css.titleText}> Books </div>
+            <div style={{fontWeight:'bold'}}>
+              <div className={css.titleText}> 
+                <span style={{color: "#FF555E"}}>B</span>
+                <span style={{color: "#FF8650"}}>o</span>
+                <span style={{color: "#F6BE00"}}>o</span>
+                <span style={{color: "#77C66E"}}>k</span>
+                <span style={{color: "#83B2FF"}}>s</span>
+              </div>
               <Paper elevation={4} className={css.paperCont} data-testid = "books">
                 <MaterialTable
                   icons={tableIcons}
