@@ -40,6 +40,7 @@ def __init__(self, author_id=0, author_name="NaN", author_tour="NaN", author_sum
 db.create_all()
 
 df = pd.read_csv(r'./authors-finaldata.csv')
+df = df.drop("Ind", axis=1)
 author_list = []
 for ind in df.index:
     id = int(ind)

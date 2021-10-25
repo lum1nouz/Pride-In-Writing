@@ -44,6 +44,7 @@ def createAuthorsCsv():
         authors_list.append({'Name' : author['display'], 'OnTour' : on_tour, 'Summary': summary, 'Link': link})
 
     authorsDataFrames = pd.DataFrame.from_dict(authors_list)
+    print(authorsDataFrames)
     lgbtDataFrames = pd.read_csv(r'./filtered_authors.csv')
 
     allDataFrames = pd.merge(authorsDataFrames, lgbtDataFrames, how='inner', on='Name')
