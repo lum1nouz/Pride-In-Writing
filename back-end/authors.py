@@ -46,7 +46,7 @@ for ind in df.index:
     nat = str(df['Nationality'][ind])
     sex = str("LGBTQ+")
     gen = str(df['Genre'][ind])
-    note = str(df['Notable works'][ind])
+    note = str(df['NotableWorks'][ind])
     published = int(10)
 
     new_author = Author(author_id=id, author_name = name, year_born = birth, nationality = nat, sexuality = sex, genre = gen, books_published = published, noteable_works = note)
@@ -54,4 +54,3 @@ for ind in df.index:
 
 db.session.add_all(author_list)
 db.session.commit()
-
