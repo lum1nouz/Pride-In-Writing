@@ -537,7 +537,7 @@ class AboutUs extends React.Component<props, state> {
                           He will be graduating Spring 2023 and he likes tennis
                         </p>
                         <p>
-                          His major responsibilities fall within the blank team.
+                          His major responsibilities fall within the back-end team.
                         </p>
                         <p>Number of closed issues: {this.state.cliffIssues}</p>
                         <p>Number of commits: {this.state.cliffCommits}</p>
