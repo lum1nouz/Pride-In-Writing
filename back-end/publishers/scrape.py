@@ -9,7 +9,7 @@ def main():
     )
     soup = BeautifulSoup(response.content, 'html.parser')
 
-    csv_file = open("info.csv", "w")
+    csv_file = open("publishers_prefinaldata.csv", "w")
     csv_writer = csv.writer(csv_file)
     csv_writer.writerow(["name", "image", "origin", "publication_types", "founded", "parent_comp", "hq", "website"])
 
