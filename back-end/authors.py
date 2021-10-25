@@ -16,13 +16,13 @@ db = SQLAlchemy(app)
 
 # Define Author Table/Data model 
 class Author(db.Model):
-    author_id = db.Column(db.Integer, primary_key=True)
+    author_id = db.Column(db.Integer(), primary_key=True)
     author_name = db.Column(db.String())
     year_born = db.Column(db.String())
     nationality = db.Column(db.String())
     sexuality = db.Column(db.String())
     gender = db.Column(db.String())
-    books_published = db.Column(db.Integer)
+    books_published = db.Column(db.Integer())
 
 def __init__(self, author_id=0, author_name="NaN", year_born ="NaN", nationality="NaN", sexuality = "NaN", gender="NaN", books_published=0):
     self.author_id = author_id
@@ -35,7 +35,7 @@ def __init__(self, author_id=0, author_name="NaN", year_born ="NaN", nationality
 
 db.create_all()
 
-df = pd.read_csv(r'back-end\authors.csv')
+df = pd.read_csv(r'./authors.csv')
 author_list = []
 for ind in df.index:
     id = ind
@@ -49,6 +49,6 @@ for ind in df.index:
     new_author = Author(author_id=id, author_name = name, year_born = birth, nationality = nat, sexuality = sex, gender = gen, books_published = published)
     author_list.append(new_author)
 
-db.session.add_all(country_list)
+db.session.add_all(author_list)
 db.session.commit()
 
