@@ -1,17 +1,26 @@
 import requests
 from bs4 import BeautifulSoup
-import random
+import csv
 
 response = requests.get(
-    url="https://en.wikipedia.org/wiki/Bloodaxe_Books",
+    url="https://en.wikipedia.org/wiki/Carnegie_Mellon_University_Press",
 )
 soup = BeautifulSoup(response.content, 'html.parser')
 
+csv_file = open("info.csv", "w")
+csv_writer = csv.writer(csv_file)
+
 # Retrieve the list of all the publishers
-sections = soup.find("tbody")
-image = sections.find("img")
-print(image["src"])
+sections = soup.find("table", {"class": "infobox vcard"})
+if sections.find("td", {"class": "infobox-image"}):
+  image = sections.find("img")
+  image = "https:" + str(image["src"])
+else:
+  image = "-1"
+print(str(image))
 print()
+
+sections = sections.find("tbody")
 
 for section in sections:
   # print(section.prettify())
@@ -37,25 +46,3 @@ for section in sections:
     print(data.text)
 
   print()
-
-  # print(section.find("th"))
-  # print(section.find("td"))
-  # print()
-  # if(section.find("a")):
-  #   print(True)
-  # else:
-  #   print(False)
-
-  # print()
-  # if(section.find("img")):
-  #   image = section.find("img")
-  #   print(image)
-  
-  # if (section.tr.th.find("a")):
-  #   print(True)
-
-  # if(section.tr.th.find("a")):
-    # label = sections.find("a")
-  # label = section.find("th", {"class": "infobox-label"})
-  # data = section.find("td", {"class": "infobox-data"})
-  # print(str(label.text) + ": " + str(data.text))
