@@ -11,6 +11,7 @@ def main():
 
     csv_file = open("info.csv", "w")
     csv_writer = csv.writer(csv_file)
+    csv_writer.writerow(["name", "origin", "publication_types", "founded", "parent_comp", "hq", "website"])
 
     # Retrieve the list of all the publishers
     sections = soup.find_all("div", {"class": "div-col"})
@@ -29,7 +30,7 @@ def main():
                 print("^^^^^^^^^^^")
                 print()
                 print(link)
-                parseLink(link, dict)
+                parseLink(link, dict, csv_writer, a.text)
 
         if(index == 26):
             break
@@ -39,7 +40,7 @@ def main():
         print(str(i) + ": " + str(dict[i]))
         csv_writer.writerow([i, dict[i]])
 
-def parseLink(link, dict):
+def parseLink(link, dict, csv_writer, name):
     
     try:
         response = requests.get(
@@ -48,6 +49,9 @@ def parseLink(link, dict):
     except Exception as e:
         return
     soup = BeautifulSoup(response.content, 'html.parser')
+    answers = {"name": name, "image": "-1", "Country of origin": "Unknown", "Publication types": "Unknown", "Founded": "Unknown", "Parent company": "Unkown", "Headquarters location": "Unknown", "Official website": "Not available"}
+    
+
 
     # csv_file = open("info.csv", "w")
     # csv_writer = csv.writer(csv_file)
@@ -59,18 +63,25 @@ def parseLink(link, dict):
         if sections == None:
             return
     checkImg = sections.find("td", {"class": "infobox-image"})
-    if  checkImg == None:
-        image = "-1"
-        print(str(image))
+    if checkImg == None:
+        pass
     elif sections.find("td", {"class": "infobox-image"}):
         image = sections.find("img")
         image = "https:" + str(image["src"])
+        answers["image"] = image
     else:
-        image = "-1"
-        print(str(image))
-        print()
+        pass
 
     sections = sections.find("tbody")
+
+    # name = ""
+    # origin = "" 
+    # publication_types = ""
+    # founded = ""
+    # parent_comp = "" 
+    # hq = ""
+    # website = ""
+
 
     for section in sections:
         # print(section.prettify())
@@ -79,26 +90,30 @@ def parseLink(link, dict):
         dataUnparsed = section.find("td")
         if labelUnparsed == None:
             continue
-        elif labelUnparsed.find("a"):
-            label = labelUnparsed.find("a")
-            addVal(label.text, dict)
-            print(label.text)
+        elif labelUnparsed.find("a") and checkValues(labelUnparsed.find("a").text):
+            if dataUnparsed == None:
+                continue
+            elif dataUnparsed.find("a"):
+                answers[labelUnparsed.find("a").text] = dataUnparsed.find("a").text
+            else:
+                answers[labelUnparsed.find("a").text] = dataUnparsed.text
         else:
-            label = labelUnparsed
-            addVal(label.text, dict)
-            print(label.text)
+            if checkValues(labelUnparsed.text):
+                if dataUnparsed == None:
+                    continue
+                elif dataUnparsed.find("a"):
+                    answers[labelUnparsed.text] = dataUnparsed.find("a").text
+                else:
+                    answers[labelUnparsed.text] = dataUnparsed.text
+    csv_writer.writerow([answers["name"], answers["image"], answers["Country of origin"], answers["Publication types"], answers["Founded"], answers["Parent company"], answers["Headquarters location"], answers["Official website"]])
 
-        if dataUnparsed == None:
-            continue
-        elif dataUnparsed.find("a"):
-            data = dataUnparsed.find("a")
-            print(data.text)
-        else:
-            data = dataUnparsed
-            print(data.text)
+def checkValues(string):
+    options = ["Country of origin", "Publication types", "Founded", "Parent company", "Headquarters location", "Official website"]
+    for option in options:
+        if option == string:
+            return True
+    return False
 
-        print()
-    print("----------------------------------")
 
 def addVal(string, dict):
     if dict.get(string) == None:
