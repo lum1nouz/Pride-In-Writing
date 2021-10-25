@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import csv
 
 response = requests.get(
-    url="https://en.wikipedia.org/wiki/Carnegie_Mellon_University_Press",
+    url="https://en.wikipedia.org/wiki/Abaddon_Books",
 )
 soup = BeautifulSoup(response.content, 'html.parser')
 

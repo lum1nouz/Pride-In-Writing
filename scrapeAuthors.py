@@ -9,8 +9,14 @@ import pandas as pd
 
 # table = soup.find_all('table')
 df = pd.read_html("https://en.wikipedia.org/wiki/List_of_LGBT_writers")
-for x in range(25):
-  print(df[x])
+# df[0].to_csv("authors.csv")
+
+if df[0].str.contains("novelist"):
+  print(df[0])
+
+# for x in range(25):
+#   if df[x].str.contains("novelist"):
+#     print(df[x])
 
 # Retrieve the list of all the publishers
 # sections = soup.find_all("table", {"class": "wikitable"})
