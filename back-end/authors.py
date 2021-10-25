@@ -41,6 +41,7 @@ db.create_all()
 
 df = pd.read_csv(r'./authors-finaldata.csv')
 df = df.drop("Ind", axis=1)
+print(df)
 author_list = []
 for ind in df.index:
     id = int(ind)
@@ -55,8 +56,9 @@ for ind in df.index:
     nat = str(df['Nationality'][ind])
     gen = str(df['Genre'][ind])
     note = str(df['Notable Works'][ind])
+    author_tour = str(tour)
 
-    new_author = Author(author_id=id, author_name = name, author_tour = tour, author_summary = sum, author_image = image, year_born = birth, nationality = nat, genre = gen, noteable_works = note)
+    new_author = Author(author_id=id, author_name = name, author_tour = str(tour), author_summary = sum, author_image = image, year_born = birth, nationality = nat, genre = gen, noteable_works = note)
     author_list.append(new_author)
 
 db.session.add_all(author_list)
