@@ -1,6 +1,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import create_engine, Column, String, Integer
+from sqlalchemy import create_engine, Column, String, Integer, PickleType
+from sqlalchemy.ext.mutable import MutableList
+
 import urllib
 import json
 import pandas as pd 
@@ -14,6 +16,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://lum1nouz:Granted1
 
 db = SQLAlchemy(app)
 
+
+
+
 # Define Author Table/Data model 
 class Author(db.Model):
     author_id = db.Column(db.Integer(), primary_key=True)
@@ -25,8 +30,12 @@ class Author(db.Model):
     nationality = db.Column(db.String())
     genre = db.Column(db.String())
     noteable_works = db.Column(db.String())
+    book_connections = db.Column(db.String())
+    publisher_connections = db.Column(db.String())
+    # book_connections = db.Column(MutableList.as_mutable(PickleType), default=[])
+    # publisher_connections = db.Column(MutableList.as_mutable(PickleType), default=[])
 
-def __init__(self, author_id=0, author_name="NaN", author_tour="NaN", author_summary="NaN", author_image="NaN", year_born ="NaN", nationality="NaN", noteable_works="NaN", genre = "NaN"):
+def __init__(self, author_id=0, author_name="NaN", author_tour="NaN", author_summary="NaN", author_image="NaN", year_born ="NaN", nationality="NaN", noteable_works="NaN", genre = "NaN", book_connections = [], publisher_connections = []):
     self.author_id = author_id
     self.author_name = author_name
     self.author_tour = author_tour
@@ -36,29 +45,29 @@ def __init__(self, author_id=0, author_name="NaN", author_tour="NaN", author_sum
     self.nationality = nationality
     self.genre = genre
     self.noteable_works = noteable_works
+    self.book_connections = book_connections
+    self.publisher_connections = publisher_connections
 
 db.create_all()
 
+# ,Name,Year Born,Nationality,Genre,Notable Works,OnTour,Link,Summary,id,BookConnections,PublisherConnections
 df = pd.read_csv(r'./authors-finaldata.csv')
-df = df.drop("Ind", axis=1)
 print(df)
 author_list = []
 for ind in df.index:
-    id = int(ind)
+    id = int(df['id'][ind])
     name = str(df['Name'][ind])
-    if(bool(df['OnTour'][ind])):
-        tour = "True"
-    else: 
-        tour = "False"
-    sum = str(df['Summary'][ind])
-    image = str(df['Link'][ind])
-    birth = str(df['Lifetime'][ind])
+    yearBorn = str(df['Year Born'][ind])
     nat = str(df['Nationality'][ind])
     gen = str(df['Genre'][ind])
     note = str(df['Notable Works'][ind])
-    author_tour = str(tour)
+    authorTour = bool(df['OnTour'][ind])
+    image = str(df['Link'][ind])
+    sum = str(df['Summary'][ind])
+    bookCon = df['BookConnections'][ind]
+    pubCon = df['PublisherConnections'][ind]
 
-    new_author = Author(author_id=id, author_name = name, author_tour = str(tour), author_summary = sum, author_image = image, year_born = birth, nationality = nat, genre = gen, noteable_works = note)
+    new_author = Author(author_id=id, author_name = name, author_tour = authorTour, author_summary = sum, author_image = image, year_born = yearBorn, nationality = nat, genre = gen, noteable_works = note, book_connections = bookCon, publisher_connections = pubCon)
     author_list.append(new_author)
 
 db.session.add_all(author_list)

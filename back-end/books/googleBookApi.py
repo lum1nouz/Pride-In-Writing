@@ -8,7 +8,7 @@ import os
 import json
 
 def createBooksCsv():
-    authorsDataFrames = pd.read_csv('authors-finaldata.csv')
+    authorsDataFrames = pd.read_csv('../authors/authors-prefinaldata.csv')
     
     def scrapeBooksByAuthor(name):
         book_params = {
