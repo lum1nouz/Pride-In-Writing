@@ -11,7 +11,7 @@ def main():
 
     csv_file = open("info.csv", "w")
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(["name", "origin", "publication_types", "founded", "parent_comp", "hq", "website"])
+    csv_writer.writerow(["name", "image", "origin", "publication_types", "founded", "parent_comp", "hq", "website"])
 
     # Retrieve the list of all the publishers
     sections = soup.find_all("div", {"class": "div-col"})
