@@ -25,14 +25,49 @@ class Book(db.Model):
     book_pages = db.Column(db.Integer)
     book_price = db.Column(db.Float)
 
-def __init__(self, book_id="NaN", book_name="NaN", book_author="NaN", book_genre="NaN", book_year_published=0, book_rating=0.0, book_pages=0, book_price=0.0):
-    self.book_id = book_id
-    self.book_name = book_name
-    self.book_author = book_author
-    self.book_genre = book_genre
-    self.book_year_published = book_year_published
-    self.book_rating = book_rating
-    self.book_pages = book_pages
-    self.book_price = book_price
+# Define Author Table/Data model 
+class Author(db.Model):
+    author_id = db.Column(db.Integer, primary_key=True)
+    author_name = db.Column(db.String())
+    year_born = db.Column(db.String())
+    nationality = db.Column(db.String())
+    sexuality = db.Column(db.String())
+    gender = db.Column(db.String())
+    books_published = db.Column(db.Integer)
+
+# Define Publisher Table/Data model 
+class Publisher(db.Model):
+    publisher_id = db.Column(db.Integer, primary_key=True)
+    publisher_name = db.Column(db.String())
+    publisher_country= db.Column(db.String())
+    publisher_type = db.Column(db.String())
+    publisher_authors = db.Column(db.String())
+    publisher_founded = db.Column(db.Integer)
+
+
+def __init__(self, nan="NaN", def_int=0, def_float=0.0):
+    self.book_id = nan
+    self.book_name = nan
+    self.book_author = nan
+    self.book_genre = nan
+    self.book_year_published = def_int
+    self.book_rating = def_float
+    self.book_pages = def_int
+    self.book_price = def_float
+
+    self.author_id = db.Column(db.Integer, primary_key=True)
+    self.author_name = db.Column(db.String())
+    self.year_born = db.Column(db.String())
+    self.nationality = db.Column(db.String())
+    self.sexuality = db.Column(db.String())
+    self.gender = db.Column(db.String())
+    self.books_published = db.Column(db.Integer)
+
+    self.publisher_id = nan
+    self.publisher_name = nan
+    self.publisher_country= nan
+    self.publisher_type = nan
+    self.publisher_authors = nan
+    self.publisher_founded = def_int
 
 db.create_all()
