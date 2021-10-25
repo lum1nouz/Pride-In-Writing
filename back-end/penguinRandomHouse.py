@@ -10,10 +10,6 @@ import json
 import numpy as np
 import pandas as pd
 
-# import init
-# import models
-# import search
-
 def createAuthorsCsv():
     def scrapeBestSellersAuthors():
         api_key = "d4huxgvevx94je6fp9eykxds"
@@ -48,7 +44,8 @@ def createAuthorsCsv():
         authors_list.append({'Name' : author['display'], 'OnTour' : on_tour, 'Summary': summary, 'Link': link})
 
     authorsDataFrames = pd.DataFrame.from_dict(authors_list)
-    lgbtDataFrames = pd.read_csv(r'./lgbtAuthors.csv')
+    lgbtDataFrames = pd.read_csv(r'./filtered_authors.csv')
+
     allDataFrames = pd.merge(authorsDataFrames, lgbtDataFrames, how='inner', on='Name')
 
     allDataFrames.to_csv('authors-finaldata.csv', encoding = 'utf-8')

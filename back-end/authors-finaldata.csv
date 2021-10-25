@@ -1,420 +1,259 @@
-,Name,OnTour,Summary,Link,Lifetime,Nationality,Genre,Notable works,References
-0,Will Aitken,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/231,b. ?,American-Canadian,"novelist, film critic","Terre Haute, Realia",[6]
-1,Edward Albee,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/247,1928–2016,American,playwright,Who's Afraid of Virginia Woolf?,[9]
-2,Lisa Alther,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/467,b. 1944,American,novelist,Stormy Weather & Other Stories; Blood Feud: The Hatfields and the McCoys: The Epic Story of Murder and Vengeance; Washed in the Blood; Kinflicks: A Novel,[9]
-3,Lisa Alther,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2197666,b. 1944,American,novelist,Stormy Weather & Other Stories; Blood Feud: The Hatfields and the McCoys: The Epic Story of Murder and Vengeance; Washed in the Blood; Kinflicks: A Novel,[9]
-4,Patrick Anderson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/621,1915-1979,English/Canadian,poet,Return to Canada,[6][18]
-5,Reinaldo Arenas,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/795,1943–1990,Cuban,"poet, novelist and playwright",Before Night Falls,[8][9]
-6,John Ashbery,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/907,1927-2017,American,poetry,Self-Portrait in a Convex Mirror,[9]
-7,John Ashbery,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111248,1927-2017,American,poetry,Self-Portrait in a Convex Mirror,[9]
-8,John Ashbery,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2121193,1927-2017,American,poetry,Self-Portrait in a Convex Mirror,[9]
-9,W. H. Auden,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/1020,1907–1973,English,poetry,"""Funeral Blues"" (poem)",[9]
-10,W. H. Auden,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/71527,1907–1973,English,poetry,"""Funeral Blues"" (poem)",[9]
-11,W. H. Auden,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111218,1907–1973,English,poetry,"""Funeral Blues"" (poem)",[9]
-12,W. H. Auden,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2075743,1907–1973,English,poetry,"""Funeral Blues"" (poem)",[9]
-13,W. H. Auden,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2075744,1907–1973,English,poetry,"""Funeral Blues"" (poem)",[9]
-14,James Baldwin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/1261,1924–1987,American,"poet, playwright, novelist",Giovanni's Room,[9]
-15,James Baldwin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/120046,1924–1987,American,"poet, playwright, novelist",Giovanni's Room,[9]
-16,James Baldwin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/223941,1924–1987,American,"poet, playwright, novelist",Giovanni's Room,[9]
-17,James Baldwin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2121303,1924–1987,American,"poet, playwright, novelist",Giovanni's Room,[9]
-18,John Barton,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/1565,b. 1957,Canadian,poet,"West of Darkness: Emily Carr, self-portrait (2nd ed.)",[42]
-19,John Barton,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2199997,b. 1957,Canadian,poet,"West of Darkness: Emily Carr, self-portrait (2nd ed.)",[42]
-20,John Barton,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2200007,b. 1957,Canadian,poet,"West of Darkness: Emily Carr, self-portrait (2nd ed.)",[42]
-21,Elizabeth Bishop,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2392,1911–1979,American,"poet, short story writer","North and South, Questions of Travel",[9]
-22,Marie-Claire Blais,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2484,b. 1939,Canadian,"novelist, playwright","A Season in the Life of Emmanuel, Mad Shadows, Augustino and the Choir of Destruction",[6][9]
-23,Elizabeth Bowen,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2897,1899–1973,Irish,novelist,Eva Trout,[9]
-24,Dionne Brand,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/3068,b. 1953,Canadian,"novelist, poet","Land to Light On, What We All Long For, Sans Souci",[67]
-25,Rita Mae Brown,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/3518,b. 1944,American,novelist,Rubyfruit Jungle,[9]
-26,William S. Burroughs,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/3852,1914–1997,American,novelist,"Naked Lunch, Queer",[78]
-27,Samuel Butler,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/3940,1835–1902,English,novelist,"Erewhon, The Way of All Flesh",[9]
-28,Truman Capote,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/4231,1924–1984,American,"novelist, non-fiction","Breakfast at Tiffany's, In Cold Blood",[9]
-29,Truman Capote,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112552,1924–1984,American,"novelist, non-fiction","Breakfast at Tiffany's, In Cold Blood",[9]
-30,Truman Capote,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172664,1924–1984,American,"novelist, non-fiction","Breakfast at Tiffany's, In Cold Blood",[9]
-31,Willa Cather,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/4507,1873–1947,American,"novelist, writer of stort stories and essays",My Ántonia,[9]
-32,Willa Cather,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/153070,1873–1947,American,"novelist, writer of stort stories and essays",My Ántonia,[9]
-33,Willa Cather,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2120258,1873–1947,American,"novelist, writer of stort stories and essays",My Ántonia,[9]
-34,Graham Chapman,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/4684,1941-1989,British,Screenwriter,A liar's Autobiography,
-35,John Cheever,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/4756,1912–1982,American,"novelist, short stories","The Enormous Radio, The Five-Forty-Eight, The Wapshot Chronicle, The Swimmer",[9]
-36,John Cheever,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2120607,1912–1982,American,"novelist, short stories","The Enormous Radio, The Five-Forty-Eight, The Wapshot Chronicle, The Swimmer",[9]
-37,John Cheever,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2182408,1912–1982,American,"novelist, short stories","The Enormous Radio, The Five-Forty-Eight, The Wapshot Chronicle, The Swimmer",[9]
-38,John Cleland,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/5121,1710–1789,English,novelist,Fanny Hill,[9]
-39,Kate Clinton,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/5162,b. 1947,American,comedian,"Don't Get Me Started, What the L, and I Told You So",[101]
-40,Kate Clinton,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/123508,b. 1947,American,comedian,"Don't Get Me Started, What the L, and I Told You So",[101]
-41,Douglas Coupland,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/5838,b. 1961,Canadian,"novelist, short story writer, playwright","Generation X: Tales for an Accelerated Culture, Microserfs, JPod",[115]
-42,Douglas Coupland,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2194419,b. 1961,Canadian,"novelist, short story writer, playwright","Generation X: Tales for an Accelerated Culture, Microserfs, JPod",[115]
-43,Douglas Coupland,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2237588,b. 1961,Canadian,"novelist, short story writer, playwright","Generation X: Tales for an Accelerated Culture, Microserfs, JPod",[115]
-44,Quentin Crisp,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/6022,1908-1999,British,"books, stage, screen, TV","""The Naked Civil Servant""",[121]
-45,Michael Cunningham,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/6172,b. 1952,American,novelist,The Hours,[39]
-46,Michael Cunningham,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111255,b. 1952,American,novelist,The Hours,[39]
-47,Marquis de Sade,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/6711,1740–1814,French,"novelist, philosopher, playwright","The 120 Days of Sodom, Justine, Philosophy in the Bedroom, Juliette",[9]
-48,Samuel R. Delany,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/6807,b. 1942,American,"novelist, literary critic","Hogg, Dhalgren, The Motion of Light in Water, Dark Reflections",[133]
-49,Samuel R. Delany,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/181387,b. 1942,American,"novelist, literary critic","Hogg, Dhalgren, The Motion of Light in Water, Dark Reflections",[133]
-50,Samuel R. Delany,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2197022,b. 1942,American,"novelist, literary critic","Hogg, Dhalgren, The Motion of Light in Water, Dark Reflections",[133]
-51,Emily Dickinson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/7035,1830–1886,American,poet,The Poems of Emily Dickinson,[9]
-52,Emily Dickinson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111809,1830–1886,American,poet,The Poems of Emily Dickinson,[9]
-53,Emily Dickinson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172038,1830–1886,American,poet,The Poems of Emily Dickinson,[9]
-54,John Donne,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/7253,1572–1631,English,poet,Notable for his erotic poetry and elegies,[9]
-55,Daphne du Maurier,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/7490,1907-1989,English,"author, playwright",Rebecca,[147]
-56,Daphne du Maurier,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112209,1907-1989,English,"author, playwright",Rebecca,[147]
-57,Daphne du Maurier,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2205501,1907-1989,English,"author, playwright",Rebecca,[147]
-58,Bret Easton Ellis,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/8005,b. 1964,American,novelist,"American Psycho, Glamorama",[155]
-59,Bret Easton Ellis,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2236742,b. 1964,American,novelist,"American Psycho, Glamorama",[155]
-60,Sarah Ellis,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/8025,b. 1952,Canadian,children's,"Odd Man Out, Pick Up Sticks",[160]
-61,Harvey Fierstein,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/8645,b. 1954,American,playwright,Torch Song Trilogy,[168]
-62,Timothy Findley,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/8677,1930–2002,Canadian,"novelist, playwright","The Wars, Headhunter, Elizabeth Rex",[6][169]
-63,Michel Foucault,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/9082,1926–1984,French,philosopher,L'Histoire de la sexualité,[9]
-64,Michel Foucault,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2235216,1926–1984,French,philosopher,L'Histoire de la sexualité,[9]
-65,Patrick Gale,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/9586,b. 1962,British,novelist,Rough Music,[182]
-66,Nancy Garden,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/9682,b. 1938,American,novelist,Annie on My Mind,[183]
-67,Nikolai Gogol,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/10321,1809–1852,Ukrainian,"novelist, playwright",Evenings on a Farm Near Dikanka,[9]
-68,Nikolai Gogol,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112577,1809–1852,Ukrainian,"novelist, playwright",Evenings on a Farm Near Dikanka,[9]
-69,Nikolai Gogol,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/124269,1809–1852,Ukrainian,"novelist, playwright",Evenings on a Farm Near Dikanka,[9]
-70,Nikolai Gogol,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2211186,1809–1852,Ukrainian,"novelist, playwright",Evenings on a Farm Near Dikanka,[9]
-71,Brad Gooch,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/10476,b. 1952,American,"poet, essayist, biographer",Jailbait and Other Stories,[39]
-72,Radclyffe Hall,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/11605,1880–1943,English,novelist,The Well of Loneliness,[9]
-73,Robin Hardy,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/11908,1952-1995,Canadian,"novelist, journalist, founding member of Publishing Triangle","Freelance contributor to The Advocate, Village Voice and Penthouse",[211]
-74,Michael Harris,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/12032,b. 1980,Canadian,"non-fiction, young adult literature",The End of Absence: Reclaiming What We've Lost in a World of Constant Connection,[212]
-75,Michael Harris,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2268391,b. 1980,Canadian,"non-fiction, young adult literature",The End of Absence: Reclaiming What We've Lost in a World of Constant Connection,[212]
-76,Adam Haslett,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/12202,b. 1970,American,"novelist, short story writer","You Are Not A Stranger Here, Imagine Me Gone",[213]
-77,Philip Hensher,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/12674,b. 1965,English,"novelist, critic, journalist",The Mulberry Empire,[215]
-78,Patricia Highsmith,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/12941,1921–1995,American,novelist,The Talented Mr. Ripley,[9]
-79,Patricia Highsmith,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2122468,1921–1995,American,novelist,The Talented Mr. Ripley,[9]
-80,Tomson Highway,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/12947,b. 1951,Canadian,"novelist, playwright",The Rez Sisters and Dry Lips Oughta Move to Kapuskasing (plays),[6]
-81,Alan Hollinghurst,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/13330,b. 1954,English,novelist,"The Swimming Pool Library, The Folding Star, The Spell, The Line of Beauty",[39][78]
-82,Alan Hollinghurst,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112065,b. 1954,English,novelist,"The Swimming Pool Library, The Folding Star, The Spell, The Line of Beauty",[39][78]
-83,Gerard Manley Hopkins,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/13486,1844–1889,English,poet,The Habit of Perfection,[9]
-84,Richard Howard,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/13666,b. 1929,American,poet,Alone With America,[9]
-85,Richard Howard,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111281,b. 1929,American,poet,Alone With America,[9]
-86,Richard Howard,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/147366,b. 1929,American,poet,Alone With America,[9]
-87,Richard Howard,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2124839,b. 1929,American,poet,Alone With America,[9]
-88,James Howe,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/13684,b. 1946,American,children's writer,The Misfits series,[223]
-89,James Howe,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/110194,b. 1946,American,children's writer,The Misfits series,[223]
-90,Langston Hughes,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/13775,1902–1967,American,poet,The Big Sea,[9]
-91,Langston Hughes,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2189228,1902–1967,American,poet,The Big Sea,[9]
-92,Christopher Isherwood,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/14135,1904–1986,English,"novelist, autobiographer","I Am a Camera, Down There on a Visit, A Single Man, Christopher and His Kind",[78]
-93,Sarah Orne Jewett,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/14533,1849–1909,American,"novelist, short story writer and poet",The Country of the Pointed Firs,[9]
-94,Sarah Orne Jewett,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/115117,1849–1909,American,"novelist, short story writer and poet",The Country of the Pointed Firs,[9]
-95,June Jordan,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/14822,1936–2002,American,poet,Directed by Desire: Collected Poems,[9]
-96,Randall Kenan,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/15393,1963–2020,American,writer,"Let the Dead Bury Their Dead, A Visitation of Spirits",[39]
-97,Jack Kerouac,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/15492,1922–1969,American,novelist,"On the Road, The Subterraneans",[78]
-98,Jack Kerouac,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2125416,1922–1969,American,novelist,"On the Road, The Subterraneans",[78]
-99,Wayne Koestenbaum,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/16056,b. 1958,American,poet and cultural critic,The Queen's Throat,[251]
-100,Wayne Koestenbaum,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111300,b. 1958,American,poet and cultural critic,The Queen's Throat,[251]
-101,Wayne Koestenbaum,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2225932,b. 1958,American,poet and cultural critic,The Queen's Throat,[251]
-102,Wayne Koestenbaum,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2246118,b. 1958,American,poet and cultural critic,The Queen's Throat,[251]
-103,Larry Kramer,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/16228,b. 1935,American,"novelist, journalist, playwright","Faggots, The Normal Heart",[78]
-104,Ellen Kushner,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/16417,b. 1955,American,writer,Thomas the Rhymer,[255]
-105,Ellen Kushner,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/220680,b. 1955,American,writer,Thomas the Rhymer,[255]
-106,David Leavitt,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/17036,b. 1961,American,novelist,The Lost Language of Cranes,[9][39]
-107,David Leavitt,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112068,b. 1961,American,novelist,The Lost Language of Cranes,[9][39]
-108,David Leavitt,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2247114,b. 1961,American,novelist,The Lost Language of Cranes,[9][39]
-109,Klaus Mann,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/18902,1906–1949,German,"novelist, short story writer",Mephisto (novel),[9]
-110,Thomas Mann,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/18908,1875–1955,German,"novelist, short story writer, essayist",Death in Venice,[9]
-111,Thomas Mann,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2187351,1875–1955,German,"novelist, short story writer, essayist",Death in Venice,[9]
-112,Thomas Mann,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2238359,1875–1955,German,"novelist, short story writer, essayist",Death in Venice,[9]
-113,Richard Mason,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/19340,b. 1977,South African/British,novelist,The Drowning People,[282]
-114,Richard Mason,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2182454,b. 1977,South African/British,novelist,The Drowning People,[282]
-115,W. Somerset Maugham,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/19481,1874–1965,English,"playwright, novelist",Of Human Bondage,[9]
-116,Armistead Maupin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/19483,b. 1944,American,novelist,Tales of the City,[9]
-117,Carson McCullers,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/19797,1917–1967,American,novelist,Reflections in a Golden Eye,[9]
-118,Carson McCullers,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2124350,1917–1967,American,novelist,Reflections in a Golden Eye,[9]
-119,James Merrill,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/20394,1926–1995,American,poet,"The Changing Light at Sandover, A Different Person",[9]
-120,Edna St. Vincent Millay,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/20619,1892–1950,American,poet,"""Euclid alone has looked on Beauty bare"", ""Renascence"", and ""The Ballad of the Harp-Weaver"" (poems)",[9]
-121,Edna St. Vincent Millay,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2118783,1892–1950,American,poet,"""Euclid alone has looked on Beauty bare"", ""Renascence"", and ""The Ballad of the Harp-Weaver"" (poems)",[9]
-122,John Milton,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/20793,1608–1674,English,poet,"Paradise Lost, Paradise Regained",[9]
-123,Yukio Mishima,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/20849,1925–1970,Japanese,"poet, playwright, novelist",Confessions of a Mask,[9]
-124,Ethan Mordden,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/21168,b. 1949,American,"novelist, essayist","""Buddies"" cycle of novels",[295]
-125,Frank O'Hara,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/22545,1926–1966,American,poetry,Lunch Poems,[9]
-126,Achy Obejas,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/22628,b. 1956,Cuban/American,writer and translator,Memory Mambo,[8]
-127,Achy Obejas,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2157821,b. 1956,Cuban/American,writer and translator,Memory Mambo,[8]
-128,Achy Obejas,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2248500,b. 1956,Cuban/American,writer and translator,Memory Mambo,[8]
-129,Achy Obejas,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2256235,b. 1956,Cuban/American,writer and translator,Memory Mambo,[8]
-130,Wilfred Owen,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/22984,1893–1918,English,poet,"""Anthem for Doomed Youth"" (poem)",[9]
-131,Fernando Pessoa,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/23727,1888–1935,Portuguese,"poet, literary critic","Mensagem, The Book of Disquiet",[9]
-132,Fernando Pessoa,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2199622,1888–1935,Portuguese,"poet, literary critic","Mensagem, The Book of Disquiet",[9]
-133,John Preston,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/24492,1945–1994,American,"novelist, editor",I Once Had a Master,[39]
-134,John Preston,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2131374,1945–1994,American,"novelist, editor",I Once Had a Master,[39]
-135,Marcel Proust,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/24609,1871–1922,French,"novelist, essayist",A la recherche du temps perdu (In Search of Lost Time),[9]
-136,Marcel Proust,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112585,1871–1922,French,"novelist, essayist",A la recherche du temps perdu (In Search of Lost Time),[9]
-137,Marcel Proust,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2198141,1871–1922,French,"novelist, essayist",A la recherche du temps perdu (In Search of Lost Time),[9]
-138,Manuel Puig,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/24645,1932–1990,Argentine,novelist,Kiss of the Spider Woman,[8][9]
-139,Manuel Puig,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2174290,1932–1990,Argentine,novelist,Kiss of the Spider Woman,[8][9]
-140,David Rakoff,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/24856,1964-2012,Canadian,humorist,"Fraud, Don't Get Too Comfortable",[326]
-141,Mary Renault,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/25268,1905–1983,English,fiction,"The Charioteer, The Last of the Wine",[9]
-142,Bill Richardson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/25470,b. 1955,Canadian,humorist,Bachelor Brothers' Bed and Breakfast,[160]
-143,Arthur Rimbaud,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/25589,1854–1891,French,poetry,A Season in Hell,[9]
-144,Arthur Rimbaud,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2196272,1854–1891,French,poetry,A Season in Hell,[9]
-145,Arthur Rimbaud,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2258771,1854–1891,French,poetry,A Season in Hell,[9]
-146,Sinclair Ross,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/26246,1908-1996,Canadian,novelist,As For Me and My House,[347]
-147,Vita Sackville-West,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/26647,1892–1962,British,novelist,The Land,[9]
-148,Vita Sackville-West,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2261305,1892–1962,British,novelist,The Land,[9]
-149,Manda Scott,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/27477,b. 1962,Scottish,novelist,Hen's Teeth,[367]
-150,Shyam Selvadurai,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/27647,b. 1965,Sri Lankan-Canadian,novelist,Funny Boy,[6]
-151,Maurice Sendak,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/27674,1928–2012,American,children's writer,Where the Wild Things Are,[369]
-152,Maurice Sendak,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/110093,1928–2012,American,children's writer,Where the Wild Things Are,[369]
-153,Ali Smith,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/28770,1962-,Scottish,novelist,Free Love and Other Stories,[378]
-154,Ali Smith,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112240,1962-,Scottish,novelist,Free Love and Other Stories,[378]
-155,Ali Smith,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/224211,1962-,Scottish,novelist,Free Love and Other Stories,[378]
-156,Gertrude Stein,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/29635,1874–1946,American,novelist,The Autobiography of Alice B. Toklas,[9]
-157,Gertrude Stein,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2127480,1874–1946,American,novelist,The Autobiography of Alice B. Toklas,[9]
-158,Gertrude Stein,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2247535,1874–1946,American,novelist,The Autobiography of Alice B. Toklas,[9]
-159,Lytton Strachey,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/30071,1880–1932,English,biographer,Queen Victoria (biography),[9]
-160,Gore Vidal,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/32041,1925–2012,American,novelist,"The City and the Pillar, Myra Breckinridge",[9]
-161,Gore Vidal,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/303909,1925–2012,American,novelist,"The City and the Pillar, Myra Breckinridge",[9]
-162,Gore Vidal,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2126561,1925–2012,American,novelist,"The City and the Pillar, Myra Breckinridge",[9]
-163,Gore Vidal,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2194020,1925–2012,American,novelist,"The City and the Pillar, Myra Breckinridge",[9]
-164,Gore Vidal,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2247494,1925–2012,American,novelist,"The City and the Pillar, Myra Breckinridge",[9]
-165,Alice Walker,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/32278,b. 1944,American,fiction,The Color Purple,[9]
-166,Alice Walker,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/128970,b. 1944,American,fiction,The Color Purple,[9]
-167,Alice Walker,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/147379,b. 1944,American,fiction,The Color Purple,[9]
-168,Alice Walker,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2190870,b. 1944,American,fiction,The Color Purple,[9]
-169,Edmund White,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33002,b. 1940,American,fiction,"A Boy's Own Story, The Beautiful Room Is Empty",[39]
-170,Edmund White,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112198,b. 1940,American,fiction,"A Boy's Own Story, The Beautiful Room Is Empty",[39]
-171,Edmund White,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2235921,b. 1940,American,fiction,"A Boy's Own Story, The Beautiful Room Is Empty",[39]
-172,Edmund White,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2238311,b. 1940,American,fiction,"A Boy's Own Story, The Beautiful Room Is Empty",[39]
-173,Patrick White,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33028,1912–1990,Australian,fiction,Flaws in the Glass,[9]
-174,Patrick White,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111998,1912–1990,Australian,fiction,Flaws in the Glass,[9]
-175,Walt Whitman,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33081,1819–1892,American,poet,Leaves of Grass,[9]
-176,Walt Whitman,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111160,1819–1892,American,poet,Leaves of Grass,[9]
-177,Walt Whitman,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/221534,1819–1892,American,poet,Leaves of Grass,[9]
-178,Walt Whitman,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/224403,1819–1892,American,poet,Leaves of Grass,[9]
-179,Walt Whitman,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2126337,1819–1892,American,poet,Leaves of Grass,[9]
-180,Oscar Wilde,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33170,1854–1900,English-Irish,"fiction, plays","The Picture of Dorian Gray, The Importance of Being Earnest",[9]
-181,Oscar Wilde,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2148970,1854–1900,English-Irish,"fiction, plays","The Picture of Dorian Gray, The Importance of Being Earnest",[9]
-182,Oscar Wilde,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2153423,1854–1900,English-Irish,"fiction, plays","The Picture of Dorian Gray, The Importance of Being Earnest",[9]
-183,Oscar Wilde,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172851,1854–1900,English-Irish,"fiction, plays","The Picture of Dorian Gray, The Importance of Being Earnest",[9]
-184,Oscar Wilde,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2179465,1854–1900,English-Irish,"fiction, plays","The Picture of Dorian Gray, The Importance of Being Earnest",[9]
-185,Oscar Wilde,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2241024,1854–1900,English-Irish,"fiction, plays","The Picture of Dorian Gray, The Importance of Being Earnest",[9]
-186,Thornton Wilder,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33173,1897–1975,American,"fiction, plays",Our Town,[428]
-187,Thornton Wilder,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2126395,1897–1975,American,"fiction, plays",Our Town,[428]
-188,Tennessee Williams,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33306,1911–1983,American,playwright,"A Streetcar Named Desire, Cat on a Hot Tin Roof",[9]
-189,Tennessee Williams,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2126452,1911–1983,American,playwright,"A Streetcar Named Desire, Cat on a Hot Tin Roof",[9]
-190,Jacqueline Wilson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33397,b. 1945,English,novelist,"The Story of Tracy Beaker, Double Act, Hetty Feather",[431]
-191,Jacqueline Wilson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2191862,b. 1945,English,novelist,"The Story of Tracy Beaker, Double Act, Hetty Feather",[431]
-192,Jonathan Wilson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33404,b. ?,Canadian,actor and playwright,My Own Private Oshawa,[432]
-193,Jeanette Winterson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33509,b. 1959,English,fiction,Oranges Are Not the Only Fruit,[9]
-194,Jeanette Winterson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/304568,b. 1959,English,fiction,Oranges Are Not the Only Fruit,[9]
-195,Jeanette Winterson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2212768,b. 1959,English,fiction,Oranges Are Not the Only Fruit,[9]
-196,Marnie Woodrow,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33691,b. 1969,Canadian,novelist,Spelling Mississippi,[437]
-197,Virginia Woolf,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33723,1882–1941,English,novelist,Orlando: A Biography,[9]
-198,Virginia Woolf,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/127527,1882–1941,English,novelist,Orlando: A Biography,[9]
-199,Virginia Woolf,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2142676,1882–1941,English,novelist,Orlando: A Biography,[9]
-200,Virginia Woolf,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2150593,1882–1941,English,novelist,Orlando: A Biography,[9]
-201,Virginia Woolf,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2174633,1882–1941,English,novelist,Orlando: A Biography,[9]
-202,Adrienne Rich,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/34184,1929-2012,American,poetry,"The Dream of a Common Language, Diving into the Wreck",[9]
-203,Terrence McNally,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/35176,b. 1939,American,playwright,"The Ritz, Love! Valour! Compassion!",[288]
-204,Juan Goytisolo,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/35415,b. 1931,Spanish,"poet, essayist, novelist",Count Julian,[9]
-205,Juan Goytisolo,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112111,b. 1931,Spanish,"poet, essayist, novelist",Count Julian,[9]
-206,Juan Goytisolo,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/182897,b. 1931,Spanish,"poet, essayist, novelist",Count Julian,[9]
-207,Paula Gunn Allen,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/35673,1939–2008,Native American,"poet, literary critic",As Long as the Rivers Flow: The Stories of Nine Native Americans,[9]
-208,Paula Gunn Allen,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/120232,1939–2008,Native American,"poet, literary critic",As Long as the Rivers Flow: The Stories of Nine Native Americans,[9]
-209,Deborah Ellis,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/42871,b. ?,Canadian,"non-fiction, young adult literature","The Breadwinner, The Heaven Shop",[160]
-210,Sarah Waters,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/44459,b. 1966,British,fiction,"Tipping the Velvet, Affinity, The Night Watch",[418]
-211,Carl Van Vechten,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/45266,1880–1964,American,"novelist, photographer",Nigger Heaven,[9]
-212,Caleb Crain,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/45331,b. 1967,American,"novelist, critic","Necessary Errors, American Sympathy",[119]
-213,Caleb Crain,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/156687,b. 1967,American,"novelist, critic","Necessary Errors, American Sympathy",[119]
-214,Hilton Als,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/46401,b. 1960,American,"writer, theatre critic",White Girls,[14]
-215,Hilton Als,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/123558,b. 1960,American,"writer, theatre critic",White Girls,[14]
-216,Hilton Als,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2166372,b. 1960,American,"writer, theatre critic",White Girls,[14]
-217,Richard McCann,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/46634,b. 1949,American,"short story writer, poet",Ghost Letters (poetry collection),[109]
-218,William Inge,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/47734,1913–1973,American,playwright,"Come Back, Little Sheba, Picnic",[9]
-219,Dorothy Allison,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/52074,b. 1949,American,novelist,Bastard Out of Carolina,[9]
-220,Ann-Marie MacDonald,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/54001,b. 1957,Canadian,"playwright, novelist","Goodnight Desdemona (Good Morning Juliet), Fall on Your Knees, The Way the Crow Flies",[98]
-221,David Levithan,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/54093,1972–,American,novelist,Boy Meets Boy,[266]
-222,David Levithan,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2174062,1972–,American,novelist,Boy Meets Boy,[266]
-223,Aaron Hamburger,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/55116,b. 1973,American,"novelist, short story writer","The View from Stalin's Head (short story collection), Faith for Beginners (",[109]
-224,Plutarch,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/55366,ca 46-ca 120,Greek,"historian, biographer, essayist",Parallel Lives,[9]
-225,Sappho,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/55468,ca 630? B.C.,Greek,poet,"""Ode to Aphrodite"" (poem)",[9]
-226,Catullus,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/55823,ca 85-ca 55 B.C.,Roman,poet,Catullus et in eum commentarius,[9]
-227,Plato,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/56798,427-327 B.C.,Greek,philosopher,Symposium,[9]
-228,Virgil,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/56799,70-19 B.C.,Roman,poet,Aeneid,[9]
-229,Tony Kushner,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/56879,b. 1956,American,playwright,Angels in America: A Gay Fantasia on National Themes,[78]
-230,Tony Kushner,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2125697,b. 1956,American,playwright,Angels in America: A Gay Fantasia on National Themes,[78]
-231,Horace,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/57140,65-8 B.C.,Roman,poet,Odes,[9]
-232,Allen Ginsberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/58073,1926–1997,American,poet,Howl,[9]
-233,Allen Ginsberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112274,1926–1997,American,poet,Howl,[9]
-234,Allen Ginsberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/147489,1926–1997,American,poet,Howl,[9]
-235,Allen Ginsberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2246851,1926–1997,American,poet,Howl,[9]
-236,Michael Carroll,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/59406,b. ?,American,short stories,Little Reef,[88]
-237,Michael Carroll,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111864,b. ?,American,short stories,Little Reef,[88]
-238,Michael Carroll,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/303531,b. ?,American,short stories,Little Reef,[88]
-239,Michael Carroll,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2213543,b. ?,American,short stories,Little Reef,[88]
-240,Thorn Kief Hillsbery,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/59876,b. ?,American,novelist,What We Do Is Secret,[109]
-241,Patrick Ryan,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/60359,b. 1965,American,"short story writer, novelist","The Dream Life of Astronauts, Send Me",[109]
-242,Poppy Z. Brite,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/60570,b. 1967,American,novelist,"Liquor, Prime, and Soul Kitchen",[9]
-243,Emma Donoghue,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/61996,b. 1969,Irish/Canadian,"novelist, short story writer",Room,[141]
-244,Emma Donoghue,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2174945,b. 1969,Irish/Canadian,"novelist, short story writer",Room,[141]
-245,D. H. Lawrence,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/62895,1885–1930,English,"novelist, playwright","The Rainbow, Lady Chatterley's Lover",[9]
-246,Jaime Manrique,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/65550,b. 1949,Colombian-American,"poet, journalist","Latin Moon in Manhattan, Eminent Maricones",[8][232]
-247,Gregory Maguire,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/67492,b. 1954,American,novelist,Wicked: The Life and Times of the Wicked Witch of the West,[276]
-248,Gregory Maguire,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/110226,b. 1954,American,novelist,Wicked: The Life and Times of the Wicked Witch of the West,[276]
-249,John Ibbitson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/68603,b. 1955,Canadian,"journalist, playwright, children's writer","1812: Jeremy's War, The Landing, The Big Shift: The Seismic Change in Canadian Politics, Business, and Culture and What It Means for Our Future",[228]
-250,John Ibbitson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2200375,b. 1955,Canadian,"journalist, playwright, children's writer","1812: Jeremy's War, The Landing, The Big Shift: The Seismic Change in Canadian Politics, Business, and Culture and What It Means for Our Future",[228]
-251,John Boyne,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/70373,b. 1971,Irish,novelist,The Boy in the Striped Pyjamas,[65]
-252,John Boyne,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/159453,b. 1971,Irish,novelist,The Boy in the Striped Pyjamas,[65]
-253,John Boyne,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2146908,b. 1971,Irish,novelist,The Boy in the Striped Pyjamas,[65]
-254,John Boyne,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172589,b. 1971,Irish,novelist,The Boy in the Striped Pyjamas,[65]
-255,E. M. Forster,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/71918,1879–1970,English,novelist,"Maurice, A Passage to India, A Room With A View, Howards End",[175]
-256,E. M. Forster,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112197,1879–1970,English,novelist,"Maurice, A Passage to India, A Room With A View, Howards End",[175]
-257,E. M. Forster,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2150539,1879–1970,English,novelist,"Maurice, A Passage to India, A Room With A View, Howards End",[175]
-258,T. S. Eliot,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/71948,1888–1965,English,poet,The Waste Land,[9]
-259,John Horne Burns,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/72509,1916–1953,American,novelist,The Gallery,[9]
-260,David Plante,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/73223,b. 1940,American,novelist,"Francoeur Trilogy--The Family, The Country and The Woods",[39]
-261,David Plante,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/119881,b. 1940,American,novelist,"Francoeur Trilogy--The Family, The Country and The Woods",[39]
-262,David Plante,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2148649,b. 1940,American,novelist,"Francoeur Trilogy--The Family, The Country and The Woods",[39]
-263,John Glassco,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/73227,1909-1981,Canadian,poet,Memoirs of Montparnasse,[6][18]
-264,Michelle Tea,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/73370,b. 1971,American,"author, poet, and literary arts organizer",The Passionate Mistakes and Intricate Corruption of One Girl in America,[397]
-265,Michelle Tea,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2235889,b. 1971,American,"author, poet, and literary arts organizer",The Passionate Mistakes and Intricate Corruption of One Girl in America,[397]
-266,Martin Wilson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/74696,b. 1973,American,fiction,What They Always Tell Us,[433]
-267,Tanya Huff,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/76866,b. 1957,Canadian,novelist,Blood Books series,[224]
-268,Tanya Huff,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/227418,b. 1957,Canadian,novelist,Blood Books series,[224]
-269,Tanya Huff,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2213815,b. 1957,Canadian,novelist,Blood Books series,[224]
-270,Howard Sturgis,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/79136,1855–1920,Anglo-American,novelist,"Tim: A Story of School Life, All That Was Possible",[9]
-271,Daphne Marlatt,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/80847,b. 1942,Canadian,"poet, novelist","Ana Historic, The Given, This Tremor Love Is",[67]
-272,Evan Fallenberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/85407,b. 1961,American-Israeli,novelist,"Light Fell, When We Danced on Water",[162]
-273,Evan Fallenberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/141685,b. 1961,American-Israeli,novelist,"Light Fell, When We Danced on Water",[162]
-274,Evan Fallenberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172582,b. 1961,American-Israeli,novelist,"Light Fell, When We Danced on Water",[162]
-275,Patrick Ness,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/87387,b. 1971,American,novelist,"Chaos Walking, Monsters of Men, A Monster Calls",[302]
-276,Patrick Ness,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/242155,b. 1971,American,novelist,"Chaos Walking, Monsters of Men, A Monster Calls",[302]
-277,Patrick Ness,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172286,b. 1971,American,novelist,"Chaos Walking, Monsters of Men, A Monster Calls",[302]
-278,Michael Thomas Ford,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/93828,b. 1968,American,"novelist, non-fiction","Alec Baldwin Doesn't Love Me, That's Mr. Faggot to You",[174]
-279,Mariko Tamaki,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/99707,b. 1975,Canadian,graphic novelist,Skim,[393]
-280,Mariko Tamaki,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/253293,b. 1975,Canadian,graphic novelist,Skim,[393]
-281,Mariko Tamaki,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2136524,b. 1975,Canadian,graphic novelist,Skim,[393]
-282,Mariko Tamaki,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2154152,b. 1975,Canadian,graphic novelist,Skim,[393]
-283,Mariko Tamaki,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2203802,b. 1975,Canadian,graphic novelist,Skim,[393]
-284,Michael Rowe,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/99903,b. 1962,Canadian,journalist,"Writing Below the Belt: Conversations with Erotic Authors, Other Men's Sons",[350]
-285,Carol Ann Duffy,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/102489,b. 1955,Scottish,"poet, playwright",Standing Female Nude,[149]
-286,Carol Ann Duffy,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/229776,b. 1955,Scottish,"poet, playwright",Standing Female Nude,[149]
-287,Audre Lorde,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/105777,1934–1992,American,"poet, essayist","Zami: A New Spelling of My Name, Sister Outsider",[9]
-288,Paul Rogers,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/110169,1936-1984,American,novelist,Saul's Book,[345]
-289,Silas House,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/110274,b. 1971,American,"novelist, journalist",[1],
-290,Silas House,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2246881,b. 1971,American,"novelist, journalist",[1],
-291,Sylvia Townsend Warner,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111225,1893–1978,English,"novelist, poet, activist",A Moral Ending and Other Stories,[9]
-292,Sylvia Townsend Warner,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2197264,1893–1978,English,"novelist, poet, activist",A Moral Ending and Other Stories,[9]
-293,Colette,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111245,1873–1954,French,novelist,Claudine series,[9]
-294,Ivy Compton-Burnett,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111263,1884–1969,English,writer,Manservant and Maidservant,[9]
-295,Susan Sontag,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111277,1933–2004,American,"novelist, essayist",AIDS and Its Metaphors,[9]
-296,Susan Sontag,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2127374,1933–2004,American,"novelist, essayist",AIDS and Its Metaphors,[9]
-297,Susan Sontag,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2189607,1933–2004,American,"novelist, essayist",AIDS and Its Metaphors,[9]
-298,Susan Sontag,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2239888,1933–2004,American,"novelist, essayist",AIDS and Its Metaphors,[9]
-299,Jean Genet,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112020,1910–1986,French,"novelist, playwright, poet",Our Lady of the Flowers,[9]
-300,Jean Cocteau,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112117,1889–1963,French,"poet, novelist, dramatist",La Voix humaine,[9]
-301,Jean Cocteau,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/174892,1889–1963,French,"poet, novelist, dramatist",La Voix humaine,[9]
-302,Angus Wilson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112120,1913–1991,English,author,Hemlock and After,[9]
-303,Tove Jansson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112199,1914–2001,Finnish,"novelist, painter, illustrator, comic strip author",Moomins series,[236]
-304,Pier Paolo Pasolini,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112301,1922–1975,Italian,"novelist, playwright","Ragazzi di vita, Una vita violenta",[9]
-305,Pier Paolo Pasolini,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/184712,1922–1975,Italian,"novelist, playwright","Ragazzi di vita, Una vita violenta",[9]
-306,Robert Rodi,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/113506,b. 1956,American,writer,"Codename: Knockout, Kept Boy",[343][344]
-307,Monique Wittig,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/120284,1935–2003,French,philosopher,Le Corps Lesbien,[9]
-308,Joanna Russ,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/120286,b. 1937,American,science fiction,The Female Man,[9][352]
-309,Joanna Russ,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2197014,b. 1937,American,science fiction,The Female Man,[9][352]
-310,Doris Grumbach,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/120347,b. 1918,American,"novelist, biographer, essayist",Chamber Music,[9]
-311,Leslie Feinberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/120389,1949–2014,American,"novelist, non-fiction",Stone Butch Blues,[165]
-312,Michael Bronski,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/121931,b. 1949,American,historian,A Queer History of the United States,[73]
-313,Michael Bronski,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2226071,b. 1949,American,historian,A Queer History of the United States,[73]
-314,Mark Doty,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/123559,b. 1953,American,poet and memoirist,"Heaven's Coast, Fire to Fire",[144]
-315,Heinrich von Kleist,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/140589,1777–1811,Prussian,"poet, dramatist, short story writer, and novelist","The Broken Jug, The Marquise of O, Michael Kohlhaas, Penthesilea, The Prince of Homburg",[9]
-316,Heinrich von Kleist,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/185450,1777–1811,Prussian,"poet, dramatist, short story writer, and novelist","The Broken Jug, The Marquise of O, Michael Kohlhaas, Penthesilea, The Prince of Homburg",[9]
-317,Brian Francis,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/143367,b. 1971,Canadian,novelist,Fruit,[177]
-318,Paul Goodman,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/156946,1911–1972,American,poet,"Growing Up Absurd, The Community of Scholars,",[9]
-319,Paul Goodman,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2135342,1911–1972,American,poet,"Growing Up Absurd, The Community of Scholars,",[9]
-320,Robert Duncan,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/157187,1919–1988,American,poet,"The Opening of the Field, Roots and Branches, and Bending the Bow",[9]
-321,Dan Savage,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/159326,b. 1964,American,"journalist, editor","Advice column Savage Love, Skipping Towards Gomorrah: The Seven Deadly Sins and the Pursuit of Happiness in America",[360][361][362][363][364]
-322,Dan Savage,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/230998,b. 1964,American,"journalist, editor","Advice column Savage Love, Skipping Towards Gomorrah: The Seven Deadly Sins and the Pursuit of Happiness in America",[360][361][362][363][364]
-323,Marina Tsvetaeva,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/181706,1892–1941,Russian,poet,"Remeslo, Posle Rossii",[9]
-324,Marina Tsvetaeva,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/240118,1892–1941,Russian,poet,"Remeslo, Posle Rossii",[9]
-325,Marina Tsvetaeva,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2148679,1892–1941,Russian,poet,"Remeslo, Posle Rossii",[9]
-326,Christos Tsiolkas,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/182291,b. 1965,Australian,novelist,The Slap,[146]
-327,Bertolt Brecht,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/182742,1898–1956,German,playwright,The Threepenny Opera,[9]
-328,Jeremy Bentham,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/182977,1748–1832,English,philosopher,An Introduction to the Principles of Morals and Legislation,[9]
-329,Jeremy Bentham,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/237267,1748–1832,English,philosopher,An Introduction to the Principles of Morals and Legislation,[9]
-330,Djuna Barnes,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/183496,1892–1982,American,novelist,"Ladies Almanack, Nightwood",[9]
-331,Val McDermid,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/183827,b. 1955,Scottish,"journalist, crime writer",Lindsay Gordon series and other notable crime series,[284]
-332,Val McDermid,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2255758,b. 1955,Scottish,"journalist, crime writer",Lindsay Gordon series and other notable crime series,[284]
-333,Aphra Behn,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/185123,c. 1640–1689,English,"dramatist, poet and novelist",Oroonoko,[9]
-334,Aphra Behn,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/228330,c. 1640–1689,English,"dramatist, poet and novelist",Oroonoko,[9]
-335,Severo Sarduy,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/185253,1937–1993,Cuban,"poet, playwright",Cobra,[8]
-336,Erwin Mortier,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/221143,b. 1965,Belgian,"novelist, poet, essayist, translator",While the Gods Were Sleeping,[296]
-337,Bill Konigsberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/229106,b. 1970,American,"sportswriter, young adult literature","Out of the Pocket, Openly Straight",[253]
-338,Bruce Benderson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/229420,b. 1946,American,"novelist, essayist",Autobiographie érotique,[46]
-339,Bruce Benderson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2235908,b. 1946,American,"novelist, essayist",Autobiographie érotique,[46]
-340,Christopher Bram,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/230460,b. 1952,American,novelist,Father of Frankenstein,[39]
-341,Sarah Scott,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/230726,1723–1795,English,novelist,A Description of Millenium Hall and the Country Adjacent,[9]
-342,Craig Johnson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/230776,b. ?,American,"screenwriter, film director","True Adolescents, The Skeleton Twins",[240]
-343,David B. Feinberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/231431,1956–1994,American,journalist,Queer and Loathing,[164]
-344,Elizabeth A. Lynn,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/232648,b. 1946,American,novelist,Chronicles of Tornor,[272]
-345,Ellis Avery,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/232731,1972–2019,American,novelist,"The Teahouse Fire, The Last Nude",[28]
-346,Fiona Patton,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/233210,b. 1962,Canadian,novelist,The Branion Realm (book series),[224]
-347,Garrard Conley,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/233637,b. 1984/1985,American,memoirist,Boy Erased: A Memoir,[108]
-348,William Beckford,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/234905,1760–1844,English,"novelist, travel writer",Vathek,[9]
-349,James Robert Baker,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/235776,1946–1997,American,novelist,"Boy Wonder, Tim and Pete",[33]
-350,John Weir,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/237144,b. 1959,American,"novelist, journalist","The Irreversible Decline of Eddie Socket, What I Did Wrong",[424]
-351,Joris-Karl Huysmans,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/237394,1848–1907,French,novelist,"Against the Grain (À rebours, 1884)",[9]
-352,Stella Duffy,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/244952,b. 1963?,English/New Zealand,novelist,State of Happiness,[150]
-353,George Chauncey,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/253406,b. 1953,American,historian,"Gay New York: Gender, Urban Culture, and the Making of the Gay Male World, 1890–1940",[97]
-354,George Chauncey,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2238196,b. 1953,American,historian,"Gay New York: Gender, Urban Culture, and the Making of the Gay Male World, 1890–1940",[97]
-355,E. F. Benson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/306888,1867–1940,English,novelist,Dodo,[9]
-356,David Sedaris,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2006286,b. 1956,American,"essayist, short story writer",Naked (essay collection),[368]
-357,Federico García Lorca,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2023778,1898–1936,Spanish,poet and playwright,Poeta en Nueva York,[9]
-358,Federico García Lorca,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2198931,1898–1936,Spanish,poet and playwright,Poeta en Nueva York,[9]
-359,Michael Golding,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2034305,b. ?,American,"novelist, screenwriter","A Poet of the Invisible World, Silk",[192]
-360,Petronius,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2058579,ca 27-66,Roman,novelist,The Satyricon,[9]
-361,Saleem Haddad,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2107857,b. 1983,Kuwaiti-British,novelist,Guapa,[207]
-362,Hart Crane,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2120486,1899–1933,American,poet,The Bridge,[9]
-363,Countee Cullen,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2120539,1903–1946,American,writer,Color (poetry collection),[9]
-364,Paul Bowles,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2121794,1910–1999,American,"novelist, poet, translator",The Sheltering Sky,[9]
-365,Muriel Rukeyser,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2126704,1913–1980,American,poetry,The Book of the Dead,[9]
-366,Gerard Reve,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2137445,1923-2006,Dutch,writer,"Op weg naar het einde, Nader tot U",[9]
-367,Umberto Saba,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2142708,1883–1957,Italian,"poet, novelist",Songbook,[9]
-368,Jane Bowles,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2144022,1917–1973,American,"novelist, playwright",Two Serious Ladies,[9]
-369,Kate Cayley,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2147107,b. ?,Canadian,"poet, dramatist, short stories","How You Were Born, The Hangman in the Mirror, After Akhmatova",[93]
-370,Zoe Whittall,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2148473,b. 1976,Canadian,fiction,"Bottle Rocket Hearts, Holding Still for As Long As Possible",[220]
-371,Christopher Rice,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2152292,b. 1978,American,author,"The Heavens Rise, The Vines",[338]
-372,Christopher Rice,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2191837,b. 1978,American,author,"The Heavens Rise, The Vines",[338]
-373,Raziel Reid,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2156006,b. 1990,Canadian,young adult fiction,When Everything Feels Like the Movies,[333]
-374,Henri Cole,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2156283,b. 1956,American,poet,Touch (poetry collection),[103]
-375,Bryan Washington,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2156320,b. 1993,American,fiction,"Lot, Memorial",[417]
-376,Samra Habib,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2158699,,Canadian,memoirist,We Have Always Been Here,[206]
-377,Honoré de Balzac,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2160048,1799–1850,French,novelist,La Comédie humaine,[9]
-378,Thom Gunn,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2169440,1929–2004,English,poet,The Man with Night Sweats,[9]
-379,Fernando Vallejo,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172125,b. 1942,Colombian,novelist,Our Lady of the Assassins,[8]
-380,Marguerite Yourcenar,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172137,1903–1987,French,novelist,Memoirs of Hadrian,[9]
-381,Garth Greenwell,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172268,b. 1978,American,novelist,What Belongs to You,[202]
-382,Vivek Shraya,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172552,b. 1981,Canadian,short story writer,"God Loves Hair, She of the Mountains",[374]
-383,Jaime Bayly,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2174705,b. 1965,Peruvian,"journalist, novelist",No se lo Digas a Nadie,[44]
-384,Benjamin Alire Sáenz,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2175355,b. 1954,American,novelist,Everything Begins and Ends at the Kentucky Club,[357]
-385,Gregory Scofield,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2186186,b. 1966,Canadian,poet,"The Gathering: Stones for the Medicine Wheel, Native Canadiana: Songs from the Urban Rez, Thunder Through My Veins",[366]
-386,Douglas A. Martin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2189252,b. 1973,American,"novelist, poet",Outline of My Lover,[280]
-387,Douglas A. Martin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2246139,b. 1973,American,"novelist, poet",Outline of My Lover,[280]
-388,Paul Russell,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2195354,b. 1956,American,novels,"The Coming Storm, The Unreal Life of Sergey Nabokov",[353]
-389,V. E. Schwab,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2195720,b. 1987,American,novelist,Shades of Magic series,[365]
-390,V. E. Schwab,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2197655,b. 1987,American,novelist,Shades of Magic series,[365]
-391,Neil Bartlett,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2197787,b. 1958,English,playwright,"More Bigger Snacks Now, A Vision of Love Revealed in Sleep, Sarrasine, A Judgement in Stone and Now That It's Morning",[9]
-392,Catherine Hernandez,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2199233,b. ?,Canadian,"playwright, novelist",Scarboorough,[217]
-393,Joshua Whitehead,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2199234,b. ?,Canadian,"poet, novelist","Full-Metal Indigiqueer, Johnny Appleseed",[426]
-394,Trey Anthony,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2214263,b. 1983,Canadian,playwright,Da Kink in My Hair,[20]
-395,Dennis Cooper,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2214684,b. 1953,American,writer,George Miles Cycle,[39][109]
-396,Dennis Cooper,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2245071,b. 1953,American,writer,George Miles Cycle,[39][109]
-397,Mattilda Bernstein Sycamore,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2214753,b. ?,American,novelist,The End of San Francisco,[49]
-398,Mattilda Bernstein Sycamore,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2246269,b. ?,American,novelist,The End of San Francisco,[49]
-399,David Demchuk,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2216133,b. ?,Canadian,"novelist, playwright","The Bone Mother, Touch, If Betty Should Rise",[135]
-400,Sara Farizan,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2218866,b. ?,American,young adult literature,If You Could Be Mine,[163]
-401,George Santayana,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2221078,1863–1952,Spanish-American,"novelist, poet, philosopher",The Realms of Being,[9]
-402,Sarah Schulman,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2227376,b. 1958,American,"novelist, historian, playwright","Stagestruck: Theater, AIDS, and the Marketing of Gay America",[9]
-403,Guy Hocquenghem,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2236096,1946–1988,French,theorist,"Homosexual Desire, L'Amour en relief (novel)",[9]
-404,Hubert Fichte,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2237638,1935–1986,German,writer,Die Geschichte der Empfindlichkeit,[9]
-405,Brad Fraser,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2238330,b. 1959,Canadian,playwright,"Unidentified Human Remains and the True Nature of Love, Poor Super Man",[6]
-406,Jack Spicer,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2238346,1925–1965,American,poet,My Vocabulary Did This to Me: The Collected Poetry of Jack Spicer,[9]
-407,Farzana Doctor,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2242700,b. ?,Canadian,novelist,Six Metres of Pavement,[139]
-408,Ivan Coyote,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2243107,b. 1969,Canadian,"spoken word performer, writer",Tomboy Survival Guide,[118]
-409,Eve Zaremba,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2244187,b. 1930,Polish/Canadian,mystery novelist,"A Reason to Kill, The Butterfly Effect",[6]
-410,Daphne Gottlieb,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2246084,b. 1968,American,"poet, fiction, nonfiction, graphic novel",Final Girl,[197]
-411,Ned Rorem,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2247189,b. 1923,American,composer,The Paris Diary of Ned Rorem,[9]
-412,Michael Sledge,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2247209,b. ?,American,"novelist, memoirist",The More I Owe You,[377]
-413,Caio Fernando Abreu,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2257128,1948-1996,Brazilian,"short stories, plays","Morangos Mofados, dragões não conhecem o paraíso",[1]
-414,Joseph Hansen,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2265515,1923–2004,American,"novelist, poet",Series of novels featuring private eye Dave Brandstetter,[9]
-415,Michael Nava,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2265521,b. 1954,American,mystery novels,"How Town, The Hidden Law, The Death of Friends, The Burning Plain, and Rag and Bone",[8]
-416,Salvatore Antonio,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2267881,b. 1976,Canadian,playwright,In Gabriel's Kitchen,[21]
-417,Colm Tóibín,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2268030,b. 1955,Irish,novelist and short story writer,The Heather Blazing,[402]
-418,Noël Coward,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2269636,1899–1973,English,playwright,Private Lives,[9]
+,Name,OnTour,Summary,Link,Lifetime,Nationality,Genre,Notable Works
+0,Will Aitken,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/231,None,American-Canadian,"novelist, film critic","Terre Haute, Realia"
+1,Lisa Alther,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/467,1944,American,novelist,Stormy Weather & Other Stories; Blood Feud: The Hatfields and the McCoys: The Epic Story of Murder and Vengeance; Washed in the Blood; Kinflicks: A Novel
+2,Lisa Alther,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2197666,1944,American,novelist,Stormy Weather & Other Stories; Blood Feud: The Hatfields and the McCoys: The Epic Story of Murder and Vengeance; Washed in the Blood; Kinflicks: A Novel
+3,Reinaldo Arenas,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/795,1943,Cuban,"poet, novelist and playwright",Before Night Falls
+4,James Baldwin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/1261,1924,American,"poet, playwright, novelist",Giovanni's Room
+5,James Baldwin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/120046,1924,American,"poet, playwright, novelist",Giovanni's Room
+6,James Baldwin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/223941,1924,American,"poet, playwright, novelist",Giovanni's Room
+7,James Baldwin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2121303,1924,American,"poet, playwright, novelist",Giovanni's Room
+8,Elizabeth Bishop,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2392,1911,American,"poet, short story writer","North and South, Questions of Travel"
+9,Marie-Claire Blais,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2484,1939,Canadian,"novelist, playwright","A Season in the Life of Emmanuel, Mad Shadows, Augustino and the Choir of Destruction"
+10,Elizabeth Bowen,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2897,1899,Irish,novelist,Eva Trout
+11,Dionne Brand,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/3068,1953,Canadian,"novelist, poet","Land to Light On, What We All Long For, Sans Souci"
+12,Rita Mae Brown,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/3518,1944,American,novelist,Rubyfruit Jungle
+13,William S. Burroughs,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/3852,1914,American,novelist,"Naked Lunch, Queer"
+14,Samuel Butler,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/3940,1835,English,novelist,"Erewhon, The Way of All Flesh"
+15,Truman Capote,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/4231,1924,American,"novelist, non-fiction","Breakfast at Tiffany's, In Cold Blood"
+16,Truman Capote,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112552,1924,American,"novelist, non-fiction","Breakfast at Tiffany's, In Cold Blood"
+17,Truman Capote,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172664,1924,American,"novelist, non-fiction","Breakfast at Tiffany's, In Cold Blood"
+18,Willa Cather,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/4507,1873,American,"novelist, writer of stort stories and essays",My Ántonia
+19,Willa Cather,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/153070,1873,American,"novelist, writer of stort stories and essays",My Ántonia
+20,Willa Cather,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2120258,1873,American,"novelist, writer of stort stories and essays",My Ántonia
+21,Graham Chapman,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/4684,1941,British,Screenwriter,A liar's Autobiography
+22,John Cheever,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/4756,1912,American,"novelist, short stories","The Enormous Radio, The Five-Forty-Eight, The Wapshot Chronicle, The Swimmer"
+23,John Cheever,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2120607,1912,American,"novelist, short stories","The Enormous Radio, The Five-Forty-Eight, The Wapshot Chronicle, The Swimmer"
+24,John Cheever,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2182408,1912,American,"novelist, short stories","The Enormous Radio, The Five-Forty-Eight, The Wapshot Chronicle, The Swimmer"
+25,John Cleland,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/5121,1710,English,novelist,Fanny Hill
+26,Douglas Coupland,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/5838,1961,Canadian,"novelist, short story writer, playwright","Generation X: Tales for an Accelerated Culture, Microserfs, JPod"
+27,Douglas Coupland,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2194419,1961,Canadian,"novelist, short story writer, playwright","Generation X: Tales for an Accelerated Culture, Microserfs, JPod"
+28,Douglas Coupland,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2237588,1961,Canadian,"novelist, short story writer, playwright","Generation X: Tales for an Accelerated Culture, Microserfs, JPod"
+29,Michael Cunningham,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/6172,1952,American,novelist,The Hours
+30,Michael Cunningham,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111255,1952,American,novelist,The Hours
+31,Marquis de Sade,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/6711,1740,French,"novelist, philosopher, playwright","The 120 Days of Sodom, Justine, Philosophy in the Bedroom, Juliette"
+32,Samuel R. Delany,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/6807,1942,American,"novelist, literary critic","Hogg, Dhalgren, The Motion of Light in Water, Dark Reflections"
+33,Samuel R. Delany,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/181387,1942,American,"novelist, literary critic","Hogg, Dhalgren, The Motion of Light in Water, Dark Reflections"
+34,Samuel R. Delany,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2197022,1942,American,"novelist, literary critic","Hogg, Dhalgren, The Motion of Light in Water, Dark Reflections"
+35,Daphne du Maurier,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/7490,1907,English,"author, playwright",Rebecca
+36,Daphne du Maurier,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112209,1907,English,"author, playwright",Rebecca
+37,Daphne du Maurier,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2205501,1907,English,"author, playwright",Rebecca
+38,Bret Easton Ellis,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/8005,1964,American,novelist,"American Psycho, Glamorama"
+39,Bret Easton Ellis,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2236742,1964,American,novelist,"American Psycho, Glamorama"
+40,Timothy Findley,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/8677,1930,Canadian,"novelist, playwright","The Wars, Headhunter, Elizabeth Rex"
+41,Patrick Gale,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/9586,1962,British,novelist,Rough Music
+42,Nancy Garden,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/9682,1938,American,novelist,Annie on My Mind
+43,Nikolai Gogol,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/10321,1809,Ukrainian,"novelist, playwright",Evenings on a Farm Near Dikanka
+44,Nikolai Gogol,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112577,1809,Ukrainian,"novelist, playwright",Evenings on a Farm Near Dikanka
+45,Nikolai Gogol,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/124269,1809,Ukrainian,"novelist, playwright",Evenings on a Farm Near Dikanka
+46,Nikolai Gogol,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2211186,1809,Ukrainian,"novelist, playwright",Evenings on a Farm Near Dikanka
+47,Radclyffe Hall,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/11605,1880,English,novelist,The Well of Loneliness
+48,Robin Hardy,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/11908,1952,Canadian,"novelist, journalist, founding member of Publishing Triangle","Freelance contributor to The Advocate, Village Voice and Penthouse"
+49,Adam Haslett,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/12202,1970,American,"novelist, short story writer","You Are Not A Stranger Here, Imagine Me Gone"
+50,Philip Hensher,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/12674,1965,English,"novelist, critic, journalist",The Mulberry Empire
+51,Patricia Highsmith,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/12941,1921,American,novelist,The Talented Mr. Ripley
+52,Patricia Highsmith,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2122468,1921,American,novelist,The Talented Mr. Ripley
+53,Tomson Highway,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/12947,1951,Canadian,"novelist, playwright",The Rez Sisters and Dry Lips Oughta Move to Kapuskasing (plays)
+54,Alan Hollinghurst,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/13330,1954,English,novelist,"The Swimming Pool Library, The Folding Star, The Spell, The Line of Beauty"
+55,Alan Hollinghurst,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112065,1954,English,novelist,"The Swimming Pool Library, The Folding Star, The Spell, The Line of Beauty"
+56,James Howe,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/13684,1946,American,children's writer,The Misfits series
+57,James Howe,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/110194,1946,American,children's writer,The Misfits series
+58,Christopher Isherwood,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/14135,1904,English,"novelist, autobiographer","I Am a Camera, Down There on a Visit, A Single Man, Christopher and His Kind"
+59,Sarah Orne Jewett,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/14533,1849,American,"novelist, short story writer and poet",The Country of the Pointed Firs
+60,Sarah Orne Jewett,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/115117,1849,American,"novelist, short story writer and poet",The Country of the Pointed Firs
+61,Randall Kenan,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/15393,1963,American,writer,"Let the Dead Bury Their Dead, A Visitation of Spirits"
+62,Jack Kerouac,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/15492,1922,American,novelist,"On the Road, The Subterraneans"
+63,Jack Kerouac,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2125416,1922,American,novelist,"On the Road, The Subterraneans"
+64,Larry Kramer,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/16228,1935,American,"novelist, journalist, playwright","Faggots, The Normal Heart"
+65,Ellen Kushner,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/16417,1955,American,writer,Thomas the Rhymer
+66,Ellen Kushner,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/220680,1955,American,writer,Thomas the Rhymer
+67,David Leavitt,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/17036,1961,American,novelist,The Lost Language of Cranes
+68,David Leavitt,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112068,1961,American,novelist,The Lost Language of Cranes
+69,David Leavitt,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2247114,1961,American,novelist,The Lost Language of Cranes
+70,Klaus Mann,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/18902,1906,German,"novelist, short story writer",Mephisto (novel)
+71,Thomas Mann,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/18908,1875,German,"novelist, short story writer, essayist",Death in Venice
+72,Thomas Mann,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2187351,1875,German,"novelist, short story writer, essayist",Death in Venice
+73,Thomas Mann,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2238359,1875,German,"novelist, short story writer, essayist",Death in Venice
+74,Richard Mason,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/19340,1977,South African/British,novelist,The Drowning People
+75,Richard Mason,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2182454,1977,South African/British,novelist,The Drowning People
+76,W. Somerset Maugham,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/19481,1874,English,"playwright, novelist",Of Human Bondage
+77,Armistead Maupin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/19483,1944,American,novelist,Tales of the City
+78,Carson McCullers,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/19797,1917,American,novelist,Reflections in a Golden Eye
+79,Carson McCullers,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2124350,1917,American,novelist,Reflections in a Golden Eye
+80,Yukio Mishima,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/20849,1925,Japanese,"poet, playwright, novelist",Confessions of a Mask
+81,Ethan Mordden,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/21168,1949,American,"novelist, essayist","""Buddies"" cycle of novels"
+82,Achy Obejas,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/22628,1956,Cuban/American,writer and translator,Memory Mambo
+83,Achy Obejas,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2157821,1956,Cuban/American,writer and translator,Memory Mambo
+84,Achy Obejas,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2248500,1956,Cuban/American,writer and translator,Memory Mambo
+85,Achy Obejas,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2256235,1956,Cuban/American,writer and translator,Memory Mambo
+86,John Preston,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/24492,1945,American,"novelist, editor",I Once Had a Master
+87,John Preston,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2131374,1945,American,"novelist, editor",I Once Had a Master
+88,Marcel Proust,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/24609,1871,French,"novelist, essayist",A la recherche du temps perdu (In Search of Lost Time)
+89,Marcel Proust,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112585,1871,French,"novelist, essayist",A la recherche du temps perdu (In Search of Lost Time)
+90,Marcel Proust,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2198141,1871,French,"novelist, essayist",A la recherche du temps perdu (In Search of Lost Time)
+91,Manuel Puig,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/24645,1932,Argentine,novelist,Kiss of the Spider Woman
+92,Manuel Puig,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2174290,1932,Argentine,novelist,Kiss of the Spider Woman
+93,Sinclair Ross,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/26246,1908,Canadian,novelist,As For Me and My House
+94,Vita Sackville-West,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/26647,1892,British,novelist,The Land
+95,Vita Sackville-West,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2261305,1892,British,novelist,The Land
+96,Manda Scott,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/27477,1962,Scottish,novelist,Hen's Teeth
+97,Shyam Selvadurai,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/27647,1965,Sri Lankan-Canadian,novelist,Funny Boy
+98,Maurice Sendak,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/27674,1928,American,children's writer,Where the Wild Things Are
+99,Maurice Sendak,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/110093,1928,American,children's writer,Where the Wild Things Are
+100,Ali Smith,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/28770,1962,Scottish,novelist,Free Love and Other Stories
+101,Ali Smith,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112240,1962,Scottish,novelist,Free Love and Other Stories
+102,Ali Smith,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/224211,1962,Scottish,novelist,Free Love and Other Stories
+103,Gertrude Stein,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/29635,1874,American,novelist,The Autobiography of Alice B. Toklas
+104,Gertrude Stein,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2127480,1874,American,novelist,The Autobiography of Alice B. Toklas
+105,Gertrude Stein,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2247535,1874,American,novelist,The Autobiography of Alice B. Toklas
+106,Gore Vidal,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/32041,1925,American,novelist,"The City and the Pillar, Myra Breckinridge"
+107,Gore Vidal,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/303909,1925,American,novelist,"The City and the Pillar, Myra Breckinridge"
+108,Gore Vidal,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2126561,1925,American,novelist,"The City and the Pillar, Myra Breckinridge"
+109,Gore Vidal,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2194020,1925,American,novelist,"The City and the Pillar, Myra Breckinridge"
+110,Gore Vidal,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2247494,1925,American,novelist,"The City and the Pillar, Myra Breckinridge"
+111,Jacqueline Wilson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33397,1945,English,novelist,"The Story of Tracy Beaker, Double Act, Hetty Feather"
+112,Jacqueline Wilson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2191862,1945,English,novelist,"The Story of Tracy Beaker, Double Act, Hetty Feather"
+113,Marnie Woodrow,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33691,1969,Canadian,novelist,Spelling Mississippi
+114,Virginia Woolf,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/33723,1882,English,novelist,Orlando: A Biography
+115,Virginia Woolf,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/127527,1882,English,novelist,Orlando: A Biography
+116,Virginia Woolf,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2142676,1882,English,novelist,Orlando: A Biography
+117,Virginia Woolf,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2150593,1882,English,novelist,Orlando: A Biography
+118,Virginia Woolf,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2174633,1882,English,novelist,Orlando: A Biography
+119,Juan Goytisolo,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/35415,1931,Spanish,"poet, essayist, novelist",Count Julian
+120,Juan Goytisolo,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112111,1931,Spanish,"poet, essayist, novelist",Count Julian
+121,Juan Goytisolo,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/182897,1931,Spanish,"poet, essayist, novelist",Count Julian
+122,Carl Van Vechten,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/45266,1880,American,"novelist, photographer",Nigger Heaven
+123,Caleb Crain,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/45331,1967,American,"novelist, critic","Necessary Errors, American Sympathy"
+124,Caleb Crain,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/156687,1967,American,"novelist, critic","Necessary Errors, American Sympathy"
+125,Hilton Als,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/46401,1960,American,"writer, theatre critic",White Girls
+126,Hilton Als,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/123558,1960,American,"writer, theatre critic",White Girls
+127,Hilton Als,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2166372,1960,American,"writer, theatre critic",White Girls
+128,Richard McCann,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/46634,1949,American,"short story writer, poet",Ghost Letters (poetry collection)
+129,Dorothy Allison,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/52074,1949,American,novelist,Bastard Out of Carolina
+130,Ann-Marie MacDonald,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/54001,1957,Canadian,"playwright, novelist","Goodnight Desdemona (Good Morning Juliet), Fall on Your Knees, The Way the Crow Flies"
+131,David Levithan,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/54093,1972,American,novelist,Boy Meets Boy
+132,David Levithan,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2174062,1972,American,novelist,Boy Meets Boy
+133,Aaron Hamburger,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/55116,1973,American,"novelist, short story writer","The View from Stalin's Head (short story collection), Faith for Beginners ("
+134,Thorn Kief Hillsbery,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/59876,None,American,novelist,What We Do Is Secret
+135,Patrick Ryan,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/60359,1965,American,"short story writer, novelist","The Dream Life of Astronauts, Send Me"
+136,Poppy Z. Brite,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/60570,1967,American,novelist,"Liquor, Prime, and Soul Kitchen"
+137,Emma Donoghue,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/61996,1969,Irish/Canadian,"novelist, short story writer",Room
+138,Emma Donoghue,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2174945,1969,Irish/Canadian,"novelist, short story writer",Room
+139,D. H. Lawrence,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/62895,1885,English,"novelist, playwright","The Rainbow, Lady Chatterley's Lover"
+140,Gregory Maguire,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/67492,1954,American,novelist,Wicked: The Life and Times of the Wicked Witch of the West
+141,Gregory Maguire,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/110226,1954,American,novelist,Wicked: The Life and Times of the Wicked Witch of the West
+142,John Ibbitson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/68603,1955,Canadian,"journalist, playwright, children's writer","1812: Jeremy's War, The Landing, The Big Shift: The Seismic Change in Canadian Politics, Business, and Culture and What It Means for Our Future"
+143,John Ibbitson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2200375,1955,Canadian,"journalist, playwright, children's writer","1812: Jeremy's War, The Landing, The Big Shift: The Seismic Change in Canadian Politics, Business, and Culture and What It Means for Our Future"
+144,John Boyne,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/70373,1971,Irish,novelist,The Boy in the Striped Pyjamas
+145,John Boyne,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/159453,1971,Irish,novelist,The Boy in the Striped Pyjamas
+146,John Boyne,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2146908,1971,Irish,novelist,The Boy in the Striped Pyjamas
+147,John Boyne,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172589,1971,Irish,novelist,The Boy in the Striped Pyjamas
+148,E. M. Forster,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/71918,1879,English,novelist,"Maurice, A Passage to India, A Room With A View, Howards End"
+149,E. M. Forster,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112197,1879,English,novelist,"Maurice, A Passage to India, A Room With A View, Howards End"
+150,E. M. Forster,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2150539,1879,English,novelist,"Maurice, A Passage to India, A Room With A View, Howards End"
+151,John Horne Burns,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/72509,1916,American,novelist,The Gallery
+152,David Plante,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/73223,1940,American,novelist,"Francoeur Trilogy--The Family, The Country and The Woods"
+153,David Plante,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/119881,1940,American,novelist,"Francoeur Trilogy--The Family, The Country and The Woods"
+154,David Plante,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2148649,1940,American,novelist,"Francoeur Trilogy--The Family, The Country and The Woods"
+155,Michelle Tea,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/73370,1971,American,"author, poet, and literary arts organizer",The Passionate Mistakes and Intricate Corruption of One Girl in America
+156,Michelle Tea,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2235889,1971,American,"author, poet, and literary arts organizer",The Passionate Mistakes and Intricate Corruption of One Girl in America
+157,Tanya Huff,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/76866,1957,Canadian,novelist,Blood Books series
+158,Tanya Huff,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/227418,1957,Canadian,novelist,Blood Books series
+159,Tanya Huff,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2213815,1957,Canadian,novelist,Blood Books series
+160,Howard Sturgis,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/79136,1855,Anglo-American,novelist,"Tim: A Story of School Life, All That Was Possible"
+161,Daphne Marlatt,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/80847,1942,Canadian,"poet, novelist","Ana Historic, The Given, This Tremor Love Is"
+162,Evan Fallenberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/85407,1961,American-Israeli,novelist,"Light Fell, When We Danced on Water"
+163,Evan Fallenberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/141685,1961,American-Israeli,novelist,"Light Fell, When We Danced on Water"
+164,Evan Fallenberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172582,1961,American-Israeli,novelist,"Light Fell, When We Danced on Water"
+165,Patrick Ness,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/87387,1971,American,novelist,"Chaos Walking, Monsters of Men, A Monster Calls"
+166,Patrick Ness,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/242155,1971,American,novelist,"Chaos Walking, Monsters of Men, A Monster Calls"
+167,Patrick Ness,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172286,1971,American,novelist,"Chaos Walking, Monsters of Men, A Monster Calls"
+168,Michael Thomas Ford,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/93828,1968,American,"novelist, non-fiction","Alec Baldwin Doesn't Love Me, That's Mr. Faggot to You"
+169,Mariko Tamaki,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/99707,1975,Canadian,graphic novelist,Skim
+170,Mariko Tamaki,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/253293,1975,Canadian,graphic novelist,Skim
+171,Mariko Tamaki,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2136524,1975,Canadian,graphic novelist,Skim
+172,Mariko Tamaki,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2154152,1975,Canadian,graphic novelist,Skim
+173,Mariko Tamaki,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2203802,1975,Canadian,graphic novelist,Skim
+174,Paul Rogers,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/110169,1936,American,novelist,Saul's Book
+175,Silas House,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/110274,1971,American,"novelist, journalist",[1]
+176,Silas House,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2246881,1971,American,"novelist, journalist",[1]
+177,Sylvia Townsend Warner,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111225,1893,English,"novelist, poet, activist",A Moral Ending and Other Stories
+178,Sylvia Townsend Warner,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2197264,1893,English,"novelist, poet, activist",A Moral Ending and Other Stories
+179,Colette,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111245,1873,French,novelist,Claudine series
+180,Ivy Compton-Burnett,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111263,1884,English,writer,Manservant and Maidservant
+181,Susan Sontag,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/111277,1933,American,"novelist, essayist",AIDS and Its Metaphors
+182,Susan Sontag,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2127374,1933,American,"novelist, essayist",AIDS and Its Metaphors
+183,Susan Sontag,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2189607,1933,American,"novelist, essayist",AIDS and Its Metaphors
+184,Susan Sontag,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2239888,1933,American,"novelist, essayist",AIDS and Its Metaphors
+185,Jean Genet,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112020,1910,French,"novelist, playwright, poet",Our Lady of the Flowers
+186,Jean Cocteau,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112117,1889,French,"poet, novelist, dramatist",La Voix humaine
+187,Jean Cocteau,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/174892,1889,French,"poet, novelist, dramatist",La Voix humaine
+188,Angus Wilson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112120,1913,English,author,Hemlock and After
+189,Tove Jansson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112199,1914,Finnish,"novelist, painter, illustrator, comic strip author",Moomins series
+190,Pier Paolo Pasolini,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/112301,1922,Italian,"novelist, playwright","Ragazzi di vita, Una vita violenta"
+191,Pier Paolo Pasolini,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/184712,1922,Italian,"novelist, playwright","Ragazzi di vita, Una vita violenta"
+192,Robert Rodi,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/113506,1956,American,writer,"Codename: Knockout, Kept Boy"
+193,Doris Grumbach,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/120347,1918,American,"novelist, biographer, essayist",Chamber Music
+194,Leslie Feinberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/120389,1949,American,"novelist, non-fiction",Stone Butch Blues
+195,Heinrich von Kleist,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/140589,1777,Prussian,"poet, dramatist, short story writer, and novelist","The Broken Jug, The Marquise of O, Michael Kohlhaas, Penthesilea, The Prince of Homburg"
+196,Heinrich von Kleist,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/185450,1777,Prussian,"poet, dramatist, short story writer, and novelist","The Broken Jug, The Marquise of O, Michael Kohlhaas, Penthesilea, The Prince of Homburg"
+197,Brian Francis,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/143367,1971,Canadian,novelist,Fruit
+198,Christos Tsiolkas,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/182291,1965,Australian,novelist,The Slap
+199,Djuna Barnes,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/183496,1892,American,novelist,"Ladies Almanack, Nightwood"
+200,Val McDermid,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/183827,1955,Scottish,"journalist, crime writer",Lindsay Gordon series and other notable crime series
+201,Val McDermid,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2255758,1955,Scottish,"journalist, crime writer",Lindsay Gordon series and other notable crime series
+202,Aphra Behn,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/185123,1640,English,"dramatist, poet and novelist",Oroonoko
+203,Aphra Behn,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/228330,1640,English,"dramatist, poet and novelist",Oroonoko
+204,Erwin Mortier,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/221143,1965,Belgian,"novelist, poet, essayist, translator",While the Gods Were Sleeping
+205,Bill Konigsberg,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/229106,1970,American,"sportswriter, young adult literature","Out of the Pocket, Openly Straight"
+206,Bruce Benderson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/229420,1946,American,"novelist, essayist",Autobiographie érotique
+207,Bruce Benderson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2235908,1946,American,"novelist, essayist",Autobiographie érotique
+208,Christopher Bram,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/230460,1952,American,novelist,Father of Frankenstein
+209,Sarah Scott,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/230726,1723,English,novelist,A Description of Millenium Hall and the Country Adjacent
+210,Craig Johnson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/230776,None,American,"screenwriter, film director","True Adolescents, The Skeleton Twins"
+211,Elizabeth A. Lynn,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/232648,1946,American,novelist,Chronicles of Tornor
+212,Ellis Avery,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/232731,1972,American,novelist,"The Teahouse Fire, The Last Nude"
+213,Fiona Patton,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/233210,1962,Canadian,novelist,The Branion Realm (book series)
+214,William Beckford,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/234905,1760,English,"novelist, travel writer",Vathek
+215,James Robert Baker,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/235776,1946,American,novelist,"Boy Wonder, Tim and Pete"
+216,John Weir,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/237144,1959,American,"novelist, journalist","The Irreversible Decline of Eddie Socket, What I Did Wrong"
+217,Joris-Karl Huysmans,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/237394,1848,French,novelist,"Against the Grain (À rebours, 1884)"
+218,Stella Duffy,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/244952,1963,English/New Zealand,novelist,State of Happiness
+219,E. F. Benson,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/306888,1867,English,novelist,Dodo
+220,David Sedaris,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2006286,1956,American,"essayist, short story writer",Naked (essay collection)
+221,Michael Golding,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2034305,None,American,"novelist, screenwriter","A Poet of the Invisible World, Silk"
+222,Petronius,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2058579,2766,Roman,novelist,The Satyricon
+223,Saleem Haddad,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2107857,1983,Kuwaiti-British,novelist,Guapa
+224,Countee Cullen,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2120539,1903,American,writer,Color (poetry collection)
+225,Paul Bowles,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2121794,1910,American,"novelist, poet, translator",The Sheltering Sky
+226,Gerard Reve,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2137445,1923,Dutch,writer,"Op weg naar het einde, Nader tot U"
+227,Umberto Saba,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2142708,1883,Italian,"poet, novelist",Songbook
+228,Jane Bowles,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2144022,1917,American,"novelist, playwright",Two Serious Ladies
+229,Christopher Rice,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2152292,1978,American,author,"The Heavens Rise, The Vines"
+230,Christopher Rice,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2191837,1978,American,author,"The Heavens Rise, The Vines"
+231,Honoré de Balzac,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2160048,1799,French,novelist,La Comédie humaine
+232,Fernando Vallejo,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172125,1942,Colombian,novelist,Our Lady of the Assassins
+233,Marguerite Yourcenar,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172137,1903,French,novelist,Memoirs of Hadrian
+234,Garth Greenwell,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172268,1978,American,novelist,What Belongs to You
+235,Vivek Shraya,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2172552,1981,Canadian,short story writer,"God Loves Hair, She of the Mountains"
+236,Jaime Bayly,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2174705,1965,Peruvian,"journalist, novelist",No se lo Digas a Nadie
+237,Benjamin Alire Sáenz,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2175355,1954,American,novelist,Everything Begins and Ends at the Kentucky Club
+238,Douglas A. Martin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2189252,1973,American,"novelist, poet",Outline of My Lover
+239,Douglas A. Martin,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2246139,1973,American,"novelist, poet",Outline of My Lover
+240,V. E. Schwab,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2195720,1987,American,novelist,Shades of Magic series
+241,V. E. Schwab,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2197655,1987,American,novelist,Shades of Magic series
+242,Catherine Hernandez,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2199233,None,Canadian,"playwright, novelist",Scarboorough
+243,Joshua Whitehead,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2199234,None,Canadian,"poet, novelist","Full-Metal Indigiqueer, Johnny Appleseed"
+244,Dennis Cooper,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2214684,1953,American,writer,George Miles Cycle
+245,Dennis Cooper,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2245071,1953,American,writer,George Miles Cycle
+246,Mattilda Bernstein Sycamore,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2214753,None,American,novelist,The End of San Francisco
+247,Mattilda Bernstein Sycamore,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2246269,None,American,novelist,The End of San Francisco
+248,David Demchuk,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2216133,None,Canadian,"novelist, playwright","The Bone Mother, Touch, If Betty Should Rise"
+249,George Santayana,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2221078,1863,Spanish-American,"novelist, poet, philosopher",The Realms of Being
+250,Sarah Schulman,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2227376,1958,American,"novelist, historian, playwright","Stagestruck: Theater, AIDS, and the Marketing of Gay America"
+251,Hubert Fichte,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2237638,1935,German,writer,Die Geschichte der Empfindlichkeit
+252,Farzana Doctor,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2242700,None,Canadian,novelist,Six Metres of Pavement
+253,Ivan Coyote,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2243107,1969,Canadian,"spoken word performer, writer",Tomboy Survival Guide
+254,Eve Zaremba,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2244187,1930,Polish/Canadian,mystery novelist,"A Reason to Kill, The Butterfly Effect"
+255,Michael Sledge,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2247209,None,American,"novelist, memoirist",The More I Owe You
+256,Joseph Hansen,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2265515,1923,American,"novelist, poet",Series of novels featuring private eye Dave Brandstetter
+257,Colm Tóibín,False,,https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2268030,1955,Irish,novelist and short story writer,The Heather Blazing
