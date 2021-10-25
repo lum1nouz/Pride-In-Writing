@@ -38,13 +38,13 @@ db.create_all()
 df = pd.read_csv(r'./authors.csv')
 author_list = []
 for ind in df.index:
-    id = ind
-    name = df['Name'][ind]
-    birth = df['Birthdate'][ind]
-    nat = df['Nationality'][ind]
-    sex = df['Sexuality'][ind]
-    gen = df['Gender'][ind]
-    published = df['Published'][ind]
+    id = int(ind)
+    name = str(df['Name'][ind])
+    birth = str(df['Birthdate'][ind])
+    nat = str(df['Nationality'][ind])
+    sex = str(df['Sexuality'][ind])
+    gen = str(df['Gender'][ind])
+    published = int(df['Published'][ind])
 
     new_author = Author(author_id=id, author_name = name, year_born = birth, nationality = nat, sexuality = sex, gender = gen, books_published = published)
     author_list.append(new_author)
