@@ -94,17 +94,21 @@ def parseLink(link, dict, csv_writer, name):
             if dataUnparsed == None:
                 continue
             elif dataUnparsed.find("a"):
-                answers[labelUnparsed.find("a").text] = dataUnparsed.find("a").text
+                output = dataUnparsed.find("a").text.replace("&nbsp", " ")
+                answers[labelUnparsed.find("a").text] = output
             else:
-                answers[labelUnparsed.find("a").text] = dataUnparsed.text
+                output = dataUnparsed.text.replace("&nbsp", " ")
+                answers[labelUnparsed.find("a").text] = output
         else:
             if checkValues(labelUnparsed.text):
                 if dataUnparsed == None:
                     continue
                 elif dataUnparsed.find("a"):
-                    answers[labelUnparsed.text] = dataUnparsed.find("a").text
+                    output = dataUnparsed.find("a").text.replace("&nbsp", " ")
+                    answers[labelUnparsed.text] = output
                 else:
-                    answers[labelUnparsed.text] = dataUnparsed.text
+                    output = dataUnparsed.text.replace("&nbsp", " ")
+                    answers[labelUnparsed.text] = output
     csv_writer.writerow([answers["name"], answers["image"], answers["Country of origin"], answers["Publication types"], answers["Founded"], answers["Parent company"], answers["Headquarters location"], answers["Official website"]])
 
 def checkValues(string):
