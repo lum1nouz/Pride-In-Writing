@@ -9,11 +9,15 @@ def main():
     )
     soup = BeautifulSoup(response.content, 'html.parser')
 
+    csv_file = open("info.csv", "w")
+    csv_writer = csv.writer(csv_file)
+
     # Retrieve the list of all the publishers
     sections = soup.find_all("div", {"class": "div-col"})
 
     # Go for all the sections of A, B, C, etc.
     index = 0
+    dict = {}
     for section in sections:
         # Retrieve the list of the sections
         uls = section.find("ul")
@@ -25,20 +29,23 @@ def main():
                 print("^^^^^^^^^^^")
                 print()
                 print(link)
-                parseLink(link)
+                parseLink(link, dict)
 
         if(index == 26):
             break
         index += 1
+    
+    for i in dict:
+        print(str(i) + ": " + str(dict[i]))
+        csv_writer.writerow([i, dict[i]])
 
-def parseLink(link):
+def parseLink(link, dict):
     
     try:
         response = requests.get(
             url=link,
         )
     except Exception as e:
-        print("Oops!  That was no valid number.  Try again...")
         return
     soup = BeautifulSoup(response.content, 'html.parser')
 
@@ -74,9 +81,11 @@ def parseLink(link):
             continue
         elif labelUnparsed.find("a"):
             label = labelUnparsed.find("a")
+            addVal(label.text, dict)
             print(label.text)
         else:
             label = labelUnparsed
+            addVal(label.text, dict)
             print(label.text)
 
         if dataUnparsed == None:
@@ -90,6 +99,12 @@ def parseLink(link):
 
         print()
     print("----------------------------------")
+
+def addVal(string, dict):
+    if dict.get(string) == None:
+        dict[string] = 1
+    else:
+        dict.update({string: dict.get(string) + 1})
 
 main()
 
