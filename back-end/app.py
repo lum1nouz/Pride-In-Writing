@@ -1,15 +1,12 @@
+# inspiration from https://gitlab.com/caitlinlien/cs373-sustainability/-/blob/master/backend/main.py
+
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
-import sys
-import json
-# sys.path.append('./books/books.py')
-# sys.path.append('./publishers/publishers.py') 
-from authors import Author, AuthorSchema
-from models import *
-from dotenv import load_dotenv
 from flask_marshmallow import Marshmallow
 from marshmallow import Schema, fields
 import flask_marshmallow as ma
+from dotenv import load_dotenv
+from models import *
 
 app = Flask(__name__)
 load_dotenv()
@@ -33,21 +30,6 @@ class AuthorSchema(ma.Schema):
     book_connections = fields.Str(required=False)
     publisher_connections = fields.Str(required=False)
 
-    # country_id = fields.Int(required=True)
-    # country_name = fields.Str(required=False)
-    # country_region = fields.Str(required=False)
-    # income_level = fields.Str(required=False)
-    # country_iso2code = fields.Str(required=False)
-    # country_iso3code = fields.Str(required=False)
-    # country_population = fields.Int(required=False)
-    # lat = fields.Int(required=False)
-    # long = fields.Int(required=False)
-    # highest_emission = fields.Float(required=False)
-    # recent_emissions = fields.Float(required=False)
-    # capital_city_id = fields.Int(required=False)
-    # country_capital_city = fields.Str(required=False)
-    # high_year = fields.Int(required=False)
-
 author_schema = AuthorSchema()
 authors_schema = AuthorSchema(many=True)
 
@@ -60,12 +42,6 @@ def getAuthors():
     all_authors = Author.query.all()
     result = authors_schema.dump(all_authors)
     return jsonify({"authors": result})
-
-
-
-
-# with app.app_context():
-#     print(getAuthors())
 
 if __name__ == "__main__":
     db.init_app(app)
