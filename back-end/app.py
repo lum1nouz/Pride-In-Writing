@@ -46,11 +46,27 @@ class BookSchema(ma.Schema):
     author_connections = fields.Str(required=False)
     publisher_connections = fields.Str(required=False)
 
+class PublisherSchema(ma.Schema):
+    publisher_id = fields.Int(required=True)
+    name = fields.Str(required=False)
+    image = fields.Str(required=False)
+    origin = fields.Str(required=False)
+    publication_types = fields.Str(required=False)
+    founded = fields.Str(required=False)
+    parent_comp = fields.Str(required=False)
+    headquarters = fields.Str(required=False)
+    website = fields.Str(required=False)
+    author_connections = fields.Str(required=False)
+    book_connections = fields.Str(required=False)
+
 author_schema = AuthorSchema()
 authors_schema = AuthorSchema(many=True)
 
 book_schema = BookSchema()
 books_schema = BookSchema(many=True)
+
+publisher_schema = PublisherSchema()
+publishers_schema = PublisherSchema(many=True)
 
 @app.route("/")
 def hello_world():
@@ -67,6 +83,12 @@ def getBooks():
     all_books = Book.query.all()
     result = books_schema.dump(all_books)
     return jsonify({"books": result})
+
+@app.route("/api/publishers", methods=["GET"])
+def getPublishers():
+    all_publishers = Publisher.query.all()
+    result = publishers_schema.dump(all_publishers)
+    return jsonify({"publishers": result})
 
 if __name__ == "__main__":
     db.init_app(app)

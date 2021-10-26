@@ -31,3 +31,16 @@ class Book(db.Model):
     authors = db.Column(db.String())
     author_connections = db.Column(db.String())
     publisher_connections = db.Column(db.String())
+
+class Publisher(db.Model):
+    publisher_id = db.Column(db.Integer(), primary_key=True)
+    name = db.Column(db.String())
+    image = db.Column(db.String())
+    origin = db.Column(db.String())
+    publication_types = db.Column(db.String())
+    founded = db.Column(db.String())
+    parent_comp = db.Column(db.String())
+    headquarters = db.Column(db.String())
+    website = db.Column(db.String())
+    author_connections = db.Column(db.String())
+    book_connections = db.Column(db.String())
