@@ -37,4 +37,4 @@ deploy_production:
     - git checkout main
   script:
     - cd back-end
-    - /root/.local/bin/eb deploy test-api-prod
+    - /root/.local/bin/eb deploy prideinwriting-api-prod
