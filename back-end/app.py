@@ -30,8 +30,27 @@ class AuthorSchema(ma.Schema):
     book_connections = fields.Str(required=False)
     publisher_connections = fields.Str(required=False)
 
+class BookSchema(ma.Schema):
+    book_id = fields.Int(required=True)
+    name = fields.Str(required=False)
+    genres = fields.Str(required=False)
+    publisher = fields.Str(required=False)
+    year = fields.Str(required=False)
+    page_count = fields.Str(required=False)
+    price = fields.Str(required=False)
+    avg_rating = fields.Str(required=False)
+    maturity_rating = fields.Str(required=False)
+    description = fields.Str(required=False)
+    image = fields.Str(required=False)
+    authors = fields.Str(required=False)
+    author_connections = fields.Str(required=False)
+    publisher_connections = fields.Str(required=False)
+
 author_schema = AuthorSchema()
 authors_schema = AuthorSchema(many=True)
+
+book_schema = BookSchema()
+books_schema = BookSchema(many=True)
 
 @app.route("/")
 def hello_world():
@@ -42,6 +61,12 @@ def getAuthors():
     all_authors = Author.query.all()
     result = authors_schema.dump(all_authors)
     return jsonify({"authors": result})
+
+@app.route("/api/books", methods=["GET"])
+def getBooks():
+    all_books = Book.query.all()
+    result = books_schema.dump(all_books)
+    return jsonify({"books": result})
 
 if __name__ == "__main__":
     db.init_app(app)
