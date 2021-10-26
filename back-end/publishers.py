@@ -52,7 +52,7 @@ db.create_all()
 
 
 # ,name,image,origin,publication_types,founded,parent_comp,hq,website,AuthorConnections,BookConnections,id
-df = pd.read_csv(r'./publishers-finaldata.csv')
+df = pd.read_csv(r'./publishers/publishers-finaldata.csv')
 print(df)
 publisher_list = []
 for ind in df.index:
