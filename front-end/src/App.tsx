@@ -14,8 +14,49 @@ import { Route, Switch } from "react-router-dom";
 import TheHours from "./components/Books/TheHours";
 import ThePriceOfSalt from "./components/Books/ThePriceOfSalt";
 import Fingersmith from "./components/Books/Fingersmith";
+import AuthorsInstance from "./components/Authors/AuthorsInstance"
+import Author from "./models/author-model";
+import Book from "./models/book-model";
+import Publisher from "./models/publisher-model";
+import axios from "axios";
+import { create } from "domain";
+
+function createLinks() {
+
+  const authData2 = {
+    author_id: 0,
+    author_name : "test",
+    author_tour : "false",
+    author_summary : undefined,
+    author_image : "https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/72509",
+    year_born : "2022",
+    nationality : "None",
+    genre : "testGenre",
+    noteable_works : "testNw",
+    book_connections : "20,25",
+    publisher_connections : "30,35"
+}
+
+const authData = authData2 as Author
+
+
+  return (
+    <div>
+      <AuthorsInstance author_id={authData.author_id} author_tour={authData.author_tour} nationality={authData.nationality} genre={authData.genre} noteable_works={authData.noteable_works} author_image ={authData.author_image} author_name ={authData.author_name} author_summary={authData.author_summary}/>
+    </div>
+  )
+}
+
+
 
 function App() {
+
+  // await axios.get(`https://gitlab.com/api/v4/projects/29826417/issues_statistics`)
+  // .then((res) => {
+  //   tIssues = (res.data as issuesResponse).statistics.counts.closed;
+  // });
+
+
   return (
     <div>
       {/* <Switch /> */}
@@ -33,7 +74,9 @@ function App() {
       <Route exact path="/the-hours" component={TheHours} />
       <Route exact path="/the-price-of-salt" component={ThePriceOfSalt} />
       <Route exact path="/fingersmith" component={Fingersmith} />
-      
+
+      <Route exact path="/author-1" render={(AuthorsInstance) => (createLinks())} />
+
     </div>
   );
 }

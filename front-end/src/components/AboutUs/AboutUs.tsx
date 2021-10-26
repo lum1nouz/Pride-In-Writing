@@ -18,9 +18,6 @@ import materialLogo from "../../Assets/materialUILogo.png";
 import nameCheapLogo from "../../Assets/nameCheapLogo.jpg";
 import postmanLogo from "../../Assets/postmanLogo.png";
 import reactLogo from "../../Assets/reactLogo.png";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
 import axios from "axios";
 
 const styles = {
