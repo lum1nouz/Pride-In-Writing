@@ -74,17 +74,32 @@ def getAuthors():
     result = authors_schema.dump(all_authors)
     return jsonify({"authors": result})
 
+@app.route("/api/authors/id=<id>", methods=["GET"])
+def get_country_id(id):
+    author = Author.query.get(id)
+    return author_schema.jsonify(author)
+
 @app.route("/api/books", methods=["GET"])
 def getBooks():
     all_books = Book.query.all()
     result = books_schema.dump(all_books)
     return jsonify({"books": result})
 
+@app.route("/api/books/id=<id>", methods=["GET"])
+def get_book_id(id):
+    book = Book.query.get(id)
+    return book_schema.jsonify(book)
+
 @app.route("/api/publishers", methods=["GET"])
 def getPublishers():
     all_publishers = Publisher.query.all()
     result = publishers_schema.dump(all_publishers)
     return jsonify({"publishers": result})
+
+@app.route("/api/publishers/id=<id>", methods=["GET"])
+def get_publisher_id(id):
+    publisher = Publisher.query.get(id)
+    return publisher_schema.jsonify(publisher)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
