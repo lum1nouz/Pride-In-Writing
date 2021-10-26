@@ -4,17 +4,13 @@ from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from marshmallow import Schema, fields
+from init import init_db
 import flask_marshmallow as ma
 from dotenv import load_dotenv
 from models import *
 
 app = Flask(__name__)
-load_dotenv()
-app.debug = True
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-# Schema: "postgres+psycopg2://<USERNAME>:<PASSWORD>@<IP_ADDRESS>:<PORT>/<DATABASE_NAME>"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://lum1nouz:Granted123@pride-writing.caddomsge5cd.us-east-2.rds.amazonaws.com:5432/postgres'
+db = init_db(app)
 ma = Marshmallow(app) 
 
 class AuthorSchema(ma.Schema):
@@ -91,5 +87,4 @@ def getPublishers():
     return jsonify({"publishers": result})
 
 if __name__ == "__main__":
-    db.init_app(app)
     app.run(host="0.0.0.0", port=5000, debug=True)
