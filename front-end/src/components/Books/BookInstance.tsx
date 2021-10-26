@@ -12,7 +12,23 @@ import { Link } from "react-router-dom";
 import Book from "../../models/book-model";
 import { JsxEmit } from "typescript";
 
-type props = {};
+type props = {
+    id: number
+    name: string
+    genre: string
+    publisher?: string
+    year:  string
+    page_count: number
+    price?: number
+    avg_rating?: number
+    maturity_rating: string
+    description?: string
+    image?: string
+    authors: string[]
+    author_connections?: string
+    publisher_connections?: string
+
+};
 
 type state = {};
 
@@ -27,8 +43,11 @@ const styles = {
 };
 
 
-class Page extends React.Component<props, state> {
-  state: state = {};
+class BookInstance extends React.Component<props, state> {
+    constructor(props: props){
+         super(props)
+        this.state = {}
+    }
 
   render() {
     return (
@@ -37,7 +56,7 @@ class Page extends React.Component<props, state> {
         <div className={css.background}>
           <Parallax strength={500} className={css.parrallaxCont}>
             <div style={{}}>
-              <div className={css.titleText}> Fingersmith </div>
+              <div className={css.titleText}> {this.props.name} </div>
               <Paper elevation={4} className={css.paperCont}>
                 <Grid
                   container
@@ -60,15 +79,15 @@ class Page extends React.Component<props, state> {
                       >
                         <CardMedia
                           style={styles.media}
-                          src={fingersmith}
                           component="img"
-                          alt="Fingersmith"
+                          alt={"Picture of " + this.props.name}
+                          image={this.props.image}
                         />
                       </div>
                       <p style={{ textAlign: "center" }}>
-                        Rating: 4 <br />
-                        Pages: 596 <br />
-                        Price: $16.89
+                        Rating: {this.props.avg_rating} <br />
+                        Pages: {this.props.page_count} <br />
+                        Price: {this.props.price}
                       </p>
                     </CardContent>
                   </Grid>
@@ -77,19 +96,19 @@ class Page extends React.Component<props, state> {
                   <h2>
                     Author <br />
                   </h2>
-                  <Button component={Link} to="/sarah-waters">
-                    Sarah Waters
+                  <Button component={Link} to={"/" + this.props.author_connections}>
+                    {this.props.author_connections}
                   </Button>
 
                   <h2>Genre</h2>
-                  <p>Fiction</p>
+                  <p>{this.props.genre}</p>
 
                   <h2>Publisher</h2>
-                  <Button component={Link} to="/virago-press">
-                    Virago Press
+                  <Button component={Link} to={"/" + this.props.publisher_connections}>
+                    {this.props.publisher_connections}
                   </Button>
                   <h2>Year Published</h2>
-                  <p>2002</p>
+                  <p>{this.props.year}</p>
                 </div>
               </Paper>
             </div>
@@ -100,4 +119,4 @@ class Page extends React.Component<props, state> {
   }
 }
 
-export default Page;
+export default BookInstance;

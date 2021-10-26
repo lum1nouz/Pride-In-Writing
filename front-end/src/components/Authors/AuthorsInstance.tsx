@@ -1,34 +1,45 @@
 import React from "react";
 import { Paper, Button } from "@material-ui/core";
 import Header from "../Header/Header";
-import css from "./Books.module.css";
-import fingersmith from "../../Assets/fingersmith.jpg";
+import css from "./Authors.module.css";
+import michael from "../../Assets/michael-cunningham.jpg";
 import { Parallax } from "react-parallax";
-import Card from "@material-ui/core/Card";
 import { CardContent } from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
-import Book from "../../models/book-model";
-import { JsxEmit } from "typescript";
 
-type props = {};
+type props = {
+    author_id : number
+    author_name : string
+    author_tour : string
+    author_summary? : string
+    author_image? : string
+    year_born? : string
+    nationality : string
+    genre : string
+    noteable_works : string
+    book_connections : number[]
+    publisher_connections : number[]
+};
 
 type state = {};
 
 const styles = {
   media: {
-    width: 300,
-    height: 400,
+    width: 400,
+    height: 500,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
   },
 };
 
-
-class Page extends React.Component<props, state> {
-  state: state = {};
+class AuthorsInstance extends React.Component<props, state> {
+  constructor(props: props){
+      super(props)
+      this.state = {}
+  }
 
   render() {
     return (
@@ -37,7 +48,7 @@ class Page extends React.Component<props, state> {
         <div className={css.background}>
           <Parallax strength={500} className={css.parrallaxCont}>
             <div style={{}}>
-              <div className={css.titleText}> Fingersmith </div>
+              <div className={css.titleText}> {this.props.author_name} </div>
               <Paper elevation={4} className={css.paperCont}>
                 <Grid
                   container
@@ -60,36 +71,40 @@ class Page extends React.Component<props, state> {
                       >
                         <CardMedia
                           style={styles.media}
-                          src={fingersmith}
                           component="img"
-                          alt="Fingersmith"
+                          alt={"Picture of " + this.props.author_name}
+                          image={this.props.author_image}
                         />
                       </div>
                       <p style={{ textAlign: "center" }}>
-                        Rating: 4 <br />
-                        Pages: 596 <br />
-                        Price: $16.89
+                        Born: {this.props.year_born}
                       </p>
                     </CardContent>
                   </Grid>
                 </Grid>
                 <div style={{ textAlign: "center" }}>
-                  <h2>
-                    Author <br />
-                  </h2>
-                  <Button component={Link} to="/sarah-waters">
-                    Sarah Waters
-                  </Button>
+                  { this.props.author_summary && <div>
+                      <h2>
+                        Biography <br />
+                      </h2>
+                      <p>
+                        {this.props.author_summary}
+                      </p>
+                    </div>}
 
-                  <h2>Genre</h2>
-                  <p>Fiction</p>
+                  <h2>Books</h2>
+                  <p>
+                    <Button component={Link} to={"/" + this.props.book_connections}>
+                      {this.props.book_connections}
+                    </Button>
+                  </p>
 
-                  <h2>Publisher</h2>
-                  <Button component={Link} to="/virago-press">
-                    Virago Press
-                  </Button>
-                  <h2>Year Published</h2>
-                  <p>2002</p>
+                  <h2>Publishers</h2>
+                  <p>
+                    <Button component={Link} to={"/" + this.props.publisher_connections}>
+                      {this.props.publisher_connections}
+                    </Button>
+                  </p>
                 </div>
               </Paper>
             </div>
@@ -100,4 +115,4 @@ class Page extends React.Component<props, state> {
   }
 }
 
-export default Page;
+export default AuthorsInstance;

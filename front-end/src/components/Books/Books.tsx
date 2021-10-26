@@ -1,4 +1,10 @@
 import React from "react";
+import { CardContent } from "@material-ui/core";
+import Card from "@material-ui/core/Card";
+import Grid from "@material-ui/core/Grid";
+import CardMedia from "@material-ui/core/CardMedia";
+import { makeStyles, createStyles } from '@material-ui/core/styles';
+import Pagination from "@material-ui/lab/Pagination";
 import { forwardRef } from 'react';
 import { Paper, Button } from "@material-ui/core";
 import Header from "../Header/Header";
@@ -109,27 +115,62 @@ class Books extends React.Component<props, state> {
                 <span style={{color: "#77C66E"}}>k</span>
                 <span style={{color: "#83B2FF"}}>s</span>
               </div>
+
+              <div style= {{display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative",
+                padding: 30,}}>
+              <Pagination count={10} color="secondary" />
+              </div>
               <Paper elevation={4} className={css.paperCont} data-testid = "books">
-                <MaterialTable
-                  icons={tableIcons}
-                  style={{ marginTop: 50, marginLeft: 20, marginRight: 20 }}
-                  columns={[
-                    { title: "Book", field: "book", type: "string" },
-                    { title: "Author", field: "author", type: "string" },
-                    { title: "Genre", field: "genre", type: "string" },
-                    { title: "Publisher", field: "publisher", type: "string" },
-                    {
-                      title: "Year Published",
-                      field: "yearPublished",
-                      type: "numeric",
-                    },
-                    { title: "Rating", field: "rating", type: "numeric" },
-                    { title: "Pages", field: "pages", type: "numeric" },
-                    { title: "Price", field: "price", type: "currency" },
-                  ]}
-                  data={dataStore}
-                  title=""
-                />
+              <Grid container spacing={1}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="/the-hours">The Hours</a></h2>
+                        <p>Author: Michael Cunningham</p>
+                        <p>Genre: Fiction</p>
+                        <p>Publisher: Farrar</p>
+                        <p>Year Published: 1988</p>
+                        <p>Rating: 4.4</p>
+                        <p>Pages: 230</p>
+                        <p>Price: 11.79</p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="/fingersmith">Fingersmith</a></h2>
+                        <p>Author: Sarah Waters</p>
+                        <p>Genre: Fiction</p>
+                        <p>Publisher: Virago Press</p>
+                        <p>Year Published: 2002</p>
+                        <p>Rating: 4</p>
+                        <p>Pages: 596</p>
+                        <p>Price: 16.89</p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="/the-price-of-salt">The Price of Salt</a></h2>
+                        <p>Author: Patricia Highsmith</p>
+                        <p>Genre: Fiction</p>
+                        <p>Publisher: G. P. Putnam's Sons</p>
+                        <p>Year Published: 1952</p>
+                        <p>Rating: 4.5</p>
+                        <p>Pages: 304</p>
+                        <p>Price: 13.69</p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+
+              </Grid>
+
               </Paper>
             </div>
           </Parallax>
