@@ -1,7 +1,7 @@
 import React from "react";
 import { Paper, Button } from "@material-ui/core";
 import Header from "../Header/Header";
-import css from "./Authors.module.css";
+import css from "./Publishers.module.css";
 import michael from "../../Assets/michael-cunningham.jpg";
 import { Parallax } from "react-parallax";
 import { CardContent } from "@material-ui/core";
@@ -35,7 +35,7 @@ const styles = {
     },
   };
   
-  class Page extends React.Component<props, state> {
+  class PublisherInstance extends React.Component<props, state> {
     constructor(props: props){
         super(props)
         this.state = {}
@@ -125,4 +125,4 @@ const styles = {
     }
   }
   
-  export default Page;
+  export default PublisherInstance;

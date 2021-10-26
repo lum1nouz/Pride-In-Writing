@@ -19,8 +19,8 @@ type props = {
     nationality : string
     genre : string
     noteable_works : string
-    book_connections? : string
-    publisher_connections? : string
+    book_connections : number[]
+    publisher_connections : number[]
 };
 
 type state = {};
