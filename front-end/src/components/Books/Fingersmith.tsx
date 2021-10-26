@@ -9,6 +9,8 @@ import { CardContent } from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
+import Book from "../../models/book-model";
+import { JsxEmit } from "typescript";
 
 type props = {};
 
@@ -23,6 +25,7 @@ const styles = {
     alignItems: "center",
   },
 };
+
 
 class Page extends React.Component<props, state> {
   state: state = {};
