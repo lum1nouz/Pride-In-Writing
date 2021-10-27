@@ -31,6 +31,12 @@ publishersData['BookConnections'] = np.empty((len(publishersData), 0)).tolist()
 publishersData['id'] = range(0, len(publishersData))
 
 counter = 0
+def compList(x, val):
+    isInList = False
+    for temp in x:
+        if val == temp:
+            isInList = True
+    return isInList
 
 for autIndex in authorsData.index:
     for bookIndex in booksData.index:
@@ -43,13 +49,44 @@ for autIndex in authorsData.index:
 
             for pubIndex in publishersData.index:
                 if( publisher.find(str(publishersData['name'][pubIndex])) != -1):
-                    if (autIndex not in publishersData['AuthorConnections'][bookIndex]):
-                        publishersData['AuthorConnections'][bookIndex].append(autIndex)
-                        authorsData['PublisherConnections'][autIndex].append(pubIndex)
-                        counter += 1
 
-                    booksData['PublisherConnections'][bookIndex].append(pubIndex)
-                    publishersData['BookConnections'][pubIndex].append(bookIndex)
+                    if not (compList(list(publishersData['AuthorConnections'][pubIndex]), autIndex)):
+                        publishersData['AuthorConnections'][pubIndex].append(autIndex)
+                    
+                    if not (compList(list(authorsData['PublisherConnections'][autIndex]), pubIndex)):
+                        authorsData['PublisherConnections'][autIndex].append(pubIndex)
+
+                    if not (compList(list(booksData['PublisherConnections'][bookIndex]), pubIndex)):
+                        booksData['PublisherConnections'][bookIndex].append(pubIndex)
+
+                    if not (compList(list(publishersData['BookConnections'][pubIndex]), bookIndex)):
+                        publishersData['BookConnections'][pubIndex].append(bookIndex)
+
+
+def listToString(x):
+    string = ""
+    counter = 0
+    for num in x:
+        if counter == 0:
+            string += str(num)
+        else:
+            string += "," + str(num)
+        counter += 1
+    return string
+
+
+for aInx in authorsData.index:
+    authorsData['PublisherConnections'][aInx] = listToString(authorsData['PublisherConnections'][aInx])
+    authorsData['BookConnections'][aInx] = listToString(authorsData['BookConnections'][aInx])
+
+for aInx in booksData.index:
+    booksData['PublisherConnections'][aInx] = listToString(booksData['PublisherConnections'][aInx])
+    booksData['AuthorConnections'][aInx] = listToString(booksData['AuthorConnections'][aInx])
+
+for aInx in publishersData.index:
+    publishersData['BookConnections'][aInx] = listToString(publishersData['BookConnections'][aInx])
+    publishersData['AuthorConnections'][aInx] = listToString(publishersData['AuthorConnections'][aInx])
+
 
 authorsData.to_csv('./authors/authors-finaldata.csv', encoding = 'utf-8')
 booksData.to_csv('./books/books-finaldata.csv', encoding = 'utf-8')

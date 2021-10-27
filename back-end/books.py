@@ -17,8 +17,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://lum1nouz:Granted1
 db = SQLAlchemy(app)
 
 
-
-
 # Define Book Table/Data model 
 class Book(db.Model):
     book_id = db.Column(db.Integer(), primary_key=True)
@@ -57,7 +55,7 @@ db.create_all()
 
 
 # ,id,name,genres,publisher,year,page_count,purchase_link,price,avg_rating,num_ratings,maturity_rating,language,description,image,authors,AuthorConnections,PublisherConnections
-df = pd.read_csv(r'./books-finaldata.csv')
+df = pd.read_csv(r'./books/books-finaldata.csv')
 print(df)
 book_list = []
 for ind in df.index:
