@@ -1,6 +1,6 @@
 import React from "react";
 import { AppBar, Toolbar, List, ListItem, Button } from "@material-ui/core";
-import "./Header.css";
+import css from "./Header.module.css";
 import { Link } from "react-router-dom";
 
 // list: {
@@ -46,34 +46,49 @@ class Header extends React.Component<props, state> {
 
   render() {
     return (
-      <AppBar className="app-bar">
+      <AppBar className={css.appbar} style={{backgroundColor: "black", position: 'relative'}}>
         <Toolbar>
-          <List className="heading left">
+          <List className={css.headingLeft}>
             <ListItem>
               <Button component={Link} to="/">
-                Pride In Writing
+              <div style={{fontWeight:'bold'}}><p>
+                            <span style={{color: "#FF555E"}}>P</span>
+                            <span style={{color: "#FF8650"}}>r</span>
+                            <span style={{color: "#F6BE00"}}>i</span>
+                            <span style={{color: "#77C66E"}}>d</span>
+                            <span style={{color: "#83B2FF"}}>e </span>
+                            <span style={{color: "#9B6EF3"}}>I</span>
+                            <span style={{color: "#FC6C85"}}>n </span>
+                            <span style={{color: "#1167b1"}}>W</span>
+                            <span style={{color: "#FF555E"}}>r</span>
+                            <span style={{color: "#77C66E"}}>i</span>
+                            <span style={{color: "#F6BE00"}}>t</span>
+                            <span style={{color: "#77C66E"}}>i</span>
+                            <span style={{color: "#83B2FF"}}>n</span>
+                            <span style={{color: "#9B6EF3"}}>g</span>
+                </p></div>
               </Button>
             </ListItem>
           </List>
-          <List className="heading">
+          <List className={css.heading}>
             <ListItem>
               <Button component={Link} to="/Authors">
-                Authors
+              <div style={{fontWeight:'bold', color: 'white'}}><p>Authors</p></div>
               </Button>
             </ListItem>
             <ListItem>
               <Button component={Link} to="/Books">
-                Books
+              <div style={{fontWeight:'bold', color: 'white'}}><p>Books</p></div>
               </Button>
             </ListItem>
             <ListItem>
               <Button component={Link} to="/Publishers">
-                Publishers
+              <div style={{fontWeight:'bold', color: 'white'}}><p>Publishers</p></div>
               </Button>
             </ListItem>
             <ListItem>
               <Button component={Link} to="/AboutUs" style={{ width: 140 }}>
-                About Us
+              <div style={{fontWeight:'bold', color: 'white'}}><p>About Us</p></div>
               </Button>
             </ListItem>
           </List>

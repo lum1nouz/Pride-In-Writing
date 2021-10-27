@@ -1,0 +1,25 @@
+.appbar {
+  height: 60px;
+  background-color: white;
+  position: 'relative';
+}
+
+.headingOne {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+.headingLeft {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  flex-grow: 1;
+}

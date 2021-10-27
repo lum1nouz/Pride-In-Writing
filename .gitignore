@@ -4,3 +4,9 @@ node_modules
 yarn.lock
 node_modules/.yarn-integrity
 .DS_Store
+back-end/__pycache__
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+

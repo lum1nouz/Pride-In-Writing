@@ -12,15 +12,19 @@ import rodrigoImg from "../../Assets/rodrigo-pic.jpg";
 import cliffImg from "../../Assets/cliff-pic.jpg";
 import gregImg from "../../Assets/greg-pic.jpg";
 import shyamImg from "../../Assets/shyam-pic.jpg";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
+import awsLogo from "../../Assets/awsAmplifyLogo.png";
+import gitLogo from "../../Assets/gitlabLogo.png";
+import materialLogo from "../../Assets/materialUILogo.png";
+import nameCheapLogo from "../../Assets/nameCheapLogo.jpg";
+import postmanLogo from "../../Assets/postmanLogo.png";
+import reactLogo from "../../Assets/reactLogo.png";
 import axios from "axios";
 
 const styles = {
   parrallaxCont: {
     margintop: 100,
-    height: 4500,
+    height: 4000,
+    backgroundColor: "white"
   },
   paperCont: {
     marginTop: 200,
@@ -28,9 +32,20 @@ const styles = {
     marginRight: 80,
     height: 1200,
   },
-  media: {
+  peopleMedia: {
     width: 200,
     height: 300,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  cardContent: {
+    backgroundColor: "white", 
+    height: 275,
+  },
+  media: {
+    maxWidth: 100,
+    maxHeight: 100,
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -70,6 +85,8 @@ type state = {
   rodrigoCommits: number;
   shyamCommits: number;
   cliffCommits: number;
+  pageNum: number;
+  oldPageNum: number
 };
 
 class AboutUs extends React.Component<props, state> {
@@ -88,13 +105,43 @@ class AboutUs extends React.Component<props, state> {
       rodrigoCommits: 0,
       shyamCommits: 0,
       cliffCommits: 0,
+      pageNum: 1,
+      oldPageNum: 0
     };
   }
 
   commitData: number[] = [0, 0, 0, 0, 0];
 
-  async checkCommitAuthor(data: commitResponse, length: number) {
-    if (data.author_email === "gjraper@Gregs-1s--0s.attlocal.net") {
+  async updatePageNum(data: commitResponse[]) {
+    let len = data.length;
+    data.forEach((element) => this.checkCommitAuthor(element));
+
+    let tempPageNum = this.state.pageNum
+    if (len >= (this.state.pageNum * 100)) {
+      tempPageNum = this.state.pageNum + 1     
+    }
+
+    this.setState({
+      totalCommits: this.state.totalCommits + len,
+      totalIssues: this.state.totalIssues,
+      gregIssues: this.state.gregIssues,
+      gregCommits: this.commitData[0],
+      pamelaCommits: this.commitData[3],
+      pamelaIssues: this.state.pamelaIssues,
+      cliffCommits: this.commitData[2],
+      cliffIssues: this.state.cliffIssues,
+      rodrigoCommits: this.commitData[1],
+      rodrigoIssues: this.state.rodrigoIssues,
+      shyamCommits: this.commitData[4],
+      shyamIssues: this.state.shyamIssues,
+      pageNum: tempPageNum,
+      oldPageNum: this.state.pageNum
+    });
+
+  }
+
+  async checkCommitAuthor(data: commitResponse) {
+    if (data.author_email === "gjraper@Gregs-1s--0s.attlocal.net" || data.author_email === "gjraper@gmail.com") {
       this.commitData[0] += 1;
     } else if (data.author_email === "restrella@outlook.com") {
       this.commitData[1] += 1;
@@ -102,8 +149,8 @@ class AboutUs extends React.Component<props, state> {
       this.commitData[2] += 1;
     } else if (data.author_email === "pamvazquez1@gmail.com") {
       this.commitData[3] += 1;
-    } else if (data.author_email === "you@example.com") {
-      this.commitData[4] += 1;
+    } else if (data.author_email === "you@example.com" || data.author_email === "shyamp1204@gmail.com" || data.author_email === "shyamp1204@utexas.edu") {
+      this.commitData[4] += 1; 
     }
   }
 
@@ -117,7 +164,12 @@ class AboutUs extends React.Component<props, state> {
     sIssues: number
   ) {
     let len = data.length;
-    data.forEach((element) => this.checkCommitAuthor(element, len));
+    data.forEach((element) => this.checkCommitAuthor(element));
+
+    let tempPageNum = this.state.pageNum
+    if (len >= (this.state.pageNum * 100)) {
+      tempPageNum = this.state.pageNum + 1     
+    }
 
     this.setState({
       totalCommits: len,
@@ -132,6 +184,7 @@ class AboutUs extends React.Component<props, state> {
       rodrigoIssues: rIssues,
       shyamCommits: this.commitData[4],
       shyamIssues: sIssues,
+      pageNum: tempPageNum
     });
   }
 
@@ -188,10 +241,10 @@ class AboutUs extends React.Component<props, state> {
 
     await axios
       .get(
-        `https://gitlab.com/api/v4/projects/29826417/repository/commits?type=all&per_page=100&page=1`
+        `https://gitlab.com/api/v4/projects/29826417/repository/commits?type=all&per_page=100&page=1` 
       )
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data)
         this.getCommitInfo(
           res.data as commitResponse[],
           tIssues,
@@ -203,6 +256,22 @@ class AboutUs extends React.Component<props, state> {
         );
       });
   }
+  
+  async componentDidUpdate() {
+    if( this.state.pageNum > this.state.oldPageNum) {
+      await axios
+        .get(
+          `https://gitlab.com/api/v4/projects/29826417/repository/commits?type=all&per_page=100&page=${this.state.pageNum}` 
+        )
+        .then((res) => {
+          console.log(res.data)
+          this.updatePageNum(
+            res.data as commitResponse[]
+          );
+        });
+      }
+  }
+
 
   render() {
     return (
@@ -210,7 +279,7 @@ class AboutUs extends React.Component<props, state> {
         <div>
           <Header></Header>
         </div>
-        <Parallax bgImage={bgPhoto} strength={500} style={styles.parrallaxCont}>
+        <Parallax strength={500} style={styles.parrallaxCont}>
           <div style={{}}>
             <Paper
               elevation={4}
@@ -227,7 +296,15 @@ class AboutUs extends React.Component<props, state> {
               }}
             >
               <div>
-                <h1> About Us </h1>
+                <h1 style={{textShadow: '1px 1px black'}}> 
+                <span style={{color: "#FF555E"}}>A</span>
+                <span style={{color: "#FF8650"}}>b</span>
+                <span style={{color: "#F6BE00"}}>o</span>
+                <span style={{color: "#77C66E"}}>u</span>
+                <span style={{color: "#83B2FF"}}>t </span>
+                <span style={{color: "#9B6EF3"}}>U</span>
+                <span style={{color: "#FC6C85"}}>s</span>
+                </h1>
                 <p>
                   Pride in Writing aims to highlight the work of LGBTQ Authors
                   and show the Publishers that support them.
@@ -256,11 +333,20 @@ class AboutUs extends React.Component<props, state> {
               }}
             >
               <div>
-                <h1> Gitlab Stats </h1>
-                <p>
-                  Pride in Writing aims to highlight the work of LGBTQ Authors
-                  and show the Publishers that support them.
-                </p>
+                <h1 style={{textShadow: '1px 1px black'}}> 
+                <span style={{color: "#FF555E"}}>G</span>
+                <span style={{color: "#FF8650"}}>i</span>
+                <span style={{color: "#F6BE00"}}>t</span>
+                <span style={{color: "#77C66E"}}>l</span>
+                <span style={{color: "#83B2FF"}}>a</span>
+                <span style={{color: "#9B6EF3"}}>b </span>
+                <span style={{color: "#FC6C85"}}>S</span>
+                <span style={{color: "#1167b1"}}>t</span>
+                <span style={{color: "#FF555E"}}>a</span>
+                <span style={{color: "#77C66E"}}>t</span>
+                <span style={{color: "#F6BE00"}}>s</span>
+                </h1>
+                <p><a style={{fontWeight:'bold'}} href="https://gitlab.com/JunLum/pride-in-writing">GitLab Repo</a></p> 
                 <p>Total commits: {this.state.totalCommits} </p>
                 <p>Total issues: {this.state.totalIssues}</p>
                 <p>Total unit tests: 0</p>
@@ -279,16 +365,29 @@ class AboutUs extends React.Component<props, state> {
                 marginTop: 100,
                 marginLeft: 30,
                 marginRight: 30,
-                height: 2100,
+                height: 1600,
               }}
             >
-              <div>
-                <h1>Meet the Team</h1>
+              <div style={{padding: 30}}>
+                <h1 style={{textShadow: '1px 1px black'}}>
+
+                <span style={{color: "#FF555E"}}>M</span>
+                <span style={{color: "#FF8650"}}>e</span>
+                <span style={{color: "#F6BE00"}}>e</span>
+                <span style={{color: "#77C66E"}}>t </span>
+                <span style={{color: "#83B2FF"}}>t</span>
+                <span style={{color: "#9B6EF3"}}>h</span>
+                <span style={{color: "#FC6C85"}}>e </span>
+                <span style={{color: "#1167b1"}}>T</span>
+                <span style={{color: "#FF555E"}}>e</span>
+                <span style={{color: "#77C66E"}}>a</span>
+                <span style={{color: "#F6BE00"}}>m</span>
+                </h1>
 
                 <Grid container spacing={3}>
-                  <Grid item xs={6}>
-                    <Card>
-                      <CardContent style={{ backgroundColor: "pink" }}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent data-testid = "pamela" style={{ backgroundColor: "white" }}>
                         <h2>Pamela Vazquez</h2>
                         <div
                           style={{
@@ -299,10 +398,10 @@ class AboutUs extends React.Component<props, state> {
                           }}
                         >
                           <CardMedia
-                            style={styles.media}
+                            style={styles.peopleMedia}
                             src={pamelaImg}
                             component="img"
-                            height="140"
+                            height="194"
                             alt="picture of pamela"
                           />
                         </div>
@@ -327,9 +426,9 @@ class AboutUs extends React.Component<props, state> {
                     </Card>
                   </Grid>
 
-                  <Grid item xs={6}>
-                    <Card>
-                      <CardContent style={{ backgroundColor: "pink" }}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent data-testid = "gregory" style={{ backgroundColor: "white" }}>
                         <h2>Gregory Raper</h2>
                         <div
                           style={{
@@ -340,7 +439,7 @@ class AboutUs extends React.Component<props, state> {
                           }}
                         >
                           <CardMedia
-                            style={styles.media}
+                            style={styles.peopleMedia}
                             src={gregImg}
                             component="img"
                             height="140"
@@ -366,9 +465,9 @@ class AboutUs extends React.Component<props, state> {
                     </Card>
                   </Grid>
 
-                  <Grid item xs={6}>
-                    <Card>
-                      <CardContent style={{ backgroundColor: "pink" }}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent data-testid = "rodrigo" style={{ backgroundColor: "white" }}>
                         <h2>Rodrigo Estrella</h2>
                         <div
                           style={{
@@ -379,7 +478,7 @@ class AboutUs extends React.Component<props, state> {
                           }}
                         >
                           <CardMedia
-                            style={styles.media}
+                            style={styles.peopleMedia}
                             src={rodrigoImg}
                             component="img"
                             height="400"
@@ -407,9 +506,9 @@ class AboutUs extends React.Component<props, state> {
                     </Card>
                   </Grid>
 
-                  <Grid item xs={6}>
-                    <Card>
-                      <CardContent style={{ backgroundColor: "pink" }}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent data-testid = "cliff" style={{ backgroundColor: "white" }}>
                         <h2>Cliff Xu</h2>
                         <div
                           style={{
@@ -420,7 +519,7 @@ class AboutUs extends React.Component<props, state> {
                           }}
                         >
                           <CardMedia
-                            style={styles.media}
+                            style={styles.peopleMedia}
                             src={cliffImg}
                             component="img"
                             height="140"
@@ -435,7 +534,7 @@ class AboutUs extends React.Component<props, state> {
                           He will be graduating Spring 2023 and he likes tennis
                         </p>
                         <p>
-                          His major responsibilities fall within the blank team.
+                          His major responsibilities fall within the back-end team.
                         </p>
                         <p>Number of closed issues: {this.state.cliffIssues}</p>
                         <p>Number of commits: {this.state.cliffCommits}</p>
@@ -444,9 +543,9 @@ class AboutUs extends React.Component<props, state> {
                     </Card>
                   </Grid>
 
-                  <Grid item xs={6}>
-                    <Card>
-                      <CardContent style={{ backgroundColor: "pink" }}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent data-testid = "shyam" style={{ backgroundColor: "white" }}>
                         <h2>Shyam Patel</h2>
                         <div
                           style={{
@@ -457,7 +556,7 @@ class AboutUs extends React.Component<props, state> {
                           }}
                         >
                           <CardMedia
-                            style={styles.media}
+                            style={styles.peopleMedia}
                             src={shyamImg}
                             component="img"
                             height="140"
@@ -473,7 +572,7 @@ class AboutUs extends React.Component<props, state> {
                           games
                         </p>
                         <p>
-                          His major responsibilities fall within the blank team.
+                          His major responsibilities fall within the back-end team.
                         </p>
                         <p>Number of closed issues: {this.state.shyamIssues}</p>
                         <p>Number of commits: {this.state.shyamCommits}</p>
@@ -497,61 +596,71 @@ class AboutUs extends React.Component<props, state> {
               marginTop: 100,
               marginLeft: 30,
               marginRight: 30,
-              height: 375,
+              height: 400,
             }}
           >
-            <div>
-              <h1>APIs Used</h1>
+            <div style={{paddingLeft: 90}}>
+              <h1 style={{textShadow: '1px 1px black'}}>
+              
+              <span style={{color: "#FF555E"}}>A</span>
+              <span style={{color: "#FF8650"}}>P</span>
+              <span style={{color: "#F6BE00"}}>I</span>
+              <span style={{color: "#77C66E"}}>s </span>
+              <span style={{color: "#83B2FF"}}>U</span>
+              <span style={{color: "#9B6EF3"}}>s</span>
+              <span style={{color: "#FC6C85"}}>e</span>
+              <span style={{color: "#1167b1"}}>d</span>
+              </h1>
 
-              <List>
-                <ListItem
-                  button
-                  component="a"
-                  href="https://www.goodreads.com/api/"
-                >
-                  <ListItemText primary="Goodreads API" />
-                </ListItem>
+              <Grid container spacing={1}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="https://reactjs.org/">Goodreads API</a></h2>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem
-                  button
-                  component="a"
-                  href="https://developers.google.com/books/docs/overview/"
-                >
-                  <ListItemText primary="Google Books API" />
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="https://developers.google.com/books/docs/overview/">Google Books API</a></h2>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem
-                  button
-                  component="a"
-                  href="https://openlibrary.org/developers/api "
-                >
-                  <ListItemText primary="Open Library API" />
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="https://openlibrary.org/developers/api">Open Library API</a></h2>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem
-                  button
-                  component="a"
-                  href="https://en.wikipedia.org/wiki/List_of_LGBT_writers "
-                >
-                  <ListItemText primary="List of LGBTQ Writers Data Source" />
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="https://en.wikipedia.org/wiki/List_of_LGBT_writers">List of LGBTQ Writers Data Source</a></h2>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem
-                  button
-                  component="a"
-                  href="https://en.wikipedia.org/wiki/List_of_English-language_book_publishing_companies"
-                >
-                  <ListItemText primary="List of Book Publishing Companies Data Source" />
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="https://en.wikipedia.org/wiki/List_of_English-language_book_publishing_companies">List of Book Publishing Companies Data Source</a></h2>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem
-                  button
-                  component="a"
-                  href="https://www.tckpublishing.com/list-of-book-publishers/"
-                >
-                  <ListItemText primary="List of Book Publishers Data Source" />
-                </ListItem>
-              </List>
+                  <Grid item xs={4}>
+                    <Card variant="outlined" style={{width: 300}}>
+                      <CardContent>
+                        <h2><a href="https://www.tckpublishing.com/list-of-book-publishers/">List of Book Publishers Data Source</a></h2>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+              </Grid>
             </div>
           </Paper>
 
@@ -566,69 +675,228 @@ class AboutUs extends React.Component<props, state> {
               marginTop: 100,
               marginLeft: 30,
               marginRight: 30,
-              height: 650,
+              height: 750,
+              backgroundColor: 'white'
             }}
           >
-            <div>
-              <h1> Tools Used </h1>
-              <List>
-                <ListItem>
-                  <ListItemText>
-                    <p>React: used to build our web app</p>
-                  </ListItemText>
-                </ListItem>
+            <div style={{padding: 30}}>
+              <h1 style={{textShadow: '1px 1px black'}}> 
+              <span style={{color: "#FF555E"}}>T</span>
+              <span style={{color: "#FF8650"}}>o</span>
+              <span style={{color: "#F6BE00"}}>o</span>
+              <span style={{color: "#77C66E"}}>l</span>
+              <span style={{color: "#83B2FF"}}>s </span>
+              <span style={{color: "#9B6EF3"}}>U</span>
+              <span style={{color: "#FC6C85"}}>s</span>
+              <span style={{color: "#1167b1"}}>e</span>
+              <span style={{color: "#FF555E"}}>d</span>
+              </h1>
+              <Grid container spacing={1}>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={styles.cardContent}>
+                        <h2><a href="https://reactjs.org/">React</a></h2>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative",
+                          }}
+                        >
+                          <CardMedia
+                            style={styles.media}
+                            src={reactLogo}
+                            component="img"
+                            height="140"
+                            alt="picture of react logo"
+                          />
+                        </div>
+                        <p>A front-end JavaScript library for building user interfaces or UI components</p>
+                        <p>Used to build our web app</p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem>
-                  <ListItemText>
-                    <p>
-                      Material UI: used to create the user interface in our
-                      React application
-                    </p>
-                  </ListItemText>
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={styles.cardContent}>
+                        <h2><a href="https://mui.com/">Material UI</a></h2>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative",
+                          }}
+                        >
+                          <CardMedia
+                            style={styles.media}
+                            src={materialLogo}
+                            component="img"
+                            height="140"
+                            alt="picture of MaterialUI logo"
+                          />
+                        </div>
+                        <p>
+                        An open-source, front-end framework for React components
+                        </p>
+                        <p>Used to create the user interface of our React application</p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={styles.cardContent}>
+                        <h2><a href="https://aws.amazon.com/amplify/">AWSAmplify</a></h2>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative",
+                          }}
+                        >
+                          <CardMedia
+                            style={styles.media}
+                            src={awsLogo}
+                            component="img"
+                            height="140"
+                            alt="picture of Aws Amplify logo"
+                          />
+                        </div>
+                        <p>
+                        Cloud computing and hosting platform
+                        </p>
+                        <p>Used to deploy our web application</p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem>
-                  <ListItemText>
-                    <p>AWSAmplify: used to deploy our web application</p>
-                  </ListItemText>
-                </ListItem>
-                <ListItem
-                  button
-                  component="a"
-                  href="https://documenter.getpostman.com/view/17727241/UUy1f71j"
-                >
-                  <ListItemText primary="Postman: used to design our Restful API. Click here to access Postman link" />
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={styles.cardContent}>
+                        <h2><a href="https://www.postman.com/">Postman</a></h2>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative",
+                          }}
+                        >
+                          <CardMedia
+                            style={styles.media}
+                            src={postmanLogo}
+                            component="img"
+                            height="140"
+                            alt="picture of Postman logo"
+                          />
+                        </div>
+                        <p>
+                        API platform for building and using APIs
+                        </p>
+                        <p>Used to design our Restful API</p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem>
-                  <ListItemText>
-                    <p>
-                      GitLab: used for our project repository and for
-                      development across team members
-                    </p>
-                  </ListItemText>
-                </ListItem>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={styles.cardContent}>
+                        <h2><a href="https://about.gitlab.com/">GitLab</a></h2>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative",
+                          }}
+                        >
+                          <CardMedia
+                            style={styles.media}
+                            src={gitLogo}
+                            component="img"
+                            height="140"
+                            alt="picture of GitLab logo"
+                          />
+                        </div>
+                        <p>
+                        Repository Manager with issue tracking and CI/CD pipeline
+                        </p>
+                        <p>Used for our project repository and development across team members</p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
 
-                <ListItem>
-                  <ListItemText>
-                    <p>
-                      NameCheap: used to register the Pride in Writing domain
-                      name
-                    </p>
-                  </ListItemText>
-                </ListItem>
-
-                <ListItem>
-                  <ListItemText>
-                    <p>
-                      Restful APIs and Data Sources: used to scrape information
-                      that will be displayed in our web application
-                    </p>
-                  </ListItemText>
-                </ListItem>
-              </List>
+                  <Grid item xs={4}>
+                    <Card variant="outlined">
+                      <CardContent style={styles.cardContent}>
+                        <h2><a href="https://www.namecheap.com/">NameCheap</a></h2>
+                        <div
+                          style={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative",
+                          }}
+                        >
+                          <CardMedia
+                            style={styles.media}
+                            src={nameCheapLogo}
+                            component="img"
+                            height="140"
+                            alt="picture of NameCheap logo"
+                          />
+                        </div>
+                        <p>
+                        Domain name registrar
+                        </p>
+                        <p>Used to register the Pride in Writing domain name</p>
+                      </CardContent>
+                    </Card>
+                  </Grid>
+                  </Grid>
             </div>
           </Paper>
+
+          <Paper
+              elevation={4}
+              style={{
+                textAlign: "center",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative",
+                marginTop: 100,
+                marginLeft: 30,
+                marginRight: 30,
+                height: 150,
+              }}
+            >
+              <div>
+                <h1 style={{textShadow: '1px 1px black'}}> 
+                <span style={{color: "#FF555E"}}>I</span>
+                <span style={{color: "#FF8650"}}>m</span>
+                <span style={{color: "#F6BE00"}}>p</span>
+                <span style={{color: "#77C66E"}}>o</span>
+                <span style={{color: "#83B2FF"}}>r</span>
+                <span style={{color: "#9B6EF3"}}>t</span>
+                <span style={{color: "#FC6C85"}}>a</span>
+                <span style={{color: "#1167b1"}}>n</span>
+                <span style={{color: "#FF555E"}}>t </span>
+                <span style={{color: "#77C66E"}}>L</span>
+                <span style={{color: "#F6BE00"}}>i</span>
+                <span style={{color: "#77C66E"}}>n</span>
+                <span style={{color: "#83B2FF"}}>k</span>
+                <span style={{color: "#9B6EF3"}}>s</span>
+                </h1>
+                <p><a style={{fontWeight:'bold'}} href="https://gitlab.com/JunLum/pride-in-writing">GitLab Repo</a></p>
+                <p><a style={{fontWeight:'bold'}} href="https://documenter.getpostman.com/view/17727241/UUy1f71j">Postman Documentation</a></p>
+              </div>
+            </Paper>
+
         </Parallax>
       </>
     );

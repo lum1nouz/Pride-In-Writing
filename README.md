@@ -35,3 +35,7 @@ Overall we enjoyed this first portion of the project. The process certianly was 
 
 Another huge takeway was using git properly. We had a couple of incidents throughout the development process, but we think that we have almost got the hang of git, and are expecting less issues in Phase 2. 
 
+https://gitlab.com/forbesye/fitsbits/-/blob/master/front-end/guitests.py
+https://gitlab.com/forbesye/fitsbits/-/blob/master/front-end/gui_tests/template.py
+-Code for running and setting up GUI tests inspired and used from here
+
