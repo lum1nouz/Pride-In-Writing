@@ -19,12 +19,10 @@ import Author from "./models/author-model";
 import Book from "./models/book-model";
 import Publisher from "./models/publisher-model";
 import axios from "axios";
-import { create } from "domain";
+import { useState, useEffect } from "react";
 import BookInstance from "./components/Books/BookInstance";
 import PublisherInstance from "./components/Publishers/PublisherInstance";
 import stringToIntegerList from "./common";
-
-
 
 const authData2 = [{
   author_id: 0,
@@ -85,10 +83,6 @@ const publData2 = [{
   book_connections: "25, 30"
 }]
 
-const authDataList = authData2 as Author[]
-const bookDataList = bookData2 as Book[]
-const publDataList = publData2 as Publisher[]
-
 function createAuthor(a: Author) {
 
   return (
@@ -116,17 +110,32 @@ function createPublisher(a: Publisher) {
   )
 }
 
+ async function getAuthorsData(){
+   let tempAuthors = [] as Author[]
+   await axios.get(`https://api.prideinwriting.me/api/authors`)
+    .then((res) => {
+      console.log(res.data)
+      tempAuthors = (res.data as Author[]);
+    });
+    return tempAuthors
+}
+
 
 
 function App() {
+  let [authDataList, setAuthDataList] = useState([] as Author[])
+  let [bookDataList, setBookDataList] = useState(bookData2 as Book[])
+  let [publDataList, setPublDataList] = useState(publData2 as Publisher[])
 
-  // await axios.get(`https://gitlab.com/api/v4/projects/29826417/issues_statistics`)
-  // .then((res) => {
-  //   tIssues = (res.data as issuesResponse).statistics.counts.closed;
-  // });
-
+  useEffect(() => {
+    async function getAuth() {
+        setAuthDataList(await getAuthorsData())
+    }
+    getAuth();
+ }, [])
 
   return (
+
     <div>
       {/* <Switch /> */}
       <Route exact path="/" component={HomePage} />
