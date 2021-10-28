@@ -85,7 +85,7 @@ async function getData() {
     console.log(err);
     return {};
   });
-  return publishers as Publisher[];
+  return JSON.parse(publishers);
 }
 
 class Publishers extends React.Component<props, state> {
