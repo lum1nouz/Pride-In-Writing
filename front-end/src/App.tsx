@@ -118,20 +118,6 @@ function App() {
   let [authDataList, setAuthDataList] = useState<Author[]>(authData2)
   let [bookDataList, setBookDataList] = useState<Book[]>(bookData2)
   let [publDataList, setPublDataList] = useState<Publisher[]>(publData2)
-  let [{ data: authData, loading: l1, error: e1 }] = useAxios(
-    "https://api.prideinwriting.me/api/authors"
-  );
-  setAuthDataList(authData as Author[])
-
-  let [{ data: bookData, loading: l2, error: e2 }] = useAxios(
-    "https://api.prideinwriting.me/api/books"
-  );
-  setBookDataList(bookData as Book[])
-
-  let [{ data: publisherData, loading: l3, error: e3 }] = useAxios(
-    "https://api.prideinwriting.me/api/publishers"
-  );
-  setPublDataList(publisherData as Publisher[])
 
   async function getAuthorsData(){
     const authors = await fetch(`https://api.prideinwriting.me/api/authors`)
