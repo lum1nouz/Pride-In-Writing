@@ -49,8 +49,8 @@ def parseLink(link, csv_writer, name):
     except Exception as e:
         csv_writer.writerow([name, "NaN"])
         return "NaN"
-    for a in paragraph.find_all("a"):
-        a.extract()
+    # for a in paragraph.find_all("a"):
+    #     a.extract()
 
     print(name)
     print(paragraph.text)
