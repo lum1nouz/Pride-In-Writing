@@ -47,4 +47,5 @@ postman_tests:
     entrypoint: [""]
   script:
     - newman --version
+    - cd back-end
     - newman run postman.json
