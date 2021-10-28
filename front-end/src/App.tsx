@@ -23,6 +23,7 @@ import { useState, useEffect } from "react";
 import BookInstance from "./components/Books/BookInstance";
 import PublisherInstance from "./components/Publishers/PublisherInstance";
 import stringToIntegerList from "./common";
+import { parseJsonText } from "typescript";
 
 const authData2 = [{
   author_id: 0,
@@ -83,6 +84,10 @@ const publData2 = [{
   book_connections: "25, 30"
 }]
 
+type autResponse = {
+  authors: Author[]
+}
+
 function createAuthor(a: Author) {
 
   return (
@@ -110,14 +115,40 @@ function createPublisher(a: Publisher) {
   )
 }
 
+const config = {
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+  }
+};
+
  async function getAuthorsData(){
-   let tempAuthors = [] as Author[]
-   await axios.get(`https://api.prideinwriting.me/api/authors`)
-    .then((res) => {
-      console.log(res.data)
-      tempAuthors = (res.data as Author[]);
+  const authors = await fetch(`https://api.prideinwriting.me/api/authors`)
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+      return {};
     });
-    return tempAuthors
+  return authors;
+
+
+  //  let tempAuthors = [] as Author[]
+  //  let tempData = null
+  //  console.log("HAHAHAHAH")
+  //  await axios.get(`https://api.prideinwriting.me/api/authors`, config)
+  //   .then((res) => {
+  //     console.log(res.data)
+  //     tempData = res.;
+  //     let parsedJson = JSON.parse(tempData) as autResponse
+  //     console.log(parsedJson)
+  //     tempAuthors = parsedJson.authors
+  //     return tempAuthors
+  //   });
+  //   console.log("HAHAHAHAH")
+  //   console.log(tempAuthors)
+  //   return tempAuthors
 }
 
 
@@ -128,14 +159,13 @@ function App() {
   let [publDataList, setPublDataList] = useState(publData2 as Publisher[])
 
   useEffect(() => {
-    async function getAuth() {
+    const getAuth = async () => {
         setAuthDataList(await getAuthorsData())
     }
     getAuth();
  }, [])
 
   return (
-
     <div>
       {/* <Switch /> */}
       <Route exact path="/" component={HomePage} />
