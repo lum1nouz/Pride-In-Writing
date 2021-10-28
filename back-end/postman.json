@@ -14,15 +14,6 @@
             "exec": [
               "pm.test(\"Status code is 200\", function() {",
               "    pm.response.to.have.status(200)",
-              "})",
-              "pm.test(\"Response keys are valid\", function() {",
-              "    pm.expect(Object.keys(pm.response.json())).include(\"authors\")",
-              "})",
-              "pm.test(\"Response keys are valid\", function() {",
-              "    var jsonData = pm.response.json();",
-              "})",
-              "pm.test(\"Response contains 119 authors\", function() {",
-              "    pm.expect(Object.keys(pm.response.json().authors).length).equal(119)",
               "})"
             ],
             "type": "text/javascript"
@@ -53,16 +44,8 @@
             "exec": [
               "pm.test(\"Status code is 200\", function() {",
               "    pm.response.to.have.status(200)",
-              "})",
-              "",
-              "pm.test(\"Response keys are valid\", function() {",
-              "    pm.expect(Object.keys(pm.response.json())).include(\"books\")",
-              "})",
-              "",
-              "pm.test(\"Response contains 445 books\", function() {",
-              "    pm.expect(Object.keys(pm.response.json().books).length).equal(445)",
               "})"
-            ],
+              ],
             "type": "text/javascript"
           }
         }
@@ -88,16 +71,8 @@
             "exec": [
               "pm.test(\"Status code is 200\", function() {",
               "    pm.response.to.have.status(200)",
-              "})",
-              "",
-              "pm.test(\"Response keys are valid\", function() {",
-              "    pm.expect(Object.keys(pm.response.json())).include(\"publishers\")",
-              "})",
-              "",
-              "pm.test(\"Response contains 550 publishers\", function() {",
-              "    pm.expect(Object.keys(pm.response.json().publishers).length).equal(550)",
               "})"
-            ],
+              ],
             "type": "text/javascript"
           }
         }
@@ -123,21 +98,8 @@
             "exec": [
               "pm.test(\"Status code is 200\", function() {",
               "    pm.response.to.have.status(200)",
-              "})",
-              "pm.test(\"Response keys are valid\", function() {",
-              "    const keys = Object.keys(pm.response.json())",
-              "    pm.expect(keys).include(\"author_image\")",
-              "    pm.expect(keys).include(\"author_name\")",
-              "    pm.expect(keys).include(\"author_summary\")",
-              "    pm.expect(keys).include(\"author_tour\")",
-              "    pm.expect(keys).include(\"book_connections\")",
-              "    pm.expect(keys).include(\"genre\")",
-              "    pm.expect(keys).include(\"nationality\")",
-              "    pm.expect(keys).include(\"noteable_works\")",
-              "    pm.expect(keys).include(\"publisher_connections\")",
-              "    pm.expect(keys).include(\"year_born\")",
               "})"
-            ],
+              ],
             "type": "text/javascript"
           }
         }
@@ -163,21 +125,8 @@
             "exec": [
               "pm.test(\"Status code is 200\", function() {",
               "    pm.response.to.have.status(200)",
-              "})",
-              "pm.test(\"Response keys are valid\", function() {",
-              "    const keys = Object.keys(pm.response.json())",
-              "    pm.expect(keys).include(\"authors\")",
-              "    pm.expect(keys).include(\"book_id\")",
-              "    pm.expect(keys).include(\"description\")",
-              "    pm.expect(keys).include(\"genres\")",
-              "    pm.expect(keys).include(\"image\")",
-              "    pm.expect(keys).include(\"genre\")",
-              "    pm.expect(keys).include(\"name\")",
-              "    pm.expect(keys).include(\"page_count\")",
-              "    pm.expect(keys).include(\"price\")",
-              "    pm.expect(keys).include(\"year\")",
               "})"
-            ],
+              ],
             "type": "text/javascript"
           }
         }
@@ -203,21 +152,8 @@
             "exec": [
               "pm.test(\"Status code is 200\", function() {",
               "    pm.response.to.have.status(200)",
-              "})",
-              "pm.test(\"Response keys are valid\", function() {",
-              "    const keys = Object.keys(pm.response.json())",
-              "    pm.expect(keys).include(\"author_connections\")",
-              "    pm.expect(keys).include(\"book_connections\")",
-              "    pm.expect(keys).include(\"headquarters\")",
-              "    pm.expect(keys).include(\"image\")",
-              "    pm.expect(keys).include(\"name\")",
-              "    pm.expect(keys).include(\"origin\")",
-              "    pm.expect(keys).include(\"parent_comp\")",
-              "    pm.expect(keys).include(\"publication_types\")",
-              "    pm.expect(keys).include(\"publisher_id\")",
-              "    pm.expect(keys).include(\"website\")",
               "})"
-            ],
+              ],
             "type": "text/javascript"
           }
         }
