@@ -1,5 +1,5 @@
 type Book = {
-    id: number
+    book_id: number
     name: string
     genre: string
     publisher?: string

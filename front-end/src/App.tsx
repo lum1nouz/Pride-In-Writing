@@ -101,7 +101,7 @@ function createBook(a: Book) {
 
   return (
     <div>
-      <BookInstance id={a.id} name={a.name} genre={a.genre} publisher={a.publisher} year={a.year} page_count ={a.page_count} price ={a.price} avg_rating={a.avg_rating} maturity_rating = {a.maturity_rating} description={a.description} image = {a.image} authors={a.authors} author_connections={stringToIntegerList(a.author_connections)} publisher_connections={stringToIntegerList(a.publisher_connections)}/>
+      <BookInstance id={a.book_id} name={a.name} genre={a.genre} publisher={a.publisher} year={a.year} page_count ={a.page_count} price ={a.price} avg_rating={a.avg_rating} maturity_rating = {a.maturity_rating} description={a.description} image = {a.image} authors={a.authors} author_connections={stringToIntegerList(a.author_connections)} publisher_connections={stringToIntegerList(a.publisher_connections)}/>
     </div>
   )
 }
@@ -110,7 +110,7 @@ function createPublisher(a: Publisher) {
 
   return (
     <div>
-      <PublisherInstance id={a.id} name={a.name} image={a.image} origin={a.origin} publication_types={a.publication_types} founded ={a.founded} parent_comp ={a.parent_comp} headquarters={a.headquarters} website={a.website} author_connections={stringToIntegerList(a.author_connections)} book_connections={stringToIntegerList(a.book_connections)}/>
+      <PublisherInstance id={a.publisher_id} name={a.name} image={a.image} origin={a.origin} publication_types={a.publication_types} founded ={a.founded} parent_comp ={a.parent_comp} headquarters={a.headquarters} website={a.website} author_connections={stringToIntegerList(a.author_connections)} book_connections={stringToIntegerList(a.book_connections)}/>
     </div>
   )
 }
@@ -131,38 +131,57 @@ const config = {
       console.log(err);
       return {};
     });
-  return authors;
+  return authors as Author[];
+}
 
+async function getBooksData(){
+  const books = await fetch(`https://api.prideinwriting.me/api/books`)
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+      return {};
+    });
+  return books as Book[];
+}
 
-  //  let tempAuthors = [] as Author[]
-  //  let tempData = null
-  //  console.log("HAHAHAHAH")
-  //  await axios.get(`https://api.prideinwriting.me/api/authors`, config)
-  //   .then((res) => {
-  //     console.log(res.data)
-  //     tempData = res.;
-  //     let parsedJson = JSON.parse(tempData) as autResponse
-  //     console.log(parsedJson)
-  //     tempAuthors = parsedJson.authors
-  //     return tempAuthors
-  //   });
-  //   console.log("HAHAHAHAH")
-  //   console.log(tempAuthors)
-  //   return tempAuthors
+async function getPublisherData(){
+  const publishers = await fetch(`https://api.prideinwriting.me/api/publishers`)
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+      return {};
+    });
+  return publishers as Publisher[];
 }
 
 
 
 function App() {
   let [authDataList, setAuthDataList] = useState([] as Author[])
-  let [bookDataList, setBookDataList] = useState(bookData2 as Book[])
-  let [publDataList, setPublDataList] = useState(publData2 as Publisher[])
+  let [bookDataList, setBookDataList] = useState([] as Book[])
+  let [publDataList, setPublDataList] = useState([] as Publisher[])
 
   useEffect(() => {
     const getAuth = async () => {
         setAuthDataList(await getAuthorsData())
     }
+
+    const getBook = async () => {
+      setBookDataList(await getBooksData())
+    }
+
+    const getPublisher = async () => {
+      setPublDataList(await getPublisherData())
+    }
+
     getAuth();
+    getBook();
+    getPublisher();
+
  }, [])
 
   return (
@@ -182,6 +201,8 @@ function App() {
       <Route exact path="/the-hours" component={TheHours} />
       <Route exact path="/the-price-of-salt" component={ThePriceOfSalt} />
       <Route exact path="/fingersmith" component={Fingersmith} />
+      <div>
+
 
       {authDataList.map(function(author){
         return <Route key={"AuthorID-" + author.author_id as string} exact path={"/author-" + author.author_id as string} render={(x) => (
@@ -190,17 +211,17 @@ function App() {
       })}
 
       {bookDataList.map(function(book){
-        return <Route key={"BookID-" + book.id as string} exact path={"/book-" + book.id as string} render={(x) => (
+        return <Route key={"BookID-" + book.book_id as string} exact path={"/book-" + book.book_id as string} render={(x) => (
           createBook(book as Book)
         )}/>
       })}
 
       {publDataList.map(function(publisher){
-        return <Route key={"PublisherID-" + publisher.id as string} exact path={"/publisher-" + publisher.id as string} render={(x) => (
+        return <Route key={"PublisherID-" + publisher.publisher_id as string} exact path={"/publisher-" + publisher.publisher_id as string} render={(x) => (
           createPublisher(publisher as Publisher)
         )}/>
       })}
-
+      </div>
     </div>
   );
 }

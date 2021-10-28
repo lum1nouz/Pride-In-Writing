@@ -111,7 +111,7 @@ class AuthorsInstance extends React.Component<props, state> {
                   <h2>Books</h2>
                   <p>
                     {this.state.bookCon.map(function(book) {
-                      return <Button component={Link} to={"/book-" + book.id}>
+                      return <Button component={Link} to={"/book-" + book.book_id}>
                                   {book.name}
                             </Button>
                     })}
@@ -120,7 +120,7 @@ class AuthorsInstance extends React.Component<props, state> {
                   <h2>Publishers</h2>
                   <p>
                     {this.state.pubCon.map(function(publisher) {
-                      return <Button component={Link} to={"/publisher-" + publisher.id}>
+                      return <Button component={Link} to={"/publisher-" + publisher.publisher_id}>
                                   {publisher.name}
                             </Button>
                     })}
