@@ -40,13 +40,11 @@ deploy_production:
     - cd back-end
     - /root/.local/bin/eb deploy prideinwriting-api-prod
 
-
 postman_tests:
   stage: test
   image: 
     name: postman/newman_alpine33
     entrypoint: [""]
-  only: [merge_requests]
   script:
     - newman --version
     - newman run postman.json
