@@ -72,7 +72,7 @@ def hello_world():
 def getAuthors():
     all_authors = Author.query.all()
     result = authors_schema.dump(all_authors)
-    return jsonify({"authors": result})
+    return authors_schema.jsonify(result)
 
 @app.route("/api/authors/id=<id>", methods=["GET"])
 def get_country_id(id):
@@ -83,7 +83,7 @@ def get_country_id(id):
 def getBooks():
     all_books = Book.query.all()
     result = books_schema.dump(all_books)
-    return jsonify({"books": result})
+    return books_schema.jsonify(result)
 
 @app.route("/api/books/id=<id>", methods=["GET"])
 def get_book_id(id):
@@ -94,7 +94,8 @@ def get_book_id(id):
 def getPublishers():
     all_publishers = Publisher.query.all()
     result = publishers_schema.dump(all_publishers)
-    return jsonify({"publishers": result})
+    return publishers_schema.jsonify(result)
+    # return jsonify({"publishers": result})
 
 @app.route("/api/publishers/id=<id>", methods=["GET"])
 def get_publisher_id(id):
