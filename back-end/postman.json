@@ -108,7 +108,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "https://prideinwriting.me/api/authors/1",
+          "raw": "https://prideinwriting.me/api/books/id=1",
           "protocol": "https",
           "host": ["api", "prideinwriting", "me"],
           "path": ["api", "authors", "1"]
@@ -135,7 +135,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "https://prideinwriting.me/api/books/1",
+          "raw": "https://prideinwriting.me/api/books/id=1",
           "protocol": "https",
           "host": ["api", "prideinwriting", "me"],
           "path": ["api", "books", "1"]
@@ -162,7 +162,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "https://prideinwriting.me/api/publishers/1",
+          "raw": "https://prideinwriting.me/api/publishers/id=1",
           "protocol": "https",
           "host": ["api", "prideinwriting", "me"],
           "path": ["api", "publishers", "1"]
