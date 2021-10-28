@@ -58,7 +58,6 @@ back_end_test:
     - python --version
     - cd back-end/
     - pip install -r requirements.txt
-    - pip install json
   script:
     - python -m pytest tests.py -vv
 
