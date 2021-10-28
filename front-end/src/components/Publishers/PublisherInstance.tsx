@@ -8,6 +8,8 @@ import { CardContent } from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
+import Author from "../../models/author-model"
+import Book from "../../models/book-model"
 
 type props = {
     id: number
@@ -39,6 +41,36 @@ const styles = {
     constructor(props: props){
         super(props)
         this.state = {}
+    }
+
+    async getBookConnections() {
+      let tempData: Book[] = []
+      this.props.book_connections.forEach(async (idNum) =>{(
+        tempData.push(await fetch('https://api.prideinwriting.me/api/books/id=' + idNum)
+        .then((response) => {
+          return response.json();
+        })
+        .catch((err) => {
+          console.log(err);
+          return {};
+        }))
+      )})
+      return tempData
+    }
+
+    async getAuthorConnections() {
+      let tempData:Author[] = []
+      this.props.author_connections?.forEach(async (idNum) =>{(
+        tempData.push(await fetch('https://api.prideinwriting.me/api/author/id=' + idNum)
+        .then((response) => {
+          return response.json();
+        })
+        .catch((err) => {
+          console.log(err);
+          return {};
+        }))
+      )})
+      return tempData
     }
   
     render() {

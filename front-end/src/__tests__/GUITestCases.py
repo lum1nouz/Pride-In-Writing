@@ -1,3 +1,7 @@
+# https://gitlab.com/forbesye/fitsbits/-/blob/master/front-end/guitests.py
+# https://gitlab.com/forbesye/fitsbits/-/blob/master/front-end/gui_tests/template.py
+# Code for running and setting up GUI tests inspired and used from here
+
 import unittest
 import time
 from selenium import webdriver

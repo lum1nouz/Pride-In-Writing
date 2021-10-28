@@ -47,10 +47,6 @@ const styles = {
   },
 };
 
-// function intListToAuthor({
-
-// })
-
 
 class BookInstance extends React.Component<props, state> {
     constructor(props: props){
@@ -59,6 +55,36 @@ class BookInstance extends React.Component<props, state> {
           autCon: [],
           pubCon: []
         }
+    }
+
+    async getPublisherConnections() {
+      let tempData: Publisher[] = []
+      this.props.publisher_connections?.forEach(async (idNum) =>{(
+        tempData.push(await fetch('https://api.prideinwriting.me/api/publishers/id=' + idNum)
+        .then((response) => {
+          return response.json();
+        })
+        .catch((err) => {
+          console.log(err);
+          return {};
+        }))
+      )})
+      return tempData
+    }
+    
+    async getAuthorConnections() {
+      let tempData:Author[] = []
+      this.props.author_connections?.forEach(async (idNum) =>{(
+        tempData.push(await fetch('https://api.prideinwriting.me/api/author/id=' + idNum)
+        .then((response) => {
+          return response.json();
+        })
+        .catch((err) => {
+          console.log(err);
+          return {};
+        }))
+      )})
+      return tempData
     }
 
   render() {
