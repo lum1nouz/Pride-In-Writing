@@ -7,7 +7,10 @@
 # Full project: https://gitlab.com/pages/plain-html
 
 stages:
-  -test
+  - build
+  - test
+  - deploy
+
 
 postman_tests: 
   stage: test
