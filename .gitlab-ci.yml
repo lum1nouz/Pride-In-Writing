@@ -65,6 +65,7 @@ jest:
   stage: test
   script:
     - cd front-end
+    - pip install npm
     - npm install
     - npm test
 
