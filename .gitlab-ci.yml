@@ -60,3 +60,19 @@ back_end_test:
     - pip install -r requirements.txt
   script:
     - python -m pytest tests.py -vv
+
+jest:
+  stage: test
+  script:
+    - cd frontend
+    - npm install
+    - npm test
+
+front_end_test:
+  stage: test
+  services:
+    - selenium/standalone-chrome
+  image: python:3.9-slim
+  script:
+    - cd front-end && pytest guitests.py
+
