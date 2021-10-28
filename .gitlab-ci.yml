@@ -65,6 +65,7 @@ jest:
   stage: test
   script:
     - cd front-end
+    - apt-get install nodejs
     - apt-get install npm
     - npm install
     - npm test
