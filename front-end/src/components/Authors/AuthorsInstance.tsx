@@ -49,12 +49,38 @@ class AuthorsInstance extends React.Component<props, state> {
       }
   }
 
-  getPublisherConnections() {
-    
+  async getPublisherConnections() {
+    let tempData: Publisher[] = []
+    this.props.publisher_connections.forEach(async (idNum) =>{(
+      tempData.push(await fetch('https://api.prideinwriting.me/api/publishers/id=' + idNum)
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+        return {};
+      }))
+    )})
+    return tempData
   }
 
-  getBookConnections() {
+  async getBookConnections() {
+    let tempData: Book[] = []
+    this.props.book_connections.forEach(async (idNum) =>{(
+      tempData.push(await fetch('https://api.prideinwriting.me/api/books/id=' + idNum)
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+        return {};
+      }))
+    )})
+    return tempData
+  }
 
+  async componentDidMount() {
+    this.setState({bookCon: await this.getBookConnections(), pubCon: await this.getPublisherConnections()}) 
   }
 
   render() {

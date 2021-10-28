@@ -3,29 +3,19 @@ import HomePage from "./components/HomePage/HomePage";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Books from "./components/Books/Books";
 import Publishers from "./components/Publishers/Publishers";
-import Putnam from "./components/Publishers/GPPutnam";
-import Farrar from "./components/Publishers/Farrar";
-import ViragoPress from "./components/Publishers/ViragoPress";
 import Authors from "./components/Authors/Authors";
-import PatriciaHighsmith from "./components/Authors/PatriciaHighsmith";
-import MichaelCunningham from "./components/Authors/MichaelCunningham";
-import SarahWaters from "./components/Authors/SarahWaters";
 import { Route, Switch } from "react-router-dom";
-import TheHours from "./components/Books/TheHours";
-import ThePriceOfSalt from "./components/Books/ThePriceOfSalt";
-import Fingersmith from "./components/Books/Fingersmith";
 import AuthorsInstance from "./components/Authors/AuthorsInstance"
 import Author from "./models/author-model";
 import Book from "./models/book-model";
 import Publisher from "./models/publisher-model";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import BookInstance from "./components/Books/BookInstance";
 import PublisherInstance from "./components/Publishers/PublisherInstance";
 import stringToIntegerList from "./common";
-import { parseJsonText } from "typescript";
+import useAxios from "axios-hooks";
 
-const authData2 = [{
+const authData2: Author[] = [{
   author_id: 0,
   author_name : "test",
   author_tour : "false",
@@ -53,8 +43,8 @@ const authData2 = [{
 
 
 
-const bookData2 = [{
-  id: 0,
+const bookData2: Book[] = [{
+  book_id: 0,
   name: "Killer Bee",
   genre: "Books",
   publisher: "Publishing Co",
@@ -70,8 +60,8 @@ const bookData2 = [{
   publisher_connections:"15,20"
 }]
 
-const publData2 = [{
-  id: 0,
+const publData2: Publisher[] = [{
+  publisher_id: 0,
   name: "123Books!!!",
   image: "https://upload.wikimedia.org/wikipedia/en/3/32/Atria_logo.png",
   origin: "texas",
@@ -122,48 +112,62 @@ const config = {
   }
 };
 
- async function getAuthorsData(){
-  const authors = await fetch(`https://api.prideinwriting.me/api/authors`)
-    .then((response) => {
-      return response.json();
-    })
-    .catch((err) => {
-      console.log(err);
-      return {};
-    });
-  return authors as Author[];
-}
-
-async function getBooksData(){
-  const books = await fetch(`https://api.prideinwriting.me/api/books`)
-    .then((response) => {
-      return response.json();
-    })
-    .catch((err) => {
-      console.log(err);
-      return {};
-    });
-  return books as Book[];
-}
-
-async function getPublisherData(){
-  const publishers = await fetch(`https://api.prideinwriting.me/api/publishers`)
-    .then((response) => {
-      return response.json();
-    })
-    .catch((err) => {
-      console.log(err);
-      return {};
-    });
-  return publishers as Publisher[];
-}
-
 
 
 function App() {
-  let [authDataList, setAuthDataList] = useState([] as Author[])
-  let [bookDataList, setBookDataList] = useState([] as Book[])
-  let [publDataList, setPublDataList] = useState([] as Publisher[])
+  let [authDataList, setAuthDataList] = useState<Author[]>(authData2)
+  let [bookDataList, setBookDataList] = useState<Book[]>(bookData2)
+  let [publDataList, setPublDataList] = useState<Publisher[]>(publData2)
+  let [{ data: authData, loading: l1, error: e1 }] = useAxios(
+    "https://api.prideinwriting.me/api/authors"
+  );
+  setAuthDataList(authData as Author[])
+
+  let [{ data: bookData, loading: l2, error: e2 }] = useAxios(
+    "https://api.prideinwriting.me/api/books"
+  );
+  setBookDataList(bookData as Book[])
+
+  let [{ data: publisherData, loading: l3, error: e3 }] = useAxios(
+    "https://api.prideinwriting.me/api/publishers"
+  );
+  setPublDataList(publisherData as Publisher[])
+
+  async function getAuthorsData(){
+    const authors = await fetch(`https://api.prideinwriting.me/api/authors`)
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+        return {};
+      });
+    return authors as Author[];
+  }
+  
+  async function getBooksData(){
+    const books = await fetch(`https://api.prideinwriting.me/api/books`)
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+        return {};
+      });
+    return books as Book[];
+  }
+  
+  async function getPublisherData(){
+    const publishers = await fetch(`https://api.prideinwriting.me/api/publishers`)
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+        return {};
+      });
+    return publishers as Publisher[];
+  }
 
   useEffect(() => {
     const getAuth = async () => {
@@ -191,20 +195,11 @@ function App() {
       <Route exact path="/AboutUs" component={AboutUs} />
       <Route exact path="/Books" component={Books} />
       <Route exact path="/Publishers" component={Publishers} />
-      <Route exact path="/putnam" component={Putnam} />
-      <Route exact path="/farrar" component={Farrar} />
-      <Route exact path="/virago-press" component={ViragoPress} />
       <Route exact path="/Authors" component={Authors} />
-      <Route exact path="/patricia-highsmith" component={PatriciaHighsmith} />
-      <Route exact path="/michael-cunningham" component={MichaelCunningham} />
-      <Route exact path="/sarah-waters" component={SarahWaters} />
-      <Route exact path="/the-hours" component={TheHours} />
-      <Route exact path="/the-price-of-salt" component={ThePriceOfSalt} />
-      <Route exact path="/fingersmith" component={Fingersmith} />
       <div>
 
 
-      {authDataList.map(function(author){
+      {(authDataList as Author[]).map(function(author){
         return <Route key={"AuthorID-" + author.author_id as string} exact path={"/author-" + author.author_id as string} render={(x) => (
           createAuthor(author as Author)
         )}/>
