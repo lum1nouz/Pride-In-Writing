@@ -5,6 +5,20 @@
 # https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Pages/HTML.gitlab-ci.yml
 
 # Full project: https://gitlab.com/pages/plain-html
+
+stages:
+  -test
+
+postman_tests: 
+  stage: test
+  image: 
+    name: postman/newman_alpine33
+    entrypoint: [""]
+  only: [merge_requests]
+  script:
+    - newman --version
+    - newman run postman.json
+
 pages:
   stage: deploy
   script:
