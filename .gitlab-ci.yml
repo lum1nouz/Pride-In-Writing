@@ -40,45 +40,45 @@ deploy_production:
     - cd back-end
     - /root/.local/bin/eb deploy prideinwriting-api-prod
 
-postman_tests:
-  stage: test
-  image: 
-    name: postman/newman_alpine33
-    entrypoint: [""]
-  script:
-    - newman --version
-    - cd back-end
-    - newman run postman.json
+# postman_tests:
+#   stage: test
+#   image: 
+#     name: postman/newman_alpine33
+#     entrypoint: [""]
+#   script:
+#     - newman --version
+#     - cd back-end
+#     - newman run postman.json
 
-back_end_test:
-  stage: test
-  image: 
-    name: "python:3.7"
-  before_script:
-    - python --version
-    - cd back-end/
-    - pip install -r requirements.txt
-  script:
-    - python -m pytest tests.py -vv
+# back_end_test:
+#   stage: test
+#   image: 
+#     name: "python:3.7"
+#   before_script:
+#     - python --version
+#     - cd back-end/
+#     - pip install -r requirements.txt
+#   script:
+#     - python -m pytest tests.py -vv
 
-jest:
-  stage: test
-  script:
-    - cd front-end
-    - apt-get install nodejs
-    - apt-get install npm
-    - npm install
-    - npm test
+# jest:
+#   stage: test
+#   script:
+#     - cd front-end
+#     - apt-get install nodejs
+#     - apt-get install npm
+#     - npm install
+#     - npm test
 
-front_end_test:
-  stage: test
-  services:
-    - selenium/standalone-chrome
-  image: python:3.9-slim
-  before_script: 
-    - pip install pytest
-    - pip install pytest-ordering
+# front_end_test:
+#   stage: test
+#   services:
+#     - selenium/standalone-chrome
+#   image: python:3.9-slim
+#   before_script: 
+#     - pip install pytest
+#     - pip install pytest-ordering
 
-  script:
-    - cd front-end && python guitests.py
+#   script:
+#     - cd front-end && python guitests.py
 
