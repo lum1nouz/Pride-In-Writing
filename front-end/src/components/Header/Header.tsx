@@ -72,22 +72,22 @@ class Header extends React.Component<props, state> {
           </List>
           <List className={css.heading}>
             <ListItem>
-              <Button component={Link} to="/Authors">
+              <Button id="authors-button" component={Link} to="/Authors">
               <div style={{fontWeight:'bold', color: 'white'}}><p>Authors</p></div>
               </Button>
             </ListItem>
             <ListItem>
-              <Button component={Link} to="/Books">
+              <Button id="books-button" component={Link} to="/Books">
               <div style={{fontWeight:'bold', color: 'white'}}><p>Books</p></div>
               </Button>
             </ListItem>
             <ListItem>
-              <Button component={Link} to="/Publishers">
+              <Button id="publishers-button" component={Link} to="/Publishers">
               <div style={{fontWeight:'bold', color: 'white'}}><p>Publishers</p></div>
               </Button>
             </ListItem>
             <ListItem>
-              <Button component={Link} to="/AboutUs" style={{ width: 140 }}>
+              <Button id="aboutus-button" component={Link} to="/AboutUs" style={{ width: 140 }}>
               <div style={{fontWeight:'bold', color: 'white'}}><p>About Us</p></div>
               </Button>
             </ListItem>

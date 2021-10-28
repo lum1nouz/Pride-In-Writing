@@ -19,7 +19,7 @@ pages:
 
 build_front_end:
   stage: build
-  image: node:latest
+  image: node:16.12.0
   script: 
     - cd front-end
     - yarn install

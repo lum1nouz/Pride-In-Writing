@@ -40,8 +40,8 @@ class GUITestCases (unittest.TestCase):
     def test0(self):
         driver = self.driver
         driver.get(self.URL)
-        expected = "Pride in Writing"
-        h1 = driver.find_elements(By.TAG_NAME, "h1")
+        expected = "P"
+        h1 = driver.find_elements(By.ID, "homePageP")
         actual = h1[0].text
         self.assertEqual(expected,actual)
 
@@ -51,10 +51,7 @@ class GUITestCases (unittest.TestCase):
         driver.get(self.URL)
         buttons = driver.find_elements(By.ID, "authors-button")
         buttons[0].click()
-        expected = "Authors"
-        titleText = driver.find_elements(By.ID, "authors-title")
-        actual = titleText[0].text
-        self.assertEqual(expected,actual)
+        self.assertEqual(self.driver.current_url, self.URL + "Authors")
 
     #Books Link in header works
     def test2(self):
@@ -62,10 +59,7 @@ class GUITestCases (unittest.TestCase):
         driver.get(self.URL)
         buttons = driver.find_elements(By.ID, "books-button")
         buttons[0].click()
-        expected = "Books"
-        titleText = driver.find_elements(By.ID, "books-title")
-        actual = titleText[0].text
-        self.assertEqual(expected,actual)
+        self.assertEqual(self.driver.current_url, self.URL + "Books")
 
     #Publisher Link in header works
     def test3(self):
@@ -73,10 +67,7 @@ class GUITestCases (unittest.TestCase):
         driver.get(self.URL)
         buttons = driver.find_elements(By.ID, "publishers-button")
         buttons[0].click()
-        expected = "Publishers"
-        titleText = driver.find_elements(By.ID, "publishers-title")
-        actual = titleText[0].text
-        self.assertEqual(expected,actual)
+        self.assertEqual(self.driver.current_url, self.URL + "Publishers")
 
     #AboutUs Link in header works
     def test4(self):
@@ -84,23 +75,68 @@ class GUITestCases (unittest.TestCase):
         driver.get(self.URL)
         buttons = driver.find_elements(By.ID, "aboutus-button")
         buttons[0].click()
-        expected = "About Us"
-        titleText = driver.find_elements(By.TAG_NAME, "h1")
-        actual = titleText[0].text
-        self.assertEqual(expected,actual)
+        self.assertEqual(self.driver.current_url, self.URL + "AboutUs")
 
-    URL = self.URL + "/AboutUs"
-        
+
+    #Author Instance Page created correctly
+    def test5(self):
+        self.temp_URL = self.URL + "author-0"
+        driver = self.driver
+        driver.get(self.temp_URL)
+        h2 = driver.find_elements(By.TAG_NAME, "h2")
+        expected = "Books"
+        x = False
+        for y in h2 :
+            if expected == y.text:
+                x = True
+        self.assertTrue(x)
+
+
+    #Book Instance Page created correctly
+    def test6(self):
+        self.temp_URL = self.URL + "book-0"
+        driver = self.driver
+        driver.get(self.temp_URL)
+        h2 = driver.find_elements(By.TAG_NAME, "h2")
+        expected = "Genre"
+        x = False
+        for y in h2 :
+            if expected == y.text:
+                x = True
+        self.assertTrue(x)
+
+
+    #Publisher Instance Page created correctly
+    def test7(self):
+        self.temp_URL = self.URL + "publisher-0"
+        driver = self.driver
+        driver.get(self.temp_URL)
+        h2 = driver.find_elements(By.TAG_NAME, "h2")
+        expected = "Authors"
+        x = False
+        for y in h2 :
+            if expected == y.text:
+                x = True
+        self.assertTrue(x)
+
+
+    #Author Instance Page can be navigated to
+    def test8(self):
+        self.temp_URL = self.URL + "Authors"
+        driver = self.driver
+        driver.get(self.temp_URL)
+        button = driver.find_elements(By.ID, "linkButton-0")
+        button[0].click()
+        self.assertEqual(self.driver.current_url, self.URL + "author-0")
+
+    def test9(self):
+        self.temp_URL = self.URL + "Books"
+        driver = self.driver
+        driver.get(self.temp_URL)
+        button = driver.find_elements(By.ID, "linkButton-0")
+        button[0].click()
+        self.assertEqual(self.driver.current_url, self.URL + "books-0")
     
-    #AboutUs page makes Gitlab Api calls
-    # def test5(self):
-    #     driver = self.driver
-    #     driver.get(self.URL)
-    #     driver.implicitly_wait(40)
-    #     expected = 0
-    #     titleText = driver.find_elements(By.TAG_NAME, "h1")
-    #     actual = titleText[0].text
-    #     self.assertGreater()
     
 
         

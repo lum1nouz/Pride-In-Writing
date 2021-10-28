@@ -53,7 +53,7 @@ class HomePage extends React.Component<props, state> {
                     <Grid item xs={7} style={{backgroundColor: 'white', height: '600px', textAlign:'center', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative'}}>
                          <div className="pride" data-testid="pride">
                             <h1>
-                            <span style={{color: "#FF555E"}}>P</span>
+                            <span id="homePageP" style={{color: "#FF555E"}}>P</span>
                             <span style={{color: "#FF8650"}}>r</span>
                             <span style={{color: "#F6BE00"}}>i</span>
                             <span style={{color: "#77C66E"}}>d</span>
