@@ -11,7 +11,7 @@ stages:
   - test
   - deploy
 
-postman_tests: 
+postman-tests:
   stage: test
   image: 
     name: postman/newman_alpine33
@@ -19,6 +19,7 @@ postman_tests:
   only: [merge_requests]
   script:
     - newman --version
+    - newman run postman.json
 
 pages:
   stage: deploy
