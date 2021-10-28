@@ -1,20 +1,14 @@
-import React from "react";
-import { CardContent } from "@material-ui/core";
-import Card from "@material-ui/core/Card";
-import Grid from "@material-ui/core/Grid";
-import CardMedia from "@material-ui/core/CardMedia";
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import Pagination from "@material-ui/lab/Pagination";
-import { forwardRef } from 'react';
-import { Paper, Button } from "@material-ui/core";
+// https://gitlab.com/mehuldar/aroundtheworld/-/blob/main/front-end/src/screens/Demographics/DemographicsAll.js
+// Around the World 
+
+import React, { useState, forwardRef, useEffect} from "react";
+import { Paper } from "@material-ui/core";
 import Header from "../Header/Header";
-import css from "./Books.module.css";
-import bgPhoto from "../../Assets/bgPhoto.jpg";
+import css from './Books.module.css';
+import { Pagination } from "@mui/material";
 import { Parallax, Background } from "react-parallax";
-import MaterialTable from "material-table";
-import internal from "stream";
-import { Link } from "react-router-dom";
 import AddBox from '@material-ui/icons/AddBox';
+import useAxios from "axios-hooks";
 import ArrowUpward from '@material-ui/icons/ArrowUpward';
 import Check from '@material-ui/icons/Check';
 import ChevronLeft from '@material-ui/icons/ChevronLeft';
@@ -29,17 +23,8 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
-
-type rowdata = {
-  book: Link;
-  author: string;
-  genre: string;
-  publisher: string;
-  yearPublished: number;
-  rating: number;
-  pages: number;
-  price: number;
-};
+import Book from '../../models/book-model'
+import BookCard from './BookCard'
 
 const tableIcons = {
   Add: forwardRef((props, ref:React.Ref<SVGSVGElement>) => <AddBox {...props} ref={ref} />),
@@ -61,14 +46,23 @@ const tableIcons = {
   ViewColumn: forwardRef((props, ref:React.Ref<SVGSVGElement>) => <ViewColumn {...props} ref={ref} />)
 };
 
-type props = {};
+function Books() {
+  const [bookData, setBookData] = useState<Book[]>([]);
+  const [page, setPage] = useState(1);
 
-type state = {};
+  const [{ data, loading, error }] = useAxios(
+    "https://api.prideinwriting.me/api/books"
+  );
+  
+  useEffect(() => {
+    const authorsData = data;
+    if (authorsData) {
+      setBookData(authorsData);
+    }
+  }, [data]);
 
-class Books extends React.Component<props, state> {
-  state: state = {};
+  
 
-  render() {
     return (
       <div>
         <Header />
@@ -82,16 +76,53 @@ class Books extends React.Component<props, state> {
                 <span style={{color: "#77C66E"}}>k</span>
                 <span style={{color: "#83B2FF"}}>s</span>
               </div>
-
-              <div style= {{display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                position: "relative",
-                padding: 30,}}>
-              <Pagination count={10} color="secondary" />
-              </div>
               <Paper elevation={4} className={css.paperCont} data-testid = "books">
-              <Grid container spacing={1}>
+
+              <div>
+          <div
+            style={{
+              display: "flex",
+              marginTop: 30,
+              flex: 1,
+              justifyContent: "center",
+            }}
+          >
+            <div>
+              <Pagination
+                defaultPage={1}
+                page={page}
+                onChange={(event, value) => setPage(value)}
+                count={Math.ceil(bookData.length / 9)}
+                variant="outlined"
+                color="primary"
+                style={{ alignSelf: "center" }}
+              />
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              marginTop: 20,
+              flex: 1,
+              justifyContent: "center",
+            }}
+          >
+            Displaying {(page - 1) * 9 + 1}-
+            {Math.min(page * 9, bookData.length)} of{" "}
+            {bookData.length}
+          </div>
+          <div className={css.cardGrid}>
+            {bookData.slice((page - 1) * 9, page * 9).map((book) => (
+              <BookCard book={book} />
+            ))}
+          </div>
+        </div>
+
+
+
+
+              
+              {/* <Grid container spacing={1}>
                   <Grid item xs={4}>
                     <Card variant="outlined" style={{width: 300}}>
                       <CardContent>
@@ -137,15 +168,14 @@ class Books extends React.Component<props, state> {
                     </Card>
                   </Grid>
 
-              </Grid>
+              </Grid>  */}
 
-              </Paper>
-            </div>
-          </Parallax>
-        </div>
-      </div>
+               </Paper>
+             </div>
+           </Parallax>
+         </div>
+       </div>
     );
   }
-}
 
 export default Books;

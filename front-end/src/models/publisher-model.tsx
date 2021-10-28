@@ -1,5 +1,5 @@
 type Publisher = {
-    id: number
+    publisher_id: number
     name: string
     image: string
     origin: string

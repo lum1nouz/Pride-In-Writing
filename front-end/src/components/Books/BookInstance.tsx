@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Book from "../../models/book-model";
 import Author from "../../models/author-model"
 import Publisher from "../../models/publisher-model"
+import stringToIntegerList from "../../common"
 
 
 type props = {
@@ -45,6 +46,10 @@ const styles = {
     alignItems: "center",
   },
 };
+
+// function intListToAuthor({
+
+// })
 
 
 class BookInstance extends React.Component<props, state> {
@@ -117,7 +122,7 @@ class BookInstance extends React.Component<props, state> {
                   <h2 id="publisherTest">Publishers</h2>
                   <p>
                     {this.state.pubCon.map(function(publisher) {
-                      return <Button component={Link} to={"/publisher-" + publisher.id}>
+                      return <Button component={Link} to={"/publisher-" + publisher.publisher_id}>
                                   {publisher.name}
                             </Button>
                     })}

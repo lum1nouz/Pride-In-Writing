@@ -49,12 +49,38 @@ class AuthorsInstance extends React.Component<props, state> {
       }
   }
 
-  getPublisherConnections() {
-    
+  async getPublisherConnections() {
+    let tempData: Publisher[] = []
+    this.props.publisher_connections.forEach(async (idNum) =>{(
+      tempData.push(await fetch('https://api.prideinwriting.me/api/publishers/id=' + idNum)
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+        return {};
+      }))
+    )})
+    return tempData
   }
 
-  getBookConnections() {
+  async getBookConnections() {
+    let tempData: Book[] = []
+    this.props.book_connections.forEach(async (idNum) =>{(
+      tempData.push(await fetch('https://api.prideinwriting.me/api/books/id=' + idNum)
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+        return {};
+      }))
+    )})
+    return tempData
+  }
 
+  async componentDidMount() {
+    this.setState({bookCon: await this.getBookConnections(), pubCon: await this.getPublisherConnections()}) 
   }
 
   render() {
@@ -111,7 +137,7 @@ class AuthorsInstance extends React.Component<props, state> {
                   <h2>Books</h2>
                   <p>
                     {this.state.bookCon.map(function(book) {
-                      return <Button component={Link} to={"/book-" + book.id}>
+                      return <Button component={Link} to={"/book-" + book.book_id}>
                                   {book.name}
                             </Button>
                     })}
@@ -120,7 +146,7 @@ class AuthorsInstance extends React.Component<props, state> {
                   <h2>Publishers</h2>
                   <p>
                     {this.state.pubCon.map(function(publisher) {
-                      return <Button component={Link} to={"/publisher-" + publisher.id}>
+                      return <Button component={Link} to={"/publisher-" + publisher.publisher_id}>
                                   {publisher.name}
                             </Button>
                     })}

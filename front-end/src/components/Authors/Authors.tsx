@@ -6,8 +6,6 @@ import css from "./Authors.module.css";
 import bgPhoto from "../../Assets/bgPhoto.jpg";
 import { Parallax, Background } from "react-parallax";
 import MaterialTable from "material-table";
-import internal from "stream";
-import { Link } from "react-router-dom";
 import AddBox from '@material-ui/icons/AddBox';
 import ArrowUpward from '@material-ui/icons/ArrowUpward';
 import Check from '@material-ui/icons/Check';
@@ -33,6 +31,7 @@ type rowdata = {
   genres: string;
   onTour: string;
   books_published: number | undefined;
+  id: number
 };
 
 function mapData(data: Author[]){
@@ -45,18 +44,12 @@ function mapData(data: Author[]){
       books_published: stringToIntegerList(data.book_connections).length,
       onTour: data.author_tour,
       genres: data.genre,
+      id: data.author_id
     })
   )})
+  return newData
 }
 
-const rowDataTest: rowdata = {
-    author: <a id="linkButton-0"  href="/author-0"> Test </a>,
-    yearBorn: "1977",
-    nationality: "American",
-    genres: "1, 2, 3",
-    onTour: "False",
-    books_published: 12,
-}
 
 
 const tableIcons = {
@@ -85,10 +78,31 @@ type state = {
   dataStore: rowdata[]
 };
 
+async function getData() {
+  const authors = await fetch(`https://api.prideinwriting.me/api/authors`)
+  .then((response) => {
+    return response.json();
+  })
+  .catch((err) => {
+    console.log(err);
+    return {};
+  });
+  return authors as Author[];
+}
+
 class Authors extends React.Component<props, state> {
-  state: state = {
-    dataStore: [rowDataTest]
-  };
+  constructor(props: props){
+    super(props)
+
+    this.state = {
+      dataStore: []
+    };
+  }
+
+  async componentDidMount() {
+    this.setState({dataStore: mapData(await getData())}) 
+  }
+
 
   render() {
     return (
@@ -110,6 +124,14 @@ class Authors extends React.Component<props, state> {
                 <MaterialTable
                   icons={tableIcons}
                   style={{ marginTop: 50, marginLeft: 20, marginRight: 20 }}
+                  options={{
+                    paging: true,
+                    pageSize: 10,
+                    pageSizeOptions: [],
+                  }}
+                  onRowClick={(_, data) =>
+                    (window.location.href = "/author-" + data?.id)
+                  }
                   columns={[
                     { title: "Author", field: "author", type: "string" },
                     { title: "Year Born", field: "yearBorn", type: "numeric" },
@@ -122,7 +144,7 @@ class Authors extends React.Component<props, state> {
                     { title: "On Tour", field: "onTour", type: "string" },
                     {
                       title: "Books Written",
-                      field: "books_Published",
+                      field: "books_published",
                       type: "numeric",
                     },
                   ]}
