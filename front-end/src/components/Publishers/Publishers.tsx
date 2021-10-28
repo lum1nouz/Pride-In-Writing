@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { forwardRef } from 'react';
 import { Paper, Button } from "@material-ui/core";
 import Header from "../Header/Header";
@@ -23,38 +23,32 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
+import Publisher from "../../models/publisher-model";
+import stringToIntegerList from "../../common"
 
 type rowdata = {
-  publisher: Link;
+  publisher: ReactElement;
   country: string;
   types: string;
-  authorsPublished: string;
-  founded: number;
+  authorsPublished: number | undefined;
+  founded: string;
+  id: number
 };
 
-const dataStore = [
-  {
-    publisher: <a href="/putnam">G. P. Putnam's Sons</a>,
-    country: "United States",
-    types: "Books",
-    authorsPublished: "29+",
-    founded: 1838,
-  },
-  {
-    publisher: <a href="/farrar">Farrar, Straus and Giroux</a>,
-    country: "United States",
-    types: "Books",
-    authorsPublished: "27+",
-    founded: 1946,
-  },
-  {
-    publisher: <a href="/putnam">Virago Press</a>,
-    country: "United Kingdom",
-    types: "Books, Women's Writing",
-    authorsPublished: "20+",
-    founded: 1973,
-  },
-];
+function mapData(data: Publisher[]){
+  let newData: rowdata[] = []
+  data.forEach(function(data) {(
+    newData.push({
+      publisher: <a id={"linkButton-" + data.publisher_id} href={"/publisher-" + data.publisher_id}> {data.name} </a>,
+      country: data.headquarters,
+      types: data.publication_types,
+      authorsPublished: stringToIntegerList(data.author_connections).length,
+      founded: data.founded,
+      id: data.publisher_id
+    })
+  )})
+  return newData
+}
 
 const tableIcons = {
   Add: forwardRef((props, ref:React.Ref<SVGSVGElement>) => <AddBox {...props} ref={ref} />),
@@ -78,10 +72,34 @@ const tableIcons = {
 
 type props = {};
 
-type state = {};
+type state = {
+  dataStore: rowdata[]
+};
+
+async function getData() {
+  const publishers = await fetch(`https://api.prideinwriting.me/api/publishers`)
+  .then((response) => {
+    return response.json();
+  })
+  .catch((err) => {
+    console.log(err);
+    return {};
+  });
+  return publishers as Publisher[];
+}
 
 class Publishers extends React.Component<props, state> {
-  state: state = {};
+  constructor(props: props){
+    super(props)
+
+    this.state = {
+      dataStore: []
+    };
+  }
+
+  async componentDidMount() {
+    this.setState({dataStore: mapData(await getData())}) 
+  }
 
   render() {
     return (
@@ -106,6 +124,14 @@ class Publishers extends React.Component<props, state> {
                 <MaterialTable
                   icons={tableIcons}
                   style={{ marginTop: 50, marginLeft: 20, marginRight: 20 }}
+                  options={{
+                    paging: true,
+                    pageSize: 10,
+                    pageSizeOptions: [],
+                  }}
+                  onRowClick={(_, data) =>
+                    (window.location.href = "/publisher-" + data?.id)
+                  }
                   columns={[
                     { title: "Publisher", field: "publisher", type: "string" },
                     {
@@ -129,7 +155,7 @@ class Publishers extends React.Component<props, state> {
                       type: "numeric",
                     },
                   ]}
-                  data={dataStore}
+                  data={this.state.dataStore}
                   title=""
                 />
               </Paper>
