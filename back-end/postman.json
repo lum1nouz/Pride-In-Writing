@@ -22,7 +22,6 @@
               "})",
               "",
               "pm.test(\"Response contains 119 authors\", function() {",
-              "print(pm.response.json())", 
               "    pm.expect(Object.keys(pm.response.json().authors).length).equal(119)",
               "})"
             ],
