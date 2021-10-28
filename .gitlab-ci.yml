@@ -73,6 +73,10 @@ front_end_test:
   services:
     - selenium/standalone-chrome
   image: python:3.9-slim
+  before_script: 
+    - pip install pytest
+    - pip install pytest-ordering
+
   script:
     - cd front-end && pytest guitests.py
 
