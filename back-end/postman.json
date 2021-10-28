@@ -17,10 +17,12 @@
               "})",
               "",
               "pm.test(\"Response keys are valid\", function() {",
+              "print(Object.keys(pm.response.json()))",
               "    pm.expect(Object.keys(pm.response.json())).include(\"authors\")",
               "})",
               "",
               "pm.test(\"Response contains 119 authors\", function() {",
+              "print(pm.response.json())", 
               "    pm.expect(Object.keys(pm.response.json().authors).length).equal(119)",
               "})"
             ],
