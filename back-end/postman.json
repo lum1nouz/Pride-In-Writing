@@ -1,6 +1,6 @@
 {
   "info": {
-    "_postman_id": "",
+    "_postman_id": "17727241-ba243856-1017-4375-b6f7-a20cfffe0175",
     "name": "Pride In Writing Tests",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
@@ -20,8 +20,8 @@
               "    pm.expect(Object.keys(pm.response.json())).include(\"authors\")",
               "})",
               "",
-              "pm.test(\"Response contains 100 authors\", function() {",
-              "    pm.expect(Object.keys(pm.response.json().authors).length).equal(100)",
+              "pm.test(\"Response contains 119 authors\", function() {",
+              "    pm.expect(Object.keys(pm.response.json().authors).length).equal(119)",
               "})"
             ],
             "type": "text/javascript"
@@ -58,8 +58,8 @@
               "    pm.expect(Object.keys(pm.response.json())).include(\"books\")",
               "})",
               "",
-              "pm.test(\"Response contains 100 books\", function() {",
-              "    pm.expect(Object.keys(pm.response.json().books).length).equal(100)",
+              "pm.test(\"Response contains 445 books\", function() {",
+              "    pm.expect(Object.keys(pm.response.json().books).length).equal(445)",
               "})"
             ],
             "type": "text/javascript"
@@ -93,8 +93,8 @@
               "    pm.expect(Object.keys(pm.response.json())).include(\"publishers\")",
               "})",
               "",
-              "pm.test(\"Response contains 100 publishers\", function() {",
-              "    pm.expect(Object.keys(pm.response.json().publishers).length).equal(100)",
+              "pm.test(\"Response contains 550 publishers\", function() {",
+              "    pm.expect(Object.keys(pm.response.json().publishers).length).equal(550)",
               "})"
             ],
             "type": "text/javascript"
