@@ -78,5 +78,5 @@ front_end_test:
     - pip install pytest-ordering
 
   script:
-    - cd front-end && pytest guitests.py
+    - cd front-end && python guitests.py
 
