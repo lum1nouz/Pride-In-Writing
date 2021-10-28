@@ -64,7 +64,7 @@ back_end_test:
 jest:
   stage: test
   script:
-    - cd frontend
+    - cd front-end
     - npm install
     - npm test
 
