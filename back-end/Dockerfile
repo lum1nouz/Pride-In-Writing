@@ -1,6 +1,11 @@
 FROM ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive
 
+#sudo docker build -t flask-docker .
+
+#docker run -it -v `pwd`:/usr/backend -w /usr/backend -p 80:80 flask-docker
+
+
 # https://forums.docker.com/t/hash-sum-mismatch-writing-more-data-as-expected/45940/3
 # Uncomment this line and follow this if you have the same issue
 COPY ./badproxy /etc/apt/apt.conf.d/99fixbadproxy

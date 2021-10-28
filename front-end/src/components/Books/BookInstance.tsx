@@ -2,7 +2,6 @@ import React from "react";
 import { Paper, Button } from "@material-ui/core";
 import Header from "../Header/Header";
 import css from "./Books.module.css";
-import fingersmith from "../../Assets/fingersmith.jpg";
 import { Parallax } from "react-parallax";
 import Card from "@material-ui/core/Card";
 import { CardContent } from "@material-ui/core";
@@ -10,7 +9,9 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import Book from "../../models/book-model";
-import { JsxEmit } from "typescript";
+import Author from "../../models/author-model"
+import Publisher from "../../models/publisher-model"
+
 
 type props = {
     id: number
@@ -25,12 +26,15 @@ type props = {
     description?: string
     image?: string
     authors: string[]
-    author_connections?: string
-    publisher_connections?: string
+    author_connections?: number[]
+    publisher_connections?: number[]
 
 };
 
-type state = {};
+type state = {
+  autCon: Author[],
+  pubCon: Publisher[]
+};
 
 const styles = {
   media: {
@@ -46,7 +50,10 @@ const styles = {
 class BookInstance extends React.Component<props, state> {
     constructor(props: props){
          super(props)
-        this.state = {}
+        this.state = {
+          autCon: [],
+          pubCon: []
+        }
     }
 
   render() {
@@ -94,19 +101,27 @@ class BookInstance extends React.Component<props, state> {
                 </Grid>
                 <div style={{ textAlign: "center" }}>
                   <h2>
-                    Author <br />
+                    Authors <br />
                   </h2>
-                  <Button component={Link} to={"/" + this.props.author_connections}>
-                    {this.props.author_connections}
-                  </Button>
+                  <p>
+                    {this.state.autCon.map(function(author) {
+                      return <Button component={Link} to={"/author-" + author.author_id}>
+                                  {author.author_name}
+                            </Button>
+                    })}
+                  </p>
 
                   <h2>Genre</h2>
                   <p>{this.props.genre}</p>
 
-                  <h2>Publisher</h2>
-                  <Button component={Link} to={"/" + this.props.publisher_connections}>
-                    {this.props.publisher_connections}
-                  </Button>
+                  <h2 id="publisherTest">Publishers</h2>
+                  <p>
+                    {this.state.pubCon.map(function(publisher) {
+                      return <Button component={Link} to={"/publisher-" + publisher.id}>
+                                  {publisher.name}
+                            </Button>
+                    })}
+                  </p>
                   <h2>Year Published</h2>
                   <p>{this.props.year}</p>
                 </div>

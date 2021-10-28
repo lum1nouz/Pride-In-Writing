@@ -2,12 +2,13 @@ import React from "react";
 import { Paper, Button } from "@material-ui/core";
 import Header from "../Header/Header";
 import css from "./Authors.module.css";
-import michael from "../../Assets/michael-cunningham.jpg";
 import { Parallax } from "react-parallax";
 import { CardContent } from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
+import Book from "../../models/book-model"
+import Publisher from "../../models/publisher-model"
 
 type props = {
     author_id : number
@@ -23,7 +24,10 @@ type props = {
     publisher_connections : number[]
 };
 
-type state = {};
+type state = {
+  bookCon : Book[]
+  pubCon : Publisher[]
+};
 
 const styles = {
   media: {
@@ -38,7 +42,19 @@ const styles = {
 class AuthorsInstance extends React.Component<props, state> {
   constructor(props: props){
       super(props)
-      this.state = {}
+
+      this.state = {
+        bookCon:[],
+        pubCon: []
+      }
+  }
+
+  getPublisherConnections() {
+    
+  }
+
+  getBookConnections() {
+
   }
 
   render() {
@@ -94,16 +110,20 @@ class AuthorsInstance extends React.Component<props, state> {
 
                   <h2>Books</h2>
                   <p>
-                    <Button component={Link} to={"/" + this.props.book_connections}>
-                      {this.props.book_connections}
-                    </Button>
+                    {this.state.bookCon.map(function(book) {
+                      return <Button component={Link} to={"/book-" + book.id}>
+                                  {book.name}
+                            </Button>
+                    })}
                   </p>
 
                   <h2>Publishers</h2>
                   <p>
-                    <Button component={Link} to={"/" + this.props.publisher_connections}>
-                      {this.props.publisher_connections}
-                    </Button>
+                    {this.state.pubCon.map(function(publisher) {
+                      return <Button component={Link} to={"/publisher-" + publisher.id}>
+                                  {publisher.name}
+                            </Button>
+                    })}
                   </p>
                 </div>
               </Paper>
@@ -116,3 +136,4 @@ class AuthorsInstance extends React.Component<props, state> {
 }
 
 export default AuthorsInstance;
+

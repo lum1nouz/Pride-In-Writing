@@ -3,11 +3,11 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import App from "../App";
 
-test("renders learn react link", async () => {
+test("renders app", async () => {
   render(<BrowserRouter>
             <App />
         </BrowserRouter>);
-  const linkElement = screen.getByText("Pride In Writing");
+  const linkElement = screen.getByText("Our mission is to spotlight book authors in the LGBTQ Community");
   expect(linkElement).toBeInTheDocument();
 });
 

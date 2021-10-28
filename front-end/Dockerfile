@@ -5,7 +5,11 @@ WORKDIR /app
 COPY package.json ./
 COPY package-lock.json ./
 
-RUN npm install
+RUN pkg-config --modversion pango
+RUN pkg-config --modversion cairo
+
+RUN yarn install
+#RUN npm install
 EXPOSE 3000
 
 COPY . ./

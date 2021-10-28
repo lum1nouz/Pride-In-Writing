@@ -19,8 +19,8 @@ type props = {
     parent_comp: string
     headquarters: string
     website: string
-    author_connections: string
-    book_connections: string
+    author_connections: number[]
+    book_connections: number[]
 };
 
 type state = {};
@@ -102,7 +102,7 @@ const styles = {
                       {this.props.publication_types}
                     </p>
   
-                    <h2>Authors</h2>
+                    <h2 id="authorsTest">Authors</h2>
                     <p>
                       <Button component={Link} to={"/" + this.props.author_connections}>
                         {this.props.author_connections}

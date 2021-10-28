@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { forwardRef } from 'react';
 import { Paper, Button } from "@material-ui/core";
 import Header from "../Header/Header";
@@ -23,42 +23,41 @@ import Remove from '@material-ui/icons/Remove';
 import SaveAlt from '@material-ui/icons/SaveAlt';
 import Search from '@material-ui/icons/Search';
 import ViewColumn from '@material-ui/icons/ViewColumn';
+import Author from "../../models/author-model"
+import stringToIntegerList from "../../common"
 
 type rowdata = {
-  author: Link;
-  yearBorn: number;
+  author: ReactElement;
+  yearBorn: string | undefined;
   nationality: string;
-  sexuality: string;
-  gender: string;
-  books_Published: number;
+  genres: string;
+  onTour: string;
+  books_published: number | undefined;
 };
 
-const dataStore = [
-  {
-    author: <a href="/patricia-highsmith">Patricia Highsmith</a>,
-    yearBorn: 1921,
+function mapData(data: Author[]){
+  let newData: rowdata[] = []
+  data.forEach(function(data) {(
+    newData.push({
+      author: <a id={"linkButton-" + data.author_id} href={"/author-" + data.author_id}> {data.author_name} </a>,
+      yearBorn: data.year_born,
+      nationality: data.nationality,
+      books_published: stringToIntegerList(data.book_connections).length,
+      onTour: data.author_tour,
+      genres: data.genre,
+    })
+  )})
+}
+
+const rowDataTest: rowdata = {
+    author: <a id="linkButton-0"  href="/author-0"> Test </a>,
+    yearBorn: "1977",
     nationality: "American",
-    sexuality: "Homosexual",
-    gender: "Female",
-    books_Published: 297,
-  },
-  {
-    author: <a href="/michael-cunningham">Michael Cunningham</a>,
-    yearBorn: 1952,
-    nationality: "American",
-    sexuality: "Homosexual",
-    gender: "Male",
-    books_Published: 48,
-  },
-  {
-    author: <a href="/sarah-waters">Sarah Waters</a>,
-    yearBorn: 1966,
-    nationality: "Welsh",
-    sexuality: "Homosexual",
-    gender: "Female",
-    books_Published: 31,
-  },
-];
+    genres: "1, 2, 3",
+    onTour: "False",
+    books_published: 12,
+}
+
 
 const tableIcons = {
   Add: forwardRef((props, ref:React.Ref<SVGSVGElement>) => <AddBox {...props} ref={ref} />),
@@ -82,10 +81,14 @@ const tableIcons = {
 
 type props = {};
 
-type state = {};
+type state = {
+  dataStore: rowdata[]
+};
 
 class Authors extends React.Component<props, state> {
-  state: state = {};
+  state: state = {
+    dataStore: [rowDataTest]
+  };
 
   render() {
     return (
@@ -115,15 +118,15 @@ class Authors extends React.Component<props, state> {
                       field: "nationality",
                       type: "string",
                     },
-                    { title: "Sexuality", field: "sexuality", type: "string" },
-                    { title: "Gender", field: "gender", type: "string" },
+                    { title: "Genres", field: "genres", type: "string" },
+                    { title: "On Tour", field: "onTour", type: "string" },
                     {
                       title: "Books Written",
                       field: "books_Published",
                       type: "numeric",
                     },
                   ]}
-                  data={dataStore}
+                  data={this.state.dataStore}
                   title=""
                 />
               </Paper>

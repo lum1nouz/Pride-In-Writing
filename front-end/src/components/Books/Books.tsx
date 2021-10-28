@@ -41,39 +41,6 @@ type rowdata = {
   price: number;
 };
 
-const dataStore = [
-  {
-    book: <a href="/the-hours">The Hours</a>,
-    author: "Michael Cunningham",
-    genre: "Fiction",
-    publisher: "Farrar",
-    yearPublished: 1988,
-    rating: 4.4,
-    pages: 230,
-    price: 11.79,
-  },
-  {
-    book: <a href="/fingersmith">Fingersmith</a>,
-    author: "Sarah Waters",
-    genre: "Fiction",
-    publisher: "Virago Press",
-    yearPublished: 2002,
-    rating: 4,
-    pages: 596,
-    price: 16.89,
-  },
-  {
-    book: <a href="/the-price-of-salt">The Price of Salt</a>,
-    author: "Patricia Highsmith",
-    genre: "Fiction",
-    publisher: "G. P. Putnam's Sons",
-    yearPublished: 1952,
-    rating: 4.5,
-    pages: 304,
-    price: 13.69,
-  },
-];
-
 const tableIcons = {
   Add: forwardRef((props, ref:React.Ref<SVGSVGElement>) => <AddBox {...props} ref={ref} />),
   Check: forwardRef((props, ref:React.Ref<SVGSVGElement>) => <Check {...props} ref={ref} />),
@@ -128,7 +95,7 @@ class Books extends React.Component<props, state> {
                   <Grid item xs={4}>
                     <Card variant="outlined" style={{width: 300}}>
                       <CardContent>
-                        <h2><a href="/the-hours">The Hours</a></h2>
+                        <h2><a id="linkButton-0" href="/books-0">The Hours</a></h2>
                         <p>Author: Michael Cunningham</p>
                         <p>Genre: Fiction</p>
                         <p>Publisher: Farrar</p>
@@ -139,6 +106,7 @@ class Books extends React.Component<props, state> {
                       </CardContent>
                     </Card>
                   </Grid>
+
                   <Grid item xs={4}>
                     <Card variant="outlined" style={{width: 300}}>
                       <CardContent>
