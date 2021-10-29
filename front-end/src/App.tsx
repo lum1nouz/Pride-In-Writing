@@ -156,24 +156,24 @@ function App() {
     return publishers as Publisher[];
   }
 
-//   useEffect(() => {
-//     const getAuth = async () => {
-//         setAuthDataList(await getAuthorsData())
-//     }
+  useEffect(() => {
+    const getAuth = async () => {
+        setAuthDataList(await getAuthorsData())
+    }
 
-//     const getBook = async () => {
-//       setBookDataList(await getBooksData())
-//     }
+    const getBook = async () => {
+      setBookDataList(await getBooksData())
+    }
 
-//     const getPublisher = async () => {
-//       setPublDataList(await getPublisherData())
-//     }
+    const getPublisher = async () => {
+      setPublDataList(await getPublisherData())
+    }
 
-//     getAuth();
-//     getBook();
-//     getPublisher();
+    getAuth();
+    getBook();
+    getPublisher();
 
-//  }, [])
+ }, [])
 
   return (
     <div>
