@@ -63,12 +63,12 @@ back_end_test:
 
 jest:
   stage: test
-  image: node:16.12.0
+  image: thocotho/webdev
   script:
-    - cd front-end
-    - yarn install
+    - cd front-end/
     - npm install
-    - yarn test
+    - npm test -- --watchAll=false
+
 
 front_end_test:
   stage: test
