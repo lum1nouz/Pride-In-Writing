@@ -65,7 +65,7 @@ jest:
   stage: test
   image: thocotho/webdev
   script:
-    - cd front-end/
+    - cd front-end
     - npm install
     - npm test -- --watchAll=false
 
