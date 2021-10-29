@@ -70,9 +70,6 @@
   },
   "jest": {
     "preset": "ts-jest",
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/setuptests.ts"
-    ],
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"
     },
