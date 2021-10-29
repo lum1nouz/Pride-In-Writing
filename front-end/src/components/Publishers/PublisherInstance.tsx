@@ -13,6 +13,7 @@ import Book from "../../models/book-model"
 type props = {
     id: number
     name: string
+    summary: string
     image: string
     origin: string
     publication_types: string
@@ -133,6 +134,10 @@ const styles = {
                     </Grid>
                   </Grid>
                   <div style={{ textAlign: "center" }}>
+                  <h2>Bio</h2>
+                    <p>
+                            {this.props.summary}
+                    </p>
                     <h2>Website</h2>
                     <p>
                       <a href={this.props.website}>

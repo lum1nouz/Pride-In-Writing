@@ -63,6 +63,7 @@ const bookData2: Book[] = [{
 const publData2: Publisher[] = [{
   publisher_id: 0,
   name: "123Books!!!",
+  summary: "hahaha",
   image: "https://upload.wikimedia.org/wikipedia/en/3/32/Atria_logo.png",
   origin: "texas",
   publication_types: "Books",
@@ -100,7 +101,7 @@ function createPublisher(a: Publisher) {
 
   return (
     <div>
-      <PublisherInstance id={a.publisher_id} name={a.name} image={a.image} origin={a.origin} publication_types={a.publication_types} founded ={a.founded} parent_comp ={a.parent_comp} headquarters={a.headquarters} website={a.website} author_connections={stringToIntegerList(a.author_connections)} book_connections={stringToIntegerList(a.book_connections)}/>
+      <PublisherInstance id={a.publisher_id} summary={a.summary} name={a.name} image={a.image} origin={a.origin} publication_types={a.publication_types} founded ={a.founded} parent_comp ={a.parent_comp} headquarters={a.headquarters} website={a.website} author_connections={stringToIntegerList(a.author_connections)} book_connections={stringToIntegerList(a.book_connections)}/>
     </div>
   )
 }
