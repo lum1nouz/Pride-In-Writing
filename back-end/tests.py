@@ -26,7 +26,7 @@ class Tests(TestCase):
             "author_id": 0,
             "author_image": "https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/231",
             "author_name": "Will Aitken",
-            "author_summary": "nan",
+            "author_summary": "Will Aitken is an American-Canadian novelist, journalist and film critic.[1][2] Originally from Te...aute, Indiana, he has been based in Montreal, Quebec since moving to that city to attend McGill University in 1972.\n",
             "author_tour": "false",
             "book_connections": "NaN",
             "genre": "novelist, film critic",
@@ -44,15 +44,15 @@ class Tests(TestCase):
         assert d == {
             "author_id": 6,
             "author_image": "https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/2174705",
-            "author_name": "Jaime Bayly",
-            "author_summary": "nan",
+            "author_name": "Dorothy Allison",
+            "author_summary": "Dorothy Allison (born April 11, 1949) is an American writer from South Carolina whose writing focu...everal Lambda Literary Awards. In 2014, Allison was elected to membership in the Fellowship of Southern Writers.[3]\n",
             "author_tour": "false",
-            "book_connections": "19,20,21",
-            "genre": "journalist, novelist",
-            "nationality": "Peruvian",
-            "noteable_works": "No se lo Digas a Nadie",
+            "book_connections": "0,1",
+            "genre": "novelist",
+            "nationality": "American",
+            "noteable_works': 'Bastard Out of Carolina",
             "publisher_connections": "NaN",
-            "year_born": "1965",
+            "year_born": "1949",
         }
 
     # Test the output when a not found author is queried
@@ -102,20 +102,20 @@ class Tests(TestCase):
         assert r.status_code == 200
         d = r.json()
         assert d == {
-            "author_connections": "5",
-            "authors": "['Djuna Barnes']",
+            "author_connections": "1",
+            "authors": "['Dorothy Allison']",
             "avg_rating": "4.0",
-            "book_id": 6,
-            "description": "'I have quite changed my mind. I am going to run away and become a boy.' In these three stories, written by Djuna Barnes under the pseudonym Lydia Steptoe, three characters find themselves on the brink of a sexual awakening - accompanied by guns, whips, and worldly innuendo. A fourteen-year-old girl plans to become 'a virago', until her mother intercepts her first tryst by dressing up as her male lover. A boy of the same age is lured into the forest by his father's mistress. A woman of forty falls in love and longs to kill herself, so unbearable is the return of the youth she thought she wanted. 'Alice', she tells herself, 'be a man.' Barnes makes gender and desire seem slippery and joyful - and makes the fictional Lydia Steptoe seem like a writer for our time.",
-            "genres": "['Fiction']",
-            "image": "http://books.google.com/books/content?id=Rr5_DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+            "book_id": 1,
+            "description": "Bastard Out of Carolina, nominated for the 1992 National Book Award for fiction, introduced Dorothy A... steeped in the hard-won wisdom of experience, expresses the strength of her unique vision with beauty and eloquence.",
+            "genres": "['Biography & Autobiography']",
+            "image": "http://books.google.com/books/content?id=xGDfLNLBHGcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
             "maturity_rating": "NOT_MATURE",
-            "name": "The Lydia Steptoe Stories",
-            "page_count": "48.0",
-            "price": "2.99",
-            "publisher": "Faber & Faber",
+            "name": "Two or Three Things I Know for Sure",
+            "page_count": "112.0",
+            "price": "11.99",
+            "publisher": "Penguin",
             "publisher_connections": "nan",
-            "year": "2019-01-03",
+            "year": "1996-08-01",
         }
 
     # Test the output when a not found book is queried
@@ -134,7 +134,7 @@ class Tests(TestCase):
         r = requests.get("https://api.prideinwriting.me/api/publishers")
         assert r.status_code == 200
         d = r.json()
-        assert len(d) == 550
+        assert len(d) == 463
 
     # Test the first instance of the publishers list
     def test_publishers_first(self):
@@ -164,15 +164,15 @@ class Tests(TestCase):
         assert d == {
             "author_connections": "nan",
             "book_connections": "nan",
-            "founded": "1984",
-            "headquarters": "Abilene, Texas",
-            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6f/ACU_Press_Current_Logo.jpg/220px-ACU_Press_Current_Logo.jpg",
-            "name": "Abilene Christian University Press",
+            "founded": "Unknown",
+            "headquarters": "Unknown",
+            "image": "https://upload.wikimedia.org/wikipedia/en/thumb/a/ad/ELCA_Brandmark_Stacked.png/200px-ELCA_Brandmark_Stacked.png",
+            "name": "Evangelical Lutheran Church in America",
             "origin": "Unknown",
-            "parent_comp": "Abilene Christian University",
-            "publication_types": "Books",
-            "publisher_id": 6,
-            "website": "www.acupressbooks.com",
+            "parent_comp": "Unkown",
+            "publication_types": "Unknown",
+            "publisher_id": 1,
+            "website": "www.elca.org",
         }
 
     # Test the output when a not found publisher is queried
