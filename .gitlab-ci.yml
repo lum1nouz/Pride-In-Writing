@@ -65,7 +65,6 @@ jest:
   stage: test
   script:
     - cd front-end
-    - apt-get install yarn
     - yarn test
 
 front_end_test:
