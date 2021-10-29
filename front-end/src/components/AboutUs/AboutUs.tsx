@@ -23,7 +23,7 @@ import axios from "axios";
 const styles = {
   parrallaxCont: {
     margintop: 100,
-    height: 4000,
+    height: 4500,
     backgroundColor: "white"
   },
   paperCont: {
@@ -600,10 +600,10 @@ class AboutUs extends React.Component<props, state> {
               marginTop: 100,
               marginLeft: 30,
               marginRight: 30,
-              height: 400,
+              height: 900,
             }}
           >
-            <div style={{paddingLeft: 90}}>
+            <div>
               <h1 style={{textShadow: '1px 1px black'}}>
               
               <span style={{color: "#FF555E"}}>A</span>
@@ -615,56 +615,57 @@ class AboutUs extends React.Component<props, state> {
               <span style={{color: "#FC6C85"}}>e</span>
               <span style={{color: "#1167b1"}}>d</span>
               </h1>
-
+            
+            <div style={{paddingLeft: 150}}>
               <Grid container spacing={1}>
-                  <Grid item xs={4}>
-                    <Card variant="outlined" style={{width: 300}}>
-                      <CardContent>
-                        <h2><a href="https://reactjs.org/">Goodreads API</a></h2>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-
-                  <Grid item xs={4}>
-                    <Card variant="outlined" style={{width: 300}}>
+                  <Grid item xs={6}>
+                    <Card variant="outlined" style={{width: 400}}>
                       <CardContent>
                         <h2><a href="https://developers.google.com/books/docs/overview/">Google Books API</a></h2>
+                        <p>We used the Google Books API to get our book information by making API requests like this one https://www.googleapis.com/books/v1/volumes</p>
                       </CardContent>
                     </Card>
                   </Grid>
 
-                  <Grid item xs={4}>
-                    <Card variant="outlined" style={{width: 300}}>
+                  <Grid item xs={6}>
+                    <Card variant="outlined" style={{width: 400}}>
                       <CardContent>
                         <h2><a href="https://openlibrary.org/developers/api">Open Library API</a></h2>
+                        <p>We used the Open Library API to get our book information by making API requests.</p>
                       </CardContent>
                     </Card>
                   </Grid>
 
-                  <Grid item xs={4}>
-                    <Card variant="outlined" style={{width: 300}}>
-                      <CardContent>
-                        <h2><a href="https://en.wikipedia.org/wiki/List_of_LGBT_writers">List of LGBTQ Writers Data Source</a></h2>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-
-                  <Grid item xs={4}>
-                    <Card variant="outlined" style={{width: 300}}>
+                  <Grid item xs={6}>
+                    <Card variant="outlined" style={{width: 400}}>
                       <CardContent>
                         <h2><a href="https://en.wikipedia.org/wiki/List_of_English-language_book_publishing_companies">List of Book Publishing Companies Data Source</a></h2>
+                        <p>We made a scraper to scrape all of the publisher names, images and information from the list of English publishers from the Wikipedia Link.
+                         We did it by scraping the lists of every letter of the alphabet and grabbing the names of the publishers and then scraped the “href” reference 
+                         from the a tags and concatenated to the string “https://en.wikipedia.org”. This allowed us to make a request to the Wikipedia page of a certain publisher. 
+                         Once inside the Wikipedia page of the publisher we scraped the “infobox vcard” which is where the image and the information of the publisher is located. 
+                         We grabbed the link of the image that is in the “infobox vcard” plus all of the information in that “infobox vcard” and stored it in label and data. 
+                         Once the loop was done for a certain publisher we output it to a csv file and then the loop continued for all the other publishers.
+                        </p>
                       </CardContent>
                     </Card>
                   </Grid>
-
-                  <Grid item xs={4}>
-                    <Card variant="outlined" style={{width: 300}}>
+                  
+                  <Grid item xs={6}>
+                    <Card variant="outlined" style={{width: 400}}>
                       <CardContent>
-                        <h2><a href="https://www.tckpublishing.com/list-of-book-publishers/">List of Book Publishers Data Source</a></h2>
+                        <h2><a href="https://en.wikipedia.org/wiki/List_of_LGBT_writers">List of LGBTQ Writers Data Source</a></h2>
+                        <p>We made a scraper to scrape all of the authors and images of the LGBTQ Authors by 
+                        scraping each table and grabbing the names of the authors and then scraping the “href” reference from the a tags 
+                        and concatenated it to the string wikipedia URL. This allowed us to make a request to the Wikipedia page of a certain author. 
+                        Once inside the Wikipedia page of the author we scraped the “infobox vcard” which is where the image of the author is located.
+                        We grabbed the link of the image that is in the “infobox vcard” and assigned wrote it to a csv file mapped to the author. 
+                        Finally, we looped until we ran out of authors and got the resultant images in a csv file.</p>
                       </CardContent>
                     </Card>
                   </Grid>
               </Grid>
+              </div>
             </div>
           </Paper>
 
