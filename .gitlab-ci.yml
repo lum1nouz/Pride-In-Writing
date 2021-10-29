@@ -67,6 +67,7 @@ jest:
   script:
     - cd front-end
     - yarn install
+    - npm install
     - yarn test
 
 front_end_test:
