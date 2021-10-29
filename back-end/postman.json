@@ -1,0 +1,174 @@
+{
+  "info": {
+    "_postman_id": "17727241-ba243856-1017-4375-b6f7-a20cfffe0175",
+    "name": "Pride In Writing Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authors",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function() {",
+              "    pm.response.to.have.status(200)",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+			"type": "noauth"
+		},
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://prideinwriting.me/api/authors",
+          "protocol": "https",
+          "host": ["api", "prideinwriting", "me"],
+          "path": ["api", "authors"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Books",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function() {",
+              "    pm.response.to.have.status(200)",
+              "})"
+              ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://prideinwriting.me/api/books",
+          "protocol": "https",
+          "host": ["api", "prideinwriting", "me"],
+          "path": ["api", "books"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Publishers",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function() {",
+              "    pm.response.to.have.status(200)",
+              "})"
+              ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://prideinwriting.me/api/publishers",
+          "protocol": "https",
+          "host": ["api", "prideinwriting", "me"],
+          "path": ["api", "publishers"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Author by ID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function() {",
+              "    pm.response.to.have.status(200)",
+              "})"
+              ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://prideinwriting.me/api/books/id=1",
+          "protocol": "https",
+          "host": ["api", "prideinwriting", "me"],
+          "path": ["api", "authors", "id=1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Book by ID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function() {",
+              "    pm.response.to.have.status(200)",
+              "})"
+              ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://prideinwriting.me/api/books/id=1",
+          "protocol": "https",
+          "host": ["api", "prideinwriting", "me"],
+          "path": ["api", "books", "id=1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Publishers by ID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function() {",
+              "    pm.response.to.have.status(200)",
+              "})"
+              ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://prideinwriting.me/api/publishers/id=1",
+          "protocol": "https",
+          "host": ["api", "prideinwriting", "me"],
+          "path": ["api", "publishers", "id=1"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
