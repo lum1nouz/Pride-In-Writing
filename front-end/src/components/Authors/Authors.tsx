@@ -87,7 +87,7 @@ async function getData() {
     console.log(err);
     return {};
   });
-  return authors as Author[];
+  return JSON.parse(authors);
 }
 
 class Authors extends React.Component<props, state> {
