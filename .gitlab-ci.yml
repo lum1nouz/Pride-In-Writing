@@ -63,15 +63,12 @@ back_end_test:
 
 jest:
   stage: test
-  services:
-    - selenium/standalone-chrome
-  image: python:3.9-slim
-  before_script: 
-    - pip install pytest
-    - pip install pytest-ordering
-
+  image: thocotho/webdev
   script:
-    - cd front-end && python guitests.py
+    - cd front-end
+    - npm install
+    - npm test -- --watchAll=false
+
 
 
 front_end_test:
