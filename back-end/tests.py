@@ -50,7 +50,7 @@ class Tests(TestCase):
             "book_connections": "0,1",
             "genre": "novelist",
             "nationality": "American",
-            "noteable_works': 'Bastard Out of Carolina",
+            "noteable_works": "Bastard Out of Carolina",
             "publisher_connections": "NaN",
             "year_born": "1949",
         }
