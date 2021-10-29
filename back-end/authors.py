@@ -49,7 +49,7 @@ def __init__(self, author_id=0, author_name="NaN", author_tour="NaN", author_sum
 # ,Name,Year Born,Nationality,Genre,Notable Works,OnTour,Link,Summary,id,BookConnections,PublisherConnections
 def createTable():
     db.create_all()
-    df = pd.read_csv(r'./authors/authors-finaldata.csv')
+    df = pd.read_csv(r'./authors/FINAL-a.csv')
     print(df)
     author_list = []
     for ind in df.index:

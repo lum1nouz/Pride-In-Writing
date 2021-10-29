@@ -24,6 +24,7 @@ db = SQLAlchemy(app)
 class Publisher(db.Model):
     publisher_id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String())
+    summary = db.Column(db.String())
     image = db.Column(db.String())
     origin = db.Column(db.String())
     publication_types = db.Column(db.String())
@@ -38,6 +39,7 @@ class Publisher(db.Model):
 def __init__(self):
     self.publisher_id = 0
     self.name = "NaN"
+    self.summary = "NaN"
     self.image = "NaN"
     self.origin = "NaN"
     self.publication_types = "NaN"
@@ -52,11 +54,12 @@ db.create_all()
 
 
 # ,name,image,origin,publication_types,founded,parent_comp,hq,website,AuthorConnections,BookConnections,id
-df = pd.read_csv(r'./publishers/publishers-finaldata.csv')
+df = pd.read_csv(r'./publishers/FINAL-p.csv')
 print(df)
 publisher_list = []
 for ind in df.index:
     Id = int(df['id'][ind])
+    Summary = str(df['summary'][ind])
     Name =str(df['name'][ind])
     Image =str(df['image'][ind])
     Origin = str(df['origin'][ind])
@@ -68,7 +71,7 @@ for ind in df.index:
     AuthorConenctions = str(df['AuthorConnections'][ind])
     BookConnections = str(df['BookConnections'][ind])
 
-    new_publisher = Publisher(publisher_id = Id, name = Name, image =Image, origin = Origin, publication_types = PublicationTypes, founded = Founded, parent_comp = ParentComp, headquarters = Headquarters, website =Website, author_connections = AuthorConenctions, book_connections = BookConnections)
+    new_publisher = Publisher(publisher_id = Id, summary = Summary, name = Name, image =Image, origin = Origin, publication_types = PublicationTypes, founded = Founded, parent_comp = ParentComp, headquarters = Headquarters, website =Website, author_connections = AuthorConenctions, book_connections = BookConnections)
     publisher_list.append(new_publisher)
 
 db.session.add_all(publisher_list)

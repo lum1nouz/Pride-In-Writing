@@ -1,3 +1,6 @@
+#Code inspired from https://gitlab.com/cs373-group14/books4u/-/blob/master/backend/scrape.py
+#Books for you
+
 from flask import Flask, render_template, request, jsonify
 #from flask_cors import CORS
 import requests

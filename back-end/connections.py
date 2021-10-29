@@ -11,8 +11,9 @@ import numpy as np
 import pandas as pd
 
 #add indexes
-authorsData = pd.read_csv(r'./authors/authors-prefinaldata.csv') #Ind,Name,Year Born,Nationality,Genre,Notable Works,OnTour,Link,Summary
-authorsData = authorsData.drop("Ind", axis=1)
+authorsData = pd.read_csv(r'./authors/final-authordata.csv') #Ind,Name,Year Born,Nationality,Genre,Notable Works,OnTour,Link,Summary
+authorsData = authorsData.drop("i", axis=1)
+authorsData = authorsData.drop("id", axis=1)
 authorsData['id'] = range(0, len(authorsData))
 
 authorsData['BookConnections'] = np.empty((len(authorsData), 0)).tolist()
@@ -23,7 +24,9 @@ booksData = pd.read_csv(r'./books/books-prefinaldata.csv') #id,name,genres,publi
 booksData['AuthorConnections'] = np.empty((len(booksData), 0)).tolist()
 booksData['PublisherConnections'] = np.empty((len(booksData), 0)).tolist()
 
-publishersData = pd.read_csv(r'./publishers/publishers-prefinaldata.csv') #name,image,origin,publication_types,founded,parent_comp,hq,website
+publishersData = pd.read_csv(r'./publishers/publishers-stage2data.csv') #name,image,origin,publication_types,founded,parent_comp,hq,website
+
+publishersData = publishersData.drop("i", axis=1)
 
 publishersData['AuthorConnections'] = np.empty((len(publishersData), 0)).tolist()
 publishersData['BookConnections'] = np.empty((len(publishersData), 0)).tolist()
@@ -88,8 +91,8 @@ for aInx in publishersData.index:
     publishersData['AuthorConnections'][aInx] = listToString(publishersData['AuthorConnections'][aInx])
 
 
-authorsData.to_csv('./authors/authors-finaldata.csv', encoding = 'utf-8')
-booksData.to_csv('./books/books-finaldata.csv', encoding = 'utf-8')
-publishersData.to_csv('./publishers/publishers-finaldata.csv', encoding = 'utf-8')
+authorsData.to_csv('./authors/FINAL-a.csv', encoding = 'utf-8')
+booksData.to_csv('./books/FINAL-b.csv', encoding = 'utf-8')
+publishersData.to_csv('./publishers/FINAL-p.csv', encoding = 'utf-8')
 
 print(counter)

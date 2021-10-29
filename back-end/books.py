@@ -55,7 +55,7 @@ db.create_all()
 
 
 # ,id,name,genres,publisher,year,page_count,purchase_link,price,avg_rating,num_ratings,maturity_rating,language,description,image,authors,AuthorConnections,PublisherConnections
-df = pd.read_csv(r'./books/books-finaldata.csv')
+df = pd.read_csv(r'./books/FINAL-b.csv')
 print(df)
 book_list = []
 for ind in df.index:

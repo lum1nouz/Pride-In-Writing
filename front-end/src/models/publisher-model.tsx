@@ -1,6 +1,7 @@
 type Publisher = {
     publisher_id: number
     name: string
+    summary: string
     image: string
     origin: string
     publication_types: string
