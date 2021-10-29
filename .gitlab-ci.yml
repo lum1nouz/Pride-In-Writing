@@ -67,7 +67,7 @@ jest:
   script:
     - cd front-end
     - npm install
-    - npm test -- --watchAll=false
+    - npm test
 
 
 front_end_test:
