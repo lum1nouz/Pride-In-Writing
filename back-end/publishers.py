@@ -6,21 +6,23 @@ from sqlalchemy.ext.mutable import MutableList
 
 import urllib
 import json
-import pandas as pd 
+import pandas as pd
 
 app = Flask(__name__)
 app.debug = True
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 # Schema: "postgres+psycopg2://<USERNAME>:<PASSWORD>@<IP_ADDRESS>:<PORT>/<DATABASE_NAME>"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://lum1nouz:Granted123@pride-writing.caddomsge5cd.us-east-2.rds.amazonaws.com:5432/postgres'
+app.config[
+    "SQLALCHEMY_DATABASE_URI"
+] = "postgresql+psycopg2://lum1nouz:Granted123@pride-writing.caddomsge5cd.us-east-2.rds.amazonaws.com:5432/postgres"
 
 db = SQLAlchemy(app)
 
 # ,name,image,origin,publication_types,founded,parent_comp,hq,website,AuthorConnections,BookConnections,id
 
 
-# Define Publisher Table/Data model 
+# Define Publisher Table/Data model
 class Publisher(db.Model):
     publisher_id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String())
@@ -50,30 +52,43 @@ def __init__(self):
     self.author_connections = "NaN"
     self.book_connections = "NaN"
 
+
 db.create_all()
 
 
 # ,name,image,origin,publication_types,founded,parent_comp,hq,website,AuthorConnections,BookConnections,id
-df = pd.read_csv(r'./publishers/FINAL-p.csv')
+df = pd.read_csv(r"./publishers/FINAL-p.csv")
 print(df)
 publisher_list = []
 for ind in df.index:
-    Id = int(df['id'][ind])
-    Summary = str(df['summary'][ind])
-    Name =str(df['name'][ind])
-    Image =str(df['image'][ind])
-    Origin = str(df['origin'][ind])
-    PublicationTypes = str(df['publication_types'][ind])
-    Founded = str(df['founded'][ind])
-    ParentComp = str(df['parent_comp'][ind])
-    Headquarters = str(df['hq'][ind])
-    Website = str(df['website'][ind])
-    AuthorConenctions = str(df['AuthorConnections'][ind])
-    BookConnections = str(df['BookConnections'][ind])
+    Id = int(df["id"][ind])
+    Summary = str(df["summary"][ind])
+    Name = str(df["name"][ind])
+    Image = str(df["image"][ind])
+    Origin = str(df["origin"][ind])
+    PublicationTypes = str(df["publication_types"][ind])
+    Founded = str(df["founded"][ind])
+    ParentComp = str(df["parent_comp"][ind])
+    Headquarters = str(df["hq"][ind])
+    Website = str(df["website"][ind])
+    AuthorConenctions = str(df["AuthorConnections"][ind])
+    BookConnections = str(df["BookConnections"][ind])
 
-    new_publisher = Publisher(publisher_id = Id, summary = Summary, name = Name, image =Image, origin = Origin, publication_types = PublicationTypes, founded = Founded, parent_comp = ParentComp, headquarters = Headquarters, website =Website, author_connections = AuthorConenctions, book_connections = BookConnections)
+    new_publisher = Publisher(
+        publisher_id=Id,
+        summary=Summary,
+        name=Name,
+        image=Image,
+        origin=Origin,
+        publication_types=PublicationTypes,
+        founded=Founded,
+        parent_comp=ParentComp,
+        headquarters=Headquarters,
+        website=Website,
+        author_connections=AuthorConenctions,
+        book_connections=BookConnections,
+    )
     publisher_list.append(new_publisher)
 
 db.session.add_all(publisher_list)
 db.session.commit()
-

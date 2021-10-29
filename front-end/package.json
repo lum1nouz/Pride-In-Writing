@@ -69,9 +69,6 @@
   },
   "jest": {
     "preset": "ts-jest",
-    "setupFilesAfterEnv": [
-      "<rootDir>/src/setuptests.ts"
-    ],
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"
     },
@@ -84,6 +81,6 @@
     "@typescript-eslint/parser": "^4.32.0",
     "eslint": "^7.32.0",
     "eslint-config-react-app": "^6.0.0",
-    "prettier": "2.4.1"
+    "prettier": "^2.4.1"
   }
 }

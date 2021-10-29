@@ -1,10 +1,9 @@
 import React from "react";
 import { Card } from "antd";
-import css from './Books.module.css';
-import Book from "../../models/book-model"
+import css from "./Books.module.css";
+import Book from "../../models/book-model";
 
-function BookCard({book}: {book:Book}){
-
+function BookCard({ book }: { book: Book }) {
   return (
     <a href={"/book-" + book.book_id}>
       <Card
@@ -23,19 +22,17 @@ function BookCard({book}: {book:Book}){
           />
         }
       >
-        <Card.Meta
-          title={book.name}
-        />
+        <Card.Meta title={book.name} />
         <div className="cardStatsSection">
           <div>Genre: {book.genre}</div>
           <div>Year Published: {book.year}</div>
           <div>Rating: {book.avg_rating}</div>
-          <div>Price:  {book.price}</div>
+          <div>Price: {book.price}</div>
           <div>Page Count: {book.page_count}</div>
         </div>
       </Card>
     </a>
   );
-};
+}
 
 export default BookCard;

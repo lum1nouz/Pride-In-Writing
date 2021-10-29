@@ -20,18 +20,18 @@ def main():
     # Go for all the sections of A, B, C, etc.
     index = 0
     for section in sections:
-      if index != 0:
-        # Retrieve the list of the sections
-        uls = section.find("ul")
-        # Get each publisher from the list
-        for li in uls.find_all("li"):
-            for a in li.find_all("a"):
-                link = "https://en.wikipedia.org" + a["href"]
-                parseLink(link, csv_writer, a.text)
+        if index != 0:
+            # Retrieve the list of the sections
+            uls = section.find("ul")
+            # Get each publisher from the list
+            for li in uls.find_all("li"):
+                for a in li.find_all("a"):
+                    link = "https://en.wikipedia.org" + a["href"]
+                    parseLink(link, csv_writer, a.text)
 
-        if index == 16:
-            break
-      index += 1
+            if index == 16:
+                break
+        index += 1
 
 
 def parseLink(link, csv_writer, name):
@@ -46,10 +46,10 @@ def parseLink(link, csv_writer, name):
     sections = soup.find("div", {"class": "mw-parser-output"})
     paragraph = sections.find("p")
     if paragraph == None:
-      csv_writer.writerow([name, "NaN"])
-      return "NaN"
+        csv_writer.writerow([name, "NaN"])
+        return "NaN"
     else:
-      paragraph = sections.find("p")
+        paragraph = sections.find("p")
 
     print(name)
     print(paragraph)

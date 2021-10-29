@@ -26,7 +26,6 @@ const styles = {
   },
 };
 
-
 class Page extends React.Component<props, state> {
   state: state = {};
 
