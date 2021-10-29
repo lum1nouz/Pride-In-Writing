@@ -85,7 +85,7 @@ async function getData() {
     console.log(err);
     return {};
   });
-  return JSON.parse(publishers);
+  return publishers;
 }
 
 class Publishers extends React.Component<props, state> {
@@ -98,7 +98,7 @@ class Publishers extends React.Component<props, state> {
   }
 
   async componentDidMount() {
-    this.setState({dataStore: mapData(await getData())}) 
+    this.setState({dataStore: await mapData(await getData())}) 
   }
 
   render() {
