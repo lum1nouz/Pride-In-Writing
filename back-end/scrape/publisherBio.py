@@ -32,7 +32,6 @@ def main():
         index += 1
 
 
-
 def parseLink(link, csv_writer, name):
 
     try:
@@ -45,7 +44,7 @@ def parseLink(link, csv_writer, name):
 
     sections = soup.find("div", {"class": "mw-parser-output"})
     try:
-      paragraph = sections.find("p")
+        paragraph = sections.find("p")
     except Exception as e:
         csv_writer.writerow([name, "NaN"])
         return "NaN"

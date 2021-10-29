@@ -7,26 +7,26 @@ import { CardContent } from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
-import Book from "../../models/book-model"
-import Publisher from "../../models/publisher-model"
+import Book from "../../models/book-model";
+import Publisher from "../../models/publisher-model";
 
 type props = {
-    author_id : number
-    author_name : string
-    author_tour : string
-    author_summary? : string
-    author_image? : string
-    year_born? : string
-    nationality : string
-    genre : string
-    noteable_works : string
-    book_connections : number[]
-    publisher_connections : number[]
+  author_id: number;
+  author_name: string;
+  author_tour: string;
+  author_summary?: string;
+  author_image?: string;
+  year_born?: string;
+  nationality: string;
+  genre: string;
+  noteable_works: string;
+  book_connections: number[];
+  publisher_connections: number[];
 };
 
 type state = {
-  bookCon : Book[]
-  pubCon : Publisher[]
+  bookCon: Book[];
+  pubCon: Publisher[];
 };
 
 const styles = {
@@ -40,47 +40,54 @@ const styles = {
 };
 
 class AuthorsInstance extends React.Component<props, state> {
-  constructor(props: props){
-      super(props)
+  constructor(props: props) {
+    super(props);
 
-      this.state = {
-        bookCon:[],
-        pubCon: []
-      }
+    this.state = {
+      bookCon: [],
+      pubCon: [],
+    };
   }
 
   async getPublisherConnections() {
-    let tempData: Publisher[] = []
-    this.props.publisher_connections.forEach(async (idNum) =>{(
-      tempData.push(await fetch('https://api.prideinwriting.me/api/publishers/id=' + idNum)
-      .then((response) => {
-        return response.json();
-      })
-      .catch((err) => {
-        console.log(err);
-        return {};
-      }))
-    )})
-    return tempData
+    let tempData: Publisher[] = [];
+    for (let num of this.props.publisher_connections) {
+      tempData.push(
+        await fetch("https://api.prideinwriting.me/api/publishers/id=" + num)
+          .then((response) => {
+            return response.json();
+          })
+          .catch((err) => {
+            console.log(err);
+            return {};
+          })
+      );
+    }
+    return tempData;
   }
 
   async getBookConnections() {
-    let tempData: Book[] = []
-    this.props.book_connections.forEach(async (idNum) =>{(
-      tempData.push(await fetch('https://api.prideinwriting.me/api/books/id=' + idNum)
-      .then((response) => {
-        return response.json();
-      })
-      .catch((err) => {
-        console.log(err);
-        return {};
-      }))
-    )})
-    return tempData
+    let tempData: Book[] = [];
+    for (let num of this.props.book_connections) {
+      tempData.push(
+        await fetch("https://api.prideinwriting.me/api/books/id=" + num)
+          .then((response) => {
+            return response.json();
+          })
+          .catch((err) => {
+            console.log(err);
+            return {};
+          })
+      );
+    }
+    return tempData;
   }
 
   async componentDidMount() {
-    this.setState({bookCon: await this.getBookConnections(), pubCon: await this.getPublisherConnections()}) 
+    await this.setState({
+      bookCon: await this.getBookConnections(),
+      pubCon: await this.getPublisherConnections(),
+    });
   }
 
   render() {
@@ -125,51 +132,48 @@ class AuthorsInstance extends React.Component<props, state> {
                   </Grid>
                 </Grid>
                 <div style={{ textAlign: "center" }}>
-                  { this.props.author_summary && <div>
+                  {this.props.author_summary && (
+                    <div>
                       <h2>
                         Biography <br />
                       </h2>
-                      <p>
-                        {this.props.author_summary}
-                      </p>
-                    </div>}
+                      <p>{this.props.author_summary}</p>
+                    </div>
+                  )}
 
                   <h2>Year Born</h2>
-                  <p>
-                    {this.props.year_born}
-                  </p>
+                  <p>{this.props.year_born}</p>
                   <h2>On-Tour Soon</h2>
-                  <p>
-                    {this.props.author_tour}
-                  </p>
+                  <p>{this.props.author_tour}</p>
                   <h2>Nationality</h2>
-                  <p>
-                    {this.props.nationality}
-                  </p>
+                  <p>{this.props.nationality}</p>
                   <h2>Genre</h2>
-                  <p>
-                    {this.props.genre}
-                  </p>
+                  <p>{this.props.genre}</p>
                   <h2>Notable Works</h2>
-                  <p>
-                    {this.props.genre}
-                  </p>
+                  <p>{this.props.genre}</p>
 
                   <h2>Book Connections</h2>
                   <p>
-                    {this.state.bookCon.map(function(book) {
-                      return <Button component={Link} to={"/book-" + book.book_id}>
-                                  {book.name}
-                            </Button>
+                    {this.state.bookCon.map(function (book) {
+                      return (
+                        <Button component={Link} to={"/book-" + book.book_id}>
+                          {book.name}
+                        </Button>
+                      );
                     })}
                   </p>
 
                   <h2>Publisher Connections</h2>
                   <p>
-                    {this.state.pubCon.map(function(publisher) {
-                      return <Button component={Link} to={"/publisher-" + publisher.publisher_id}>
-                                  {publisher.name}
-                            </Button>
+                    {this.state.pubCon.map(function (publisher) {
+                      return (
+                        <Button
+                          component={Link}
+                          to={"/publisher-" + publisher.publisher_id}
+                        >
+                          {publisher.name}
+                        </Button>
+                      );
                     })}
                   </p>
                 </div>
@@ -183,4 +187,3 @@ class AuthorsInstance extends React.Component<props, state> {
 }
 
 export default AuthorsInstance;
-

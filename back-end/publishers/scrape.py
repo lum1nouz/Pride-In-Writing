@@ -3,15 +3,27 @@ from bs4 import BeautifulSoup
 import random
 import csv
 
+
 def main():
     response = requests.get(
         url="https://en.wikipedia.org/wiki/List_of_English-language_book_publishing_companies",
     )
-    soup = BeautifulSoup(response.content, 'html.parser')
+    soup = BeautifulSoup(response.content, "html.parser")
 
     csv_file = open("publishers_prefinaldata.csv", "w")
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(["name", "image", "origin", "publication_types", "founded", "parent_comp", "hq", "website"])
+    csv_writer.writerow(
+        [
+            "name",
+            "image",
+            "origin",
+            "publication_types",
+            "founded",
+            "parent_comp",
+            "hq",
+            "website",
+        ]
+    )
 
     # Retrieve the list of all the publishers
     sections = soup.find_all("div", {"class": "div-col"})
@@ -32,26 +44,34 @@ def main():
                 print(link)
                 parseLink(link, dict, csv_writer, a.text)
 
-        if(index == 26):
+        if index == 26:
             break
         index += 1
-    
+
     for i in dict:
         print(str(i) + ": " + str(dict[i]))
         csv_writer.writerow([i, dict[i]])
 
+
 def parseLink(link, dict, csv_writer, name):
-    
+
     try:
         response = requests.get(
             url=link,
         )
     except Exception as e:
         return
-    soup = BeautifulSoup(response.content, 'html.parser')
-    answers = {"name": name, "image": "-1", "Country of origin": "Unknown", "Publication types": "Unknown", "Founded": "Unknown", "Parent company": "Unkown", "Headquarters location": "Unknown", "Official website": "Not available"}
-    
-
+    soup = BeautifulSoup(response.content, "html.parser")
+    answers = {
+        "name": name,
+        "image": "-1",
+        "Country of origin": "Unknown",
+        "Publication types": "Unknown",
+        "Founded": "Unknown",
+        "Parent company": "Unkown",
+        "Headquarters location": "Unknown",
+        "Official website": "Not available",
+    }
 
     # csv_file = open("info.csv", "w")
     # csv_writer = csv.writer(csv_file)
@@ -75,13 +95,12 @@ def parseLink(link, dict, csv_writer, name):
     sections = sections.find("tbody")
 
     # name = ""
-    # origin = "" 
+    # origin = ""
     # publication_types = ""
     # founded = ""
-    # parent_comp = "" 
+    # parent_comp = ""
     # hq = ""
     # website = ""
-
 
     for section in sections:
         # print(section.prettify())
@@ -109,10 +128,29 @@ def parseLink(link, dict, csv_writer, name):
                 else:
                     output = dataUnparsed.text.replace("&nbsp", " ")
                     answers[labelUnparsed.text] = output
-    csv_writer.writerow([answers["name"], answers["image"], answers["Country of origin"], answers["Publication types"], answers["Founded"], answers["Parent company"], answers["Headquarters location"], answers["Official website"]])
+    csv_writer.writerow(
+        [
+            answers["name"],
+            answers["image"],
+            answers["Country of origin"],
+            answers["Publication types"],
+            answers["Founded"],
+            answers["Parent company"],
+            answers["Headquarters location"],
+            answers["Official website"],
+        ]
+    )
+
 
 def checkValues(string):
-    options = ["Country of origin", "Publication types", "Founded", "Parent company", "Headquarters location", "Official website"]
+    options = [
+        "Country of origin",
+        "Publication types",
+        "Founded",
+        "Parent company",
+        "Headquarters location",
+        "Official website",
+    ]
     for option in options:
         if option == string:
             return True
@@ -125,5 +163,5 @@ def addVal(string, dict):
     else:
         dict.update({string: dict.get(string) + 1})
 
-main()
 
+main()

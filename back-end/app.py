@@ -9,6 +9,7 @@ import flask_marshmallow as ma
 from dotenv import load_dotenv
 from models import *
 
+
 class AuthorSchema(ma.Schema):
     author_id = fields.Int(required=True)
     author_name = fields.Str(required=False)
@@ -21,6 +22,7 @@ class AuthorSchema(ma.Schema):
     noteable_works = fields.Str(required=False)
     book_connections = fields.Str(required=False)
     publisher_connections = fields.Str(required=False)
+
 
 class BookSchema(ma.Schema):
     book_id = fields.Int(required=True)
@@ -38,6 +40,7 @@ class BookSchema(ma.Schema):
     author_connections = fields.Str(required=False)
     publisher_connections = fields.Str(required=False)
 
+
 class PublisherSchema(ma.Schema):
     publisher_id = fields.Int(required=True)
     name = fields.Str(required=False)
@@ -51,6 +54,7 @@ class PublisherSchema(ma.Schema):
     author_connections = fields.Str(required=False)
     book_connections = fields.Str(required=False)
 
+
 author_schema = AuthorSchema()
 authors_schema = AuthorSchema(many=True)
 
@@ -60,9 +64,11 @@ books_schema = BookSchema(many=True)
 publisher_schema = PublisherSchema()
 publishers_schema = PublisherSchema(many=True)
 
+
 @app.route("/")
 def hello_world():
     return '<img src="https://i.kym-cdn.com/photos/images/original/001/211/814/a1c.jpg" alt="cowboy" />'
+
 
 @app.route("/api/authors", methods=["GET"])
 def getAuthors():
@@ -70,10 +76,12 @@ def getAuthors():
     result = authors_schema.dump(all_authors)
     return authors_schema.jsonify(result)
 
+
 @app.route("/api/authors/id=<id>", methods=["GET"])
 def get_country_id(id):
     author = Author.query.get(id)
     return author_schema.jsonify(author)
+
 
 @app.route("/api/books", methods=["GET"])
 def getBooks():
@@ -81,10 +89,12 @@ def getBooks():
     result = books_schema.dump(all_books)
     return books_schema.jsonify(result)
 
+
 @app.route("/api/books/id=<id>", methods=["GET"])
 def get_book_id(id):
     book = Book.query.get(id)
     return book_schema.jsonify(book)
+
 
 @app.route("/api/publishers", methods=["GET"])
 def getPublishers():
@@ -93,10 +103,12 @@ def getPublishers():
     return publishers_schema.jsonify(result)
     # return jsonify({"publishers": result})
 
+
 @app.route("/api/publishers/id=<id>", methods=["GET"])
 def get_publisher_id(id):
     publisher = Publisher.query.get(id)
     return publisher_schema.jsonify(publisher)
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)

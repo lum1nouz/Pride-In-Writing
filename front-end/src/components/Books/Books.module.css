@@ -1,6 +1,6 @@
 .parrallaxCont {
   margin-top: 0px;
-  height: 1450px;
+  height: 2000px;
 }
 
 .titleText {
@@ -26,7 +26,7 @@
   padding-top: 30px;
   padding-left: 30px;
   /* TODO: Change this height to a % of the table selector */
-  height: 1200px;
+  height: 1700px;
 }
 
 .card {
@@ -60,7 +60,6 @@
   height: 300px;
 }
 
-
 .cardGrid {
   display: grid;
   justify-items: center;
@@ -69,5 +68,3 @@
   padding: 30px;
   margin-top: 5px;
 }
-
-

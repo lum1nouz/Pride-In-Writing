@@ -1,4 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy 
+from flask_sqlalchemy import SQLAlchemy
 from init import init_db
 from flask import Flask
 import flask_marshmallow as ma
@@ -6,7 +6,8 @@ from flask_marshmallow import Marshmallow
 
 app = Flask(__name__)
 db = init_db(app)
-ma = Marshmallow(app) 
+ma = Marshmallow(app)
+
 
 class Author(db.Model):
     author_id = db.Column(db.Integer(), primary_key=True)
@@ -23,6 +24,7 @@ class Author(db.Model):
     # book_connections = db.Column(MutableList.as_mutable(PickleType), default=[])
     # publisher_connections = db.Column(MutableList.as_mutable(PickleType), default=[])
 
+
 class Book(db.Model):
     book_id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String())
@@ -38,6 +40,7 @@ class Book(db.Model):
     authors = db.Column(db.String())
     author_connections = db.Column(db.String())
     publisher_connections = db.Column(db.String())
+
 
 class Publisher(db.Model):
     publisher_id = db.Column(db.Integer(), primary_key=True)
