@@ -87,7 +87,7 @@ async function getData() {
     console.log(err);
     return {};
   });
-  return JSON.parse(authors);
+  return authors;
 }
 
 class Authors extends React.Component<props, state> {
@@ -100,7 +100,7 @@ class Authors extends React.Component<props, state> {
   }
 
   async componentDidMount() {
-    this.setState({dataStore: mapData(await getData())}) 
+    this.setState({dataStore: await mapData(await getData())}) 
   }
 
 

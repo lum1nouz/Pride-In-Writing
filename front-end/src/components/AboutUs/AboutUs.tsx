@@ -117,7 +117,7 @@ class AboutUs extends React.Component<props, state> {
     data.forEach((element) => this.checkCommitAuthor(element));
 
     let tempPageNum = this.state.pageNum
-    if (len >= (this.state.pageNum * 100)) {
+    if (len >= 100) {
       tempPageNum = this.state.pageNum + 1     
     }
 
@@ -165,9 +165,13 @@ class AboutUs extends React.Component<props, state> {
   ) {
     let len = data.length;
     data.forEach((element) => this.checkCommitAuthor(element));
+    console.log(data)
 
     let tempPageNum = this.state.pageNum
-    if (len >= (this.state.pageNum * 100)) {
+    // if (len >= (this.state.pageNum * 100)) {
+    //   tempPageNum = this.state.pageNum + 1     
+    // }
+    if (len >= 100 ) {
       tempPageNum = this.state.pageNum + 1     
     }
 
