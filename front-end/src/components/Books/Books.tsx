@@ -50,16 +50,26 @@ function Books() {
   const [bookData, setBookData] = useState<Book[]>([]);
   const [page, setPage] = useState(1);
 
-  const [{ data, loading, error }] = useAxios(
-    "https://api.prideinwriting.me/api/books"
-  );
+  async function getData() {
+    const authors = await fetch(`https://api.prideinwriting.me/api/books`)
+    .then((response) => {
+      return response.json();
+    })
+    .catch((err) => {
+      console.log(err);
+      return {};
+    });
+    return authors as Book[];
+  }
+
   
   useEffect(() => {
-    const authorsData = data;
-    if (authorsData) {
-      setBookData(authorsData);
+
+    const getBooks = async () => {
+      setBookData(await getData())
     }
-  }, [data]);
+    getBooks()
+  }, []);
 
   
 

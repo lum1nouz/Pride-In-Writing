@@ -55,7 +55,7 @@ const bookData2: Book[] = [{
   maturity_rating: "MATURE",
   description: "This is a fantastic book",
   image: "http://books.google.com/books/content?id=PN5hAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api,%5B",
-  authors: ["Margaret",],
+  authors: ["Margaret", "Amy", "Donald"],
   author_connections: "10,15",
   publisher_connections:"15,20"
 }]

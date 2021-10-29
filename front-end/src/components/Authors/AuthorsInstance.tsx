@@ -134,7 +134,28 @@ class AuthorsInstance extends React.Component<props, state> {
                       </p>
                     </div>}
 
-                  <h2>Books</h2>
+                  <h2>Year Born</h2>
+                  <p>
+                    {this.props.year_born}
+                  </p>
+                  <h2>On-Tour Soon</h2>
+                  <p>
+                    {this.props.author_tour}
+                  </p>
+                  <h2>Nationality</h2>
+                  <p>
+                    {this.props.nationality}
+                  </p>
+                  <h2>Genre</h2>
+                  <p>
+                    {this.props.genre}
+                  </p>
+                  <h2>Notable Works</h2>
+                  <p>
+                    {this.props.genre}
+                  </p>
+
+                  <h2>Book Connections</h2>
                   <p>
                     {this.state.bookCon.map(function(book) {
                       return <Button component={Link} to={"/book-" + book.book_id}>
@@ -143,7 +164,7 @@ class AuthorsInstance extends React.Component<props, state> {
                     })}
                   </p>
 
-                  <h2>Publishers</h2>
+                  <h2>Publisher Connections</h2>
                   <p>
                     {this.state.pubCon.map(function(publisher) {
                       return <Button component={Link} to={"/publisher-" + publisher.publisher_id}>

@@ -1,5 +1,12 @@
-from flask_sqlalchemy import SQLAlchemy
-db = SQLAlchemy()
+from flask_sqlalchemy import SQLAlchemy 
+from init import init_db
+from flask import Flask
+import flask_marshmallow as ma
+from flask_marshmallow import Marshmallow
+
+app = Flask(__name__)
+db = init_db(app)
+ma = Marshmallow(app) 
 
 class Author(db.Model):
     author_id = db.Column(db.Integer(), primary_key=True)

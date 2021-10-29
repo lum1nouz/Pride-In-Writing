@@ -2,7 +2,6 @@ import React from "react";
 import { Paper, Button } from "@material-ui/core";
 import Header from "../Header/Header";
 import css from "./Publishers.module.css";
-import michael from "../../Assets/michael-cunningham.jpg";
 import { Parallax } from "react-parallax";
 import { CardContent } from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -25,7 +24,11 @@ type props = {
     book_connections: number[]
 };
 
-type state = {};
+type state = {
+  bookCon : Book[]
+  autCon : Author[]
+};
+
 
 const styles = {
     media: {
@@ -39,9 +42,14 @@ const styles = {
   
   class PublisherInstance extends React.Component<props, state> {
     constructor(props: props){
-        super(props)
-        this.state = {}
-    }
+      super(props)
+
+      this.state = {
+        bookCon:[],
+        autCon: []
+      }
+  }
+
 
     async getBookConnections() {
       let tempData: Book[] = []
@@ -101,25 +109,37 @@ const styles = {
                             position: "relative",
                           }}
                         >
-                          <CardMedia
+                          <img
+            alt="N/A"
+            src={this.props.image}
+            style={{
+              height: 200,
+              width: 250,
+              marginLeft: 50,
+              marginTop: 10,
+            }} />
+                          {/* <CardMedia
                             style={styles.media}
                             component="img"
                             alt={"Picture of " + this.props.name}
                             image={this.props.image}
-                          />
+                          /> */}
                         </div>
                         <p style={{ textAlign: "center" }}>
                           Parent Company: {this.props.parent_comp} <br />
                           Headquarters: {this.props.headquarters} <br />
-                          Website:{" "}
-                          <a href={" " + this.props.website}>
-                            {this.props.name} Website
-                          </a>
                         </p>
                       </CardContent>
                     </Grid>
                   </Grid>
                   <div style={{ textAlign: "center" }}>
+                    <h2>Website</h2>
+                    <p>
+                      <a href={this.props.website}>
+                            {this.props.name} Website
+                          </a>
+                    </p>
+
                     <h2>
                       Origin <br />
                     </h2>
@@ -134,19 +154,25 @@ const styles = {
                       {this.props.publication_types}
                     </p>
   
-                    <h2 id="authorsTest">Authors</h2>
-                    <p>
-                      <Button component={Link} to={"/" + this.props.author_connections}>
-                        {this.props.author_connections}
-                      </Button>
-                    </p>
+                    <h2>Book Connections</h2>
+                  <p>
+                    {this.state.bookCon.map(function(book) {
+                      return <Button component={Link} to={"/book-" + book.book_id}>
+                                  {book.name}
+                            </Button>
+                    })}
+                  </p>
   
-                    <h2>Books</h2>
-                    <p>
-                      <Button component={Link} to={"/" + this.props.book_connections}>
-                        {this.props.book_connections}
-                      </Button>
-                    </p>
+                  <h2>
+                    Author Connections <br />
+                  </h2>
+                  <p>
+                    {this.state.autCon.map(function(author) {
+                      return <Button component={Link} to={"/author-" + author.author_id}>
+                                  {author.author_name}
+                            </Button>
+                    })}
+                  </p>
                   </div>
                 </Paper>
               </div>

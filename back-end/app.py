@@ -9,10 +9,6 @@ import flask_marshmallow as ma
 from dotenv import load_dotenv
 from models import *
 
-app = Flask(__name__)
-db = init_db(app)
-ma = Marshmallow(app) 
-
 class AuthorSchema(ma.Schema):
     author_id = fields.Int(required=True)
     author_name = fields.Str(required=False)

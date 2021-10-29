@@ -13,6 +13,14 @@ import Author from "../../models/author-model"
 import Publisher from "../../models/publisher-model"
 import stringToIntegerList from "../../common"
 
+function arrayToString(arr: String[]){
+  let tempData: string = ""
+  arr.forEach((s)=> {
+    tempData = tempData + " " + s
+  })
+  return tempData
+}
+
 
 type props = {
     id: number
@@ -131,8 +139,37 @@ class BookInstance extends React.Component<props, state> {
                   </Grid>
                 </Grid>
                 <div style={{ textAlign: "center" }}>
+                { this.props.description && <div>
+                      <h2>
+                        Description <br />
+                      </h2>
+                      <p>
+                        {this.props.description}
+                      </p>
+                    </div>}
+
+                  <h2>Genre</h2>
+                  <p>
+                    {this.props.genre}
+                  </p>
+
+                  <h2>Maturity Rating</h2>
+                  <p>
+                    {this.props.maturity_rating}
+                  </p>
+
+                  <h2>Year Published</h2>
+                  <p>
+                    {this.props.year}
+                  </p>
+
+                  <h2>Writen By</h2>
+                  <p>
+                    {arrayToString(this.props.authors)}
+                  </p>
+
                   <h2>
-                    Authors <br />
+                    Author Connections <br />
                   </h2>
                   <p>
                     {this.state.autCon.map(function(author) {
@@ -142,10 +179,7 @@ class BookInstance extends React.Component<props, state> {
                     })}
                   </p>
 
-                  <h2>Genre</h2>
-                  <p>{this.props.genre}</p>
-
-                  <h2 id="publisherTest">Publishers</h2>
+                  <h2 id="publisherTest">Publisher Connections</h2>
                   <p>
                     {this.state.pubCon.map(function(publisher) {
                       return <Button component={Link} to={"/publisher-" + publisher.publisher_id}>
@@ -153,8 +187,6 @@ class BookInstance extends React.Component<props, state> {
                             </Button>
                     })}
                   </p>
-                  <h2>Year Published</h2>
-                  <p>{this.props.year}</p>
                 </div>
               </Paper>
             </div>
