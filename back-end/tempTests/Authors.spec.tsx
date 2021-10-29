@@ -1,15 +1,17 @@
 import React from "react";
-import HomePage from "../components/HomePage/HomePage";
+import Authors from "../components/Authors/Authors";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 
-test("Checks that the Home page renders without crashing", async () => {
+require('jest-fetch-mock').enableMocks()
+
+test("Checks that Authors renders without crashing", () => {
   render(
     <BrowserRouter>
       {" "}
-      <HomePage />{" "}
+      <Authors />{" "}
     </BrowserRouter>
   );
-  const screenText = screen.getByTestId("pride");
+  const screenText =  screen.getByTestId("authors");
   expect(screenText).toBeInTheDocument();
 });

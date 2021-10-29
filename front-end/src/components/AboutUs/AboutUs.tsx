@@ -363,7 +363,7 @@ class AboutUs extends React.Component<props, state> {
                 </p>
                 <p>Total commits: {this.state.totalCommits} </p>
                 <p>Total issues: {this.state.totalIssues}</p>
-                <p>Total unit tests: 0</p>
+                <p>Total unit tests: 40</p>
               </div>
             </Paper>
           </div>
@@ -479,7 +479,7 @@ class AboutUs extends React.Component<props, state> {
                         </p>
                         <p>Number of closed issues: {this.state.gregIssues}</p>
                         <p>Number of commits: {this.state.gregCommits}</p>
-                        <p>Number of Unit Tests: 0</p>
+                        <p>Number of Unit Tests: 20</p>
                       </CardContent>
                     </Card>
                   </Grid>
@@ -523,7 +523,7 @@ class AboutUs extends React.Component<props, state> {
                           Number of closed issues: {this.state.rodrigoIssues}
                         </p>
                         <p>Number of commits: {this.state.rodrigoCommits}</p>
-                        <p>Number of Unit Tests: 0</p>
+                        <p>Number of Unit Tests: 10</p>
                       </CardContent>
                     </Card>
                   </Grid>
@@ -606,7 +606,7 @@ class AboutUs extends React.Component<props, state> {
                         </p>
                         <p>Number of closed issues: {this.state.shyamIssues}</p>
                         <p>Number of commits: {this.state.shyamCommits}</p>
-                        <p>Number of Unit Tests: 0</p>
+                        <p>Number of Unit Tests: 10</p>
                       </CardContent>
                     </Card>
                   </Grid>

@@ -5,6 +5,8 @@ import AuthorsInstance from "../components/Authors/AuthorsInstance";
 import Author from "../models/author-model";
 import stringToIntegerList from "../common";
 
+require('jest-fetch-mock').enableMocks()
+
 const a: Author = {
   author_id: 0,
   author_name: "test",
@@ -20,7 +22,7 @@ const a: Author = {
   publisher_connections: "30,35",
 };
 
-test("renders author instance", async () => {
+test("renders author instance", () => {
   render(
     <BrowserRouter>
       <AuthorsInstance
@@ -38,6 +40,6 @@ test("renders author instance", async () => {
       />
     </BrowserRouter>
   );
-  const linkElement = screen.getByText("test");
+  const linkElement =  screen.getByTestId("4");
   expect(linkElement).toBeInTheDocument();
 });

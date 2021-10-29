@@ -94,7 +94,7 @@ class AuthorsInstance extends React.Component<props, state> {
     return (
       <div>
         <Header />
-        <div className={css.background}>
+        <div data-testid="4" className={css.background}>
           <Parallax strength={500} className={css.parrallaxCont}>
             <div style={{}}>
               <div className={css.titleText}> {this.props.author_name} </div>

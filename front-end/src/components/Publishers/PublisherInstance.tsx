@@ -96,7 +96,7 @@ class PublisherInstance extends React.Component<props, state> {
       <div>
         <Header />
         <div className={css.background}>
-          <Parallax strength={500} className={css.parrallaxCont}>
+          <Parallax data-testid="444" strength={500} className={css.parrallaxCont}>
             <div style={{}}>
               <div className={css.titleText}> {this.props.name} </div>
               <Paper elevation={4} className={css.paperCont}>

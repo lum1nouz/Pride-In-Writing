@@ -222,7 +222,7 @@ function App() {
   return (
     <div>
       {/* <Switch /> */}
-      <Route exact path="/" component={HomePage} />
+      <Route data-testid= "4444" exact path="/" component={HomePage} />
       <Route exact path="/AboutUs" component={AboutUs} />
       <Route exact path="/Books" component={Books} />
       <Route exact path="/Publishers" component={Publishers} />
@@ -261,6 +261,7 @@ function App() {
           );
         })}
       </div>
+      testParagraph
     </div>
   );
 }

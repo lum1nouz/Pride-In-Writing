@@ -27,6 +27,7 @@
     "jest-css-modules": "^2.1.0",
     "jest-css-modules-transform": "^4.3.0",
     "jest-dom": "^4.0.0",
+    "jest-fetch-mock": "^3.0.3",
     "material-table": "^1.69.3",
     "picocolors": "^1.0.0",
     "react": "^17.0.2",
@@ -69,6 +70,9 @@
   },
   "jest": {
     "preset": "ts-jest",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setuptests.ts"
+    ],
     "moduleNameMapper": {
       "\\.(css|less)$": "identity-obj-proxy"
     },

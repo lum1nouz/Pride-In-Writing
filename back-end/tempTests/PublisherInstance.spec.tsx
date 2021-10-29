@@ -5,6 +5,8 @@ import PublisherInstance from "../components/Publishers/PublisherInstance";
 import Publisher from "../models/publisher-model";
 import stringToIntegerList from "../common";
 
+require('jest-fetch-mock').enableMocks()
+
 const a: Publisher = {
   publisher_id: 0,
   name: "123Books!!!",
@@ -20,7 +22,7 @@ const a: Publisher = {
   book_connections: "25, 30",
 };
 
-test("renders publisher instance", async () => {
+test("renders publisher instance", () => {
   render(
     <BrowserRouter>
       <PublisherInstance
@@ -39,6 +41,6 @@ test("renders publisher instance", async () => {
       />
     </BrowserRouter>
   );
-  const linkElement = screen.getByText("123Books!!!");
+  const linkElement = screen.getByTestId("444");
   expect(linkElement).toBeInTheDocument();
 });

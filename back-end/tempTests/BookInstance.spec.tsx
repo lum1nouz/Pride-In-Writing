@@ -5,6 +5,8 @@ import BookInstance from "../components/Books/BookInstance";
 import Book from "../models/book-model";
 import stringToIntegerList from "../common";
 
+require('jest-fetch-mock').enableMocks()
+
 const a: Book = {
   book_id: 0,
   name: "Killer Bee",
@@ -23,7 +25,7 @@ const a: Book = {
   publisher_connections: "15,20",
 };
 
-test("renders book instance", async () => {
+test("renders book instance", () => {
   render(
     <BrowserRouter>
       <BookInstance
@@ -44,6 +46,6 @@ test("renders book instance", async () => {
       />
     </BrowserRouter>
   );
-  const linkElement = screen.getByText("Killer Bee");
+  const linkElement = screen.getByTestId("44");
   expect(linkElement).toBeInTheDocument();
 });
