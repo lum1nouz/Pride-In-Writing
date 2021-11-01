@@ -66,6 +66,16 @@ Phase 2:
 | Pamela Vazquez De La Cruz | 15 | 35|
 | Shyam Patel | 15 | 35|
 
+Phase 3: 
+
+| Name | Estimate | Actual |
+| ------ | ------ | ------ |
+| Gregory Raper | 25 | |
+| Rodrigo Estrella | 24 | |
+| Cliff Xu | 25 | |
+| Pamela Vazquez De La Cruz | 20-25 | |
+| Shyam Patel | 30 | |
+
 
 **Comments**
 
