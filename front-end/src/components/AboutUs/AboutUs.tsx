@@ -105,39 +105,12 @@ class AboutUs extends React.Component<props, state> {
       rodrigoCommits: 0,
       shyamCommits: 0,
       cliffCommits: 0,
-      pageNum: 1,
+      pageNum: 0,
       oldPageNum: 0,
     };
   }
 
   commitData: number[] = [0, 0, 0, 0, 0];
-
-  async updatePageNum(data: commitResponse[]) {
-    let len = data.length;
-    data.forEach((element) => this.checkCommitAuthor(element));
-
-    let tempPageNum = this.state.pageNum;
-    if (len >= 100) {
-      tempPageNum = this.state.pageNum + 1;
-    }
-
-    this.setState({
-      totalCommits: this.state.totalCommits + len,
-      totalIssues: this.state.totalIssues,
-      gregIssues: this.state.gregIssues,
-      gregCommits: this.commitData[0],
-      pamelaCommits: this.commitData[3],
-      pamelaIssues: this.state.pamelaIssues,
-      cliffCommits: this.commitData[2],
-      cliffIssues: this.state.cliffIssues,
-      rodrigoCommits: this.commitData[1],
-      rodrigoIssues: this.state.rodrigoIssues,
-      shyamCommits: this.commitData[4],
-      shyamIssues: this.state.shyamIssues,
-      pageNum: tempPageNum,
-      oldPageNum: this.state.pageNum,
-    });
-  }
 
   async checkCommitAuthor(data: commitResponse) {
     if (
@@ -160,45 +133,8 @@ class AboutUs extends React.Component<props, state> {
     }
   }
 
-  async getCommitInfo(
-    data: commitResponse[],
-    tIssues: number,
-    gIssues: number,
-    rIssues: number,
-    cIssues: number,
-    pIssues: number,
-    sIssues: number
-  ) {
-    let len = data.length;
-    data.forEach((element) => this.checkCommitAuthor(element));
-    console.log(data);
-
-    let tempPageNum = this.state.pageNum;
-    // if (len >= (this.state.pageNum * 100)) {
-    //   tempPageNum = this.state.pageNum + 1
-    // }
-    if (len >= 100) {
-      tempPageNum = this.state.pageNum + 1;
-    }
-
-    this.setState({
-      totalCommits: len,
-      totalIssues: tIssues,
-      gregIssues: gIssues,
-      gregCommits: this.commitData[0],
-      pamelaCommits: this.commitData[3],
-      pamelaIssues: pIssues,
-      cliffCommits: this.commitData[2],
-      cliffIssues: cIssues,
-      rodrigoCommits: this.commitData[1],
-      rodrigoIssues: rIssues,
-      shyamCommits: this.commitData[4],
-      shyamIssues: sIssues,
-      pageNum: tempPageNum,
-    });
-  }
-
   //Gitlab project id: 29826417
+  //Upon initial render get issue data from Gitlab
   async componentDidMount() {
     let tIssues: number = 0;
     let gIssues: number = 0;
@@ -249,34 +185,69 @@ class AboutUs extends React.Component<props, state> {
         sIssues = (res.data as issuesResponse).statistics.counts.closed;
       });
 
-    await axios
-      .get(
-        `https://gitlab.com/api/v4/projects/29826417/repository/commits?type=all&per_page=100&page=1`
-      )
-      .then((res) => {
-        console.log(res.data);
-        this.getCommitInfo(
-          res.data as commitResponse[],
-          tIssues,
-          gIssues,
-          rIssues,
-          cIssues,
-          pIssues,
-          sIssues
-        );
+      //Set state after getting all the issue data
+      //pageNum = 1 will trigger the first update and start getting commit data
+      this.setState({
+        totalCommits: 0,
+        totalIssues: tIssues,
+        gregIssues: gIssues,
+        gregCommits: this.commitData[0],
+        pamelaCommits: this.commitData[3],
+        pamelaIssues: pIssues,
+        cliffCommits: this.commitData[2],
+        cliffIssues: cIssues,
+        rodrigoCommits: this.commitData[1],
+        rodrigoIssues: rIssues,
+        shyamCommits: this.commitData[4],
+        shyamIssues: sIssues,
+        pageNum: 1,
+        oldPageNum: 0
       });
   }
 
+  //Called by componentDidUpdate
+  //Logic to see if we are at the last page
+  //Maps data from gitlab commit api calls to the state
+  async updatePageNum(data: commitResponse[]) {
+    let len = data.length;
+    data.forEach((element) => this.checkCommitAuthor(element));
+
+    let tempPageNum = this.state.pageNum;
+    if (len >= 100) {
+      tempPageNum += 1;
+    }
+
+    this.setState({
+      totalCommits: this.state.totalCommits + len,
+      totalIssues: this.state.totalIssues,
+      gregIssues: this.state.gregIssues,
+      gregCommits: this.commitData[0],
+      pamelaCommits: this.commitData[3],
+      pamelaIssues: this.state.pamelaIssues,
+      cliffCommits: this.commitData[2],
+      cliffIssues: this.state.cliffIssues,
+      rodrigoCommits: this.commitData[1],
+      rodrigoIssues: this.state.rodrigoIssues,
+      shyamCommits: this.commitData[4],
+      shyamIssues: this.state.shyamIssues,
+      pageNum: tempPageNum,
+      oldPageNum: this.state.pageNum,
+    });
+  }
+
+  //Handles getting commit data
+  //Updates and calls the next page until there are no more
   async componentDidUpdate() {
     if (this.state.pageNum > this.state.oldPageNum) {
+      let responseData: commitResponse[] = []
       await axios
         .get(
           `https://gitlab.com/api/v4/projects/29826417/repository/commits?type=all&per_page=100&page=${this.state.pageNum}`
         )
         .then((res) => {
-          console.log(res.data);
-          this.updatePageNum(res.data as commitResponse[]);
+          responseData = res.data as commitResponse[]
         });
+        await this.updatePageNum(responseData)
     }
   }
 
