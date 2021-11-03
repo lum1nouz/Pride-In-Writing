@@ -171,6 +171,8 @@ class Authors extends React.Component<props, state> {
                     paging: true,
                     pageSize: 10,
                     pageSizeOptions: [],
+                    search: false,
+                    sorting: false
                   }}
                   onRowClick={(_, data) =>
                     (window.location.href = "/author-" + data?.id)

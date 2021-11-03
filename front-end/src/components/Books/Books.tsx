@@ -118,6 +118,22 @@ function Books() {
             </div>
             <Paper elevation={4} className={css.paperCont} data-testid="book44">
               <div>
+                <div className={css.cardGrid}>
+                  {bookData.slice((page - 1) * 9, page * 9).map((book) => (
+                    <BookCard book={book} />
+                  ))}
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    marginTop: 20,
+                    flex: 1,
+                    justifyContent: "center",
+                  }}
+                >
+                  Displaying {(page - 1) * 9 + 1}-
+                  {Math.min(page * 9, bookData.length)} of {bookData.length}
+                </div>
                 <div
                   style={{
                     display: "flex",
@@ -137,22 +153,6 @@ function Books() {
                       style={{ alignSelf: "center" }}
                     />
                   </div>
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    marginTop: 20,
-                    flex: 1,
-                    justifyContent: "center",
-                  }}
-                >
-                  Displaying {(page - 1) * 9 + 1}-
-                  {Math.min(page * 9, bookData.length)} of {bookData.length}
-                </div>
-                <div className={css.cardGrid}>
-                  {bookData.slice((page - 1) * 9, page * 9).map((book) => (
-                    <BookCard book={book} />
-                  ))}
                 </div>
               </div>
 
