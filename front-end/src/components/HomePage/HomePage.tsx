@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { createRef } from "react";
 import Header from "../Header/Header";
 import css from "./HomePage.module.css";
 import booksPics from "../../Assets/booksPic.png";
@@ -9,9 +9,12 @@ import { CardContent } from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from '@material-ui/core/Typography';
 import { CardActionArea } from '@mui/material';
-import authorStockImg from "../../Assets/authorImg.jpg";
+import authorStockImg from "../../Assets/authorImg.png";
 import bookStockImg from "../../Assets/bookImg.jpg";
 import publisherStockImg from "../../Assets/publisherImg.jpg";
+import penguinLogoImg from "../../Assets/penguinLogo.png";
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 
 const styles = {
@@ -39,11 +42,13 @@ type props = {};
 
 type state = {};
 
-const Splash = () => {
-  const ref = useRef(null)
-}
 class HomePage extends React.Component<props, state> {
   state: state = {};
+  private myRef:  React.RefObject<HTMLDivElement>;
+  constructor(props: any) {
+    super(props);
+    this.myRef = React.createRef();
+  }
   render() {
     return (
       <div>
@@ -91,6 +96,24 @@ class HomePage extends React.Component<props, state> {
                     Community
                   </p>
                 </div>
+                <div style = {{display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative", 
+                padding: 15}}> 
+                <Stack spacing={2} direction="row">
+                  <Button variant="contained">Search by Query</Button>
+                  <Button variant="outlined">Search by Name</Button>
+                </Stack>
+                </div> 
+
+                <div>
+                  <p>Insert search bar here</p>
+                  </div>
+
+                <div>
+                
+                  </div>
               </div>
             </Grid>
             <Grid
@@ -109,20 +132,20 @@ class HomePage extends React.Component<props, state> {
             </Grid>
           </Grid>
           
-          {/* <div className={css.downButton}>
+          <div className={css.downButton}>
 					<DownOutlined
 						className={css.downButtonIcon}
 						onClick={() => {
-							window.scrollTo({
-								top: ref.current.offsetTop,
-								behavior: "smooth",
-							})
+              if(this.myRef.current != null){
+                window.scrollTo({
+                  top: this.myRef.current.offsetTop,
+                  behavior: "smooth",
+                })
+              }
 						}}
 					/>
-				</div> */}
-          {/* call ref={ref} */}
-
-          <div style={{
+				</div>
+          <div ref={this.myRef} style={{
                 textAlign: "center",
                 display: "flex",
                 justifyContent: "center",
@@ -147,8 +170,8 @@ class HomePage extends React.Component<props, state> {
                 justifyContent: "center",
                 alignItems: "center",
                 position: "relative",
-                paddingLeft: 45,
-                paddingBottom: 45}}>
+                paddingBottom: 75,
+                paddingLeft: 45}}>
 
             <Grid container spacing={2}>
                   <Grid item xs={4}>
@@ -158,15 +181,14 @@ class HomePage extends React.Component<props, state> {
                           src={authorStockImg}
                           component="img"
                           height="300"
-                          alt="green iguana"
+                          alt="authors image"
                         />
                         <CardContent>
                           <Typography gutterBottom variant="h5" component="div">
                             Authors
                           </Typography>
                           <Typography variant="body2">
-                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarctica
+                            Want to know which Authors are in the LGBTQ community?
                           </Typography>
                         </CardContent>
                       </CardActionArea>
@@ -180,15 +202,14 @@ class HomePage extends React.Component<props, state> {
                           src={bookStockImg}
                           component="img"
                           height="300"
-                          alt="green iguana"
+                          alt="books image"
                         />
                         <CardContent>
                           <Typography gutterBottom variant="h5" component="div">
                             Books
                           </Typography>
                           <Typography variant="body2">
-                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarctica
+                            Learn about books written by LGBTQ Authors!
                           </Typography>
                         </CardContent>
                       </CardActionArea>
@@ -199,18 +220,17 @@ class HomePage extends React.Component<props, state> {
                     <Card sx={{ maxWidth: 345 }}>
                       <CardActionArea>
                         <CardMedia
-                          src={publisherStockImg}
+                          src={penguinLogoImg}
                           component="img"
                           height="300"
-                          alt="green iguana"
+                          alt="publishers image"
                         />
                         <CardContent>
                           <Typography gutterBottom variant="h5" component="div">
                             Publishers
                           </Typography>
                           <Typography variant="body2">
-                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                            species, ranging across all continents except Antarctica
+                            Learn which Publishing companies are supporting LGBTQ Authors!
                           </Typography>
                         </CardContent>
                       </CardActionArea>
