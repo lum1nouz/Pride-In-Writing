@@ -131,6 +131,15 @@ def get_publisher_id(id):
     publisher = Publisher.query.get(id)
     return publisher_schema.jsonify(publisher)
 
+# Publisher Sorting
+@app.route("/api/publisher/sort=<order>&column=<column>", methods=["GET"])
+def get_sorted_years(order, column):
+    if order == "descending":
+        sorted_publishers = Book.query.order_by(getattr(Publisher, column).desc()).all()
+    if order == "ascending":
+        sorted_publishers = Book.query.order_by(getattr(Publisher, column).asc()).all()
+    result = publisher_schema.dump(sorted_publishers)
+    return jsonify({"sorted_publishers": result})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
