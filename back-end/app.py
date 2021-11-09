@@ -92,7 +92,6 @@ def get_sorted_years(order, column):
     result = author_schema.dump(sorted_authors)
     return jsonify({"sorted_authors": result})
 
-
 # __________ Books __________
 
 @app.route("/api/books", methods=["GET"])
@@ -106,6 +105,16 @@ def getBooks():
 def get_book_id(id):
     book = Book.query.get(id)
     return book_schema.jsonify(book)
+
+# Book Sorting
+@app.route("/api/books/sort=<order>&column=<column>", methods=["GET"])
+def get_sorted_years(order, column):
+    if order == "descending":
+        sorted_books = Book.query.order_by(getattr(Book, column).desc()).all()
+    if order == "ascending":
+        sorted_books = Book.query.order_by(getattr(Book, column).asc()).all()
+    result = book_schema.dump(sorted_books)
+    return jsonify({"sorted_books": result})
 
 # __________ Publishers __________
 
