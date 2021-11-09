@@ -64,11 +64,11 @@ books_schema = BookSchema(many=True)
 publisher_schema = PublisherSchema()
 publishers_schema = PublisherSchema(many=True)
 
-
 @app.route("/")
 def hello_world():
     return '<img src="https://i.kym-cdn.com/photos/images/original/001/211/814/a1c.jpg" alt="cowboy" />'
 
+# __________ Authors __________
 
 @app.route("/api/authors", methods=["GET"])
 def getAuthors():
@@ -82,6 +82,18 @@ def get_country_id(id):
     author = Author.query.get(id)
     return author_schema.jsonify(author)
 
+# Author Sorting
+@app.route("/api/authors/sort=<order>&column=<column>", methods=["GET"])
+def get_sorted_years(order, column):
+    if order == "descending":
+        sorted_authors = Author.query.order_by(getattr(Author, column).desc()).all()
+    if order == "ascending":
+        sorted_authors = Author.query.order_by(getattr(Author, column).asc()).all()
+    result = author_schema.dump(sorted_authors)
+    return jsonify({"sorted_authors": result})
+
+
+# __________ Books __________
 
 @app.route("/api/books", methods=["GET"])
 def getBooks():
@@ -95,6 +107,7 @@ def get_book_id(id):
     book = Book.query.get(id)
     return book_schema.jsonify(book)
 
+# __________ Publishers __________
 
 @app.route("/api/publishers", methods=["GET"])
 def getPublishers():
