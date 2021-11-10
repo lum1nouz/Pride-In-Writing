@@ -1,22 +1,23 @@
 .parrallaxCont {
   margin-top: 0px;
-  height: 2000px;
+  height: 1500px;
 }
 
 .titleText {
   margin-top: 75px;
   font-size: 72px;
   text-align: center;
-  color: white;
+  color: black;
+  font-weight: bold;
   text-shadow: 1px 1px black;
 }
 
 .background {
-  background-image: url("../../Assets/bgPhoto.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
+  background-color: white;
 }
 
 .paperCont {
@@ -26,7 +27,7 @@
   padding-top: 30px;
   padding-left: 30px;
   /* TODO: Change this height to a % of the table selector */
-  height: 1700px;
+  height: 1200px;
 }
 
 .card {
