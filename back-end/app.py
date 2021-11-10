@@ -83,7 +83,7 @@ def get_country_id(id):
 
 # Author Sorting
 @app.route("/api/authors/sort=<order>&column=<column>", methods=["GET"])
-def get_sorted_years(order, column):
+def get_sorted_authors(order, column):
     if order == "descending":
         sorted_authors = Author.query.order_by(getattr(Author, column).desc()).all()
     if order == "ascending":
@@ -107,7 +107,7 @@ def get_book_id(id):
 
 # Book Sorting
 @app.route("/api/books/sort=<order>&column=<column>", methods=["GET"])
-def get_sorted_years(order, column):
+def get_sorted_books(order, column):
     if order == "descending":
         sorted_books = Book.query.order_by(getattr(Book, column).desc()).all()
     if order == "ascending":
@@ -131,7 +131,7 @@ def get_publisher_id(id):
 
 # Publisher Sorting
 @app.route("/api/publisher/sort=<order>&column=<column>", methods=["GET"])
-def get_sorted_years(order, column):
+def get_sorted_publishers(order, column):
     if order == "descending":
         sorted_publishers = Book.query.order_by(getattr(Publisher, column).desc()).all()
     if order == "ascending":
