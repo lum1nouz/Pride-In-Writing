@@ -76,7 +76,7 @@ def getAuthors():
 
     # Query Params
     sort_by = str(request.args.get('sort_by'))
-    direction = str.(request.args.get('direction'))
+    direction = str(request.args.get('direction'))
 
     # Sort
     if sort_by is not None and direction is not None:
@@ -108,6 +108,18 @@ def get_country_id(id):
 @app.route("/api/books", methods=["GET"])
 def getBooks():
     all_books = Book.query.all()
+
+    # Query Params
+    sort_by = str(request.args.get('sort_by'))
+    direction = str(request.args.get('direction'))
+
+    # Sort
+    if sort_by is not None and direction is not None:
+        if direction == 'ascend':
+            all_authors = all_books.order_by(getattr(Book, sort_by).asc())
+        elif direction == 'descend':
+            all_authors = all_books.order_by(getattr(Book, sort_by).desc())
+
     result = books_schema.dump(all_books)
     return books_schema.jsonify(result)
 
@@ -132,9 +144,20 @@ def get_book_id(id):
 @app.route("/api/publishers", methods=["GET"])
 def getPublishers():
     all_publishers = Publisher.query.all()
+
+    # Query Params
+    sort_by = str(request.args.get('sort_by'))
+    direction = str(request.args.get('direction'))
+
+    # Sort
+    if sort_by is not None and direction is not None:
+        if direction == 'ascend':
+            all_authors = all_publishers.order_by(getattr(Publisher, sort_by).asc())
+        elif direction == 'descend':
+            all_authors = all_publishers.order_by(getattr(Publisher, sort_by).desc())
+
     result = publishers_schema.dump(all_publishers)
     return publishers_schema.jsonify(result)
-    # return jsonify({"publishers": result})
 
 @app.route("/api/publishers/id=<id>", methods=["GET"])
 def get_publisher_id(id):
