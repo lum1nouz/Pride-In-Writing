@@ -76,7 +76,6 @@ def getAuthors():
     result = authors_schema.dump(all_authors)
     return authors_schema.jsonify(result)
 
-
 @app.route("/api/authors/id=<id>", methods=["GET"])
 def get_country_id(id):
     author = Author.query.get(id)
@@ -124,7 +123,6 @@ def getPublishers():
     result = publishers_schema.dump(all_publishers)
     return publishers_schema.jsonify(result)
     # return jsonify({"publishers": result})
-
 
 @app.route("/api/publishers/id=<id>", methods=["GET"])
 def get_publisher_id(id):
