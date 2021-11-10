@@ -9,10 +9,10 @@ import { CardContent } from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from '@material-ui/core/Typography';
 import { CardActionArea } from '@mui/material';
-import authorStockImg from "../../Assets/authorImg.png";
+import authorStockImg from "../../Assets/authorImg.jpg";
 import bookStockImg from "../../Assets/bookImg.jpg";
 import publisherStockImg from "../../Assets/publisherImg.jpg";
-import penguinLogoImg from "../../Assets/penguinLogo.png";
+import penguinLogoImg from "../../Assets/penguinLogo.webp";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 
