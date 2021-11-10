@@ -274,7 +274,7 @@ class AboutUs extends React.Component<props, state> {
               }}
             >
               <div>
-                <h1 style={{ textShadow: "1px 1px black" }}>
+                <h1 style={{ textShadow: "1px 1px black", fontWeight:"bold" }}>
                   <span style={{ color: "#FF555E" }}>A</span>
                   <span style={{ color: "#FF8650" }}>b</span>
                   <span style={{ color: "#F6BE00" }}>o</span>
@@ -311,7 +311,7 @@ class AboutUs extends React.Component<props, state> {
               }}
             >
               <div>
-                <h1 style={{ textShadow: "1px 1px black" }}>
+                <h1 style={{ textShadow: "1px 1px black", fontWeight:"bold"  }}>
                   <span style={{ color: "#FF555E" }}>G</span>
                   <span style={{ color: "#FF8650" }}>i</span>
                   <span style={{ color: "#F6BE00" }}>t</span>
@@ -326,7 +326,7 @@ class AboutUs extends React.Component<props, state> {
                 </h1>
                 <p>
                   <a
-                    style={{ fontWeight: "bold" }}
+                    style={{ fontWeight: "bold"}}
                     href="https://gitlab.com/JunLum/pride-in-writing"
                   >
                     GitLab Repo
@@ -354,7 +354,7 @@ class AboutUs extends React.Component<props, state> {
               }}
             >
               <div style={{ padding: 30 }}>
-                <h1 style={{ textShadow: "1px 1px black" }}>
+                <h1 style={{ textShadow: "1px 1px black", fontWeight:"bold" }}>
                   <span style={{ color: "#FF555E" }}>M</span>
                   <span style={{ color: "#FF8650" }}>e</span>
                   <span style={{ color: "#F6BE00" }}>e</span>
@@ -601,7 +601,7 @@ class AboutUs extends React.Component<props, state> {
             }}
           >
             <div>
-              <h1 style={{ textShadow: "1px 1px black" }}>
+              <h1 style={{ textShadow: "1px 1px black", fontWeight:"bold"  }}>
                 <span style={{ color: "#FF555E" }}>A</span>
                 <span style={{ color: "#FF8650" }}>P</span>
                 <span style={{ color: "#F6BE00" }}>I</span>
@@ -725,7 +725,7 @@ class AboutUs extends React.Component<props, state> {
             }}
           >
             <div style={{ padding: 30 }}>
-              <h1 style={{ textShadow: "1px 1px black" }}>
+              <h1 style={{ textShadow: "1px 1px black", fontWeight:"bold"  }}>
                 <span style={{ color: "#FF555E" }}>T</span>
                 <span style={{ color: "#FF8650" }}>o</span>
                 <span style={{ color: "#F6BE00" }}>o</span>
@@ -937,7 +937,7 @@ class AboutUs extends React.Component<props, state> {
             }}
           >
             <div>
-              <h1 style={{ textShadow: "1px 1px black" }}>
+              <h1 style={{ textShadow: "1px 1px black", fontWeight:"bold" }}>
                 <span style={{ color: "#FF555E" }}>I</span>
                 <span style={{ color: "#FF8650" }}>m</span>
                 <span style={{ color: "#F6BE00" }}>p</span>
