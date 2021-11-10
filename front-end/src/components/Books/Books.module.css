@@ -1,6 +1,6 @@
 .parrallaxCont {
   margin-top: 0px;
-  height: 1500px;
+  height: 1800px;
 }
 
 .titleText {
@@ -27,7 +27,8 @@
   padding-top: 30px;
   padding-left: 30px;
   /* TODO: Change this height to a % of the table selector */
-  height: 1200px;
+  height: 1400px;
+  background-color: grey;
 }
 
 .card {
@@ -39,8 +40,8 @@
 
 .cardImage {
   object-fit: contain;
-  width: 400px;
-  height: 400px;
+  width: 200px;
+  height: 200px;
 }
 
 .bioCardStyle {
@@ -57,8 +58,9 @@
 }
 
 .bookCardStyle {
-  width: 350px;
-  height: 300px;
+  width: 300px;
+  height: 375px;
+  background-color: pink;
 }
 
 .cardGrid {
