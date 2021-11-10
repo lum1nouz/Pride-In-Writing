@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Button } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import Header from "../Header/Header";
 import css from "./Publishers.module.css";
 import { Parallax } from "react-parallax";
@@ -9,6 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import Author from "../../models/author-model";
 import Book from "../../models/book-model";
+import Button from '@mui/material/Button';
 
 type props = {
   id: number;
@@ -98,18 +99,16 @@ class PublisherInstance extends React.Component<props, state> {
         <div className={css.background}>
           <Parallax data-testid="444" strength={500} className={css.parrallaxCont}>
             <div style={{}}>
-              <div className={css.titleText}> {this.props.name} </div>
+              <div className={css.titleText} style={{textShadow: "4px 4px rgba(0, 0, 255, .2)"}}> {this.props.name} </div>
               <Paper elevation={4} className={css.paperCont}>
                 <Grid
                   container
-                  spacing={0}
-                  direction="column"
-                  alignItems="center"
-                  justify="center"
+                  spacing={2}
+                  style= {{position: "relative"}}
                 >
-                  <Grid item xs={12}>
+                  <Grid item xs={6}>
                     <CardContent
-                      style={{ backgroundColor: "pink", width: "fit-content" }}
+                      style={{width: "fit-content" }}
                     >
                       <div
                         style={{
@@ -142,8 +141,9 @@ class PublisherInstance extends React.Component<props, state> {
                       </p>
                     </CardContent>
                   </Grid>
-                </Grid>
-                <div style={{ textAlign: "center" }}>
+
+                  <Grid item xs={6}>
+                  <div style={{ textAlign: "center" }}>
                   <h2>Bio</h2>
                   <p>{this.props.summary}</p>
                   <h2>Website</h2>
@@ -165,9 +165,9 @@ class PublisherInstance extends React.Component<props, state> {
                   <p>
                     {this.state.bookCon.map(function (book) {
                       return (
-                        <Button component={Link} to={"/book-" + book.book_id}>
-                          {book.name}
-                        </Button>
+                        <Button href={"/book-" + book.book_id}>
+                         {book.name}
+                      </Button>
                       );
                     })}
                   </p>
@@ -178,16 +178,15 @@ class PublisherInstance extends React.Component<props, state> {
                   <p>
                     {this.state.autCon.map(function (author) {
                       return (
-                        <Button
-                          component={Link}
-                          to={"/author-" + author.author_id}
-                        >
-                          {author.author_name}
-                        </Button>
+                        <Button href={"/author-" + author.author_id}>
+                        {author.author_name}
+                     </Button>
                       );
                     })}
                   </p>
                 </div>
+                  </Grid>
+                </Grid>
               </Paper>
             </div>
           </Parallax>

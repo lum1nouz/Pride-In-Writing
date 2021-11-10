@@ -2,12 +2,14 @@ import React from "react";
 import { Card } from "antd";
 import css from "./Books.module.css";
 import Book from "../../models/book-model";
+import 'antd/dist/antd.css';
 
 function BookCard({ book }: { book: Book }) {
   return (
     <a href={"/book-" + book.book_id}>
       <Card
         className={css.bookCardStyle}
+        bordered={true}
         hoverable
         cover={
           <img
@@ -15,7 +17,7 @@ function BookCard({ book }: { book: Book }) {
             src={book.image}
             style={{
               height: 200,
-              width: 250,
+              width: 200,
               marginLeft: 50,
               marginTop: 10,
             }}
