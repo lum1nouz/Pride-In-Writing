@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 import Book from "../../models/book-model";
 import Author from "../../models/author-model";
 import Publisher from "../../models/publisher-model";
-import stringToIntegerList from "../../common";
+import {stringToIntegerList} from "../../common";
 import Button from '@mui/material/Button';
 
 // function arrayToString(arr: String[]) {

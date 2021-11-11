@@ -12,8 +12,7 @@ import Publisher from "./models/publisher-model";
 import { useState, useEffect } from "react";
 import BookInstance from "./components/Books/BookInstance";
 import PublisherInstance from "./components/Publishers/PublisherInstance";
-import stringToIntegerList from "./common";
-import useAxios from "axios-hooks";
+import {stringToIntegerList} from "./common";
 
 // const authData2: Author[] = [
 //   {
