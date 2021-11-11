@@ -8,7 +8,6 @@ from init import init_db
 import flask_marshmallow as ma
 from dotenv import load_dotenv
 from models import *
-from query_helpers import *
 
 
 class AuthorSchema(ma.Schema):
@@ -76,17 +75,15 @@ def getAuthors():
     all_authors = Author.query.all()
 
     # Query Params
-    all_queries = request.args.to_dict(flat=False)
+    sort_by = request.args.get('sort_by').lower()
+    order = request.args.get('direction').lower()
 
     # Sort
-    sort_by = get_query("sort", all_queries)
-    order = get_query("direction", all_queries)
-
     if sort_by is not None:
-        if order == 'descend':
-            all_authors = all_authors.order_by(getattr(Author, sort_by).desc())
-        else:
+        if order == 'ascend':
             all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
+        else:
+            all_authors = all_authors.order_by(getattr(Author, sort_by).desc())
 
     result = authors_schema.dump(all_authors)
     return authors_schema.jsonify(result)
@@ -103,17 +100,15 @@ def getBooks():
     all_books = Book.query.all()
 
     # Query Params
-    all_queries = request.args.to_dict(flat=False)
+    sort_by = request.args.get('sort_by').lower()
+    order = request.args.get('direction').lower()
 
     # Sort
-    sort_by = get_query("sort", all_queries)
-    order = get_query("direction", all_queries)
-
     if sort_by is not None:
-        if order == 'descend':
-            all_books = all_books.order_by(getattr(Author, sort_by).desc())
-        else:
+        if order == 'ascend':
             all_books = all_books.order_by(getattr(Author, sort_by).asc())
+        else:
+            all_books = all_books.order_by(getattr(Author, sort_by).desc())
 
     result = books_schema.dump(all_books)
     return books_schema.jsonify(result)
@@ -131,17 +126,15 @@ def getPublishers():
     all_publishers = Publisher.query.all()
 
     # Query Params
-    all_queries = request.args.to_dict(flat=False)
+    sort_by = request.args.get('sort_by').lower()
+    order = request.args.get('direction').lower()
 
     # Sort
-    sort_by = get_query("sort", all_queries)
-    order = get_query("direction", all_queries)
-
     if sort_by is not None:
-        if order == 'descend':
-            all_publishers = all_publishers.order_by(getattr(Author, sort_by).desc())
-        else:
+        if order == 'ascend':
             all_publishers = all_publishers.order_by(getattr(Author, sort_by).asc())
+        else:
+            all_publishers = all_publishers.order_by(getattr(Author, sort_by).desc())
 
     result = publishers_schema.dump(all_publishers)
     return publishers_schema.jsonify(result)
