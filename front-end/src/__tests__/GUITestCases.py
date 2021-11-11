@@ -88,7 +88,7 @@ class GUITestCases (unittest.TestCase):
         driver = self.driver
         driver.get(self.temp_URL)
         h2 = driver.find_elements(By.TAG_NAME, "h2")
-        expected = "Books"
+        expected = "Publisher Connections"
         x = False
         for y in h2 :
             if expected == y.text:
@@ -116,7 +116,7 @@ class GUITestCases (unittest.TestCase):
         driver = self.driver
         driver.get(self.temp_URL)
         h2 = driver.find_elements(By.TAG_NAME, "h2")
-        expected = "Authors"
+        expected = "Book Connections"
         x = False
         for y in h2 :
             if expected == y.text:
@@ -139,7 +139,7 @@ class GUITestCases (unittest.TestCase):
         driver.get(self.temp_URL)
         button = driver.find_elements(By.ID, "linkButton-0")
         button[0].click()
-        self.assertEqual(self.driver.current_url, self.URL + "books-0")
+        self.assertEqual(self.driver.current_url, self.URL + "book-0")
     
     
 

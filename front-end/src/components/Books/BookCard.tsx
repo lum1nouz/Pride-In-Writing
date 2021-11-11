@@ -5,7 +5,7 @@ import Book from "../../models/book-model";
 
 function BookCard({ book }: { book: Book }) {
   return (
-    <a href={"/book-" + book.book_id}>
+    <a id={"linkButton-" + book.book_id} href={"/book-" + book.book_id}>
       <Card
         className={css.bookCardStyle}
         hoverable
