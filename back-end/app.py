@@ -1,6 +1,6 @@
 # inspiration from https://gitlab.com/caitlinlien/cs373-sustainability/-/blob/master/backend/main.py
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from marshmallow import Schema, fields
@@ -64,28 +64,52 @@ books_schema = BookSchema(many=True)
 publisher_schema = PublisherSchema()
 publishers_schema = PublisherSchema(many=True)
 
-
 @app.route("/")
 def hello_world():
     return '<img src="https://i.kym-cdn.com/photos/images/original/001/211/814/a1c.jpg" alt="cowboy" />'
 
+# __________ Authors __________
 
 @app.route("/api/authors", methods=["GET"])
 def getAuthors():
     all_authors = Author.query.all()
+
+    # Query Params
+    sort_by = request.args.get('sort_by').lower()
+    order = request.args.get('direction').lower()
+
+    # Sort
+    if sort_by is not None:
+        if order == 'ascend':
+            all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
+        else:
+            all_authors = all_authors.order_by(getattr(Author, sort_by).desc())
+
     result = authors_schema.dump(all_authors)
     return authors_schema.jsonify(result)
-
 
 @app.route("/api/authors/id=<id>", methods=["GET"])
 def get_country_id(id):
     author = Author.query.get(id)
     return author_schema.jsonify(author)
 
+# __________ Books __________
 
 @app.route("/api/books", methods=["GET"])
 def getBooks():
     all_books = Book.query.all()
+
+    # Query Params
+    sort_by = request.args.get('sort_by').lower()
+    order = request.args.get('direction').lower()
+
+    # Sort
+    if sort_by is not None:
+        if order == 'ascend':
+            all_books = all_books.order_by(getattr(Author, sort_by).asc())
+        else:
+            all_books = all_books.order_by(getattr(Author, sort_by).desc())
+
     result = books_schema.dump(all_books)
     return books_schema.jsonify(result)
 
@@ -95,20 +119,30 @@ def get_book_id(id):
     book = Book.query.get(id)
     return book_schema.jsonify(book)
 
+# __________ Publishers __________
 
 @app.route("/api/publishers", methods=["GET"])
 def getPublishers():
     all_publishers = Publisher.query.all()
+
+    # Query Params
+    sort_by = request.args.get('sort_by').lower()
+    order = request.args.get('direction').lower()
+
+    # Sort
+    if sort_by is not None:
+        if order == 'ascend':
+            all_publishers = all_publishers.order_by(getattr(Author, sort_by).asc())
+        else:
+            all_publishers = all_publishers.order_by(getattr(Author, sort_by).desc())
+
     result = publishers_schema.dump(all_publishers)
     return publishers_schema.jsonify(result)
-    # return jsonify({"publishers": result})
-
 
 @app.route("/api/publishers/id=<id>", methods=["GET"])
 def get_publisher_id(id):
     publisher = Publisher.query.get(id)
     return publisher_schema.jsonify(publisher)
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
