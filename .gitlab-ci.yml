@@ -27,47 +27,47 @@ build_front_end:
     - CI=false npm run build
     - echo "Build complete."
 
-deploy_production:
-  image: python:3.6-stretch
-  only:
-    variables:
-      - $CI_COMMIT_BRANCH == "main"
-  stage: deploy
-  before_script:
-    - pip install awsebcli --upgrade --user
-    - git checkout main
-  script:
-    - cd back-end
-    - /root/.local/bin/eb deploy prideinwriting-api-prod
+# deploy_production:
+#   image: python:3.6-stretch
+#   only:
+#     variables:
+#       - $CI_COMMIT_BRANCH == "main"
+#   stage: deploy
+#   before_script:
+#     - pip install awsebcli --upgrade --user
+#     - git checkout main
+#   script:
+#     - cd back-end
+#     - /root/.local/bin/eb deploy prideinwriting-api-prod
 
-postman_tests:
-  stage: test
-  image: 
-    name: postman/newman_alpine33
-    entrypoint: [""]
-  script:
-    - newman --version
-    - cd back-end
-    - newman run postman.json
+# postman_tests:
+#   stage: test
+#   image: 
+#     name: postman/newman_alpine33
+#     entrypoint: [""]
+#   script:
+#     - newman --version
+#     - cd back-end
+#     - newman run postman.json
 
-back_end_test:
-  stage: test
-  image: 
-    name: "python:3.7"
-  before_script:
-    - python --version
-    - cd back-end/
-    - pip install -r requirements.txt
-  script:
-    - python -m pytest tests.py -vv
+# back_end_test:
+#   stage: test
+#   image: 
+#     name: "python:3.7"
+#   before_script:
+#     - python --version
+#     - cd back-end/
+#     - pip install -r requirements.txt
+#   script:
+#     - python -m pytest tests.py -vv
 
-jest:
-  stage: test
-  image: thocotho/webdev
-  script:
-    - cd front-end
-    - npm install
-    - npm test -- --watchAll=false
+# jest:
+#   stage: test
+#   image: thocotho/webdev
+#   script:
+#     - cd front-end
+#     - npm install
+#     - npm test -- --watchAll=false
 
 
 
@@ -77,6 +77,7 @@ front_end_test:
     - selenium/standalone-chrome
   image: python:3.9-slim
   before_script: 
+    - apk add --update curl && rm -rf /var/cache/apk/*
     - pip install pytest
     - pip install pytest-ordering
     - pip install -r front-end/src/__tests__/requirements.txt
@@ -85,7 +86,6 @@ front_end_test:
     - apt-get install nodejs npm -y
     - apt-get --yes install libnss3
     - apt-get --yes install libgconf-2-4
-    - apt-get install libx11-xcb1
 
     - curl -sS -L https://dl.google.com/linux/linux_signing_key.pub |
       apt-key add -
