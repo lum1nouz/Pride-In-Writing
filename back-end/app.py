@@ -8,6 +8,7 @@ from init import init_db
 import flask_marshmallow as ma
 from dotenv import load_dotenv
 from models import *
+from query_helpers import *
 
 
 class AuthorSchema(ma.Schema):
@@ -75,15 +76,17 @@ def getAuthors():
     all_authors = Author.query.all()
 
     # Query Params
-    sort_by = str(request.args.get('sort_by'))
-    direction = str(request.args.get('direction'))
+    all_queries = request.args.to_dict(flat=False)
 
     # Sort
-    if sort_by is not None and direction is not None:
-        if direction == 'ascend':
-            all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
-        elif direction == 'descend':
+    sort_by = get_query("sort", all_queries)
+    order = get_query("direction", all_queries)
+
+    if sort_by is not None:
+        if order == 'descend':
             all_authors = all_authors.order_by(getattr(Author, sort_by).desc())
+        else:
+            all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
 
     result = authors_schema.dump(all_authors)
     return authors_schema.jsonify(result)
@@ -92,16 +95,6 @@ def getAuthors():
 def get_country_id(id):
     author = Author.query.get(id)
     return author_schema.jsonify(author)
-
-# # Author Sorting
-# @app.route("/api/authors/sort=<order>&column=<column>", methods=["GET"])
-# def get_sorted_authors(order, column):
-#     if order == "descending":
-#         sorted_authors = Author.query.order_by(getattr(Author, column).desc()).all()
-#     if order == "ascending":
-#         sorted_authors = Author.query.order_by(getattr(Author, column).asc()).all()
-#     result = author_schema.dump(sorted_authors)
-#     return jsonify({"sorted_authors": result})
 
 # __________ Books __________
 
@@ -129,16 +122,6 @@ def get_book_id(id):
     book = Book.query.get(id)
     return book_schema.jsonify(book)
 
-# # Book Sorting
-# @app.route("/api/books/sort=<order>&column=<column>", methods=["GET"])
-# def get_sorted_books(order, column):
-#     if order == "descending":
-#         sorted_books = Book.query.order_by(getattr(Book, column).desc()).all()
-#     if order == "ascending":
-#         sorted_books = Book.query.order_by(getattr(Book, column).asc()).all()
-#     result = book_schema.dump(sorted_books)
-#     return jsonify({"sorted_books": result})
-
 # __________ Publishers __________
 
 @app.route("/api/publishers", methods=["GET"])
@@ -163,16 +146,6 @@ def getPublishers():
 def get_publisher_id(id):
     publisher = Publisher.query.get(id)
     return publisher_schema.jsonify(publisher)
-
-# # Publisher Sorting
-# @app.route("/api/publisher/sort=<order>&column=<column>", methods=["GET"])
-# def get_sorted_publishers(order, column):
-#     if order == "descending":
-#         sorted_publishers = Book.query.order_by(getattr(Publisher, column).desc()).all()
-#     if order == "ascending":
-#         sorted_publishers = Book.query.order_by(getattr(Publisher, column).asc()).all()
-#     result = publisher_schema.dump(sorted_publishers)
-#     return jsonify({"sorted_publishers": result})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
