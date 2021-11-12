@@ -108,7 +108,7 @@ selenium_tests:
         image: cmontminy/selenium-ci
         before_script:
                 # - git checkout main
-                - pip3 install -r frontend/src/__tests__/requirements.txt
+                - pip3 install -r front-end/src/__tests__/requirements.txt
         script:
                 - python3 frontend/guitests.py
 
