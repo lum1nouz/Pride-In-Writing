@@ -20,7 +20,6 @@ import sys
 # PATH = "./front-end/src/__tests__/chromedriver.exe"
 PATH = "chromedriver_linux64"
 URL = "https://www.prideinwriting.me/"
-URL = "http://localhost:3000/"
 
 class GUITestCases (unittest.TestCase):
 
@@ -46,7 +45,7 @@ class GUITestCases (unittest.TestCase):
         chrome_options.add_argument('--allow-insecure-localhost')
         chrome_options.add_argument('--start-maximized')
 
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+        self.driver = webdriver.Chrome(PATH)
         self.driver.get(URL)
         self.driver.maximize_window()
         self.URL = URL
