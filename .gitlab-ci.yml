@@ -88,6 +88,7 @@ front_end_test:
     - apt-get install nodejs npm -y
     - apt-get --yes install libnss3
     - apt-get --yes install libgconf-2-4
+    - apt-get install libx11-xcb1
 
     - curl -sS -L https://dl.google.com/linux/linux_signing_key.pub |
       apt-key add -
