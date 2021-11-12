@@ -20,6 +20,7 @@ import sys
 # PATH = "./front-end/src/__tests__/chromedriver.exe"
 PATH = "chromedriver_linux64"
 URL = "https://www.prideinwriting.me/"
+URL = "http://localhost:3000/"
 
 class GUITestCases (unittest.TestCase):
 
@@ -41,7 +42,7 @@ class GUITestCases (unittest.TestCase):
         chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
-        chrome_options.add_argument('--window-size=1280,800')
+        chrome_options.add_argument('--window-size=1920,1080')
         chrome_options.add_argument('--allow-insecure-localhost')
         chrome_options.add_argument('--start-maximized')
 
@@ -103,6 +104,7 @@ class GUITestCases (unittest.TestCase):
         self.temp_URL = self.URL + "author-0"
         driver = self.driver
         driver.get(self.temp_URL)
+        driver.implicitly_wait(10)
         h2 = driver.find_elements(By.TAG_NAME, "h2")
         expected = "Publisher Connections"
         x = False
@@ -117,6 +119,7 @@ class GUITestCases (unittest.TestCase):
         self.temp_URL = self.URL + "book-0"
         driver = self.driver
         driver.get(self.temp_URL)
+        driver.implicitly_wait(10)
         h2 = driver.find_elements(By.TAG_NAME, "h2")
         expected = "Genre"
         x = False
@@ -131,6 +134,7 @@ class GUITestCases (unittest.TestCase):
         self.temp_URL = self.URL + "publisher-0"
         driver = self.driver
         driver.get(self.temp_URL)
+        driver.implicitly_wait(10)
         h2 = driver.find_elements(By.TAG_NAME, "h2")
         expected = "Book Connections"
         x = False
@@ -145,6 +149,7 @@ class GUITestCases (unittest.TestCase):
         self.temp_URL = self.URL + "Authors"
         driver = self.driver
         driver.get(self.temp_URL)
+        driver.implicitly_wait(10)
         button = driver.find_elements(By.ID, "linkButton-0")
         button[0].click()
         self.assertEqual(self.driver.current_url, self.URL + "author-0")
@@ -153,6 +158,7 @@ class GUITestCases (unittest.TestCase):
         self.temp_URL = self.URL + "Books"
         driver = self.driver
         driver.get(self.temp_URL)
+        driver.implicitly_wait(10)
         button = driver.find_elements(By.ID, "linkButton-0")
         button[0].click()
         self.assertEqual(self.driver.current_url, self.URL + "book-0")
