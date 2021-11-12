@@ -73,34 +73,42 @@ build_front_end:
 
 
 
-front_end_test:
-  stage: test
-  services:
-    - selenium/standalone-chrome
-  image: python:3.9-slim
-  before_script: 
-    - pip install pytest
-    - pip install pytest-ordering
-    - pip install -r front-end/src/__tests__/requirements.txt
+# front_end_test:
+#   stage: test
+#   services:
+#     - selenium/standalone-chrome
+#   image: python:3.9-slim
+#   before_script: 
+#     - pip install pytest
+#     - pip install pytest-ordering
+#     - pip install -r front-end/src/__tests__/requirements.txt
 
-    - apt-get update -q -y
-    - apt-get install curl -y
-    - apt-get install nodejs npm -y
-    - apt-get --yes install libnss3
-    - apt-get --yes install libgconf-2-4
-    - apt-get install libx11-xcb1
+#     - apt-get update -q -y
+#     - apt-get install curl -y
+#     - apt-get install nodejs npm -y
+#     - apt-get --yes install libnss3
+#     - apt-get --yes install libgconf-2-4
+#     - apt-get install libx11-xcb1
 
-    - curl -sS -L https://dl.google.com/linux/linux_signing_key.pub |
-      apt-key add -
+#     - curl -sS -L https://dl.google.com/linux/linux_signing_key.pub |
+#       apt-key add -
 
-    - echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/
-      stable main" > /etc/apt/sources.list.d/google.list
-    - apt-get update -q -y
-    - apt-get install -y google-chrome-stable
-    - npm install --global yarn
-    - yarn install
+#     - echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/
+#       stable main" > /etc/apt/sources.list.d/google.list
+#     - apt-get update -q -y
+#     - apt-get install -y google-chrome-stable
+#     - npm install --global yarn
+#     - yarn install
 
 
-  script:
-    - cd front-end && python guitests.py
+#   script:
+#     - cd front-end && python guitests.py
+
+selenium_tests:
+        image: cmontminy/selenium-ci
+        before_script:
+                - git checkout main
+                - pip3 install -r frontend/gui_tests/requirements.txt
+        script:
+                - python3 frontend/guitests.py
 

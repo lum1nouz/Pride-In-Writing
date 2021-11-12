@@ -17,23 +17,39 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 import sys
 
-PATH = "./front-end/src/__tests__/chromedriver.exe"
+# PATH = "./front-end/src/__tests__/chromedriver.exe"
+PATH = "chromedriver_linux64"
+URL = "https://www.prideinwriting.me/"
 
 class GUITestCases (unittest.TestCase):
 
-    URL = "https://www.prideinwriting.me/"
+    # URL = "https://www.prideinwriting.me/"
     # URL = "http://localhost:3000/"
 
     # Get drivers and run website before all tests
     @classmethod
     def setUpClass(self):
-        options = Options()
-        options.add_argument('--headless')
-        options.add_argument('--no-sandbox')
-        options.add_argument('--disable-dev-shm-usage')
-        # s = Service(ChromeDriverManager().install())
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-        self.driver.implicitly_wait(40)
+        # options = Options()
+        # options.add_argument('--headless')
+        # options.add_argument('--no-sandbox')
+        # options.add_argument('--disable-dev-shm-usage')
+        # # s = Service(ChromeDriverManager().install())
+        # self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        # self.driver.implicitly_wait(40)
+
+        chrome_options = Options()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        chrome_options.add_argument('--window-size=1280,800')
+        chrome_options.add_argument('--allow-insecure-localhost')
+        chrome_options.add_argument('--start-maximized')
+
+        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+        self.driver.get(URL)
+        self.driver.maximize_window()
+        self.URL = URL
+
 
     # Close browser and quit after all tests
     @classmethod
