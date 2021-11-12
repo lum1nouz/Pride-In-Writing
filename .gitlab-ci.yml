@@ -6,28 +6,28 @@
 
 # Full project: https://gitlab.com/pages/plain-html
 
-image: node:latest
+# image: node:latest
 
-pages:
-  stage: deploy
-  script:
-    - mkdir .public
-    - cp -r * .public
-    - mv .public public
-  artifacts:
-    paths:
-      - public
-  rules:
-    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+# pages:
+#   stage: deploy
+#   script:
+#     - mkdir .public
+#     - cp -r * .public
+#     - mv .public public
+#   artifacts:
+#     paths:
+#       - public
+#   rules:
+#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
-build_front_end:
-  stage: build
-  image: node:16.12.0
-  script: 
-    - cd front-end
-    - yarn install
-    - CI=false npm run build
-    - echo "Build complete."
+# build_front_end:
+#   stage: build
+#   image: node:16.12.0
+#   script: 
+#     - cd front-end
+#     - yarn install
+#     - CI=false npm run build
+#     - echo "Build complete."
 
 # deploy_production:
 #   image: python:3.6-stretch
