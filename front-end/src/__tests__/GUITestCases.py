@@ -45,7 +45,7 @@ class GUITestCases (unittest.TestCase):
         chrome_options.add_argument('--allow-insecure-localhost')
         chrome_options.add_argument('--start-maximized')
 
-        self.driver = webdriver.Chrome(PATH)
+        self.driver = webdriver.Chrome(PATH, options=chrome_options)
         self.driver.get(URL)
         self.driver.maximize_window()
         self.URL = URL
