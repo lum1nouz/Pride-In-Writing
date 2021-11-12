@@ -96,7 +96,7 @@ front_end_test:
       stable main" > /etc/apt/sources.list.d/google.list
     - apt-get update -q -y
     - apt-get install -y google-chrome-stable
-    - yarn install
+    - npm install
 
   script:
     - cd front-end && python guitests.py
