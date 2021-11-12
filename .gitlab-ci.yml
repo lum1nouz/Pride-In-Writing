@@ -99,7 +99,6 @@ front_end_test:
     - apt-get install -y google-chrome-stable
     - npm install --global yarn
     - yarn install
-    - yarn start
 
 
   script:

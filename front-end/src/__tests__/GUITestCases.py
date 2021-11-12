@@ -21,8 +21,8 @@ PATH = "./front-end/src/__tests__/chromedriver.exe"
 
 class GUITestCases (unittest.TestCase):
 
-    # URL = "https://www.prideinwriting.me/"
-    URL = "http://localhost:3000/"
+    URL = "https://www.prideinwriting.me/"
+    # URL = "http://localhost:3000/"
 
     # Get drivers and run website before all tests
     @classmethod
