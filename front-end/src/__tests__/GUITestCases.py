@@ -32,7 +32,7 @@ class GUITestCases (unittest.TestCase):
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         # s = Service(ChromeDriverManager().install())
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        self.driver = webdriver.Chrome(service=Service(executable_path=r"./front-end/src/__tests__/chromedriver", options=options)
         self.driver.implicitly_wait(40)
 
     # Close browser and quit after all tests
