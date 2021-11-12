@@ -110,5 +110,5 @@ selenium_tests:
                 # - git checkout main
                 - pip3 install -r front-end/src/__tests__/requirements.txt
         script:
-                - python3 front-end/guitests.py
+                - cd front-end && python3 guitests.py
 
