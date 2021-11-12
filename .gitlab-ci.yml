@@ -84,7 +84,7 @@ front_end_test:
     - pip install -r front-end/src/__tests__/requirements.txt
 
     - apt-get update -q -y
-    - apt-get install curl
+    - apt-get --yes install curl
     - apt-get install nodejs npm -y
     - apt-get --yes install libnss3
     - apt-get --yes install libgconf-2-4
