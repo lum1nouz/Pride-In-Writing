@@ -10,12 +10,6 @@ import { TablePagination } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import { TextField, Select, MenuItem, SelectChangeEvent } from "@mui/material";
 
-enum sorts {
-  default = 0,
-  descending = 1,
-  ascending = 2
-}
-
 type rowdata = {
   author: ReactElement;
   yearBorn: string | undefined;
@@ -92,27 +86,30 @@ class Authors extends React.Component<props, state> {
     };
   }
 
+  async componentDidMount() {
+    this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
+  }
+
+  //Beware of using
+  //State changes often with sorting/filtering
   componentDidUpdate() {
     console.log(this.state)
   }
 
+  //Used to build API request
   createApiString() {
-    let returnString = ""
     let filterString = ""
     let sortString = ""
-
     if(this.state.curFilter.category !== "") {
-      filterString = "?" + this.state.curFilter.category + "=" + this.state.curFilter.value
+      filterString = "?Filter" + this.state.curFilter.category + "=" + this.state.curFilter.value
     }
     if(this.state.curSort.category !== "") {
-      sortString = "?" + this.state.curSort.category + "=" + this.state.curSort.value
+      sortString = "?Sort" + this.state.curSort.category + "=" + this.state.curSort.value
     }
-
-    returnString = "?perPage=" + this.state.perPage + "?page=" + this.state.page + filterString + sortString
-
-    return returnString;
+    return "?perPage=" + this.state.perPage + "?page=" + this.state.page + filterString + sortString;
   }
 
+  //Calls API 
   async getData() {
     const authors = await fetch("https://api.prideinwriting.me/api/authors" + this.createApiString())
       .then((response) => {
@@ -125,6 +122,7 @@ class Authors extends React.Component<props, state> {
     return authors;
   }
 
+  //Calls search route on API
   async getDataForSearch(search: string) {
     const authors = await fetch("https://api.prideinwriting.me/api/authors?search=" + search)
       .then((response) => {
@@ -137,10 +135,10 @@ class Authors extends React.Component<props, state> {
     return authors;
   }
 
-  async componentDidMount() {
-    this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
-  }
-
+  //Logic used to indicate sorting order 
+  //Starts at default order
+  //First click sets to "desc" or descending order
+  //Second click sets to "asc" or ascending order 
   changeSort(col: number){
     let lookup = ["name", "yearBorn", "nationality", "genres", "onTour", "booksPublished"]
     let tempCategory = lookup[col]
@@ -159,7 +157,9 @@ class Authors extends React.Component<props, state> {
     
     this.setState({ dataStore: this.state.dataStore, curSort: newSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
-
+  
+  //Used by TextFields 
+  //Changes state by key of user input
   handleFilterChange(cat: string, event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     let newFilter: filter = {
       category: cat,
@@ -168,12 +168,16 @@ class Authors extends React.Component<props, state> {
     this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: newFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
 
+  //Used by TextField
+  //Submits Filtering requests by the enter key
   handleEnterKey(event: React.KeyboardEvent<HTMLDivElement>) {
     if(event.which === 13) {
       this.handleSubmit()
     }
   }
 
+  //Used by Select components
+  //Sets state to user choice 
   handleSelectFilter(event: SelectChangeEvent<string>, cat: string) {
     let newFilter: filter = { 
       category: "",
@@ -189,14 +193,18 @@ class Authors extends React.Component<props, state> {
     this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: newFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
 
+  //Handles the submit button for updating the data
   async handleSubmit(){
     this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
 
+  //Used by search Text field
+  //Updates state by keystroke for the search entry
   handleSearchText(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: event.target.value});
   }
 
+  //Calls API search
   async handleSearch() {
     this.setState({ dataStore: mapData(await this.getDataForSearch(this.state.search)), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
