@@ -6,6 +6,9 @@ import { Parallax } from "react-parallax";
 import MaterialTable from "material-table";
 import Author from "../../models/author-model";
 import {stringToIntegerList, tableIcons} from "../../common";
+import { TablePagination } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
+import { TextField, Select, MenuItem, SelectChangeEvent } from "@mui/material";
 
 enum sorts {
   default = 0,
@@ -47,24 +50,26 @@ function mapData(data: Author[]) {
   return newData;
 }
 
+type filter = {
+  category: string;
+  value: string;
+};
+
+type sort = {
+  category: string;
+  value: string;
+};
+
 type props = {};
 
 type state = {
   dataStore: rowdata[];
-  curSorts: sorts[]
+  curFilter: filter;
+  curSort: sort;
+  perPage: number;
+  page: number;
 };
 
-async function getData() {
-  const authors = await fetch(`https://api.prideinwriting.me/api/authors`)
-    .then((response) => {
-      return response.json();
-    })
-    .catch((err) => {
-      console.log(err);
-      return {};
-    });
-  return authors;
-}
 
 class Authors extends React.Component<props, state> {
   constructor(props: props) {
@@ -72,35 +77,107 @@ class Authors extends React.Component<props, state> {
 
     this.state = {
       dataStore: [],
-      curSorts: [sorts.default, sorts.default, sorts.default, sorts.default, sorts.default, sorts.default]
+      curSort: {
+        category: "",
+        value: ""
+      },
+      curFilter: {
+        category: "",
+        value: ""
+      },
+      perPage: 20,
+      page: 0 
     };
   }
 
+  componentDidUpdate() {
+    console.log(this.state)
+  }
+
+  createApiString() {
+    let returnString = ""
+    let filterString = ""
+    let sortString = ""
+
+    if(this.state.curFilter.category !== "") {
+      filterString = "?" + this.state.curFilter.category + "=" + this.state.curFilter.value
+    }
+    if(this.state.curSort.category !== "") {
+      sortString = "?" + this.state.curSort.category + "=" + this.state.curSort.value
+    }
+
+    returnString = "?perPage=" + this.state.perPage + "?page=" + this.state.page + filterString + sortString
+
+    return returnString;
+  }
+
+  async getData() {
+    const authors = await fetch("https://api.prideinwriting.me/api/authors" + this.createApiString())
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+        return {};
+      });
+    return authors;
+  }
+
   async componentDidMount() {
-    this.setState({ dataStore: await mapData(await getData()), curSorts: this.state.curSorts});
+    this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
   }
 
   changeSort(col: number){
-    let curSort = this.state.curSorts[col]
-    let nextSort = curSort + 1
-    if (curSort === 2) {
-      nextSort = 0
+    let lookup = ["name", "yearBorn", "nationality", "genres", "onTour", "booksPublished"]
+    let tempCategory = lookup[col]
+    let tempValue = "desc"
+    let check = this.state.curSort.value
+    if(check === "desc" && tempCategory === this.state.curSort.category) {
+      tempValue = "asc"
+    } else if (check === "asc" && tempCategory === this.state.curSort.category){
+      tempCategory = ""
+      tempValue = ""
     }
-    let newSorts = []
-    for(let i: number = 0; i < this.state.curSorts.length; i++) {
-      if( i === col) {
-        newSorts.push(nextSort)
-      } else {
-        newSorts.push(0)
+    let newSort: sort = {
+      category: tempCategory,
+      value: tempValue
+    }
+    
+    this.setState({ dataStore: this.state.dataStore, curSort: newSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
+  }
+
+  handleFilterChange(cat: string, event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    let newFilter: filter = {
+      category: cat,
+      value: event.target.value
+    }
+    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: newFilter, perPage: this.state.perPage, page: this.state.page});
+  }
+
+  handleEnterKey(event: React.KeyboardEvent<HTMLDivElement>) {
+    if(event.which === 13) {
+      console.log("Lets gooo")
+    }
+  }
+
+  handleSelectFilter(event: SelectChangeEvent<string>, cat: string) {
+    let newFilter: filter = { 
+      category: "",
+      value: "",
+    }
+    if(event.target.value !== "none") {
+      newFilter = { 
+        category: cat,
+        value: event.target.value
       }
     }
-    this.setState({ dataStore: this.state.dataStore, curSorts: newSorts});
+    
+    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: newFilter, perPage: this.state.perPage, page: this.state.page});
   }
 
 
 
   render() {
-    console.log(this.state.curSorts[0])
     return (
       <div>
         <Header />
@@ -122,41 +199,77 @@ class Authors extends React.Component<props, state> {
                 data-testid="authors"
               >
                 <div>
-                <div className="filters">
-                  <div className="filter-block d-flex flex-row align-items-center mb-2">
-                    <h4>Name</h4>
-                    <Button onClick={() => this.changeSort(0)}> Sort </Button>
+                  <div className="filters">
+                   <Grid container spacing={1}>
+                   <Grid item xs={4}>
+                    <div className="filter-block d-flex flex-row align-items-center mb-2">
+                      <h4>Name</h4>
+                      <Button onClick={() => this.changeSort(0)}> Sort </Button>
+                      <TextField label = "Filter by Name" variant = "outlined" onChange = {(e) => this.handleFilterChange("name", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                    </div>
+                    </Grid>
+                    <Grid item xs={4}>
+                    <div className="filter-block d-flex flex-row align-items-center mb-2">
+                      <h4>Year Born</h4>
+                      <Button onClick={() => this.changeSort(1)}> Sort </Button>
+                      <TextField label = "Filter by Name" variant = "outlined" onChange = {(e) => this.handleFilterChange("yearBorn", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                    </div>
+                    </Grid>
+                    <Grid item xs={4}>
+                    <div className="filter-block d-flex flex-row align-items-center mb-2">
+                      <h4>Nationality</h4>
+                      <Button onClick={() => this.changeSort(2)}> Sort </Button>
+                      <TextField label = "Filter by Name" variant = "outlined" onChange = {(e) => this.handleFilterChange("nationality", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                    </div>
+                    </Grid>
+                    <Grid item xs={4}>
+                    <div className="filter-block d-flex flex-row align-items-center mb-2">
+                      <h4>Genres</h4>
+                      <Button onClick={() => this.changeSort(3)}> Sort </Button>
+                      <Select
+                            value="none"
+                            label="Age"
+                            onChange={(e) => this.handleSelectFilter(e, "genre")}
+                          >
+                      <MenuItem value={"true"}>Yes</MenuItem>
+                      <MenuItem value={"false"}>No</MenuItem>
+                      <MenuItem value={"none"}>Pick an option</MenuItem>
+                    </Select>
+                    </div>
+                    </Grid>
+                    <Grid item xs={4}>
+                    <div className="filter-block d-flex flex-row align-items-center mb-2">
+                      <h4>On Tour</h4>
+                      <Button onClick={() => this.changeSort(4)}> Sort </Button>
+                      <Select
+                            value="none"
+                            label="Age"
+                            onChange={(e) => this.handleSelectFilter(e, "onTour")}
+                          >
+                      <MenuItem value={"true"}>Yes</MenuItem>
+                      <MenuItem value={"false"}>No</MenuItem>
+                      <MenuItem value={"none"}>Pick an option</MenuItem>
+                    </Select>
+                    </div>
+                    </Grid>
+                    <Grid item xs={4}>
+                    <div className="filter-block d-flex flex-row align-items-center mb-2">
+                      <h4>Books Published</h4>
+                      <Button onClick={() => this.changeSort(5)}> Sort </Button>
+                      <TextField label = "Filter by Name" variant = "outlined" onChange = {(e) => this.handleFilterChange("booksPublished", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                    </div>
+                    </Grid>
+                    </Grid>
                   </div>
-                  <div className="filter-block d-flex flex-row align-items-center mb-2">
-                    <h4>Year Born</h4>
-                    <Button onClick={() => this.changeSort(1)}> Sort </Button>
-                  </div>
-                  <div className="filter-block d-flex flex-row align-items-center mb-2">
-                    <h4>Nationality</h4>
-                    <Button onClick={() => this.changeSort(2)}> Sort </Button>
-                  </div>
-                  <div className="filter-block d-flex flex-row align-items-center mb-2">
-                    <h4>Genres</h4>
-                    <Button onClick={() => this.changeSort(3)}> Sort </Button>
-                  </div>
-                  <div className="filter-block d-flex flex-row align-items-center mb-2">
-                    <h4>On Tour</h4>
-                    <Button onClick={() => this.changeSort(4)}> Sort </Button>
-                  </div>
-                  <div className="filter-block d-flex flex-row align-items-center mb-2">
-                    <h4>Books Published</h4>
-                    <Button onClick={() => this.changeSort(5)}> Sort </Button>
-                  </div>
-                </div>
 
 
                 <MaterialTable
                   icons={tableIcons}
                   style={{ marginTop: 50, marginLeft: 20, marginRight: 20 }}
                   options={{
-                    paging: true,
-                    pageSize: 10,
-                    pageSizeOptions: [],
+                    // paging: true,
+                    pageSize: 15,
+                    // pageSizeOptions: [],
                     search: false,
                     sorting: false
                   }}
@@ -181,6 +294,23 @@ class Authors extends React.Component<props, state> {
                   ]}
                   data={this.state.dataStore}
                   title=""
+                  components={{
+                    Pagination: props => (
+                                 <TablePagination
+                                 {...props}
+                                rowsPerPageOptions={[15]}
+                            rowsPerPage={15}
+                            count={500}
+                            page={0}
+                            // onChangePage={(e, page) =>
+
+                            // }
+                            onChangeRowsPerPage={event => {
+                              
+                            }}
+                          />
+                        ),
+                              }}
                 />
                 </div>
               </Paper>
