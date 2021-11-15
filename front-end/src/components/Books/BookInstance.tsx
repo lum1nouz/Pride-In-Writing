@@ -13,6 +13,7 @@ import Author from "../../models/author-model";
 import Publisher from "../../models/publisher-model";
 import {stringToIntegerList} from "../../common";
 import Button from '@mui/material/Button';
+import Rating from '@mui/material/Rating';
 
 // function arrayToString(arr: String[]) {
 //   let tempData: string = "";
@@ -142,7 +143,7 @@ class BookInstance extends React.Component<props, state> {
                         />
                       </div>
                       <p style={{ textAlign: "center" }}>
-                        Rating: {this.props.avg_rating} <br />
+                        Rating: <Rating name="read-only" value={this.props.avg_rating} readOnly /><br />
                         Pages: {this.props.page_count} <br />
                         Price: {this.props.price}
                       </p>

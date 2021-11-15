@@ -209,6 +209,7 @@ class Authors extends React.Component<props, state> {
     this.setState({ dataStore: mapData(await this.getDataForSearch(this.state.search)), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
 
+  
 
 
   render() {
@@ -356,6 +357,14 @@ class Authors extends React.Component<props, state> {
                             // onChangePage={(e, page) =>
 
                             // }
+                            onPageChange={() => {
+                              window.scrollTo({
+                                top: 0,
+                                left: 0,
+                                behavior: "smooth",
+                              })
+                            }
+                }
                             onChangeRowsPerPage={event => {
                               
                             }}
