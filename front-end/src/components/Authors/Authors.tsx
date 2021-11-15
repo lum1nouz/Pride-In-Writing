@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import { Paper, Button, Grid } from "@material-ui/core";
 import Header from "../Header/Header";
 import css from "./Authors.module.css";
+import hljs from "highlight.js"
 import { Parallax } from "react-parallax";
 import MaterialTable from "material-table";
 import Author from "../../models/author-model";
@@ -90,6 +91,14 @@ class Authors extends React.Component<props, state> {
   async componentDidMount() {
     this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
   }
+
+  // highlightSearchTerms = (term, node) => {
+  //   let instance = new Mark(node);
+  //   instance.mark(term, {
+  //     separateWordSearch: true,
+  //     accuracy: "exactly"
+  //   });
+  // };
 
   //Beware of using
   //State changes often with sorting/filtering
@@ -209,6 +218,24 @@ class Authors extends React.Component<props, state> {
   //Updates state by keystroke for the search entry
   handleSearchText(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: event.target.value});
+
+    //   document.querySelectorAll('pre code').forEach((el) => {
+    //     console.log(el)
+    //     if( el.textContent?.includes(this.state.search) ) {
+    //       hljs.highlightElement(el as HTMLElement);
+    //     }
+
+    // });
+
+    // var searchedPara = document.querySelector('.search-content');
+    // var words = event.currentTarget.value;
+    // var regex = RegExp(words, 'gi') // case insensitive
+    // var replacement = '<b>'+ words +'</b>';
+    // var newHTML = searchedPara?.textContent?.replace(regex, replacement);
+    // if(searchedPara !== null) {
+    //   searchedPara.innerHTML = newHTML as string;
+    // }
+  
   }
 
   //Calls API search
@@ -328,7 +355,7 @@ class Authors extends React.Component<props, state> {
                   <Grid item xs={4}>
                   </Grid>
                 </Grid>
-
+                
                 <MaterialTable
                   icons={tableIcons}
                   style={{ marginTop: 40, marginLeft: 20, marginRight: 20 }}
