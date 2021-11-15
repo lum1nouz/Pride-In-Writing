@@ -83,6 +83,18 @@ def getAuthors():
     sort_by = request.args.get('sort_by').lower()
     order = request.args.get('direction').lower()
 
+    nationality = request.args.get('nationality')
+    genre = request.args.get('genre').lower()
+    year_born = request.args.get('year_born')
+
+    # Filter 
+    if nationality is not None:
+        all_authors = all_authors.filter(Author.nationality == nationality)
+    if genre is not None:
+        all_authors = all_authors.filter(Author.genre == genre)
+    if year_born is not None:
+        all_authors = all_authors.filter(Author.year_born == year_born)
+
     # Sort
     if sort_by is not None:
         if order == 'ascend':
