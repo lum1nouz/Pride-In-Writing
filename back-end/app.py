@@ -181,15 +181,23 @@ def getPublishers():
     all_publishers = db.session.query(Publisher)
 
     # Query Params
-    sort_by = request.args.get('sort_by').lower()
-    order = request.args.get('direction').lower()
+    sort_by = request.args.get('sort_by')
+    order = request.args.get('direction')
+    search = request.args.get('search')
 
     # Sort
-    if sort_by is not None:
+    if sort_by is not None and order is not None:
+        sort_by = sort_by.lower()
+        order = order.lower()
         if order == 'ascend':
             all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).asc())
         else:
             all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).desc())
+
+    # Search
+    if search is not None:
+        search = search.lower()
+        all_publishers = search_authors(search, all_publishers)
 
     result = publishers_schema.dump(all_publishers)
     return publishers_schema.jsonify(result)
