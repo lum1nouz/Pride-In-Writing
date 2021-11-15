@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import { Paper, Button } from "@material-ui/core";
+import { TablePagination } from "@material-ui/core";
 import Header from "../Header/Header";
 import css from "./Publishers.module.css";
 import { Parallax } from "react-parallax";
@@ -39,10 +40,27 @@ function mapData(data: Publisher[]) {
   return newData;
 }
 
-type props = {};
+type filter = {
+  category: string;
+  value: string;
+};
+
+type sort = {
+  category: string;
+  value: string;
+};
+
+type props = {
+  dataLen: number
+};
 
 type state = {
   dataStore: rowdata[];
+  curFilter: filter;
+  curSort: sort;
+  perPage: number;
+  page: number;
+  search: string;
 };
 
 async function getData() {
@@ -63,11 +81,53 @@ class Publishers extends React.Component<props, state> {
 
     this.state = {
       dataStore: [],
+      curSort: {
+        category: "",
+        value: ""
+      },
+      curFilter: {
+        category: "",
+        value: ""
+      },
+      perPage: 15,
+      page: 0,
+      search: "" 
     };
   }
 
   async componentDidMount() {
-    this.setState({ dataStore: await mapData(await getData()) });
+    this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
+  }
+
+    //Calls API 
+  async getData() {
+    const authors = await fetch("https://api.prideinwriting.me/api/publishers" + this.createApiString())
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+        return {};
+      });
+    return authors;
+  }
+
+  //Used to build API request
+  createApiString() {
+    let filterString = ""
+    let sortString = ""
+    if(this.state.curFilter.category !== "") {
+      filterString = "?Filter" + this.state.curFilter.category + "=" + this.state.curFilter.value
+    }
+    if(this.state.curSort.category !== "") {
+      sortString = "?Sort" + this.state.curSort.category + "=" + this.state.curSort.value
+    }
+    return "?perPage=" + this.state.perPage + "?page=" + this.state.page + filterString + sortString;
+  }
+
+  //Handles the submit button for updating the data
+  async handleSubmit(){
+    this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
 
   render() {
@@ -132,6 +192,24 @@ class Publishers extends React.Component<props, state> {
                   ]}
                   data={this.state.dataStore}
                   title=""
+                  components={{
+                    Pagination: props => (
+                                 <TablePagination
+                                 {...props}
+                                rowsPerPageOptions={[10,15,20]}
+                            rowsPerPage={this.state.perPage}
+                            count={this.state.dataStore.length}
+                            page={this.state.page}
+                             onChangePage={(e, page) => {
+                                 this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: page, search: this.state.search})
+                                 this.handleSubmit()
+                             }}
+                            onChangeRowsPerPage={event => {
+                              this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: +event.target.value, page: this.state.page, search: this.state.search})
+                            }}
+                          />
+                        ),
+                              }}
                 />
               </Paper>
             </div>

@@ -54,7 +54,9 @@ type sort = {
   value: string;
 };
 
-type props = {};
+type props = {
+  dataLen: number
+};
 
 type state = {
   dataStore: rowdata[];
@@ -80,7 +82,7 @@ class Authors extends React.Component<props, state> {
         category: "",
         value: ""
       },
-      perPage: 20,
+      perPage: 15,
       page: 0,
       search: "" 
     };
@@ -318,9 +320,7 @@ class Authors extends React.Component<props, state> {
                   icons={tableIcons}
                   style={{ marginTop: 40, marginLeft: 20, marginRight: 20 }}
                   options={{
-                    // paging: true,
-                    pageSize: 15,
-                    // pageSizeOptions: [],
+                    pageSize: this.state.perPage,
                     search: false,
                     sorting: false
                   }}
@@ -349,15 +349,16 @@ class Authors extends React.Component<props, state> {
                     Pagination: props => (
                                  <TablePagination
                                  {...props}
-                                rowsPerPageOptions={[15]}
-                            rowsPerPage={15}
-                            count={500}
-                            page={0}
-                            // onChangePage={(e, page) =>
-
-                            // }
+                                rowsPerPageOptions={[10,15,20]}
+                            rowsPerPage={this.state.perPage}
+                            count={this.state.dataStore.length}
+                            page={this.state.page}
+                             onChangePage={(e, page) => {
+                                 this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: page, search: this.state.search})
+                                 this.handleSubmit()
+                             }}
                             onChangeRowsPerPage={event => {
-                              
+                              this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: +event.target.value, page: this.state.page, search: this.state.search})
                             }}
                           />
                         ),

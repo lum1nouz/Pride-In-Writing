@@ -13,6 +13,7 @@ import { useState, useEffect } from "react";
 import BookInstance from "./components/Books/BookInstance";
 import PublisherInstance from "./components/Publishers/PublisherInstance";
 import {stringToIntegerList} from "./common";
+import { render } from "react-dom";
 
 // const authData2: Author[] = [
 //   {
@@ -223,9 +224,9 @@ function App() {
       {/* <Switch /> */}
       <Route data-testid= "4444" exact path="/" component={HomePage} />
       <Route exact path="/AboutUs" component={AboutUs} />
-      <Route exact path="/Books" component={Books} />
-      <Route exact path="/Publishers" component={Publishers} />
-      <Route exact path="/Authors" component={Authors} />
+      <Route exact path="/Books" render={(x) =>  <Books dataLen={bookDataList.length}/> } />
+      <Route exact path="/Publishers" render={(x) =>  <Publishers dataLen={publDataList.length}/> } />
+      <Route exact path="/Authors" render={(x) =>  <Authors dataLen={authDataList.length}/> }  />
       <div>
         {authDataList.map(function (author) {
           return (

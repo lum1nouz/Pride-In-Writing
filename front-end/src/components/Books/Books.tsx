@@ -10,9 +10,14 @@ import { Parallax } from "react-parallax";
 import Book from "../../models/book-model";
 import BookCard from "./BookCard";
 
-function Books() {
+type props = {
+  dataLen: number
+};
+
+function Books(props: props) {
   const [bookData, setBookData] = useState<Book[]>([]);
   const [page, setPage] = useState(1);
+  const perPage = 9
 
   async function getData() {
     const authors = await fetch(`https://api.prideinwriting.me/api/books`)
@@ -85,54 +90,6 @@ function Books() {
                   </div>
                 </div>
               </div>
-
-              {/* <Grid container spacing={1}>
-                  <Grid item xs={4}>
-                    <Card variant="outlined" style={{width: 300}}>
-                      <CardContent>
-                        <h2><a id="linkButton-0" href="/books-0">The Hours</a></h2>
-                        <p>Author: Michael Cunningham</p>
-                        <p>Genre: Fiction</p>
-                        <p>Publisher: Farrar</p>
-                        <p>Year Published: 1988</p>
-                        <p>Rating: 4.4</p>
-                        <p>Pages: 230</p>
-                        <p>Price: 11.79</p>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-
-                  <Grid item xs={4}>
-                    <Card variant="outlined" style={{width: 300}}>
-                      <CardContent>
-                        <h2><a href="/fingersmith">Fingersmith</a></h2>
-                        <p>Author: Sarah Waters</p>
-                        <p>Genre: Fiction</p>
-                        <p>Publisher: Virago Press</p>
-                        <p>Year Published: 2002</p>
-                        <p>Rating: 4</p>
-                        <p>Pages: 596</p>
-                        <p>Price: 16.89</p>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-
-                  <Grid item xs={4}>
-                    <Card variant="outlined" style={{width: 300}}>
-                      <CardContent>
-                        <h2><a href="/the-price-of-salt">The Price of Salt</a></h2>
-                        <p>Author: Patricia Highsmith</p>
-                        <p>Genre: Fiction</p>
-                        <p>Publisher: G. P. Putnam's Sons</p>
-                        <p>Year Published: 1952</p>
-                        <p>Rating: 4.5</p>
-                        <p>Pages: 304</p>
-                        <p>Price: 13.69</p>
-                      </CardContent>
-                    </Card>
-                  </Grid>
-
-              </Grid>  */}
             </Paper>
           </div>
         </Parallax>
