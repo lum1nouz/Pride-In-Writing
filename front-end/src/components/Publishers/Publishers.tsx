@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
-import { Paper, Button } from "@material-ui/core";
+import { Paper, Button, Grid, TextField } from "@material-ui/core";
+import {  Select, MenuItem, SelectChangeEvent } from "@mui/material";
 import { TablePagination } from "@material-ui/core";
 import Header from "../Header/Header";
 import css from "./Publishers.module.css";
@@ -63,18 +64,6 @@ type state = {
   search: string;
 };
 
-async function getData() {
-  const publishers = await fetch(`https://api.prideinwriting.me/api/publishers`)
-    .then((response) => {
-      return response.json();
-    })
-    .catch((err) => {
-      console.log(err);
-      return {};
-    });
-  return publishers;
-}
-
 class Publishers extends React.Component<props, state> {
   constructor(props: props) {
     super(props);
@@ -99,7 +88,7 @@ class Publishers extends React.Component<props, state> {
     this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
   }
 
-    //Calls API 
+  //Calls API 
   async getData() {
     const authors = await fetch("https://api.prideinwriting.me/api/publishers" + this.createApiString())
       .then((response) => {
@@ -125,9 +114,91 @@ class Publishers extends React.Component<props, state> {
     return "?perPage=" + this.state.perPage + "?page=" + this.state.page + filterString + sortString;
   }
 
+  //Calls search route on API
+  async getDataForSearch(search: string) {
+    const authors = await fetch("https://api.prideinwriting.me/api/publishers?search=" + search)
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+        return {};
+      });
+    return authors;
+  }
+
+  //Logic used to indicate sorting order 
+  //Starts at default order
+  //First click sets to "desc" or descending order
+  //Second click sets to "asc" or ascending order 
+  changeSort(col: number){
+    let lookup = ["name", "country", "types", "authorsPublished", "founded"]
+    let tempCategory = lookup[col]
+    let tempValue = "desc"
+    let check = this.state.curSort.value
+    if(check === "desc" && tempCategory === this.state.curSort.category) {
+      tempValue = "asc"
+    } else if (check === "asc" && tempCategory === this.state.curSort.category){
+      tempCategory = ""
+      tempValue = ""
+    }
+    let newSort: sort = {
+      category: tempCategory,
+      value: tempValue
+    }
+    
+    this.setState({ dataStore: this.state.dataStore, curSort: newSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
+  }
+
+  //Used by TextFields 
+  //Changes state by key of user input
+  handleFilterChange(cat: string, event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    let newFilter: filter = {
+      category: cat,
+      value: event.target.value
+    }
+    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: newFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
+  }
+
+  //Used by TextField
+  //Submits Filtering requests by the enter key
+  handleEnterKey(event: React.KeyboardEvent<HTMLDivElement>) {
+    if(event.which === 13) {
+      this.handleSubmit()
+    }
+  }
+
+  //Used by Select components
+  //Sets state to user choice 
+  handleSelectFilter(event: SelectChangeEvent, cat: string) {
+    let newFilter: filter = { 
+      category: "",
+      value: "",
+    }
+    if(event.target.value !== "none") {
+      newFilter = { 
+        category: cat,
+        value: event.target.value
+      }
+    }
+    
+    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: newFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
+  }
+
   //Handles the submit button for updating the data
   async handleSubmit(){
     this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
+  }
+
+  //Used by search Text field
+  //Updates state by keystroke for the search entry
+  handleSearchText(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: event.target.value});
+  }
+
+  //Calls API search
+  async handleSearch() {
+    this.setState({ dataStore: mapData(await this.getDataForSearch(this.state.search)), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
 
   render() {
@@ -154,6 +225,63 @@ class Publishers extends React.Component<props, state> {
                 className={css.paperCont}
                 data-testid="publishers"
               >
+                <div>
+                  <div>
+                   <Grid container spacing={1}>
+                   <Grid item xs={4}>
+                    <div style={{margin: 10}}>
+                      <h4>Publishers</h4>
+                      <Button onClick={() => this.changeSort(0)} variant = "outlined"> Sort </Button>
+                      <TextField label = "Filter by Name" variant = "outlined" onChange = {(e) => this.handleFilterChange("name", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                    </div>
+                    </Grid>
+                    <Grid item xs={4}>
+                    <div style={{margin: 10}}>
+                      <h4>Country of Origin</h4>
+                      <Button onClick={() => this.changeSort(1)} variant="outlined"> Sort </Button>
+                      <TextField label = "Filter by Country" variant = "outlined" onChange = {(e) => this.handleFilterChange("country", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                    </div>
+                    </Grid>
+                    <Grid item xs={4}>
+                    <div style={{margin: 10}}>
+                      <h4>Publication Types</h4>
+                      <Button onClick={() => this.changeSort(2)} variant="outlined"> Sort </Button>
+                      <Select
+                            value="none"
+                            label="Age"
+                            onChange={(e) => this.handleSelectFilter(e, "types")}
+                          >
+                      <MenuItem value={"books"}>Books</MenuItem>
+                      <MenuItem value={"textbooks"}>Textbooks</MenuItem>
+                      <MenuItem value={"none"}>Pick an option</MenuItem>
+                    </Select>
+                    </div>
+                    </Grid>
+                    <Grid item xs={4}>
+                    <div style={{margin: 10}}>
+                      <h4>Authors Published</h4>
+                      <Button onClick={() => this.changeSort(3)} variant="outlined"> Sort </Button>
+                      <TextField label = "Filter by Authors Published" variant = "outlined" onChange = {(e) => this.handleFilterChange("authorsPublished", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                    </div>
+                    </Grid>
+                    <Grid item xs={4}>
+                    <div style={{margin: 10}}>
+                      <h4>Year Founded</h4>
+                      <Button onClick={() => this.changeSort(4)} variant="outlined"> Sort </Button>
+                      <TextField label = "Filter by Year Founded" variant = "outlined" onChange = {(e) => this.handleFilterChange("founded", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                    </div>
+                    </Grid>
+                    </Grid>
+                  </div>
+
+                <Grid container spacing={5} style={{marginTop: 20}}>
+                  <Grid item xs={4}>
+                  </Grid>
+                  <Button onClick={() => this.handleSubmit()} variant="outlined"> Get Filtered/Sorted Data </Button>
+                  <Grid item xs={4}>
+                  </Grid>
+                </Grid>
+
                 <MaterialTable
                   icons={tableIcons}
                   style={{ marginTop: 50, marginLeft: 20, marginRight: 20 }}
@@ -211,6 +339,7 @@ class Publishers extends React.Component<props, state> {
                         ),
                               }}
                 />
+                </div>
               </Paper>
             </div>
           </Parallax>

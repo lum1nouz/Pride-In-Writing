@@ -94,16 +94,16 @@ class Authors extends React.Component<props, state> {
 
   //Beware of using
   //State changes often with sorting/filtering
-  componentDidUpdate() {
-    console.log(this.state)
-  }
+  // componentDidUpdate() {
+  //   console.log(this.state)
+  // }
 
   //Used to build API request
   createApiString() {
     let filterString = ""
     let sortString = ""
     if(this.state.curFilter.category !== "") {
-      filterString = "?Filter" + this.state.curFilter.category + "=" + this.state.curFilter.value
+      filterString = "?sort_by=" +this.state.curFilter.category + "?order=" + this.state.curFilter.value
     }
     if(this.state.curSort.category !== "") {
       sortString = "?Sort" + this.state.curSort.category + "=" + this.state.curSort.value
@@ -113,6 +113,7 @@ class Authors extends React.Component<props, state> {
 
   //Calls API 
   async getData() {
+    console.log("https://api.prideinwriting.me/api/authors" + this.createApiString())
     const authors = await fetch("https://api.prideinwriting.me/api/authors" + this.createApiString())
       .then((response) => {
         return response.json();
@@ -311,7 +312,7 @@ class Authors extends React.Component<props, state> {
                 <Grid container spacing={5} style={{marginTop: 20}}>
                   <Grid item xs={4}>
                   </Grid>
-                  <Button onClick={() => this.handleSubmit} variant="outlined"> Get Filtered/Sorted Data </Button>
+                  <Button onClick={() => this.handleSubmit()} variant="outlined"> Get Filtered/Sorted Data </Button>
                   <Grid item xs={4}>
                   </Grid>
                 </Grid>
