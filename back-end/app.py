@@ -97,10 +97,10 @@ def getAuthors():
 
     # Sort
     if sort_by is not None:
-        if order == 'ascend':
-            all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
-        else:
+        if order == 'descend':
             all_authors = all_authors.order_by(getattr(Author, sort_by).desc())
+        else:
+            all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
 
     result = authors_schema.dump(all_authors)
     return authors_schema.jsonify(result)
@@ -131,10 +131,10 @@ def getBooks():
 
     # Sort
     if sort_by is not None:
-        if order == 'ascend':
-            all_books = all_books.order_by(getattr(Book, sort_by).asc())
-        else:
+        if order == 'descend':
             all_books = all_books.order_by(getattr(Book, sort_by).desc())
+        else:
+            all_books = all_books.order_by(getattr(Book, sort_by).asc())
 
     result = books_schema.dump(all_books)
     return books_schema.jsonify(result)
@@ -166,10 +166,10 @@ def getPublishers():
 
     # Sort
     if sort_by is not None:
-        if order == 'ascend':
-            all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).asc())
-        else:
+        if order == 'descend':
             all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).desc())
+        else:
+            all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).asc())
 
     result = publishers_schema.dump(all_publishers)
     return publishers_schema.jsonify(result)
