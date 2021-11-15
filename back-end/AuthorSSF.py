@@ -11,24 +11,8 @@ def search_authors(search, all_authors):
     terms = search.split()
     terms = [w.lower() for w in terms]
 
-    # if "zodiac" in terms:
-    #     return all_authors.filter(
-    #         and_(Politician.name.match("Cruz"), Politician.name.match("Ted"))
-    #     )
     searches = []
     for term in terms:
-        # searches.append(Politician.office.match(term))
-        # try:
-        #     searches.append(Politician.district_number.in_([int(term)]))
-        # except ValueError:
-        #     pass
-        # searches.append(
-        #     Politician.current_district.has(
-        #         District.counties.any(func.lower(Counties.name).contains(term.lower()))
-        #     )
-        # )
-        # searches.append(Politician.elections.any(Election.election_day.contains(term)))
-
         # Author Name
         searches.append(Author.author_name.ilike("%{}%".format(term)))
         # Author Genre
