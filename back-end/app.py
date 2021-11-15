@@ -8,6 +8,7 @@ from init import init_db
 import flask_marshmallow as ma
 from dotenv import load_dotenv
 from models import *
+from AuthorSSF import *
 
 
 class AuthorSchema(ma.Schema):
@@ -77,30 +78,35 @@ def hello_world():
 
 @app.route("/api/authors", methods=["GET"])
 def getAuthors():
-    all_authors = Author.query.all()
+    # all_authors = Author.query.all()
+    all_authors = db.session.query(Author)
 
     # Query Params
-    sort_by = request.args.get('sort_by').lower()
-    order = request.args.get('direction').lower()
+    # sort_by = request.args.get('sort_by').lower()
+    # order = request.args.get('direction').lower()
+    search = request.args.get('search').lower()
 
-    nationality = request.args.get('nationality')
-    genre = request.args.get('genre').lower()
-    year_born = request.args.get('year_born')
+    # nationality = request.args.get('nationality')
+    # genre = request.args.get('genre').lower()
+    # year_born = request.args.get('year_born')
 
-    # Filter 
-    if nationality is not None:
-        all_authors = all_authors.filter(Author.nationality == nationality)
-    if genre is not None:
-        all_authors = all_authors.filter(Author.genre == genre)
-    if year_born is not None:
-        all_authors = all_authors.filter(Author.year_born == year_born)
+    # # Filter 
+    # if nationality is not None:
+    #     all_authors = all_authors.filter(Author.nationality == nationality)
+    # if genre is not None:
+    #     all_authors = all_authors.filter(Author.genre == genre)
+    # if year_born is not None:
+    #     all_authors = all_authors.filter(Author.year_born == year_born)
 
-    # Sort
-    if sort_by is not None:
-        if order == 'ascend':
-            all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
-        else:
-            all_authors = all_authors.order_by(getattr(Author, sort_by).desc())
+    # # Sort
+    # if sort_by is not None:
+    #     if order == 'ascend':
+    #         all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
+    #     else:
+    #         all_authors = all_authors.order_by(getattr(Author, sort_by).desc())
+
+    if search is not None:
+        all_authors = search_authors(search, all_authors)
 
     result = authors_schema.dump(all_authors)
     return authors_schema.jsonify(result)
