@@ -155,9 +155,9 @@ def getPublishers():
     # Sort
     if sort_by is not None:
         if order == 'ascend':
-            all_publishers = all_publishers.order_by(getattr(Author, sort_by).asc())
+            all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).asc())
         else:
-            all_publishers = all_publishers.order_by(getattr(Author, sort_by).desc())
+            all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).desc())
 
     result = publishers_schema.dump(all_publishers)
     return publishers_schema.jsonify(result)
