@@ -81,7 +81,14 @@ function Books(props: props) {
                     <Pagination
                       defaultPage={1}
                       page={page}
-                      onChange={(event, value) => setPage(value)}
+                      onChange={(event, value) => {
+                        setPage(value) 
+                        window.scrollTo({
+                        top: 0,
+                        left: 0,
+                        behavior: "smooth",
+                      })
+                    }}
                       count={Math.ceil(bookData.length / 9)}
                       variant="outlined"
                       color="primary"
