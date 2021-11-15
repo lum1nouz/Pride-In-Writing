@@ -82,30 +82,34 @@ def getAuthors():
     all_authors = db.session.query(Author)
 
     # Query Params
-    # sort_by = request.args.get('sort_by').lower()
-    # order = request.args.get('direction').lower()
-    search = request.args.get('search').lower()
+    sort_by = request.args.get('sort_by')
+    order = request.args.get('direction')
+    search = request.args.get('search')
 
-    # nationality = request.args.get('nationality')
-    # genre = request.args.get('genre').lower()
-    # year_born = request.args.get('year_born')
+    nationality = request.args.get('nationality')
+    genre = request.args.get('genre')
+    year_born = request.args.get('year_born')
 
     # # Filter 
-    # if nationality is not None:
-    #     all_authors = all_authors.filter(Author.nationality == nationality)
-    # if genre is not None:
-    #     all_authors = all_authors.filter(Author.genre == genre)
-    # if year_born is not None:
-    #     all_authors = all_authors.filter(Author.year_born == year_born)
+    if nationality is not None:
+        all_authors = all_authors.filter(Author.nationality == nationality)
+    if genre is not None:
+        genre = genre.lower()
+        all_authors = all_authors.filter(Author.genre == genre)
+    if year_born is not None:
+        all_authors = all_authors.filter(Author.year_born == year_born)
 
     # # Sort
-    # if sort_by is not None:
-    #     if order == 'ascend':
-    #         all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
-    #     else:
-    #         all_authors = all_authors.order_by(getattr(Author, sort_by).desc())
+    if sort_by is not None and order is not None:
+        sort_by = sort_by.lower()
+        order = order.lower()
+        if order == 'ascend':
+            all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
+        else:
+            all_authors = all_authors.order_by(getattr(Author, sort_by).desc())
 
     if search is not None:
+        search = search.lower()
         all_authors = search_authors(search, all_authors)
 
     result = authors_schema.dump(all_authors)
