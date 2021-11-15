@@ -185,7 +185,9 @@ class HomePage extends React.Component<props, state> {
                         />
                         <CardContent>
                           <Typography gutterBottom variant="h5" component="div">
+                          <a href="/Authors">
                             Authors
+                          </a>
                           </Typography>
                           <Typography variant="body2">
                             Want to know which Authors are in the LGBTQ community?
@@ -206,7 +208,9 @@ class HomePage extends React.Component<props, state> {
                         />
                         <CardContent>
                           <Typography gutterBottom variant="h5" component="div">
+                          <a href="/Books">
                             Books
+                          </a>
                           </Typography>
                           <Typography variant="body2">
                             Learn about books written by LGBTQ Authors!
@@ -227,7 +231,9 @@ class HomePage extends React.Component<props, state> {
                         />
                         <CardContent>
                           <Typography gutterBottom variant="h5" component="div">
+                          <a href="/Publishers">
                             Publishers
+                          </a>
                           </Typography>
                           <Typography variant="body2">
                             Learn which Publishing companies are supporting LGBTQ Authors!
