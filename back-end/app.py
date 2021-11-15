@@ -92,6 +92,8 @@ def getAuthors():
 
     # # Filter 
     if nationality is not None:
+        # TODO: Need to change database to be all lower cased
+        nationality = nationality.lower()
         all_authors = all_authors.filter(Author.nationality == nationality)
     if genre is not None:
         genre = genre.lower()
