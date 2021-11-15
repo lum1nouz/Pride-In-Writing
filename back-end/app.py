@@ -129,6 +129,21 @@ def getBooks():
     sort_by = request.args.get('sort_by').lower()
     order = request.args.get('direction').lower()
 
+    rating = request.args.get('rating')
+    genres = request.args.get('genre').lower()
+    year_published = request.args.get('year')
+    author = request.args.get('author')
+
+    # Filter 
+    if rating is not None:
+        all_books = all_books.filter(Book.avg_rating == rating)
+    if genres is not None:
+        all_books = all_books.filter(Book.genres == genres)
+    if year_published is not None:
+        all_books = all_books.filter(Book.year == year_published)
+    if author is not None:
+        all_books = all_books.filter(Book.authors == author)
+
     # Sort
     if sort_by is not None:
         if order == 'descend':
@@ -163,6 +178,18 @@ def getPublishers():
     # Query Params
     sort_by = request.args.get('sort_by').lower()
     order = request.args.get('direction').lower()
+
+    origin = request.args.get('origin')
+    pub_type = request.args.get('pub_type')
+    founded = request.args.get('founded')
+
+    # Filter
+    if origin is not None:
+        all_publishers = all_publishers.filter(Publisher.origin == origin)
+    if pub_type is not None:
+        all_publishers = all_publishers.filter(Publisher.publication_types == pub_type)
+    if founded is not None:
+        all_publishers = all_publishers.filter(Publisher.founded == founded)
 
     # Sort
     if sort_by is not None:
