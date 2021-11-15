@@ -135,18 +135,26 @@ def get_author_ids(ids):
 
 @app.route("/api/books", methods=["GET"])
 def getBooks():
-    all_books = Book.query.all()
+    all_books = db.session.query(Book)
 
     # Query Params
-    sort_by = request.args.get('sort_by').lower()
-    order = request.args.get('direction').lower()
+    sort_by = request.args.get('sort_by')
+    order = request.args.get('direction')
+    search = request.args.get('search')
 
     # Sort
-    if sort_by is not None:
+    if sort_by is not None and order is not None:
+        sort_by = sort_by.lower()
+        order = order.lower()
         if order == 'ascend':
             all_books = all_books.order_by(getattr(Book, sort_by).asc())
         else:
             all_books = all_books.order_by(getattr(Book, sort_by).desc())
+
+    # Search
+    if search is not None:
+        search = search.lower()
+        all_books = search_authors(search, all_books)
 
     result = books_schema.dump(all_books)
     return books_schema.jsonify(result)
@@ -170,7 +178,7 @@ def get_book_ids(ids):
 
 @app.route("/api/publishers", methods=["GET"])
 def getPublishers():
-    all_publishers = Publisher.query.all()
+    all_publishers = db.session.query(Publisher)
 
     # Query Params
     sort_by = request.args.get('sort_by').lower()
