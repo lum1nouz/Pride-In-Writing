@@ -9,6 +9,8 @@ import flask_marshmallow as ma
 from dotenv import load_dotenv
 from models import *
 from AuthorSSF import *
+from BookSSF import *
+from PublisherSSF import *
 
 
 class AuthorSchema(ma.Schema):
@@ -154,7 +156,7 @@ def getBooks():
     # Search
     if search is not None:
         search = search.lower()
-        all_books = search_authors(search, all_books)
+        all_books = search_books(search, all_books)
 
     result = books_schema.dump(all_books)
     return books_schema.jsonify(result)
@@ -197,7 +199,7 @@ def getPublishers():
     # Search
     if search is not None:
         search = search.lower()
-        all_publishers = search_authors(search, all_publishers)
+        all_publishers = search_publishers(search, all_publishers)
 
     result = publishers_schema.dump(all_publishers)
     return publishers_schema.jsonify(result)
