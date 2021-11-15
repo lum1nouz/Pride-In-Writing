@@ -3,6 +3,7 @@ import { Card } from "antd";
 import css from "./Books.module.css";
 import Book from "../../models/book-model";
 import 'antd/dist/antd.css';
+import Rating from '@mui/material/Rating';
 
 function BookCard({ book }: { book: Book }) {
   return (
@@ -28,7 +29,7 @@ function BookCard({ book }: { book: Book }) {
         <div className="cardStatsSection">
           <div>Genre: {book.genre}</div>
           <div>Year Published: {book.year}</div>
-          <div>Rating: {book.avg_rating}</div>
+          <div>Rating: <Rating name="read-only" value={book.avg_rating} readOnly /></div>
           <div>Price: {book.price}</div>
           <div>Page Count: {book.page_count}</div>
         </div>

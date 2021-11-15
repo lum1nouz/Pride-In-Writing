@@ -212,6 +212,7 @@ class Authors extends React.Component<props, state> {
     this.setState({ dataStore: mapData(await this.getDataForSearch(this.state.search)), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
 
+  
 
 
   render() {
@@ -357,6 +358,11 @@ class Authors extends React.Component<props, state> {
                              onChangePage={(e, page) => {
                                  this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: page, search: this.state.search})
                                  this.handleSubmit()
+                                 window.scrollTo({
+                                  top: 0,
+                                  left: 0,
+                                  behavior: "smooth",
+                                })
                              }}
                             onChangeRowsPerPage={event => {
                               this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: +event.target.value, page: this.state.page, search: this.state.search})
