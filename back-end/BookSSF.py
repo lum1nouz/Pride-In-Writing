@@ -1,9 +1,7 @@
 from models import *
 from sqlalchemy import and_, or_, func
 
-# Applies filter with an "or" on each attribute
-# District number and counties have to be an exact match
-# search all_authors
+# Code based on https://gitlab.com/forbesye/fitsbits/-/blob/master/back-end/Politician.py
 def search_books(search, all_books):
     if not search:
         return all_books
