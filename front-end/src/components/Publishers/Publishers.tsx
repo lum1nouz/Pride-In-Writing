@@ -90,7 +90,7 @@ class Publishers extends React.Component<props, state> {
 
   //Calls API 
   async getData() {
-    const authors = await fetch("https://api.prideinwriting.me/api/publishers" + this.createApiString())
+    const authors = await fetch("https://api.prideinwriting.me/api/publishers" + this.createApiString(" "))
       .then((response) => {
         return response.json();
       })
@@ -102,21 +102,27 @@ class Publishers extends React.Component<props, state> {
   }
 
   //Used to build API request
-  createApiString() {
+  createApiString(str: string) {
     let filterString = ""
     let sortString = ""
+    let searchString = ""
     if(this.state.curFilter.category !== "") {
-      filterString = "?Filter" + this.state.curFilter.category + "=" + this.state.curFilter.value
+      filterString = "?sort_by=" +this.state.curFilter.category + "?order=" + this.state.curFilter.value
     }
     if(this.state.curSort.category !== "") {
       sortString = "?Sort" + this.state.curSort.category + "=" + this.state.curSort.value
     }
-    return "?perPage=" + this.state.perPage + "?page=" + this.state.page + filterString + sortString;
+    if(str !== "") {
+      filterString = ""
+      sortString = ""
+      searchString = "?search=" + str.replace(" ", "+")
+    }
+    return "?perPage=" + this.state.perPage + "?page=" + this.state.page + searchString + filterString + sortString;
   }
 
   //Calls search route on API
   async getDataForSearch(search: string) {
-    const authors = await fetch("https://api.prideinwriting.me/api/publishers?search=" + search)
+    const authors = await fetch("https://api.prideinwriting.me/api/publishers" + this.createApiString(search))
       .then((response) => {
         return response.json();
       })
@@ -220,6 +226,19 @@ class Publishers extends React.Component<props, state> {
                 <span style={{ color: "#FF555E" }}>r</span>
                 <span style={{ color: "#FF8650" }}>s</span>
               </div>
+              <Grid container spacing={5} style={{marginTop: 20}}>
+                  <Grid item xs={9}>
+                  </Grid>
+                  <Grid item xs={2}>
+                  <TextField variant="outlined" label="Search Publishers" onChange={(e) => this.handleSearchText(e)}> </TextField>
+                  <Button onClick={() => {
+                    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: 1, search: this.state.search})
+                    this.handleSearch()
+                    }} variant="outlined"> Search </Button>
+                  </Grid>
+                  <Grid item xs={1}>
+                  </Grid>
+                </Grid>
               <Paper
                 elevation={4}
                 className={css.paperCont}
@@ -277,7 +296,10 @@ class Publishers extends React.Component<props, state> {
                 <Grid container spacing={5} style={{marginTop: 20}}>
                   <Grid item xs={4}>
                   </Grid>
-                  <Button onClick={() => this.handleSubmit()} variant="outlined"> Get Filtered/Sorted Data </Button>
+                  <Button onClick={() => {
+                    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: 1, search: this.state.search})
+                      this.handleSubmit()
+                    }} variant="outlined"> Get Filtered/Sorted Data </Button>
                   <Grid item xs={4}>
                   </Grid>
                 </Grid>
@@ -329,8 +351,17 @@ class Publishers extends React.Component<props, state> {
                             count={this.state.dataStore.length}
                             page={this.state.page}
                              onChangePage={(e, page) => {
-                                 this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: page, search: this.state.search})
-                                 this.handleSubmit()
+                                this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: page, search: this.state.search})
+                                if(this.state.search === ""){
+                                this.handleSubmit()
+                                } else{
+                                this.handleSearch()
+                                }
+                                window.scrollTo({
+                                top: 0,
+                                left: 0,
+                                behavior: "smooth",
+                              })
                              }}
                             onChangeRowsPerPage={event => {
                               this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: +event.target.value, page: this.state.page, search: this.state.search})

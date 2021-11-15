@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Paper, Button } from "@material-ui/core";
+import { Paper, Button, Grid } from "@material-ui/core";
 import Header from "../Header/Header";
 import css from "./Authors.module.css";
 import { Parallax } from "react-parallax";
@@ -7,7 +7,6 @@ import MaterialTable from "material-table";
 import Author from "../../models/author-model";
 import {stringToIntegerList, tableIcons} from "../../common";
 import { TablePagination } from "@material-ui/core";
-import { Grid } from "@material-ui/core";
 import { TextField, Select, MenuItem, SelectChangeEvent } from "@mui/material";
 
 type rowdata = {
@@ -99,22 +98,27 @@ class Authors extends React.Component<props, state> {
   // }
 
   //Used to build API request
-  createApiString() {
+  createApiString(str: string) {
     let filterString = ""
     let sortString = ""
+    let searchString = ""
     if(this.state.curFilter.category !== "") {
       filterString = "?sort_by=" +this.state.curFilter.category + "?order=" + this.state.curFilter.value
     }
     if(this.state.curSort.category !== "") {
       sortString = "?Sort" + this.state.curSort.category + "=" + this.state.curSort.value
     }
-    return "?perPage=" + this.state.perPage + "?page=" + this.state.page + filterString + sortString;
+    if(str !== "") {
+      filterString = ""
+      sortString = ""
+      searchString = "?search=" + str.replace(" ", "+")
+    }
+    return "?perPage=" + this.state.perPage + "?page=" + this.state.page + searchString + filterString + sortString;
   }
 
   //Calls API 
   async getData() {
-    console.log("https://api.prideinwriting.me/api/authors" + this.createApiString())
-    const authors = await fetch("https://api.prideinwriting.me/api/authors" + this.createApiString())
+    const authors = await fetch("https://api.prideinwriting.me/api/authors" + this.createApiString(""))
       .then((response) => {
         return response.json();
       })
@@ -127,7 +131,7 @@ class Authors extends React.Component<props, state> {
 
   //Calls search route on API
   async getDataForSearch(search: string) {
-    const authors = await fetch("https://api.prideinwriting.me/api/authors?search=" + search)
+    const authors = await fetch("https://api.prideinwriting.me/api/authors" + this.createApiString(search))
       .then((response) => {
         return response.json();
       })
@@ -236,7 +240,10 @@ class Authors extends React.Component<props, state> {
                   </Grid>
                   <Grid item xs={2}>
                   <TextField variant="outlined" label="Search Authors" onChange={(e) => this.handleSearchText(e)}> </TextField>
-                  <Button onClick={() => this.handleSearch} variant="outlined"> Search </Button>
+                  <Button onClick={() => {
+                    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: 1, search: this.state.search})
+                    this.handleSearch()
+                    }} variant="outlined"> Search </Button>
                   </Grid>
                   <Grid item xs={1}>
                   </Grid>
@@ -313,7 +320,11 @@ class Authors extends React.Component<props, state> {
                 <Grid container spacing={5} style={{marginTop: 20}}>
                   <Grid item xs={4}>
                   </Grid>
-                  <Button onClick={() => this.handleSubmit()} variant="outlined"> Get Filtered/Sorted Data </Button>
+                  <Button onClick={() => {
+                    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: 1, search: this.state.search})
+                      this.handleSubmit()
+                    }}
+                    variant="outlined"> Get Filtered/Sorted Data </Button>
                   <Grid item xs={4}>
                   </Grid>
                 </Grid>
@@ -357,7 +368,11 @@ class Authors extends React.Component<props, state> {
                             page={this.state.page}
                              onChangePage={(e, page) => {
                                  this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: page, search: this.state.search})
-                                 this.handleSubmit()
+                                 if(this.state.search === ""){
+                                  this.handleSubmit()
+                                 } else{
+                                  this.handleSearch()
+                                 }
                                  window.scrollTo({
                                   top: 0,
                                   left: 0,
