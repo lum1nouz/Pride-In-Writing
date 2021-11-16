@@ -104,11 +104,11 @@ def getAuthors():
         # TODO: Need to change database to be all lower cased
         all_authors = all_authors.filter(Author.nationality == nationality)
     if genre is not None:
-        all_authors = all_authors.filter(Author.genre == genre)
+        all_authors = all_authors.filter(Author.genre.contains(genre))
     if year_born is not None:
         all_authors = all_authors.filter(Author.year_born == year_born)
     if name is not None:
-        all_authors = all_authors.filter(Author.author_name == name)
+        all_authors = all_authors.filter(Author.author_name.contains(name))
 
     # # Sort
     if sort_by is not None and order is not None:
@@ -180,11 +180,11 @@ def getBooks():
         all_books = all_books.filter(Book.avg_rating == rating)
     if genres is not None:
         genres = genres.lower()
-        all_books = all_books.filter(Book.genres == genres)
+        all_books = all_books.filter(Book.genres.contains(genres))
     if year_published is not None:
-        all_books = all_books.filter(Book.year == year_published)
+        all_books = all_books.filter(Book.year.contains(year_published))
     if author is not None:
-        all_books = all_books.filter(Book.authors == author)
+        all_books = all_books.filter(Book.authors.contains(author))
     if price is not None:
         all_books = all_books.filter(Book.price == price)
     if page_count is not None:
@@ -257,9 +257,9 @@ def getPublishers():
     if origin is not None:
         all_publishers = all_publishers.filter(Publisher.origin == origin)
     if pub_type is not None:
-        all_publishers = all_publishers.filter(Publisher.publication_types == pub_type)
+        all_publishers = all_publishers.filter(Publisher.publication_types .contains(pub_type))
     if founded is not None:
-        all_publishers = all_publishers.filter(Publisher.founded == founded)
+        all_publishers = all_publishers.filter(Publisher.founded.contains(founded))
 
     # Sort
     if sort_by is not None and order is not None:
