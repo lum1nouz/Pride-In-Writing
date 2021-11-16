@@ -124,9 +124,9 @@ const axios = require("axios");
     function createApiString(str) {
         let searchString = ""
         if(str !== "") {
-        searchString = "?search=" + str.replace(" ", "+")
+        searchString = "&search=" + str.replace(" ", "+")
         }
-        return "?perPage=" + perPage + "?page=" + page + searchString;
+        return "?perPage=" + perPage + "&page=" + page + searchString;
     }
   
 

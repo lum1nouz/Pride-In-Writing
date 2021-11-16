@@ -113,17 +113,17 @@ class Authors extends React.Component<props, state> {
     let sortString = ""
     let searchString = ""
     if(this.state.curFilter.category !== "") {
-      filterString = "?sort_by=" +this.state.curFilter.category + "?order=" + this.state.curFilter.value
+      filterString = "&" + this.state.curFilter.category + "=" + this.state.curFilter.value
     }
     if(this.state.curSort.category !== "") {
-      sortString = "?Sort" + this.state.curSort.category + "=" + this.state.curSort.value
+      sortString = "&sort_by=" +this.state.curSort.category + "&direction=" + this.state.curSort.value
     }
     if(str !== "") {
       filterString = ""
       sortString = ""
-      searchString = "?search=" + str.replace(" ", "+").replace(",", "") 
+      searchString = "&search=" + str.replace(" ", "+").replace(",", "") 
     }
-    return "?perPage=" + this.state.perPage + "?page=" + this.state.page + searchString + filterString + sortString;
+    return "?perPage=" + this.state.perPage + "&page=" + this.state.page + searchString + filterString + sortString;
   }
 
   //Calls API 

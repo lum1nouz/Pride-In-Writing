@@ -90,18 +90,18 @@ function Books(props: props) {
     let filterString = ""
     let sortString = ""
     let searchString = ""
-    if(curFilter.category !== "") {
-      filterString = "?sort_by=" + curFilter.category + "?order=" + curFilter.value
+    if(this.state.curFilter.category !== "") {
+      filterString = "&" + this.state.curFilter.category + "=" + this.state.curFilter.value
     }
-    if(curSort.category !== "") {
-      sortString = "?Sort" + curSort.category + "=" + curSort.value
+    if(this.state.curSort.category !== "") {
+      sortString = "&sort_by=" +this.state.curSort.category + "&direction=" + this.state.curSort.value
     }
     if(str !== "") {
       filterString = ""
       sortString = ""
-      searchString = "?search=" + str.replace(" ", "+").replace(",", "") 
+      searchString = "&search=" + str.replace(" ", "+").replace(",", "") 
     }
-    return "?perPage=" + perPage + "?page=" + page + searchString + filterString + sortString;
+    return "?perPage=" + this.state.perPage + "&page=" + this.state.page + searchString + filterString + sortString;
   }
 
   //Used by TextFields 
