@@ -115,7 +115,7 @@ class Publishers extends React.Component<props, state> {
     if(str !== "") {
       filterString = ""
       sortString = ""
-      searchString = "?search=" + str.replace(" ", "+")
+      searchString = "?search=" + str.replace(" ", "+").replace(",", "") 
     }
     return "?perPage=" + this.state.perPage + "?page=" + this.state.page + searchString + filterString + sortString;
   }

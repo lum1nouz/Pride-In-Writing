@@ -28,16 +28,16 @@ function BookCard({ book, search }: { book: Book, search: string }) {
       >
         <Card.Meta title={book.name} />
         <div className="cardStatsSection">
-          <div>Genre: {<Highlighter
+          <div>{<Highlighter
 								// highlightClassName={styles.searchHighlight}
 								searchWords={search.split(" ")}
-								textToHighlight={book.genre}
+								textToHighlight={"Genre:" +book.genre}
 							/>
           } </div>
-          <div>Year Published: {<Highlighter
+          <div>{<Highlighter
 								// highlightClassName={styles.searchHighlight}
 								searchWords={search.split(" ")}
-								textToHighlight={book.year}
+								textToHighlight={"Year Published: " + book.year}
 							/> }
           </div>
           <div>Rating: <Rating name="read-only" value={book.avg_rating} readOnly /> </div>

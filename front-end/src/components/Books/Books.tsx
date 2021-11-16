@@ -103,7 +103,7 @@ function Books(props: props) {
     if(str !== "") {
       filterString = ""
       sortString = ""
-      searchString = "?search=" + str.replace(" ", "+")
+      searchString = "?search=" + str.replace(" ", "+").replace(",", "") 
     }
     return "?perPage=" + perPage + "?page=" + page + searchString + filterString + sortString;
   }

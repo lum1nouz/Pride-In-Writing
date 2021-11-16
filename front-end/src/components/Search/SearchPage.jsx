@@ -233,7 +233,7 @@ const axios = require("axios");
                 </tr>
               </thead>
               <tbody>
-                {/* {Object.keys(authorData).map(getAuthors)} */}
+                {Object.keys(authorData).map(getAuthors)}
               </tbody>
             </Bootstrap.Table>
         </div>
@@ -252,9 +252,9 @@ const axios = require("axios");
             {bookItemCount} */}
           </div>
           <div className="cardGrid">
-            {/* {bookData.map((book) => (
+            {bookData.map((book) => (
               <BookCard book={book} search={searchText} />
-            ))} */}
+            ))}
           </div>
           <div
             style={{
@@ -310,7 +310,7 @@ const axios = require("axios");
                   <th scope="col">{highlightText("Year Founded")}</th>
                 </tr>
               </thead>
-              {/* <tbody>{Object.keys(publisherData).map(getPublishers)}</tbody> */}
+              <tbody>{Object.keys(publisherData).map(getPublishers)}</tbody>
             </Bootstrap.Table>
             <Pagination
               defaultPage={1}
