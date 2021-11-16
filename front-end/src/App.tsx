@@ -191,7 +191,7 @@ function App() {
           );
         })}
       </div>
-      testParagraph
+      <p style={{color: "white"}}>testParagraph</p>
     </div>
   );
 }
