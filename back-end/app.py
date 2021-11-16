@@ -139,6 +139,13 @@ def get_author_ids(ids):
 def getBooks():
     all_books = db.session.query(Book)
 
+    # Pagination
+    page = request.args.get('page')
+    if page == None:
+        page = 1
+    else:
+        page = int(page)
+
     # Query Params
     sort_by = request.args.get('sort_by')
     order = request.args.get('direction')
@@ -158,7 +165,19 @@ def getBooks():
         search = search.lower()
         all_books = search_books(search, all_books)
 
-    result = books_schema.dump(all_books)
+    # Page = Current Page Number
+    # Per Page = How many per page
+    if page != -1:
+        per_page_param = request.args.get('per_page')
+        per_page = 20
+        if per_page_param is not None:
+            per_page = int(per_page_param)
+
+        books = all_books.paginate(page=page, per_page=per_page)
+        result = books_schema.dump(books.items)
+    else:
+        result = books_schema.dump(all_books)
+        
     return books_schema.jsonify(result)
 
 
