@@ -6,103 +6,103 @@
 
 # Full project: https://gitlab.com/pages/plain-html
 
-# image: node:latest
+image: node:latest
 
-# pages:
-#   stage: deploy
-#   script:
-#     - mkdir .public
-#     - cp -r * .public
-#     - mv .public public
-#   artifacts:
-#     paths:
-#       - public
-#   rules:
-#     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+pages:
+  stage: deploy
+  script:
+    - mkdir .public
+    - cp -r * .public
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
-# build_front_end:
-#   stage: build
-#   image: node:16.12.0
-#   script: 
-#     - cd front-end
-#     - yarn install
-#     - CI=false npm run build
-#     - echo "Build complete."
+build_front_end:
+  stage: build
+  image: node:16.12.0
+  script: 
+    - cd front-end
+    - yarn install
+    - CI=false npm run build
+    - echo "Build complete."
 
-# deploy_production:
-#   image: python:3.6-stretch
-#   only:
-#     variables:
-#       - $CI_COMMIT_BRANCH == "main"
-#   stage: deploy
-#   before_script:
-#     - pip install awsebcli --upgrade --user
-#     - git checkout main
-#   script:
-#     - cd back-end
-#     - /root/.local/bin/eb deploy prideinwriting-api-prod
+deploy_production:
+  image: python:3.6-stretch
+  only:
+    variables:
+      - $CI_COMMIT_BRANCH == "main"
+  stage: deploy
+  before_script:
+    - pip install awsebcli --upgrade --user
+    - git checkout main
+  script:
+    - cd back-end
+    - /root/.local/bin/eb deploy prideinwriting-api-prod
 
-# postman_tests:
-#   stage: test
-#   image: 
-#     name: postman/newman_alpine33
-#     entrypoint: [""]
-#   script:
-#     - newman --version
-#     - cd back-end
-#     - newman run postman.json
+postman_tests:
+  stage: test
+  image: 
+    name: postman/newman_alpine33
+    entrypoint: [""]
+  script:
+    - newman --version
+    - cd back-end
+    - newman run postman.json
 
-# back_end_test:
-#   stage: test
-#   image: 
-#     name: "python:3.7"
-#   before_script:
-#     - python --version
-#     - cd back-end/
-#     - pip install -r requirements.txt
-#   script:
-#     - python -m pytest tests.py -vv
+back_end_test:
+  stage: test
+  image: 
+    name: "python:3.7"
+  before_script:
+    - python --version
+    - cd back-end/
+    - pip install -r requirements.txt
+  script:
+    - python -m pytest tests.py -vv
 
-# jest:
-#   stage: test
-#   image: thocotho/webdev
-#   script:
-#     - cd front-end
-#     - npm install
-#     - npm test -- --watchAll=false
-
-
-
-# front_end_test:
-#   stage: test
-#   services:
-#     - selenium/standalone-chrome
-#   image: python:3.9-slim
-#   before_script: 
-#     - pip install pytest
-#     - pip install pytest-ordering
-#     - pip install -r front-end/src/__tests__/requirements.txt
-
-#     - apt-get update -q -y
-#     - apt-get install curl -y
-#     - apt-get install nodejs npm -y
-#     - apt-get --yes install libnss3
-#     - apt-get --yes install libgconf-2-4
-#     - apt-get install libx11-xcb1
-
-#     - curl -sS -L https://dl.google.com/linux/linux_signing_key.pub |
-#       apt-key add -
-
-#     - echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/
-#       stable main" > /etc/apt/sources.list.d/google.list
-#     - apt-get update -q -y
-#     - apt-get install -y google-chrome-stable
-#     - npm install --global yarn
-#     - yarn install
+jest:
+  stage: test
+  image: thocotho/webdev
+  script:
+    - cd front-end
+    - npm install
+    - npm test -- --watchAll=false
 
 
-#   script:
-#     - cd front-end && python guitests.py
+
+front_end_test:
+  stage: test
+  services:
+    - selenium/standalone-chrome
+  image: python:3.9-slim
+  before_script: 
+    - pip install pytest
+    - pip install pytest-ordering
+    - pip install -r front-end/src/__tests__/requirements.txt
+
+    - apt-get update -q -y
+    - apt-get install curl -y
+    - apt-get install nodejs npm -y
+    - apt-get --yes install libnss3
+    - apt-get --yes install libgconf-2-4
+    - apt-get install libx11-xcb1
+
+    - curl -sS -L https://dl.google.com/linux/linux_signing_key.pub |
+      apt-key add -
+
+    - echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/
+      stable main" > /etc/apt/sources.list.d/google.list
+    - apt-get update -q -y
+    - apt-get install -y google-chrome-stable
+    - npm install --global yarn
+    - yarn install
+
+
+  script:
+    - cd front-end && python guitests.py
 
 selenium_tests:
         image: cmontminy/selenium-ci
