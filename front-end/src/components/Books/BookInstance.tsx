@@ -89,7 +89,7 @@ class BookInstance extends React.Component<props, state> {
           })
       );
     }
-    return tempData;
+    return tempData.filter(item => Object.keys(item).length);
   }
 
   async getAuthorConnections() {
@@ -106,7 +106,8 @@ class BookInstance extends React.Component<props, state> {
           })
       );
     }
-    return tempData;
+
+    return tempData.filter(item => Object.keys(item).length);
   }
 
   render() {
