@@ -72,7 +72,7 @@ class PublisherInstance extends React.Component<props, state> {
           })
       );
     }
-    return tempData;
+    return tempData.filter(item => Object.keys(item).length);
   }
 
   async getAuthorConnections() {
@@ -89,7 +89,7 @@ class PublisherInstance extends React.Component<props, state> {
           })
       );
     }
-    return tempData;
+    return tempData.filter(item => Object.keys(item).length);
   }
 
   render() {
@@ -162,8 +162,11 @@ class PublisherInstance extends React.Component<props, state> {
                   <p>{this.props.publication_types}</p>
 
                   <h2>Book Connections</h2>
+
                   <p>
-                    {this.state.bookCon.map(function (book) {
+                    {/* {console.log(this.state.bookCon)} */}
+                    
+                    {this.state.bookCon.filter(item => Object.keys(item).length).map(function (book) {
                       return (
                         <Button href={"/book-" + book.book_id}>
                          {book.name}

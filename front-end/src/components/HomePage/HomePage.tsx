@@ -15,6 +15,7 @@ import publisherStockImg from "../../Assets/publisherImg.jpg";
 import penguinLogoImg from "../../Assets/penguinLogo.webp";
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
 
 
 const styles = {
@@ -102,18 +103,12 @@ class HomePage extends React.Component<props, state> {
                 position: "relative", 
                 padding: 15}}> 
                 <Stack spacing={2} direction="row">
-                  <Button variant="contained">Search by Query</Button>
-                  <Button variant="outlined">Search by Name</Button>
+                  <Button variant="contained"
+                  component={Link}
+                  to="/SearchPage">
+                    Search the website</Button>
                 </Stack>
                 </div> 
-
-                <div>
-                  <p>Insert search bar here</p>
-                  </div>
-
-                <div>
-                
-                  </div>
               </div>
             </Grid>
             <Grid
