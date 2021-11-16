@@ -162,9 +162,9 @@ class Publishers extends React.Component<props, state> {
     }
     if(this.state.curSort.category !== "") {
       let directionField = "&direction=" + this.state.curSort.value
-      if(this.state.curSort.value === "ascend") {
-        directionField = ""
-      }
+      // if(this.state.curSort.value === "ascend") {
+      //   directionField = ""
+      // }
       sortString = "&sort_by=" +this.state.curSort.category + directionField
     }
     if(str !== "") {

@@ -60,8 +60,12 @@ class PublisherInstance extends React.Component<props, state> {
 
   async getBookConnections() {
     let tempData: Book[] = [];
+    let param = this.props.book_connections.toString()
+    if(param === "NaN") {
+      param = "-1"
+    }
       tempData = (
-        await fetch("https://api.prideinwriting.me/api/books/ids=" + this.props.book_connections.toString())
+        await fetch("https://api.prideinwriting.me/api/books/ids=" + param)
           .then((response) => {
             return response.json();
           })
@@ -75,8 +79,12 @@ class PublisherInstance extends React.Component<props, state> {
 
   async getAuthorConnections() {
     let tempData: Author[] = [];
+    let param = this.props.author_connections.toString()
+    if(param === "NaN") {
+      param = "-1"
+    }
       tempData = (
-        await fetch("https://api.prideinwriting.me/api/authors/ids=" + this.props.author_connections.toString())
+        await fetch("https://api.prideinwriting.me/api/authors/ids=" + param)
           .then((response) => {
             return response.json();
           })
@@ -161,6 +169,14 @@ class PublisherInstance extends React.Component<props, state> {
 
                   <p>
                     {/* {console.log(this.state.bookCon)} */}
+
+                    {(this.state.bookCon.length < 1) ? 
+                      (
+                        <div> None found </div>
+                      ) : (
+                        <div></div>
+                      )
+                    }
                     
                     {this.state.bookCon.filter(item => Object.keys(item).length).map(function (book) {
                       return (
@@ -175,6 +191,15 @@ class PublisherInstance extends React.Component<props, state> {
                     Author Connections <br />
                   </h2>
                   <p>
+
+                  {(this.state.autCon.length < 1) ? 
+                      (
+                        <div> None found </div>
+                      ) : (
+                        <div></div>
+                      )
+                    }
+
                     {this.state.autCon.map(function (author) {
                       return (
                         <Button href={"/author-" + author.author_id}>
