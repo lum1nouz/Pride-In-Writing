@@ -250,12 +250,12 @@ def getPublishers():
     # Per Page = How many per page
     if page != -1:
         per_page_param = request.args.get('per_page')
-        per_page = 20
         if per_page_param is not None:
             per_page = int(per_page_param)
-
-        publishers = all_publishers.paginate(page=page, per_page=per_page)
-        result = publishers_schema.dump(publishers.items)
+            publishers = all_publishers.paginate(page=page, per_page=per_page)
+            result = publishers_schema.dump(publishers.items)
+        else:
+            result = publishers_schema.dump(all_publishers)
     else:
         result = publishers_schema.dump(all_publishers)
 
