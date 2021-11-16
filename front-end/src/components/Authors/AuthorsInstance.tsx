@@ -1,5 +1,5 @@
 import React from "react";
-import { Paper, Button } from "@material-ui/core";
+import { Paper } from "@material-ui/core";
 import Header from "../Header/Header";
 import css from "./Authors.module.css";
 import { Parallax } from "react-parallax";
@@ -9,6 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import Book from "../../models/book-model";
 import Publisher from "../../models/publisher-model";
+import Button from '@mui/material/Button';
 
 type props = {
   author_id: number;
@@ -51,9 +52,8 @@ class AuthorsInstance extends React.Component<props, state> {
 
   async getPublisherConnections() {
     let tempData: Publisher[] = [];
-    for (let num of this.props.publisher_connections) {
-      tempData.push(
-        await fetch("https://api.prideinwriting.me/api/publishers/id=" + num)
+      tempData = (
+        await fetch("https://api.prideinwriting.me/api/publishers/ids=" + this.props.publisher_connections.toString())
           .then((response) => {
             return response.json();
           })
@@ -62,15 +62,14 @@ class AuthorsInstance extends React.Component<props, state> {
             return {};
           })
       );
-    }
-    return tempData;
+
+    return tempData.filter(item => Object.keys(item).length);
   }
 
   async getBookConnections() {
     let tempData: Book[] = [];
-    for (let num of this.props.book_connections) {
-      tempData.push(
-        await fetch("https://api.prideinwriting.me/api/books/id=" + num)
+      tempData = (
+        await fetch("https://api.prideinwriting.me/api/books/ids=" + this.props.book_connections.toString())
           .then((response) => {
             return response.json();
           })
@@ -79,8 +78,8 @@ class AuthorsInstance extends React.Component<props, state> {
             return {};
           })
       );
-    }
-    return tempData;
+
+    return tempData.filter(item => Object.keys(item).length);
   }
 
   async componentDidMount() {
@@ -97,18 +96,16 @@ class AuthorsInstance extends React.Component<props, state> {
         <div data-testid="4" className={css.background}>
           <Parallax strength={500} className={css.parrallaxCont}>
             <div style={{}}>
-              <div className={css.titleText}> {this.props.author_name} </div>
+              <div className={css.titleText} style={{textShadow: "4px 4px rgba(0, 0, 255, .2)"}}> {this.props.author_name} </div>
               <Paper elevation={4} className={css.paperCont}>
                 <Grid
                   container
-                  spacing={0}
-                  direction="column"
-                  alignItems="center"
-                  justify="center"
+                  spacing={2}
+                  style= {{position: "relative"}}
                 >
-                  <Grid item xs={12}>
+                  <Grid item xs={6}>
                     <CardContent
-                      style={{ backgroundColor: "pink", width: "fit-content" }}
+                      style={{width: "fit-content" }}
                     >
                       <div
                         style={{
@@ -125,13 +122,14 @@ class AuthorsInstance extends React.Component<props, state> {
                           image={this.props.author_image}
                         />
                       </div>
-                      <p style={{ textAlign: "center" }}>
+                      <p style={{ textAlign: "center", fontWeight: "bold" }}>
                         Born: {this.props.year_born}
                       </p>
                     </CardContent>
                   </Grid>
-                </Grid>
-                <div style={{ textAlign: "center" }}>
+
+                  <Grid item xs= {6}>
+                  <div style={{ textAlign: "center" }}>
                   {this.props.author_summary && (
                     <div>
                       <h2>
@@ -156,9 +154,9 @@ class AuthorsInstance extends React.Component<props, state> {
                   <p>
                     {this.state.bookCon.map(function (book) {
                       return (
-                        <Button component={Link} to={"/book-" + book.book_id}>
-                          {book.name}
-                        </Button>
+                        <Button href={"/book-" + book.book_id}>
+                         {book.name}
+                      </Button>
                       );
                     })}
                   </p>
@@ -167,16 +165,15 @@ class AuthorsInstance extends React.Component<props, state> {
                   <p>
                     {this.state.pubCon.map(function (publisher) {
                       return (
-                        <Button
-                          component={Link}
-                          to={"/publisher-" + publisher.publisher_id}
-                        >
-                          {publisher.name}
-                        </Button>
+                      <Button href={"/publisher-" + publisher.publisher_id}>
+                      {publisher.name}
+                   </Button>
                       );
                     })}
                   </p>
                 </div>
+                  </Grid>
+                </Grid>
               </Paper>
             </div>
           </Parallax>
