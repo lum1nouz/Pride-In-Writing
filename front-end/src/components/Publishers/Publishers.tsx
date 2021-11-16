@@ -81,7 +81,7 @@ class Publishers extends React.Component<props, state> {
         value: ""
       },
       perPage: 15,
-      page: 0,
+      page: 1,
       search: "" 
     };
   }
@@ -140,7 +140,8 @@ class Publishers extends React.Component<props, state> {
 
   //Calls API 
   async getData() {
-    const authors = await fetch("https://api.prideinwriting.me/api/publishers" + this.createApiString(" "))
+    console.log("https://api.prideinwriting.me/api/publishers" + this.createApiString(""))
+    const publishers = await fetch("https://api.prideinwriting.me/api/publishers" + this.createApiString(""))
       .then((response) => {
         return response.json();
       })
@@ -148,7 +149,7 @@ class Publishers extends React.Component<props, state> {
         console.log(err);
         return {};
       });
-    return authors;
+    return publishers;
   }
 
   //Used to build API request
@@ -160,7 +161,11 @@ class Publishers extends React.Component<props, state> {
       filterString = "&" + this.state.curFilter.category + "=" + this.state.curFilter.value
     }
     if(this.state.curSort.category !== "") {
-      sortString = "&sort_by=" +this.state.curSort.category + "&direction=" + this.state.curSort.value
+      let directionField = "&direction=" + this.state.curSort.value
+      if(this.state.curSort.value === "ascend") {
+        directionField = ""
+      }
+      sortString = "&sort_by=" +this.state.curSort.category + directionField
     }
     if(str !== "") {
       filterString = ""
@@ -190,11 +195,11 @@ class Publishers extends React.Component<props, state> {
   changeSort(col: number){
     let lookup = ["name", "country", "types", "authorsPublished", "founded"]
     let tempCategory = lookup[col]
-    let tempValue = "desc"
+    let tempValue = "descend"
     let check = this.state.curSort.value
-    if(check === "desc" && tempCategory === this.state.curSort.category) {
-      tempValue = "asc"
-    } else if (check === "asc" && tempCategory === this.state.curSort.category){
+    if(check === "descend" && tempCategory === this.state.curSort.category) {
+      tempValue = "ascend"
+    } else if (check === "ascend" && tempCategory === this.state.curSort.category){
       tempCategory = ""
       tempValue = ""
     }

@@ -74,7 +74,7 @@ function Books(props: props) {
 
     //Calls search route on API
     async function getDataForSearch(srch: string) {
-      const authors = await fetch("https://api.prideinwriting.me/api/authors" + createApiString(srch))
+      const authors = await fetch("https://api.prideinwriting.me/api/books" + createApiString(srch))
         .then((response) => {
           return response.json();
         })
@@ -94,7 +94,11 @@ function Books(props: props) {
       filterString = "&" + curFilter.category + "=" + curFilter.value
     }
     if(curSort.category !== "") {
-      sortString = "&sort_by=" + curSort.category + "&direction=" + curSort.value
+      let directionField = "&direction=" + curSort.value
+      if(curSort.value === "ascend") {
+        directionField = ""
+      }
+      sortString = "&sort_by=" + curSort.category + directionField
     }
     if(str !== "") {
       filterString = ""
@@ -156,11 +160,11 @@ function Books(props: props) {
   function changeSort(col: number){
     let lookup = ["name", "genre", "year", "rating", "price", "pageCount"]
     let tempCategory = lookup[col]
-    let tempValue = "desc"
+    let tempValue = "descend"
     let check = curSort.value
-    if(check === "desc" && tempCategory === curSort.category) {
-      tempValue = "asc"
-    } else if (check === "asc" && tempCategory === curSort.category){
+    if(check === "descend" && tempCategory === curSort.category) {
+      tempValue = "ascend"
+    } else if (check === "ascend" && tempCategory === curSort.category){
       tempCategory = ""
       tempValue = ""
     }

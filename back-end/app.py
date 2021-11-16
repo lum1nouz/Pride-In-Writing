@@ -203,7 +203,7 @@ def getBooks():
     # Page = Current Page Number
     # Per Page = How many per page
     if page != -1:
-        per_page_param = request.args.get('per_page')
+        per_page_param = request.args.get('perPage')
         if per_page_param is not None:
             per_page = int(per_page_param)
             books = all_books.paginate(page=page, per_page=per_page)
@@ -277,7 +277,7 @@ def getPublishers():
     # Page = Current Page Number
     # Per Page = How many per page
     if page != -1:
-        per_page_param = request.args.get('per_page')
+        per_page_param = request.args.get('perPage')
         if per_page_param is not None:
             per_page = int(per_page_param)
             publishers = all_publishers.paginate(page=page, per_page=per_page)

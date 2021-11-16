@@ -30,7 +30,7 @@ const styles = {
 
 const axios = require("axios");
 
- export function SearchPage({}, {}) {
+ export function SearchPage() {
   const [authorData, setAuthorData] = useState([]);
   const [bookData, setBookData] = useState([]);
   const [publisherData, setPublisherData] = useState([]);
@@ -95,7 +95,7 @@ const axios = require("axios");
         </td>
         <td> {highlightText(data.origin)}</td>
         <td> {highlightText(data.publication_types)}</td>
-        <td> {highlightText(data.authorsPublished.toString())}</td>
+        <td> {highlightText(authorsPublished.toString())}</td>
         <td> {highlightText(data.founded)}</td>
       </tr>
     );
@@ -126,6 +126,7 @@ const axios = require("axios");
         if(str !== "") {
         searchString = "&search=" + str.replace(" ", "+")
         }
+        console.log("?perPage=" + perPage + "&page=" + page + searchString)
         return "?perPage=" + perPage + "&page=" + page + searchString;
     }
   
@@ -138,9 +139,12 @@ const axios = require("axios");
           "https://api.prideinwriting.me/api/authors" + urlParams
         )
         .then((response) => {
-          setAuthorData(response.data.result);
+          setAuthorData(response.data);
           setAuthorItemCount(response.data.count);
           setLoading(false);
+        }).catch((err) => {
+          console.log(err);
+          return {};
         });
     };
 
@@ -152,9 +156,12 @@ const axios = require("axios");
             "https://api.prideinwriting.me/api/books" + urlParams
           )
           .then((response) => {
-            setBookData(response.data.result);
+            setBookData(response.data);
             setBookItemCount(response.data.count);
             setLoading(false);
+          }).catch((err) => {
+            console.log(err);
+            return {};
           });
     };
 
@@ -166,9 +173,12 @@ const axios = require("axios");
             "https://api.prideinwriting.me/api/publishers" + urlParams
           )
           .then((response) => {
-            setPublisherData(response.data.result);
+            setPublisherData(response.data);
             setPublisherItemCount(response.data.count);
             setLoading(false);
+          }).catch((err) => {
+            console.log(err);
+            return {};
           });
     };
 

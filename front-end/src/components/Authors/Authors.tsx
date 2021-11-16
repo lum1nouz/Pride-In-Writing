@@ -48,7 +48,7 @@ class Authors extends React.Component<props, state> {
         value: ""
       },
       perPage: 15,
-      page: 0,
+      page: 1,
       search: "" 
     };
   }
@@ -116,7 +116,11 @@ class Authors extends React.Component<props, state> {
       filterString = "&" + this.state.curFilter.category + "=" + this.state.curFilter.value
     }
     if(this.state.curSort.category !== "") {
-      sortString = "&sort_by=" +this.state.curSort.category + "&direction=" + this.state.curSort.value
+      let directionField = "&direction=" + this.state.curSort.value
+      if(this.state.curSort.value === "ascend") {
+        directionField = ""
+      }
+      sortString = "&sort_by=" +this.state.curSort.category + directionField
     }
     if(str !== "") {
       filterString = ""
