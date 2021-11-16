@@ -171,7 +171,7 @@ def getBooks():
     search = request.args.get('search')
 
     rating = request.args.get('rating')
-    genres = request.args.get('genre').lower()
+    genres = request.args.get('genre')
     year_published = request.args.get('year')
     author = request.args.get('author')
 
@@ -179,6 +179,7 @@ def getBooks():
     if rating is not None:
         all_books = all_books.filter(Book.avg_rating == rating)
     if genres is not None:
+        genres = genres.lower()
         all_books = all_books.filter(Book.genres == genres)
     if year_published is not None:
         all_books = all_books.filter(Book.year == year_published)
