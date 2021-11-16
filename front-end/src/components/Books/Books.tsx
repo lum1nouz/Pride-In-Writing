@@ -218,7 +218,7 @@ function Books(props: props) {
                    <Grid item xs={4}>
                     <div style={{margin: 10}}>
                       <h4>Title</h4>
-                      <Button onClick={() => changeSort(0)} variant = "outlined"> Sort </Button>
+                      <Button id={"nameSort"} onClick={() => changeSort(0)} variant = "outlined"> Sort </Button>
                       <TextField label = "Filter by Title" variant = "outlined" onChange = {(e) => handleFilterChange("name", e)} onKeyPress = {(e) => handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>

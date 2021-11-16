@@ -275,7 +275,7 @@ class Authors extends React.Component<props, state> {
                    <Grid item xs={4}>
                     <div style={{margin: 10}}>
                       <h4>Name</h4>
-                      <Button onClick={() => this.changeSort(0)} variant = "outlined"> Sort </Button>
+                      <Button id={"nameSort"} onClick={() => this.changeSort(0)} variant = "outlined"> Sort </Button>
                       <TextField label = "Filter by Name" variant = "outlined" onChange = {(e) => this.handleFilterChange("author_name", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>

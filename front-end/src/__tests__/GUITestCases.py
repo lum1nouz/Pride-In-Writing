@@ -161,6 +161,36 @@ class GUITestCases (unittest.TestCase):
         button = driver.find_elements(By.ID, "linkButton-0")
         button[0].click()
         self.assertEqual(self.driver.current_url, self.URL + "book-0")
+
+    def test10(self):
+        self.temp_URL = self.URL + "Authors"
+        driver = self.driver
+        driver.get(self.temp_URL)
+        driver.implicitly_wait(10)
+        button = driver.find_elements(By.ID, "nameSort")
+        button[0].click()
+        driver.implicitly_wait(10)
+        self.assertEqual(self.driver.current_url, self.URL + "author-FILLIN")
+
+    def test11(self):
+        self.temp_URL = self.URL + "Books"
+        driver = self.driver
+        driver.get(self.temp_URL)
+        driver.implicitly_wait(10)
+        button = driver.find_elements(By.ID, "nameSort")
+        button[0].click()
+        driver.implicitly_wait(10)
+        self.assertEqual(self.driver.current_url, self.URL + "author-FILLIN")
+
+    def test11(self):
+        self.temp_URL = self.URL + "Publishers"
+        driver = self.driver
+        driver.get(self.temp_URL)
+        driver.implicitly_wait(10)
+        button = driver.find_elements(By.ID, "nameSort")
+        button[0].click()
+        driver.implicitly_wait(10)
+        self.assertEqual(self.driver.current_url, self.URL + "author-FILLIN")
     
     
 
