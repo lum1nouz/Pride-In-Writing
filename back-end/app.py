@@ -126,13 +126,13 @@ def getAuthors():
     # Page = Current Page Number
     # Per Page = How many per page
     if page != -1:
-        per_page_param = request.args.get('per_page')
-        per_page = 20
+        per_page_param = request.args.get('perPage')
         if per_page_param is not None:
             per_page = int(per_page_param)
-
-        authors = all_authors.paginate(page=page, per_page=per_page)
-        result = authors_schema.dump(authors.items)
+            authors = all_authors.paginate(page=page, per_page=per_page)
+            result = authors_schema.dump(authors.items)
+        else:
+            result = authors_schema.dump(all_authors)
     else:
         result = authors_schema.dump(all_authors)
 
