@@ -8,6 +8,9 @@ from init import init_db
 import flask_marshmallow as ma
 from dotenv import load_dotenv
 from models import *
+from AuthorSSF import *
+from BookSSF import *
+from PublisherSSF import *
 
 
 class AuthorSchema(ma.Schema):
@@ -77,32 +80,64 @@ def hello_world():
 
 @app.route("/api/authors", methods=["GET"])
 def getAuthors():
-    all_authors = Author.query.all()
+    all_authors = db.session.query(Author)
+
+    # Pagination
+    page = request.args.get('page')
+    if page == None:
+        page = 1
+    else:
+        page = int(page)
 
     # Query Params
-    sort_by = request.args.get('sort_by').lower()
-    order = request.args.get('direction').lower()
+    sort_by = request.args.get('sort_by')
+    order = request.args.get('direction')
+    search = request.args.get('search')
 
     nationality = request.args.get('nationality')
-    genre = request.args.get('genre').lower()
+    genre = request.args.get('genre')
     year_born = request.args.get('year_born')
 
-    # Filter 
+    # # Filter 
     if nationality is not None:
+        # TODO: Need to change database to be all lower cased
+        nationality = nationality.lower()
         all_authors = all_authors.filter(Author.nationality == nationality)
     if genre is not None:
+        genre = genre.lower()
         all_authors = all_authors.filter(Author.genre == genre)
     if year_born is not None:
         all_authors = all_authors.filter(Author.year_born == year_born)
 
-    # Sort
-    if sort_by is not None:
-        if order == 'descend':
+    # # Sort
+    if sort_by is not None and order is not None:
+        sort_by = sort_by.lower()
+        order = order.lower()
+        if order == 'ascend':
+            all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
+        else:
             all_authors = all_authors.order_by(getattr(Author, sort_by).desc())
         else:
             all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
 
-    result = authors_schema.dump(all_authors)
+    # Search
+    if search is not None:
+        search = search.lower()
+        all_authors = search_authors(search, all_authors)
+
+    # Page = Current Page Number
+    # Per Page = How many per page
+    if page != -1:
+        per_page_param = request.args.get('perPage')
+        if per_page_param is not None:
+            per_page = int(per_page_param)
+            authors = all_authors.paginate(page=page, per_page=per_page)
+            result = authors_schema.dump(authors.items)
+        else:
+            result = authors_schema.dump(all_authors)
+    else:
+        result = authors_schema.dump(all_authors)
+
     return authors_schema.jsonify(result)
 
 @app.route("/api/authors/id=<id>", methods=["GET"])
@@ -123,11 +158,19 @@ def get_author_ids(ids):
 
 @app.route("/api/books", methods=["GET"])
 def getBooks():
-    all_books = Book.query.all()
+    all_books = db.session.query(Book)
+
+    # Pagination
+    page = request.args.get('page')
+    if page == None:
+        page = 1
+    else:
+        page = int(page)
 
     # Query Params
-    sort_by = request.args.get('sort_by').lower()
-    order = request.args.get('direction').lower()
+    sort_by = request.args.get('sort_by')
+    order = request.args.get('direction')
+    search = request.args.get('search')
 
     rating = request.args.get('rating')
     genres = request.args.get('genre').lower()
@@ -145,13 +188,34 @@ def getBooks():
         all_books = all_books.filter(Book.authors == author)
 
     # Sort
-    if sort_by is not None:
-        if order == 'descend':
+    if sort_by is not None and order is not None:
+        sort_by = sort_by.lower()
+        order = order.lower()
+        if order == 'ascend':
+            all_books = all_books.order_by(getattr(Book, sort_by).asc())
+        else:
             all_books = all_books.order_by(getattr(Book, sort_by).desc())
         else:
             all_books = all_books.order_by(getattr(Book, sort_by).asc())
 
-    result = books_schema.dump(all_books)
+    # Search
+    if search is not None:
+        search = search.lower()
+        all_books = search_books(search, all_books)
+
+    # Page = Current Page Number
+    # Per Page = How many per page
+    if page != -1:
+        per_page_param = request.args.get('per_page')
+        if per_page_param is not None:
+            per_page = int(per_page_param)
+            books = all_books.paginate(page=page, per_page=per_page)
+            result = books_schema.dump(books.items)
+        else:
+            result = books_schema.dump(all_books)
+    else:
+        result = books_schema.dump(all_books)
+
     return books_schema.jsonify(result)
 
 
@@ -173,11 +237,19 @@ def get_book_ids(ids):
 
 @app.route("/api/publishers", methods=["GET"])
 def getPublishers():
-    all_publishers = Publisher.query.all()
+    all_publishers = db.session.query(Publisher)
+
+    # Pagination
+    page = request.args.get('page')
+    if page == None:
+        page = 1
+    else:
+        page = int(page)
 
     # Query Params
-    sort_by = request.args.get('sort_by').lower()
-    order = request.args.get('direction').lower()
+    sort_by = request.args.get('sort_by')
+    order = request.args.get('direction')
+    search = request.args.get('search')
 
     origin = request.args.get('origin')
     pub_type = request.args.get('pub_type')
@@ -192,13 +264,34 @@ def getPublishers():
         all_publishers = all_publishers.filter(Publisher.founded == founded)
 
     # Sort
-    if sort_by is not None:
-        if order == 'descend':
+    if sort_by is not None and order is not None:
+        sort_by = sort_by.lower()
+        order = order.lower()
+        if order == 'ascend':
+            all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).asc())
+        else:
             all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).desc())
         else:
             all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).asc())
 
-    result = publishers_schema.dump(all_publishers)
+    # Search
+    if search is not None:
+        search = search.lower()
+        all_publishers = search_publishers(search, all_publishers)
+
+    # Page = Current Page Number
+    # Per Page = How many per page
+    if page != -1:
+        per_page_param = request.args.get('per_page')
+        if per_page_param is not None:
+            per_page = int(per_page_param)
+            publishers = all_publishers.paginate(page=page, per_page=per_page)
+            result = publishers_schema.dump(publishers.items)
+        else:
+            result = publishers_schema.dump(all_publishers)
+    else:
+        result = publishers_schema.dump(all_publishers)
+
     return publishers_schema.jsonify(result)
 
 @app.route("/api/publishers/id=<id>", methods=["GET"])
