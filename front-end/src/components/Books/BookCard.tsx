@@ -26,8 +26,12 @@ function BookCard({ book, search }: { book: Book, search: string }) {
           />
         }
       >
-        <Card.Meta title={book.name} />
+        <Card.Meta title={<Highlighter 
+        searchWords={search.split(" ")}
+        textToHighlight= {book.name} 
+        /> } />
         <div className="cardStatsSection">
+          <div> </div>
           <div>{<Highlighter
 								// highlightClassName={styles.searchHighlight}
 								searchWords={search.split(" ")}
