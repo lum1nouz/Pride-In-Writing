@@ -8,84 +8,13 @@ import { Route, Switch } from "react-router-dom";
 import AuthorsInstance from "./components/Authors/AuthorsInstance";
 import Author from "./models/author-model";
 import Book from "./models/book-model";
+import SearchPage from "./components/Search/SearchPage";
 import Publisher from "./models/publisher-model";
 import { useState, useEffect } from "react";
 import BookInstance from "./components/Books/BookInstance";
 import PublisherInstance from "./components/Publishers/PublisherInstance";
 import {stringToIntegerList} from "./common";
 import { render } from "react-dom";
-
-// const authData2: Author[] = [
-//   {
-//     author_id: 0,
-//     author_name: "test",
-//     author_tour: "false",
-//     author_summary: undefined,
-//     author_image:
-//       "https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/72509",
-//     year_born: "2022",
-//     nationality: "None",
-//     genre: "testGenre",
-//     noteable_works: "testNw",
-//     book_connections: "20,25",
-//     publisher_connections: "30,35",
-//   },
-//   {
-//     author_id: 1,
-//     author_name: "test2",
-//     author_tour: "false",
-//     author_summary: undefined,
-//     author_image:
-//       "https://api.penguinrandomhouse.com/title/client/Public/domains/PRH.US/authors/72509",
-//     year_born: "2022",
-//     nationality: "None",
-//     genre: "testGenre",
-//     noteable_works: "testNw",
-//     book_connections: "20,25",
-//     publisher_connections: "30,35",
-//   },
-// ];
-
-// const bookData2: Book[] = [
-//   {
-//     book_id: 0,
-//     name: "Killer Bee",
-//     genre: "Books",
-//     publisher: "Publishing Co",
-//     year: "1995",
-//     page_count: 1432,
-//     price: 6.99,
-//     avg_rating: 4.5,
-//     maturity_rating: "MATURE",
-//     description: "This is a fantastic book",
-//     image:
-//       "http://books.google.com/books/content?id=PN5hAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api,%5B",
-//     authors: ["Margaret", "Amy", "Donald"],
-//     author_connections: "10,15",
-//     publisher_connections: "15,20",
-//   },
-// ];
-
-// const publData2: Publisher[] = [
-//   {
-//     publisher_id: 0,
-//     name: "123Books!!!",
-//     summary: "hahaha",
-//     image: "https://upload.wikimedia.org/wikipedia/en/3/32/Atria_logo.png",
-//     origin: "texas",
-//     publication_types: "Books",
-//     founded: "1993",
-//     parent_comp: "ABC",
-//     headquarters: "DEF",
-//     website: "http://www.simonandschusterpublishing.com/atria/index.html",
-//     author_connections: "15,20",
-//     book_connections: "25, 30",
-//   },
-// ];
-
-type autResponse = {
-  authors: Author[];
-};
 
 function createAuthor(a: Author) {
   return (
@@ -224,6 +153,7 @@ function App() {
       {/* <Switch /> */}
       <Route data-testid= "4444" exact path="/" component={HomePage} />
       <Route exact path="/AboutUs" component={AboutUs} />
+      <Route exact path="/SearchPage" component={SearchPage} />
       <Route exact path="/Books" render={(x) =>  <Books dataLen={bookDataList.length}/> } />
       <Route exact path="/Publishers" render={(x) =>  <Publishers dataLen={publDataList.length}/> } />
       <Route exact path="/Authors" render={(x) =>  <Authors dataLen={authDataList.length}/> }  />

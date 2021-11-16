@@ -274,7 +274,7 @@ function Books(props: props) {
               <div>
                 <div className={css.cardGrid}>
                   {bookData.slice((page - 1) * 9, page * 9).map((book) => (
-                    <BookCard book={book} />
+                    <BookCard book={book} search={search} />
                   ))}
                 </div>
                 <div

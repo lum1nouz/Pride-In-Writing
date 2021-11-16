@@ -2,10 +2,11 @@ import React from "react";
 import { Card } from "antd";
 import css from "./Books.module.css";
 import Book from "../../models/book-model";
+import Highlighter from "react-highlight-words";
 import 'antd/dist/antd.css';
 import Rating from '@mui/material/Rating';
 
-function BookCard({ book }: { book: Book }) {
+function BookCard({ book, search }: { book: Book, search: string }) {
   return (
     <a href={"/book-" + book.book_id}>
       <Card
@@ -27,11 +28,30 @@ function BookCard({ book }: { book: Book }) {
       >
         <Card.Meta title={book.name} />
         <div className="cardStatsSection">
-          <div>Genre: {book.genre}</div>
-          <div>Year Published: {book.year}</div>
-          <div>Rating: <Rating name="read-only" value={book.avg_rating} readOnly /></div>
-          <div>Price: {book.price}</div>
-          <div>Page Count: {book.page_count}</div>
+          <div>Genre: {<Highlighter
+								// highlightClassName={styles.searchHighlight}
+								searchWords={search.split(" ")}
+								textToHighlight={book.genre}
+							/>
+          } </div>
+          <div>Year Published: {<Highlighter
+								// highlightClassName={styles.searchHighlight}
+								searchWords={search.split(" ")}
+								textToHighlight={book.year}
+							/> }
+          </div>
+          <div>Rating: <Rating name="read-only" value={book.avg_rating} readOnly /> </div>
+          <div>Price: {<Highlighter
+								// highlightClassName={styles.searchHighlight}
+								searchWords={search.split(" ")}
+								textToHighlight={book.price + ""}
+							/> } 
+          </div>
+          <div>Page Count: {<Highlighter
+								// highlightClassName={styles.searchHighlight}
+								searchWords={search.split(" ")}
+								textToHighlight={book.page_count + ""}
+							/> } </div>
         </div>
       </Card>
     </a>
