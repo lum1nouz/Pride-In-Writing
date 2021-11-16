@@ -117,8 +117,6 @@ def getAuthors():
             all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
         else:
             all_authors = all_authors.order_by(getattr(Author, sort_by).desc())
-        else:
-            all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
 
     # Search
     if search is not None:
@@ -195,8 +193,6 @@ def getBooks():
             all_books = all_books.order_by(getattr(Book, sort_by).asc())
         else:
             all_books = all_books.order_by(getattr(Book, sort_by).desc())
-        else:
-            all_books = all_books.order_by(getattr(Book, sort_by).asc())
 
     # Search
     if search is not None:
@@ -271,8 +267,6 @@ def getPublishers():
             all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).asc())
         else:
             all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).desc())
-        else:
-            all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).asc())
 
     # Search
     if search is not None:
