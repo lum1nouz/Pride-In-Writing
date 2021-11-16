@@ -5,45 +5,9 @@ import { Pagination } from "@mui/material";
 import css from "./Authors.module.css";
 import { Parallax } from "react-parallax";
 import * as Bootstrap from "react-bootstrap";
-import MaterialTable from "material-table";
 import Author from "../../models/author-model";
-import {stringToIntegerList, tableIcons} from "../../common";
-import { TablePagination } from "@material-ui/core";
+import {stringToIntegerList} from "../../common";
 import { TextField, Select, MenuItem, SelectChangeEvent } from "@mui/material";
-
-type rowdata = {
-  author: ReactElement;
-  yearBorn: string | undefined;
-  nationality: string;
-  genres: string;
-  onTour: string;
-  books_published: number | undefined;
-  id: number;
-};
-
-// function mapData(data: Author[]) {
-//   let newData: rowdata[] = [];
-//   data.forEach(function (data) {
-//     newData.push({
-//       author: (
-//         <a
-//           id={"linkButton-" + data.author_id}
-//           href={"/author-" + data.author_id}
-//         >
-//           {" "}
-//           {data.author_name}{" "}
-//         </a>
-//       ),
-//       yearBorn: data.year_born,
-//       nationality: data.nationality,
-//       books_published: stringToIntegerList(data.book_connections).length,
-//       onTour: data.author_tour,
-//       genres: data.genre,
-//       id: data.author_id,
-//     });
-//   });
-//   return newData;
-// }
 
 type filter = {
   category: string;
@@ -127,22 +91,21 @@ class Authors extends React.Component<props, state> {
   };
 
   async componentDidMount() {
+    let pageNum: number = 1
+    pageNum = parseInt(localStorage.getItem('pageNum') as string)
+    if (pageNum === null) {
+      pageNum = 1
+    }
+    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: pageNum });
     this.setState({ dataStore: await this.getData(), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
   }
 
-  // highlightSearchTerms = (term, node) => {
-  //   let instance = new Mark(node);
-  //   instance.mark(term, {
-  //     separateWordSearch: true,
-  //     accuracy: "exactly"
-  //   });
-  // };
-
   //Beware of using
   //State changes often with sorting/filtering
-  // componentDidUpdate() {
-  //   console.log(this.state)
-  // }
+  componentDidUpdate() {
+    // console.log(this.state)
+    localStorage.setItem('pageNum', JSON.stringify(this.state.page))
+  }
 
   //Used to build API request
   createApiString(str: string) {

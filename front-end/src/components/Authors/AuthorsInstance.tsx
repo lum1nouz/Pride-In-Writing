@@ -52,9 +52,8 @@ class AuthorsInstance extends React.Component<props, state> {
 
   async getPublisherConnections() {
     let tempData: Publisher[] = [];
-    for (let num of this.props.publisher_connections) {
-      tempData.push(
-        await fetch("https://api.prideinwriting.me/api/publishers/id=" + num)
+      tempData = (
+        await fetch("https://api.prideinwriting.me/api/publishers/ids=" + this.props.publisher_connections.toString())
           .then((response) => {
             return response.json();
           })
@@ -63,15 +62,14 @@ class AuthorsInstance extends React.Component<props, state> {
             return {};
           })
       );
-    }
+
     return tempData.filter(item => Object.keys(item).length);
   }
 
   async getBookConnections() {
     let tempData: Book[] = [];
-    for (let num of this.props.book_connections) {
-      tempData.push(
-        await fetch("https://api.prideinwriting.me/api/books/id=" + num)
+      tempData = (
+        await fetch("https://api.prideinwriting.me/api/books/ids=" + this.props.book_connections.toString())
           .then((response) => {
             return response.json();
           })
@@ -80,7 +78,7 @@ class AuthorsInstance extends React.Component<props, state> {
             return {};
           })
       );
-    }
+
     return tempData.filter(item => Object.keys(item).length);
   }
 

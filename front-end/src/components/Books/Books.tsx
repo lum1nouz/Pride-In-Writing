@@ -27,7 +27,7 @@ type props = {
 
 function Books(props: props) {
   const [bookData, setBookData] = useState<Book[]>([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState( !!parseInt(localStorage.getItem('pageNum') as string) ? parseInt(localStorage.getItem('pageNum') as string) : 1);
   const [oldPage, setOldPage] = useState(0);
   const [curFilter, setCurFilter] = useState<filter>({category: "", value: ""})
   const [curSort, setCurSort] = useState<sort>({category: "", value: ""})
@@ -35,12 +35,6 @@ function Books(props: props) {
   const perPage = 9
 
   useEffect(() => {
-    console.log(page)
-    console.log(oldPage)
-    console.log(curFilter)
-    console.log(curSort)
-    console.log(search)
-
 
     const getBooks = async () => {
       setBookData(await getData());
@@ -49,6 +43,8 @@ function Books(props: props) {
     const getBooksSearch = async () => {
     setBookData(await getDataForSearch(search));
     };
+
+    localStorage.setItem('pageNum', JSON.stringify(page))
 
     //Page change triggers data fetch
     if(oldPage !== page) {

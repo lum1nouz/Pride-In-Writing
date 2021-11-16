@@ -2,6 +2,8 @@ import React, { ReactElement } from "react";
 import { Paper, Button, Grid, TextField } from "@material-ui/core";
 import {  Select, MenuItem, SelectChangeEvent } from "@mui/material";
 import { TablePagination } from "@material-ui/core";
+import { Pagination } from "@mui/material";
+import * as Bootstrap from "react-bootstrap";
 import Header from "../Header/Header";
 import css from "./Publishers.module.css";
 import { Parallax } from "react-parallax";
@@ -56,7 +58,7 @@ type props = {
 };
 
 type state = {
-  dataStore: rowdata[];
+  dataStore: Publisher[];
   curFilter: filter;
   curSort: sort;
   perPage: number;
@@ -85,8 +87,56 @@ class Publishers extends React.Component<props, state> {
   }
 
   async componentDidMount() {
-    this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
+    let pageNum: number = 1
+    pageNum = parseInt(localStorage.getItem('pageNum') as string)
+    if (pageNum === null) {
+      pageNum = 1
+    }
+    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: pageNum });
+    this.setState({ dataStore: await this.getData(), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
   }
+
+  //Beware of using
+  //State changes often with sorting/filtering
+  componentDidUpdate() {
+    // console.log(this.state)
+    localStorage.setItem('pageNum', JSON.stringify(this.state.page))
+  }
+
+  mapData = (row: Publisher) => {
+    const data = row;
+    let authPublished = stringToIntegerList(data.author_connections).length
+    return (
+      <tr key={data.publisher_id}>
+        <td>
+          <a href={"/publisher-" + data.publisher_id}>
+            {this.highlightText(data.name)}
+          </a>
+        </td>
+        <td> {this.highlightText(data.origin + "")}</td>
+        <td> {this.highlightText(data.publication_types)}</td>
+        <td> {this.highlightText(authPublished.toString())}</td>
+        <td> {this.highlightText(data.founded)}</td>
+      </tr>
+    );
+  }
+
+  highlightText(text: string) {
+    const searchQuery = this.state.search.toLowerCase() ?? "";
+    const parts = text.split(new RegExp(`(${searchQuery})`, "gi"));
+  
+    return (
+      <span>
+        {parts.map((part) =>
+          part.toLowerCase() === searchQuery ? (
+            <text style={{ backgroundColor: "yellow" }}>{part}</text>
+          ) : (
+            part
+          )
+        )}
+      </span>
+    );
+  };
 
   //Calls API 
   async getData() {
@@ -193,7 +243,7 @@ class Publishers extends React.Component<props, state> {
 
   //Handles the submit button for updating the data
   async handleSubmit(){
-    this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
+    this.setState({ dataStore: await this.getData(), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
 
   //Used by search Text field
@@ -204,7 +254,7 @@ class Publishers extends React.Component<props, state> {
 
   //Calls API search
   async handleSearch() {
-    this.setState({ dataStore: mapData(await this.getDataForSearch(this.state.search)), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
+    this.setState({ dataStore: await this.getDataForSearch(this.state.search), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
 
   render() {
@@ -304,7 +354,7 @@ class Publishers extends React.Component<props, state> {
                   </Grid>
                 </Grid>
 
-                <MaterialTable
+                {/* <MaterialTable
                   icons={tableIcons}
                   style={{ marginTop: 50, marginLeft: 20, marginRight: 20 }}
                   options={{
@@ -369,7 +419,73 @@ class Publishers extends React.Component<props, state> {
                           />
                         ),
                               }}
-                />
+                /> */}
+
+                        <h2 className="header">Publishers</h2>
+                                  <div>
+                                        <div
+                                          style={{
+                                            display: "flex",
+                                            justifyContent: "flex-end",
+                                            paddingRight: "5%",
+                                          }}
+                                        >
+                                          {this.highlightText(
+                                            `Displaying ${
+                                              this.props.dataLen > 0 ? (this.state.page - 1) * 10 + 1 : 0
+                                            }-${Math.min(
+                                              this.state.page * 10,
+                                              this.props.dataLen
+                                            )} of ${this.props.dataLen}`
+                                          )}
+                                        </div>
+                                        <Bootstrap.Table
+                                          table-bordered
+                                          style={{ width: "90%", marginLeft: "5%" }}
+                                        >
+                                          <thead>
+                                            <tr>
+                                              <th scope="col">{this.highlightText("Publisher")}</th>
+                                              <th scope="col">{this.highlightText("Country of Origin")}</th>
+                                              <th scope="col">{this.highlightText("Publication Types")}</th>
+                                              <th scope="col">{this.highlightText("Authors Published")}</th>
+                                              <th scope="col">{this.highlightText("Year Founded")}</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            {/* {Object.keys(this.state.dataStore).map(this.mapData)} */}
+                                            {this.state.dataStore.map(this.mapData)}
+                                          </tbody>
+                                        </Bootstrap.Table>
+                                    </div>
+
+                          <Pagination
+                            defaultPage={1}
+                            page={this.state.page}
+                            onChange={(_, value) => {
+                              this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: value, search: this.state.search})
+                              if(this.state.search === ""){
+                                this.handleSubmit()
+                               } else{
+                                this.handleSearch()
+                               }
+                            }}
+                            count={Math.ceil(this.props.dataLen / this.state.perPage)}
+                            variant="outlined"
+                            color="primary"
+                            showFirstButton
+                            showLastButton
+                            style={{
+                              paddingTop: "10pt",
+                              paddingRight: "5%",
+                              display: "flex",
+                              justifyContent: "flex-end",
+                            }}
+                          />
+
+
+
+
                 </div>
               </Paper>
             </div>
