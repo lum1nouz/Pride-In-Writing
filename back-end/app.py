@@ -90,28 +90,33 @@ def getAuthors():
         page = int(page)
 
     # Query Params
-    sort_by = request.args.get('sort_by').lower()
-    order = request.args.get('direction').lower()
-    search = request.args.get('search').lower()
+    sort_by = request.args.get('sort_by')
+    order = request.args.get('direction')
+    search = request.args.get('search')
 
-    nationality = request.args.get('nationality').lower()
-    genre = request.args.get('genre').lower()
+    nationality = request.args.get('nationality')
+    genre = request.args.get('genre')
     year_born = request.args.get('year_born')
-    name = request.args.get('name').lower()
+    name = request.args.get('name')
 
     # # Filter 
     if nationality is not None:
         # TODO: Need to change database to be all lower cased
-        all_authors = all_authors.filter(Author.nationality == nationality)
+        nationality = nationality.lower()
+        all_authors = all_authors.filter(Author.nationality.contains(nationality))
     if genre is not None:
-        all_authors = all_authors.filter(Author.genre == genre)
+        genre = genre.lower()
+        all_authors = all_authors.filter(Author.genre.contains(genre))
     if year_born is not None:
-        all_authors = all_authors.filter(Author.year_born == year_born)
+        all_authors = all_authors.filter(Author.year_born.contains(year_born))
     if name is not None:
-        all_authors = all_authors.filter(Author.author_name == name)
+        name = name.lower()
+        all_authors = all_authors.filter(Author.author_name.contains(name))
 
     # # Sort
     if sort_by is not None and order is not None:
+        sort_by = sort_by.lower()
+        order = order.lower()
         if order == 'ascend':
             all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
         else:
@@ -119,6 +124,7 @@ def getAuthors():
 
     # Search
     if search is not None:
+        search = search.lower()
         all_authors = search_authors(search, all_authors)
 
     # Page = Current Page Number
@@ -164,14 +170,14 @@ def getBooks():
         page = int(page)
 
     # Query Params
-    sort_by = request.args.get('sort_by').lower()
-    order = request.args.get('direction').lower()
-    search = request.args.get('search').lower()
+    sort_by = request.args.get('sort_by')
+    order = request.args.get('direction')
+    search = request.args.get('search')
 
     rating = request.args.get('rating')
-    genres = request.args.get('genre').lower()
+    genres = request.args.get('genre')
     year_published = request.args.get('year')
-    author = request.args.get('author').lower()
+    author = request.args.get('author')
     price = request.args.get('price')
     page_count = request.args.get('page_count')
 
@@ -180,11 +186,12 @@ def getBooks():
         all_books = all_books.filter(Book.avg_rating == rating)
     if genres is not None:
         genres = genres.lower()
-        all_books = all_books.filter(Book.genres == genres)
+        all_books = all_books.filter(Book.genres.contains(genres))
     if year_published is not None:
-        all_books = all_books.filter(Book.year == year_published)
+        all_books = all_books.filter(Book.year.contains(year_published))
     if author is not None:
-        all_books = all_books.filter(Book.authors == author)
+        author = author.lower()
+        all_books = all_books.filter(Book.authors.contains(author))
     if price is not None:
         all_books = all_books.filter(Book.price == price)
     if page_count is not None:
@@ -192,6 +199,8 @@ def getBooks():
 
     # Sort
     if sort_by is not None and order is not None:
+        sort_by = sort_by.lower()
+        order = order.lower()
         if order == 'ascend':
             all_books = all_books.order_by(getattr(Book, sort_by).asc())
         else:
@@ -199,6 +208,7 @@ def getBooks():
 
     # Search
     if search is not None:
+        search = search.lower()
         all_books = search_books(search, all_books)
 
     # Page = Current Page Number
@@ -245,24 +255,28 @@ def getPublishers():
         page = int(page)
 
     # Query Params
-    sort_by = request.args.get('sort_by').lower()
-    order = request.args.get('direction').lower()
-    search = request.args.get('search').lower()
+    sort_by = request.args.get('sort_by')
+    order = request.args.get('direction')
+    search = request.args.get('search')
 
-    origin = request.args.get('origin').lower()
-    pub_type = request.args.get('pub_type').lower()
+    origin = request.args.get('origin')
+    pub_type = request.args.get('pub_type')
     founded = request.args.get('founded')
 
     # Filter
     if origin is not None:
+        origin = origin.lower()
         all_publishers = all_publishers.filter(Publisher.origin == origin)
     if pub_type is not None:
-        all_publishers = all_publishers.filter(Publisher.publication_types == pub_type)
+        pub_type = pub_type.lower()
+        all_publishers = all_publishers.filter(Publisher.publication_types.contains(pub_type))
     if founded is not None:
-        all_publishers = all_publishers.filter(Publisher.founded == founded)
+        all_publishers = all_publishers.filter(Publisher.founded.contains(founded))
 
     # Sort
     if sort_by is not None and order is not None:
+        sort_by = sort_by.lower()
+        order = order.lower()
         if order == 'ascend':
             all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).asc())
         else:
@@ -270,6 +284,7 @@ def getPublishers():
 
     # Search
     if search is not None:
+        search = search.lower()
         all_publishers = search_publishers(search, all_publishers)
 
     # Page = Current Page Number

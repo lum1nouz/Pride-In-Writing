@@ -157,7 +157,7 @@ class Publishers extends React.Component<props, state> {
     let filterString = ""
     let sortString = ""
     let searchString = ""
-    if(this.state.curFilter.category !== "") {
+    if(this.state.curFilter.category !== "" && this.state.curFilter.value !== "") {
       filterString = "&" + this.state.curFilter.category + "=" + this.state.curFilter.value
     }
     if(this.state.curSort.category !== "") {
@@ -193,7 +193,7 @@ class Publishers extends React.Component<props, state> {
   //First click sets to "desc" or descending order
   //Second click sets to "asc" or ascending order 
   changeSort(col: number){
-    let lookup = ["name", "country", "types", "authorsPublished", "founded"]
+    let lookup = ["name", "origin", "publication_types", "author_connections", "founded"]
     let tempCategory = lookup[col]
     let tempValue = "descend"
     let check = this.state.curSort.value
@@ -305,7 +305,7 @@ class Publishers extends React.Component<props, state> {
                    <Grid item xs={4}>
                     <div style={{margin: 10}}>
                       <h4>Publishers</h4>
-                      <Button onClick={() => this.changeSort(0)} variant = "outlined"> Sort </Button>
+                      <Button id={"nameSort"} onClick={() => this.changeSort(0)} variant = "outlined"> Sort </Button>
                       <TextField label = "Filter by Name" variant = "outlined" onChange = {(e) => this.handleFilterChange("name", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>
@@ -313,7 +313,7 @@ class Publishers extends React.Component<props, state> {
                     <div style={{margin: 10}}>
                       <h4>Country of Origin</h4>
                       <Button onClick={() => this.changeSort(1)} variant="outlined"> Sort </Button>
-                      <TextField label = "Filter by Country" variant = "outlined" onChange = {(e) => this.handleFilterChange("country", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                      <TextField label = "Filter by Country" variant = "outlined" onChange = {(e) => this.handleFilterChange("origin", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>
                     <Grid item xs={4}>
@@ -323,10 +323,13 @@ class Publishers extends React.Component<props, state> {
                       <Select
                             value="none"
                             label="Age"
-                            onChange={(e) => this.handleSelectFilter(e, "types")}
+                            onChange={(e) => this.handleSelectFilter(e, "publication_types")}
                           >
                       <MenuItem value={"books"}>Books</MenuItem>
                       <MenuItem value={"textbooks"}>Textbooks</MenuItem>
+                      <MenuItem value={"magazine"}>Magazine</MenuItem>
+                      <MenuItem value={"academic"}>Academic Resources</MenuItem>
+                      <MenuItem value={"journals"}>Journals</MenuItem>
                       <MenuItem value={"none"}>Pick an option</MenuItem>
                     </Select>
                     </div>
@@ -335,7 +338,7 @@ class Publishers extends React.Component<props, state> {
                     <div style={{margin: 10}}>
                       <h4>Authors Published</h4>
                       <Button onClick={() => this.changeSort(3)} variant="outlined"> Sort </Button>
-                      <TextField label = "Filter by Authors Published" variant = "outlined" onChange = {(e) => this.handleFilterChange("authorsPublished", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                      <TextField label = "Filter by Authors Published" variant = "outlined" onChange = {(e) => this.handleFilterChange("author_connections", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>
                     <Grid item xs={4}>
