@@ -1,0 +1,27 @@
+/* Code inspired from https://gitlab.com/mehuldar/aroundtheworld/-/blob/splash-search/front-end/src/screens/Search/Search.css \
+    Around The World */
+
+.mainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 200px;
+    margin-left: 100px;
+    margin-right: 100px;
+  }
+  
+  .header {
+    font-weight: bold;
+    padding-top: 40px;
+    text-align: center;
+  }
+  
+  .cardGrid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: auto auto auto;
+    gap: 60px;
+    padding: 30px;
+    margin-top: 15px;
+  }
+  
