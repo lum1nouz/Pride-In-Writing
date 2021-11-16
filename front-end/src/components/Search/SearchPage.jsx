@@ -30,7 +30,7 @@ const styles = {
 
 const axios = require("axios");
 
-const SearchPage = ({}) => {
+ export function SearchPage({}, {}) {
   const [authorData, setAuthorData] = useState([]);
   const [bookData, setBookData] = useState([]);
   const [publisherData, setPublisherData] = useState([]);
@@ -201,7 +201,7 @@ const SearchPage = ({}) => {
     <div> 
 {/* all tables */}
     <h2 className="header">Authors</h2>
-          <div>
+       <div>
             <div
               style={{
                 display: "flex",
@@ -236,6 +236,7 @@ const SearchPage = ({}) => {
                 {/* {Object.keys(authorData).map(getAuthors)} */}
               </tbody>
             </Bootstrap.Table>
+        </div>
         <div>
           <h2 className="header">Books</h2>
           <div
@@ -276,6 +277,7 @@ const SearchPage = ({}) => {
             </div> */}
 
           </div>
+        </div>
           <h2 className="header">Publishers</h2>
           <div>
             <div
@@ -327,8 +329,6 @@ const SearchPage = ({}) => {
               }}
             />
         </div>
-          </div>
-        </div>
     </div>
       ) : (
         <Spinner
@@ -343,4 +343,5 @@ const SearchPage = ({}) => {
   );
 };
 
-export default SearchPage;
+export default SearchPage
+

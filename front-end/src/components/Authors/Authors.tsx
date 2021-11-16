@@ -1,9 +1,10 @@
 import React, { ReactElement } from "react";
 import { Paper, Button, Grid } from "@material-ui/core";
 import Header from "../Header/Header";
+import { Pagination } from "@mui/material";
 import css from "./Authors.module.css";
-import hljs from "highlight.js"
 import { Parallax } from "react-parallax";
+import * as Bootstrap from "react-bootstrap";
 import MaterialTable from "material-table";
 import Author from "../../models/author-model";
 import {stringToIntegerList, tableIcons} from "../../common";
@@ -20,29 +21,29 @@ type rowdata = {
   id: number;
 };
 
-function mapData(data: Author[]) {
-  let newData: rowdata[] = [];
-  data.forEach(function (data) {
-    newData.push({
-      author: (
-        <a
-          id={"linkButton-" + data.author_id}
-          href={"/author-" + data.author_id}
-        >
-          {" "}
-          {data.author_name}{" "}
-        </a>
-      ),
-      yearBorn: data.year_born,
-      nationality: data.nationality,
-      books_published: stringToIntegerList(data.book_connections).length,
-      onTour: data.author_tour,
-      genres: data.genre,
-      id: data.author_id,
-    });
-  });
-  return newData;
-}
+// function mapData(data: Author[]) {
+//   let newData: rowdata[] = [];
+//   data.forEach(function (data) {
+//     newData.push({
+//       author: (
+//         <a
+//           id={"linkButton-" + data.author_id}
+//           href={"/author-" + data.author_id}
+//         >
+//           {" "}
+//           {data.author_name}{" "}
+//         </a>
+//       ),
+//       yearBorn: data.year_born,
+//       nationality: data.nationality,
+//       books_published: stringToIntegerList(data.book_connections).length,
+//       onTour: data.author_tour,
+//       genres: data.genre,
+//       id: data.author_id,
+//     });
+//   });
+//   return newData;
+// }
 
 type filter = {
   category: string;
@@ -59,7 +60,7 @@ type props = {
 };
 
 type state = {
-  dataStore: rowdata[];
+  dataStore: Author[];
   curFilter: filter;
   curSort: sort;
   perPage: number;
@@ -88,8 +89,45 @@ class Authors extends React.Component<props, state> {
     };
   }
 
+   mapData = (row: Author) => {
+    const data = row;
+    let booksWritten = stringToIntegerList(data.book_connections).length
+    return (
+      <tr key={data.author_id}>
+        <td>
+          <a href={"/author-" + data.author_id}>
+            {this.highlightText(data.author_name)}
+          </a>
+        </td>
+        <td> {this.highlightText(data.year_born + "")}</td>
+        <td> {this.highlightText(data.nationality)}</td>
+        <td> {this.highlightText(data.genre)}</td>
+        <td> {this.highlightText(data.author_tour)}</td>
+        <td> {this.highlightText(booksWritten.toString())}</td>
+      </tr>
+    );
+  }
+
+
+   highlightText(text: string) {
+    const searchQuery = this.state.search.toLowerCase() ?? "";
+    const parts = text.split(new RegExp(`(${searchQuery})`, "gi"));
+  
+    return (
+      <span>
+        {parts.map((part) =>
+          part.toLowerCase() === searchQuery ? (
+            <text style={{ backgroundColor: "yellow" }}>{part}</text>
+          ) : (
+            part
+          )
+        )}
+      </span>
+    );
+  };
+
   async componentDidMount() {
-    this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
+    this.setState({ dataStore: await this.getData(), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
   }
 
   // highlightSearchTerms = (term, node) => {
@@ -211,36 +249,18 @@ class Authors extends React.Component<props, state> {
 
   //Handles the submit button for updating the data
   async handleSubmit(){
-    this.setState({ dataStore: mapData(await this.getData()), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
+    this.setState({ dataStore: await this.getData(), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
 
   //Used by search Text field
   //Updates state by keystroke for the search entry
   handleSearchText(event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: event.target.value});
-
-    //   document.querySelectorAll('pre code').forEach((el) => {
-    //     console.log(el)
-    //     if( el.textContent?.includes(this.state.search) ) {
-    //       hljs.highlightElement(el as HTMLElement);
-    //     }
-
-    // });
-
-    // var searchedPara = document.querySelector('.search-content');
-    // var words = event.currentTarget.value;
-    // var regex = RegExp(words, 'gi') // case insensitive
-    // var replacement = '<b>'+ words +'</b>';
-    // var newHTML = searchedPara?.textContent?.replace(regex, replacement);
-    // if(searchedPara !== null) {
-    //   searchedPara.innerHTML = newHTML as string;
-    // }
-  
+    this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: event.target.value});  
   }
 
   //Calls API search
   async handleSearch() {
-    this.setState({ dataStore: mapData(await this.getDataForSearch(this.state.search)), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
+    this.setState({ dataStore: await this.getDataForSearch(this.state.search), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page, search: this.state.search});
   }
 
   
@@ -356,7 +376,7 @@ class Authors extends React.Component<props, state> {
                   </Grid>
                 </Grid>
                 
-                <MaterialTable
+                {/* <MaterialTable
                   icons={tableIcons}
                   style={{ marginTop: 40, marginLeft: 20, marginRight: 20 }}
                   options={{
@@ -412,7 +432,72 @@ class Authors extends React.Component<props, state> {
                           />
                         ),
                               }}
-                />
+                /> */}
+
+                            <h2 className="header">Authors</h2>
+                                  <div>
+                                        <div
+                                          style={{
+                                            display: "flex",
+                                            justifyContent: "flex-end",
+                                            paddingRight: "5%",
+                                          }}
+                                        >
+                                          {this.highlightText(
+                                            `Displaying ${
+                                              this.props.dataLen > 0 ? (this.state.page - 1) * 10 + 1 : 0
+                                            }-${Math.min(
+                                              this.state.page * 10,
+                                              this.props.dataLen
+                                            )} of ${this.props.dataLen}`
+                                          )}
+                                        </div>
+                                        <Bootstrap.Table
+                                          table-bordered
+                                          style={{ width: "90%", marginLeft: "5%" }}
+                                        >
+                                          <thead>
+                                            <tr>
+                                              <th scope="col">{this.highlightText("Author")}</th>
+                                              <th scope="col">{this.highlightText("Year Born")}</th>
+                                              <th scope="col">{this.highlightText("Nationality")}</th>
+                                              <th scope="col">{this.highlightText("Genres")}</th>
+                                              <th scope="col">{this.highlightText("On Tour")}</th>
+                                              <th scope="col">{this.highlightText("Books Written")}</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            {/* {Object.keys(this.state.dataStore).map(this.mapData)} */}
+                                            {this.state.dataStore.map(this.mapData)}
+                                          </tbody>
+                                        </Bootstrap.Table>
+                                    </div>
+
+                          <Pagination
+                            defaultPage={1}
+                            page={this.state.page}
+                            onChange={(_, value) => {
+                              this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: value, search: this.state.search})
+                              if(this.state.search === ""){
+                                this.handleSubmit()
+                               } else{
+                                this.handleSearch()
+                               }
+                            }}
+                            count={Math.ceil(this.props.dataLen / this.state.perPage)}
+                            variant="outlined"
+                            color="primary"
+                            showFirstButton
+                            showLastButton
+                            style={{
+                              paddingTop: "10pt",
+                              paddingRight: "5%",
+                              display: "flex",
+                              justifyContent: "flex-end",
+                            }}
+                          />
+
+
                 </div>
               </Paper>
             </div>

@@ -8,9 +8,9 @@ import { Route, Switch } from "react-router-dom";
 import AuthorsInstance from "./components/Authors/AuthorsInstance";
 import Author from "./models/author-model";
 import Book from "./models/book-model";
-import SearchPage from "./components/Search/SearchPage";
+import * as SearchPage from "./components/Search/SearchPage.jsx";
 import Publisher from "./models/publisher-model";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import BookInstance from "./components/Books/BookInstance";
 import PublisherInstance from "./components/Publishers/PublisherInstance";
 import {stringToIntegerList} from "./common";
@@ -153,7 +153,7 @@ function App() {
       {/* <Switch /> */}
       <Route data-testid= "4444" exact path="/" component={HomePage} />
       <Route exact path="/AboutUs" component={AboutUs} />
-      <Route exact path="/SearchPage" component={SearchPage} />
+      <Route exact path="/SearchPage" render={(x) => <SearchPage.SearchPage />} />
       <Route exact path="/Books" render={(x) =>  <Books dataLen={bookDataList.length}/> } />
       <Route exact path="/Publishers" render={(x) =>  <Publishers dataLen={publDataList.length}/> } />
       <Route exact path="/Authors" render={(x) =>  <Authors dataLen={authDataList.length}/> }  />
