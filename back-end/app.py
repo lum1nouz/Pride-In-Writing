@@ -188,12 +188,12 @@ def getBooks():
     # Per Page = How many per page
     if page != -1:
         per_page_param = request.args.get('per_page')
-        per_page = 20
         if per_page_param is not None:
             per_page = int(per_page_param)
-
-        books = all_books.paginate(page=page, per_page=per_page)
-        result = books_schema.dump(books.items)
+            books = all_books.paginate(page=page, per_page=per_page)
+            result = books_schema.dump(books.items)
+        else:
+            result = books_schema.dump(all_books)
     else:
         result = books_schema.dump(all_books)
 
