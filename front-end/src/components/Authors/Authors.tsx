@@ -133,8 +133,7 @@ class Authors extends React.Component<props, state> {
   //Calls API 
   async getData() {
     // console.log("https://api.prideinwriting.me/api/authors" + this.createApiString(""))
-    // const authors = await fetch("https://api.prideinwriting.me/api/authors" + this.createApiString(""))
-    const authors = await fetch("localHost:5000/api/authors" + this.createApiString(""))
+    const authors = await fetch("https://api.prideinwriting.me/api/authors" + this.createApiString(""))
       .then((response) => {
         return response.json();
       })
