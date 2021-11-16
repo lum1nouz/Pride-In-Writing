@@ -64,6 +64,11 @@ books_schema = BookSchema(many=True)
 publisher_schema = PublisherSchema()
 publishers_schema = PublisherSchema(many=True)
 
+def stringToSet(string):
+    a_list = string.split(",")
+    map_object = map(int, a_list)
+    return set(map_object)
+
 @app.route("/")
 def hello_world():
     return '<img src="https://i.kym-cdn.com/photos/images/original/001/211/814/a1c.jpg" alt="cowboy" />'
@@ -78,20 +83,41 @@ def getAuthors():
     sort_by = request.args.get('sort_by').lower()
     order = request.args.get('direction').lower()
 
+    nationality = request.args.get('nationality')
+    genre = request.args.get('genre').lower()
+    year_born = request.args.get('year_born')
+
+    # Filter 
+    if nationality is not None:
+        all_authors = all_authors.filter(Author.nationality == nationality)
+    if genre is not None:
+        all_authors = all_authors.filter(Author.genre == genre)
+    if year_born is not None:
+        all_authors = all_authors.filter(Author.year_born == year_born)
+
     # Sort
     if sort_by is not None:
-        if order == 'ascend':
-            all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
-        else:
+        if order == 'descend':
             all_authors = all_authors.order_by(getattr(Author, sort_by).desc())
+        else:
+            all_authors = all_authors.order_by(getattr(Author, sort_by).asc())
 
     result = authors_schema.dump(all_authors)
     return authors_schema.jsonify(result)
 
 @app.route("/api/authors/id=<id>", methods=["GET"])
-def get_country_id(id):
+def get_author_id(id):
     author = Author.query.get(id)
     return author_schema.jsonify(author)
+
+@app.route("/api/authors/ids=<ids>", methods=["GET"])
+def get_author_ids(ids):
+    idList = stringToSet(ids)
+    for x in idList:
+        print(x)
+    authors = Author.query.filter(Author.author_id.in_(idList)).all()
+    result = authors_schema.dump(authors)
+    return authors_schema.jsonify(result)
 
 # __________ Books __________
 
@@ -103,12 +129,27 @@ def getBooks():
     sort_by = request.args.get('sort_by').lower()
     order = request.args.get('direction').lower()
 
+    rating = request.args.get('rating')
+    genres = request.args.get('genre').lower()
+    year_published = request.args.get('year')
+    author = request.args.get('author')
+
+    # Filter 
+    if rating is not None:
+        all_books = all_books.filter(Book.avg_rating == rating)
+    if genres is not None:
+        all_books = all_books.filter(Book.genres == genres)
+    if year_published is not None:
+        all_books = all_books.filter(Book.year == year_published)
+    if author is not None:
+        all_books = all_books.filter(Book.authors == author)
+
     # Sort
     if sort_by is not None:
-        if order == 'ascend':
-            all_books = all_books.order_by(getattr(Author, sort_by).asc())
+        if order == 'descend':
+            all_books = all_books.order_by(getattr(Book, sort_by).desc())
         else:
-            all_books = all_books.order_by(getattr(Author, sort_by).desc())
+            all_books = all_books.order_by(getattr(Book, sort_by).asc())
 
     result = books_schema.dump(all_books)
     return books_schema.jsonify(result)
@@ -118,6 +159,15 @@ def getBooks():
 def get_book_id(id):
     book = Book.query.get(id)
     return book_schema.jsonify(book)
+
+@app.route("/api/books/ids=<ids>", methods=["GET"])
+def get_book_ids(ids):
+    idList = stringToSet(ids)
+    for x in idList:
+        print(x)
+    books = Book.query.filter(Book.book_id.in_(idList)).all()
+    result = books_schema.dump(books)
+    return books_schema.jsonify(result)
 
 # __________ Publishers __________
 
@@ -129,12 +179,24 @@ def getPublishers():
     sort_by = request.args.get('sort_by').lower()
     order = request.args.get('direction').lower()
 
+    origin = request.args.get('origin')
+    pub_type = request.args.get('pub_type')
+    founded = request.args.get('founded')
+
+    # Filter
+    if origin is not None:
+        all_publishers = all_publishers.filter(Publisher.origin == origin)
+    if pub_type is not None:
+        all_publishers = all_publishers.filter(Publisher.publication_types == pub_type)
+    if founded is not None:
+        all_publishers = all_publishers.filter(Publisher.founded == founded)
+
     # Sort
     if sort_by is not None:
-        if order == 'ascend':
-            all_publishers = all_publishers.order_by(getattr(Author, sort_by).asc())
+        if order == 'descend':
+            all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).desc())
         else:
-            all_publishers = all_publishers.order_by(getattr(Author, sort_by).desc())
+            all_publishers = all_publishers.order_by(getattr(Publisher, sort_by).asc())
 
     result = publishers_schema.dump(all_publishers)
     return publishers_schema.jsonify(result)
@@ -143,6 +205,15 @@ def getPublishers():
 def get_publisher_id(id):
     publisher = Publisher.query.get(id)
     return publisher_schema.jsonify(publisher)
+
+@app.route("/api/publishers/ids=<ids>", methods=["GET"])
+def get_publisher_ids(ids):
+    idList = stringToSet(ids)
+    for x in idList:
+        print(x)
+    publisher = Publisher.query.filter(Publisher.publisher_id.in_(idList)).all()
+    result = publishers_schema.dump(publisher)
+    return publishers_schema.jsonify(result)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
