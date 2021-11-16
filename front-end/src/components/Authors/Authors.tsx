@@ -112,7 +112,7 @@ class Authors extends React.Component<props, state> {
     let filterString = ""
     let sortString = ""
     let searchString = ""
-    if(this.state.curFilter.category !== "") {
+    if(this.state.curFilter.category !== "" && this.state.curFilter.value !== "") {
       filterString = "&" + this.state.curFilter.category + "=" + this.state.curFilter.value
     }
     if(this.state.curSort.category !== "") {
@@ -132,7 +132,9 @@ class Authors extends React.Component<props, state> {
 
   //Calls API 
   async getData() {
-    const authors = await fetch("https://api.prideinwriting.me/api/authors" + this.createApiString(""))
+    // console.log("https://api.prideinwriting.me/api/authors" + this.createApiString(""))
+    // const authors = await fetch("https://api.prideinwriting.me/api/authors" + this.createApiString(""))
+    const authors = await fetch("localHost:5000/api/authors" + this.createApiString(""))
       .then((response) => {
         return response.json();
       })
@@ -281,14 +283,14 @@ class Authors extends React.Component<props, state> {
                     <div style={{margin: 10}}>
                       <h4>Year Born</h4>
                       <Button onClick={() => this.changeSort(1)} variant="outlined"> Sort </Button>
-                      <TextField label = "Filter by Name" variant = "outlined" onChange = {(e) => this.handleFilterChange("yearBorn", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                      <TextField label = "Filter by Year Born" variant = "outlined" onChange = {(e) => this.handleFilterChange("year_born", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>
                     <Grid item xs={4}>
                     <div style={{margin: 10}}>
                       <h4>Nationality</h4>
                       <Button onClick={() => this.changeSort(2)} variant="outlined"> Sort </Button>
-                      <TextField label = "Filter by Name" variant = "outlined" onChange = {(e) => this.handleFilterChange("nationality", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                      <TextField label = "Filter by Nationality" variant = "outlined" onChange = {(e) => this.handleFilterChange("nationality", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>
                     <Grid item xs={4}>
@@ -300,8 +302,11 @@ class Authors extends React.Component<props, state> {
                             label="Age"
                             onChange={(e) => this.handleSelectFilter(e, "genre")}
                           >
-                      <MenuItem value={"true"}>Yes</MenuItem>
-                      <MenuItem value={"false"}>No</MenuItem>
+                      <MenuItem value={"novelist"}>Novelist</MenuItem>
+                      <MenuItem value={"poet"}>Poet</MenuItem>
+                      <MenuItem value={"playwright"}>Playwright</MenuItem>
+                      <MenuItem value={"writer"}>Writer</MenuItem>
+                      <MenuItem value={"short"}>Short Story Writer</MenuItem>
                       <MenuItem value={"none"}>Pick an option</MenuItem>
                     </Select>
                     </div>
@@ -313,7 +318,7 @@ class Authors extends React.Component<props, state> {
                       <Select
                             value="none"
                             label="Age"
-                            onChange={(e) => this.handleSelectFilter(e, "onTour")}
+                            onChange={(e) => this.handleSelectFilter(e, "author_tour")}
                           >
                       <MenuItem value={"true"}>Yes</MenuItem>
                       <MenuItem value={"false"}>No</MenuItem>
@@ -325,7 +330,7 @@ class Authors extends React.Component<props, state> {
                     <div style={{margin: 10}}>
                       <h4>Books Written</h4>
                       <Button onClick={() => this.changeSort(5)} variant="outlined"> Sort </Button>
-                      <TextField label = "Filter by Name" variant = "outlined" onChange = {(e) => this.handleFilterChange("booksPublished", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                      <TextField label = "Filter by Books Written" variant = "outlined" onChange = {(e) => this.handleFilterChange("booksPublished", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>
                     </Grid>

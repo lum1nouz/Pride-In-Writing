@@ -90,10 +90,10 @@ function Books(props: props) {
     let filterString = ""
     let sortString = ""
     let searchString = ""
-    if(curFilter.category !== "") {
+    if(curFilter.category !== "" && curFilter.value !== "") {
       filterString = "&" + curFilter.category + "=" + curFilter.value
     }
-    if(curSort.category !== "") {
+    if(curSort.category !== "" ) {
       let directionField = "&direction=" + curSort.value
       // if(curSort.value === "ascend") {
       //   directionField = ""
@@ -158,7 +158,7 @@ function Books(props: props) {
   //First click sets to "desc" or descending order
   //Second click sets to "asc" or ascending order 
   function changeSort(col: number){
-    let lookup = ["name", "genre", "year", "rating", "price", "pageCount"]
+    let lookup = ["name", "genres", "year", "avg_rating", "price", "page_count"]
     let tempCategory = lookup[col]
     let tempValue = "descend"
     let check = curSort.value
@@ -229,10 +229,15 @@ function Books(props: props) {
                       <Select
                             value="none"
                             label="Age"
-                            onChange={(e) => handleSelectFilter(e, "genre")}
+                            onChange={(e) => handleSelectFilter(e, "genres")}
                           >
-                      <MenuItem value={"true"}>Yes</MenuItem>
-                      <MenuItem value={"false"}>No</MenuItem>
+                      <MenuItem value={"fiction"}>Fiction</MenuItem>
+                      <MenuItem value={"drama"}>Drama</MenuItem>
+                      <MenuItem value={"psychology"}>Psychology</MenuItem>
+                      <MenuItem value={"poetry"}>Poetry</MenuItem>
+                      <MenuItem value={"health"}>Health and Fitness</MenuItem>
+                      <MenuItem value={"biography"}>Biography</MenuItem>
+                      <MenuItem value={"humor"}>Humor</MenuItem>
                       <MenuItem value={"none"}>Pick an option</MenuItem>
                     </Select>
                     </div>
@@ -241,7 +246,7 @@ function Books(props: props) {
                     <div style={{margin: 10}}>
                       <h4>Rating</h4>
                       <Button onClick={() => changeSort(2)} variant="outlined"> Sort </Button>
-                      <TextField label = "Filter by Rating" variant = "outlined" onChange = {(e) => handleFilterChange("rating", e)} onKeyPress = {(e) => handleEnterKey(e)}> </TextField>
+                      <TextField label = "Filter by Rating" variant = "outlined" onChange = {(e) => handleFilterChange("avg_rating", e)} onKeyPress = {(e) => handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>
                     <Grid item xs={4}>
@@ -255,7 +260,7 @@ function Books(props: props) {
                     <div style={{margin: 10}}>
                       <h4>Page Count</h4>
                       <Button onClick={() => changeSort(5)} variant="outlined"> Sort </Button>
-                      <TextField label = "Filter by Page Count" variant = "outlined" onChange = {(e) => handleFilterChange("pageCount", e)} onKeyPress = {(e) => handleEnterKey(e)}> </TextField>
+                      <TextField label = "Filter by Page Count" variant = "outlined" onChange = {(e) => handleFilterChange("page_count", e)} onKeyPress = {(e) => handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>
                     </Grid>
