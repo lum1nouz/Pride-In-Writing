@@ -16,6 +16,7 @@
 | ------ | ------ |
 | Phase 1 | 792b8fb903e62b12f1208979626d436538c54492 |
 | Phase 2 |  bf4c57e8e9a33db0fcd54e47afc9aa14624409a9|
+| Phase 3 |  |
 
 
 **Project Leader**
@@ -24,6 +25,7 @@
 | ------ | ------ |
 | Phase 1 | Gregory Raper |
 | Phase 2 | Pamela Vazquez |
+| Phase 3 |  |
 
 
 **Pipelines**
@@ -94,3 +96,6 @@ Overall this phase was more challenging and required a lot more time out of each
 
 One main thing that we did differentely in this phase was creating a spreadsheet of all the tasks that needed to be done with deadlines and assigning people to tasks. This helped us stay more organized and visualize where other team members were at. 
 
+
+Phase 3 Comments: 
+****INSERT PHASE 3 COMMENTS****
