@@ -261,7 +261,7 @@ function App() {
           );
         })}
       </div>
-      <p style="color:white;">testParagraph</p>
+      <div style="color:white;">testParagraph</div>
     </div>
   );
 }
