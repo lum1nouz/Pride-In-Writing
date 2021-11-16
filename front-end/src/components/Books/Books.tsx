@@ -95,9 +95,9 @@ function Books(props: props) {
     }
     if(curSort.category !== "") {
       let directionField = "&direction=" + curSort.value
-      if(curSort.value === "ascend") {
-        directionField = ""
-      }
+      // if(curSort.value === "ascend") {
+      //   directionField = ""
+      // }
       sortString = "&sort_by=" + curSort.category + directionField
     }
     if(str !== "") {

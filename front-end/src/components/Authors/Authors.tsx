@@ -117,9 +117,9 @@ class Authors extends React.Component<props, state> {
     }
     if(this.state.curSort.category !== "") {
       let directionField = "&direction=" + this.state.curSort.value
-      if(this.state.curSort.value === "ascend") {
-        directionField = ""
-      }
+      // if(this.state.curSort.value === "ascend") {
+      //   directionField = ""
+      // }
       sortString = "&sort_by=" +this.state.curSort.category + directionField
     }
     if(str !== "") {
@@ -161,13 +161,13 @@ class Authors extends React.Component<props, state> {
   //First click sets to "desc" or descending order
   //Second click sets to "asc" or ascending order 
   changeSort(col: number){
-    let lookup = ["name", "yearBorn", "nationality", "genres", "onTour", "booksPublished"]
+    let lookup = ["author_name", "year_born", "nationality", "genre", "author_tour", "book_connections"]
     let tempCategory = lookup[col]
-    let tempValue = "desc"
+    let tempValue = "descend"
     let check = this.state.curSort.value
-    if(check === "desc" && tempCategory === this.state.curSort.category) {
-      tempValue = "asc"
-    } else if (check === "asc" && tempCategory === this.state.curSort.category){
+    if(check === "descend" && tempCategory === this.state.curSort.category) {
+      tempValue = "ascend"
+    } else if (check === "ascend" && tempCategory === this.state.curSort.category){
       tempCategory = ""
       tempValue = ""
     }
@@ -274,7 +274,7 @@ class Authors extends React.Component<props, state> {
                     <div style={{margin: 10}}>
                       <h4>Name</h4>
                       <Button onClick={() => this.changeSort(0)} variant = "outlined"> Sort </Button>
-                      <TextField label = "Filter by Name" variant = "outlined" onChange = {(e) => this.handleFilterChange("name", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                      <TextField label = "Filter by Name" variant = "outlined" onChange = {(e) => this.handleFilterChange("author_name", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>
                     <Grid item xs={4}>
@@ -412,9 +412,9 @@ class Authors extends React.Component<props, state> {
                                         >
                                           {this.highlightText(
                                             `Displaying ${
-                                              this.props.dataLen > 0 ? (this.state.page - 1) * 10 + 1 : 0
+                                              this.props.dataLen > 0 ? (this.state.page - 1) * this.state.perPage + 1 : 0
                                             }-${Math.min(
-                                              this.state.page * 10,
+                                              this.state.page * this.state.perPage,
                                               this.props.dataLen
                                             )} of ${this.props.dataLen}`
                                           )}
