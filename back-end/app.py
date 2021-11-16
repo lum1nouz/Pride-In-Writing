@@ -80,8 +80,14 @@ def hello_world():
 
 @app.route("/api/authors", methods=["GET"])
 def getAuthors():
-    # all_authors = Author.query.all()
     all_authors = db.session.query(Author)
+
+    # Pagination
+    page = request.args.get('page')
+    if page == None:
+        page = 1
+    else:
+        page = int(page)
 
     # Query Params
     sort_by = request.args.get('sort_by')
@@ -116,7 +122,19 @@ def getAuthors():
         search = search.lower()
         all_authors = search_authors(search, all_authors)
 
-    result = authors_schema.dump(all_authors)
+    # Page = Current Page Number
+    # Per Page = How many per page
+    if page != -1:
+        per_page_param = request.args.get('per_page')
+        per_page = 20
+        if per_page_param is not None:
+            per_page = int(per_page_param)
+
+        books = all_authors.paginate(page=page, per_page=per_page)
+        result = authors_schema.dump(books.items)
+    else:
+        result = authors_schema.dump(all_authors)
+
     return authors_schema.jsonify(result)
 
 @app.route("/api/authors/id=<id>", methods=["GET"])
@@ -177,7 +195,7 @@ def getBooks():
         result = books_schema.dump(books.items)
     else:
         result = books_schema.dump(all_books)
-        
+
     return books_schema.jsonify(result)
 
 
