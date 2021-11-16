@@ -23,7 +23,7 @@ URL = "https://www.prideinwriting.me/"
 
 class GUITestCases (unittest.TestCase):
 
-    # URL = "https://www.prideinwriting.me/"
+    URL = "https://www.prideinwriting.me/"
     # URL = "http://localhost:3000/"
 
     # Get drivers and run website before all tests
