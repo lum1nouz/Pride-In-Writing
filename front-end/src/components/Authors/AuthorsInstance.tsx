@@ -9,7 +9,7 @@ import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import Book from "../../models/book-model";
 import Publisher from "../../models/publisher-model";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 
 type props = {
   author_id: number;
@@ -52,42 +52,46 @@ class AuthorsInstance extends React.Component<props, state> {
 
   async getPublisherConnections() {
     let tempData: Publisher[] = [];
-    let param = this.props.publisher_connections.toString()
-    if(param === "NaN") {
-      param = "-1"
+    let param = this.props.publisher_connections.toString();
+    if (param === "NaN") {
+      param = "-1";
     }
-      tempData = (
-        await fetch("https://api.prideinwriting.me/api/publishers/ids=" + param)
-          .then((response) => {
-            return response.json();
-          })
-          .catch((err) => {
-            console.log(err + "   \n https://api.prideinwriting.me/api/publishers/ids=" + param);
-            return {};
-          })
-      );
+    tempData = await fetch(
+      "https://api.prideinwriting.me/api/publishers/ids=" + param
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(
+          err +
+            "   \n https://api.prideinwriting.me/api/publishers/ids=" +
+            param
+        );
+        return {};
+      });
 
-    return tempData.filter(item => Object.keys(item).length);
+    return tempData.filter((item) => Object.keys(item).length);
   }
 
   async getBookConnections() {
     let tempData: Book[] = [];
-    let param = this.props.book_connections.toString()
-    if(param === "NaN") {
-      param = "-1"
+    let param = this.props.book_connections.toString();
+    if (param === "NaN") {
+      param = "-1";
     }
-      tempData = (
-        await fetch("https://api.prideinwriting.me/api/books/ids=" + param)
-          .then((response) => {
-            return response.json();
-          })
-          .catch((err) => {
-            console.log(err);
-            return {};
-          })
-      );
+    tempData = await fetch(
+      "https://api.prideinwriting.me/api/books/ids=" + param
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .catch((err) => {
+        console.log(err);
+        return {};
+      });
 
-    return tempData.filter(item => Object.keys(item).length);
+    return tempData.filter((item) => Object.keys(item).length);
   }
 
   async componentDidMount() {
@@ -104,17 +108,17 @@ class AuthorsInstance extends React.Component<props, state> {
         <div data-testid="4" className={css.background}>
           <Parallax strength={500} className={css.parrallaxCont}>
             <div style={{}}>
-              <div className={css.titleText} style={{textShadow: "4px 4px rgba(0, 0, 255, .2)"}}> {this.props.author_name} </div>
+              <div
+                className={css.titleText}
+                style={{ textShadow: "4px 4px rgba(0, 0, 255, .2)" }}
+              >
+                {" "}
+                {this.props.author_name}{" "}
+              </div>
               <Paper elevation={4} className={css.paperCont}>
-                <Grid
-                  container
-                  spacing={2}
-                  style= {{position: "relative"}}
-                >
+                <Grid container spacing={2} style={{ position: "relative" }}>
                   <Grid item xs={6}>
-                    <CardContent
-                      style={{width: "fit-content" }}
-                    >
+                    <CardContent style={{ width: "fit-content" }}>
                       <div
                         style={{
                           display: "flex",
@@ -136,68 +140,64 @@ class AuthorsInstance extends React.Component<props, state> {
                     </CardContent>
                   </Grid>
 
-                  <Grid item xs= {6}>
-                  <div style={{ textAlign: "center" }}>
-                  {this.props.author_summary && (
-                    <div>
-                      <h2>
-                        Biography <br />
-                      </h2>
-                      <p>{this.props.author_summary}</p>
+                  <Grid item xs={6}>
+                    <div style={{ textAlign: "center" }}>
+                      {this.props.author_summary && (
+                        <div>
+                          <h2>
+                            Biography <br />
+                          </h2>
+                          <p>{this.props.author_summary}</p>
+                        </div>
+                      )}
+
+                      <h2>Year Born</h2>
+                      <p>{this.props.year_born}</p>
+                      <h2>On-Tour Soon</h2>
+                      <p>{this.props.author_tour}</p>
+                      <h2>Nationality</h2>
+                      <p>{this.props.nationality}</p>
+                      <h2>Genre</h2>
+                      <p>{this.props.genre}</p>
+                      <h2>Notable Works</h2>
+                      <p>{this.props.genre}</p>
+
+                      <h2>Book Connections</h2>
+                      <p>
+                        {this.state.bookCon.length < 1 ? (
+                          <div> None found </div>
+                        ) : (
+                          <div></div>
+                        )}
+
+                        {this.state.bookCon.map(function (book) {
+                          return (
+                            <Button href={"/book-" + book.book_id}>
+                              {book.name}
+                            </Button>
+                          );
+                        })}
+                      </p>
+
+                      <h2>Publisher Connections</h2>
+                      <p>
+                        {this.state.pubCon.length < 1 ? (
+                          <div> None found </div>
+                        ) : (
+                          <div></div>
+                        )}
+
+                        {this.state.pubCon.map(function (publisher) {
+                          return (
+                            <Button
+                              href={"/publisher-" + publisher.publisher_id}
+                            >
+                              {publisher.name}
+                            </Button>
+                          );
+                        })}
+                      </p>
                     </div>
-                  )}
-
-                  <h2>Year Born</h2>
-                  <p>{this.props.year_born}</p>
-                  <h2>On-Tour Soon</h2>
-                  <p>{this.props.author_tour}</p>
-                  <h2>Nationality</h2>
-                  <p>{this.props.nationality}</p>
-                  <h2>Genre</h2>
-                  <p>{this.props.genre}</p>
-                  <h2>Notable Works</h2>
-                  <p>{this.props.genre}</p>
-
-                  <h2>Book Connections</h2>
-                  <p>
-
-                  {(this.state.bookCon.length < 1) ? 
-                      (
-                        <div> None found </div>
-                      ) : (
-                        <div></div>
-                      )
-                    }
-
-                    {this.state.bookCon.map(function (book) {
-                      return (
-                        <Button href={"/book-" + book.book_id}>
-                         {book.name}
-                      </Button>
-                      );
-                    })}
-                  </p>
-
-                  <h2>Publisher Connections</h2>
-                  <p>
-
-                  {(this.state.pubCon.length < 1) ? 
-                      (
-                        <div> None found </div>
-                      ) : (
-                        <div></div>
-                      )
-                    }
-
-                    {this.state.pubCon.map(function (publisher) {
-                      return (
-                      <Button href={"/publisher-" + publisher.publisher_id}>
-                      {publisher.name}
-                   </Button>
-                      );
-                    })}
-                  </p>
-                </div>
                   </Grid>
                 </Grid>
               </Paper>

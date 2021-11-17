@@ -185,24 +185,24 @@ class AboutUs extends React.Component<props, state> {
         sIssues = (res.data as issuesResponse).statistics.counts.closed;
       });
 
-      //Set state after getting all the issue data
-      //pageNum = 1 will trigger the first update and start getting commit data
-      this.setState({
-        totalCommits: 0,
-        totalIssues: tIssues,
-        gregIssues: gIssues,
-        gregCommits: this.commitData[0],
-        pamelaCommits: this.commitData[3],
-        pamelaIssues: pIssues,
-        cliffCommits: this.commitData[2],
-        cliffIssues: cIssues,
-        rodrigoCommits: this.commitData[1],
-        rodrigoIssues: rIssues,
-        shyamCommits: this.commitData[4],
-        shyamIssues: sIssues,
-        pageNum: 1,
-        oldPageNum: 0
-      });
+    //Set state after getting all the issue data
+    //pageNum = 1 will trigger the first update and start getting commit data
+    this.setState({
+      totalCommits: 0,
+      totalIssues: tIssues,
+      gregIssues: gIssues,
+      gregCommits: this.commitData[0],
+      pamelaCommits: this.commitData[3],
+      pamelaIssues: pIssues,
+      cliffCommits: this.commitData[2],
+      cliffIssues: cIssues,
+      rodrigoCommits: this.commitData[1],
+      rodrigoIssues: rIssues,
+      shyamCommits: this.commitData[4],
+      shyamIssues: sIssues,
+      pageNum: 1,
+      oldPageNum: 0,
+    });
   }
 
   //Called by componentDidUpdate
@@ -239,15 +239,15 @@ class AboutUs extends React.Component<props, state> {
   //Updates and calls the next page until there are no more
   async componentDidUpdate() {
     if (this.state.pageNum > this.state.oldPageNum) {
-      let responseData: commitResponse[] = []
+      let responseData: commitResponse[] = [];
       await axios
         .get(
           `https://gitlab.com/api/v4/projects/29826417/repository/commits?type=all&per_page=100&page=${this.state.pageNum}`
         )
         .then((res) => {
-          responseData = res.data as commitResponse[]
+          responseData = res.data as commitResponse[];
         });
-        await this.updatePageNum(responseData)
+      await this.updatePageNum(responseData);
     }
   }
 
@@ -274,7 +274,7 @@ class AboutUs extends React.Component<props, state> {
               }}
             >
               <div>
-                <h1 style={{ textShadow: "1px 1px black", fontWeight:"bold" }}>
+                <h1 style={{ textShadow: "1px 1px black", fontWeight: "bold" }}>
                   <span style={{ color: "#FF555E" }}>A</span>
                   <span style={{ color: "#FF8650" }}>b</span>
                   <span style={{ color: "#F6BE00" }}>o</span>
@@ -311,7 +311,7 @@ class AboutUs extends React.Component<props, state> {
               }}
             >
               <div>
-                <h1 style={{ textShadow: "1px 1px black", fontWeight:"bold"  }}>
+                <h1 style={{ textShadow: "1px 1px black", fontWeight: "bold" }}>
                   <span style={{ color: "#FF555E" }}>G</span>
                   <span style={{ color: "#FF8650" }}>i</span>
                   <span style={{ color: "#F6BE00" }}>t</span>
@@ -326,7 +326,7 @@ class AboutUs extends React.Component<props, state> {
                 </h1>
                 <p>
                   <a
-                    style={{ fontWeight: "bold"}}
+                    style={{ fontWeight: "bold" }}
                     href="https://gitlab.com/JunLum/pride-in-writing"
                   >
                     GitLab Repo
@@ -354,7 +354,7 @@ class AboutUs extends React.Component<props, state> {
               }}
             >
               <div style={{ padding: 30 }}>
-                <h1 style={{ textShadow: "1px 1px black", fontWeight:"bold" }}>
+                <h1 style={{ textShadow: "1px 1px black", fontWeight: "bold" }}>
                   <span style={{ color: "#FF555E" }}>M</span>
                   <span style={{ color: "#FF8650" }}>e</span>
                   <span style={{ color: "#F6BE00" }}>e</span>
@@ -601,7 +601,7 @@ class AboutUs extends React.Component<props, state> {
             }}
           >
             <div>
-              <h1 style={{ textShadow: "1px 1px black", fontWeight:"bold"  }}>
+              <h1 style={{ textShadow: "1px 1px black", fontWeight: "bold" }}>
                 <span style={{ color: "#FF555E" }}>A</span>
                 <span style={{ color: "#FF8650" }}>P</span>
                 <span style={{ color: "#F6BE00" }}>I</span>
@@ -725,7 +725,7 @@ class AboutUs extends React.Component<props, state> {
             }}
           >
             <div style={{ padding: 30 }}>
-              <h1 style={{ textShadow: "1px 1px black", fontWeight:"bold"  }}>
+              <h1 style={{ textShadow: "1px 1px black", fontWeight: "bold" }}>
                 <span style={{ color: "#FF555E" }}>T</span>
                 <span style={{ color: "#FF8650" }}>o</span>
                 <span style={{ color: "#F6BE00" }}>o</span>
@@ -937,7 +937,7 @@ class AboutUs extends React.Component<props, state> {
             }}
           >
             <div>
-              <h1 style={{ textShadow: "1px 1px black", fontWeight:"bold" }}>
+              <h1 style={{ textShadow: "1px 1px black", fontWeight: "bold" }}>
                 <span style={{ color: "#FF555E" }}>I</span>
                 <span style={{ color: "#FF8650" }}>m</span>
                 <span style={{ color: "#F6BE00" }}>p</span>

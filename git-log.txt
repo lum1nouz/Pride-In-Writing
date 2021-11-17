@@ -1,8 +1,964 @@
+commit 1e5716709083d4d7374eb3a6864a60da88ee9ffa
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 20:47:27 2021 -0600
+
+    Changed selenium testing to work
+
+commit d43d4fc1e60d3c71b9b60bb6be28a0569e04a034
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 20:32:25 2021 -0600
+
+    last functionality changes, lots of backend changes, front end fixes
+
+commit df04e9aa760861b2e06b90912df3d9810e852ebb
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 18:57:14 2021 -0600
+
+    Changed query params, modified api urls in front end
+
+commit 4bb01a8e99d2f1920a2b8d095106b7bdfe03fe2c
+Merge: ae0baf5 7d9203d
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 18:22:32 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/JunLum/pride-in-writing into dev
+
+commit ae0baf584cea91d8f739a1dc1607724183f388e3
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 18:22:25 2021 -0600
+
+    Changed Readme
+
+commit 7d9203de7abbe79283e8a08c0aa21ae61b54c11f
+Author: shyamp12041 <shyamp1204@utexas.edu>
+Date:   Tue Nov 16 18:17:32 2021 -0600
+
+    updated backend tests to account for every endpoint
+
+commit 6891f1afd72bfb50c7b416f80794050a3780fd7a
+Merge: d3e8198 fa1d4e1
+Author: shyamp12041 <shyamp1204@utexas.edu>
+Date:   Tue Nov 16 18:04:05 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/JunLum/pride-in-writing into dev
+
+commit d3e8198f9f9efd15fd4b945a88358851a9ad0e34
+Author: shyamp12041 <shyamp1204@utexas.edu>
+Date:   Tue Nov 16 18:03:52 2021 -0600
+
+    updated postman tests
+
+commit fa1d4e1dc775bc22a5b4f4e60cb9dda6a8d64a2d
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 17:57:21 2021 -0600
+
+    Selenium tests updated, ci changed
+
+commit 5cc1ef30ae438148443927e305e613273248055a
+Merge: 8319b3e e84eae5
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 17:34:21 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/JunLum/pride-in-writing into dev
+
+commit 8319b3e10186e49b1961de71f747a176cc0b77d3
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 17:34:17 2021 -0600
+
+    Sorting/filtering changes and commented pipeline
+
+commit e84eae5f5c1537d1c1acaf2a3f0d5b12aa8aad0c
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Tue Nov 16 17:32:52 2021 -0600
+
+    small fixes
+
+commit 2c342dc1956d17ec704d9c2b333d61d0bbd520ff
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 17:01:48 2021 -0600
+
+    Changes to column names and formatting
+
+commit bc1751db3f9e1b4d4980c6b810cc3391a2b10e23
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Tue Nov 16 16:52:31 2021 -0600
+
+    changed some == to contains
+
+commit da14e964cc20d4490b9142460ffaf057eede7602
+Merge: a3e3960 67d9a60
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 16:24:33 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/JunLum/pride-in-writing into dev
+
+commit a3e396038b72b10dfad65e02cd905398994176ff
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 16:24:27 2021 -0600
+
+    Fixed author connections etc., fixed some sorting, small changes
+
+commit 67d9a602aa2e41a9b359896d81b67d05ebc8d669
+Merge: 3413315 bb35ca0
+Author: Cliff Xu <xu.cliffjun@gmail.com>
+Date:   Tue Nov 16 22:15:25 2021 +0000
+
+    Merge branch 'backEndFilter' into 'dev'
+    
+    more filters
+    
+    See merge request JunLum/pride-in-writing!64
+
+commit bb35ca0d407dfcc23c9e883505399fc8f77bfe21
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Tue Nov 16 16:03:10 2021 -0600
+
+    more filters
+
+commit 3413315e4b35cf76026943fdbc101ae4ed04cefd
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Tue Nov 16 13:18:58 2021 -0600
+
+    fixed the perPage continuity issue
+
+commit 8825268e49529d1dc212706267dafcda413ff79a
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 11:51:59 2021 -0600
+
+    search page changes
+
+commit 060df9dc3a3a3484f6a9c9f4c4f86450fd9b277d
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 11:00:16 2021 -0600
+
+    paging changes, small fixes, more needed
+
+commit 3aca2d7632b18b5c58cf08a5a954748188668a68
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Tue Nov 16 01:44:21 2021 -0600
+
+    fix nonetype method call
+
+commit 186f5a75b4c684c75d0668eb5a81ad63a98d36bf
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 01:05:48 2021 -0600
+
+    Syntax changes
+
+commit 06dda779064f2900ae687d15e1e63e031d18cf37
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 00:53:44 2021 -0600
+
+    api query param format changes
+
+commit 45c36323905bbc593755a8f0eeba8a3c7f224eae
+Merge: e2f127e 24ec54e
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Tue Nov 16 06:46:12 2021 +0000
+
+    Merge branch 'main' into 'dev'
+    
+    # Conflicts:
+    #   front-end/src/App.tsx
+    #   front-end/src/__tests__/GUITestCases.py
+
+commit e2f127e252043e2ee65a2aac86a0e080bf61a804
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Tue Nov 16 06:42:39 2021 +0000
+
+    Uncomment pipeline
+
+commit bd546301ae0e1f7351e425179c38cc728a4a28a6
+Merge: 456a679 0e9704c
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Tue Nov 16 06:41:53 2021 +0000
+
+    Merge branch 'frontEndUIChanges' into 'dev'
+    
+    added code to scroll back to top of page after changing pages in author table,...
+    
+    See merge request JunLum/pride-in-writing!59
+
+commit 456a679cbe2bd81f77322ae5a1694af968e0b169
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 23:15:11 2021 -0600
+
+    fixed error in merge
+
+commit 0e9704cef68cfa3cadaa5f1d9bc40de4d0ea5397
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Mon Nov 15 22:59:30 2021 -0600
+
+    Changed testParagraph to white
+
+commit 645bb2fbb3057ba8feb669dae240c787a534fcf4
+Merge: cbad0b2 abaa1ff
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 22:56:00 2021 -0600
+
+    fixed merge conflicts
+
+commit abaa1fff56ec409a111b0fd6adf6634cd4763c96
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 22:48:58 2021 -0600
+
+    fixed when no per page input publisher
+
+commit cde1683f8551bb41faefc7ef30eb8b11c490a63d
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 22:48:21 2021 -0600
+
+    fixed when no per page input books
+
+commit b2a4e0568187e5ea16a4f05da21f9e26ffb59795
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 22:47:04 2021 -0600
+
+    fixed when no per page input
+
+commit cbad0b2b6ff2353878f50ae91375347b9da495f4
+Author: Pamela De La Cruz <pamvazquez1@gmail.com>
+Date:   Tue Nov 16 04:40:10 2021 +0000
+
+    Update README.md
+
+commit 5a1c2cadabc79dbd0bb542e3c38f3baaf70efc0d
+Merge: f3d9780 104c584
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Mon Nov 15 22:38:13 2021 -0600
+
+    Merge branch 'frontEndUIChanges' of https://gitlab.com/JunLum/pride-in-writing into frontEndUIChanges
+
+commit f3d9780fe65564a852f406a141333918f5a7133d
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Mon Nov 15 22:38:07 2021 -0600
+
+    Saves page, reduced api calls in instance pages, publisher table highlights
+
+commit 104c584ef67db9e8573468b4592890e374d83495
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Mon Nov 15 22:32:18 2021 -0600
+
+    Added favicon and highlightfor book title
+
+commit 4f67151ce0c33375ba8ca310739d8906ca7ad925
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Mon Nov 15 21:58:36 2021 -0600
+
+    Changed Author Table, changed book card highlighting
+
+commit a185d16c66afb275fbeaa4122de7b3eef2c6f305
+Merge: dc53702 7c6aa68
+Author: Cliff Xu <xu.cliffjun@gmail.com>
+Date:   Tue Nov 16 02:44:52 2021 +0000
+
+    Merge branch 'backEndFilter' into 'dev'
+    
+    Back end filter
+    
+    See merge request JunLum/pride-in-writing!57
+
+commit 5ce6fafa59d2ab4c9ee2859d8c21b793f1e7751c
+Merge: 2bb91d0 0e0a195
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Mon Nov 15 20:38:05 2021 -0600
+
+    Merge branch 'frontEndUIChanges' of https://gitlab.com/JunLum/pride-in-writing into frontEndUIChanges
+
+commit 2bb91d09e477c566c5494e8f13fb786e853ba6f9
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Mon Nov 15 20:37:58 2021 -0600
+
+    Fixed jest tests, Changed Author Table, added highlighting
+
+commit 359e595fb0b8f8b8d73027e5230a89dd76a45e52
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 19:32:23 2021 -0600
+
+    added pagination for publishers
+
+commit 24ec54e173c15dc242e864678c8297f2341bb897
+Author: shyamp12041 <shyamp1204@utexas.edu>
+Date:   Mon Nov 15 19:31:23 2021 -0600
+
+    new attempt on user story fix
+
+commit aad5aa5d47e03cd285ca1b860f01dcd8c4a97a31
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 19:30:43 2021 -0600
+
+    add pagination for authors
+
+commit d747827acefc2f1f59d04d7a344e36ec994c424e
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 19:29:24 2021 -0600
+
+    added pagination for books
+
+commit 0e0a195f1f2e7c849d9fc9e261dbce326610f8ff
+Merge: 01a9c23 c9842ca
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Mon Nov 15 19:29:07 2021 -0600
+
+    Merge branch 'frontEndUIChanges' of https://gitlab.com/JunLum/pride-in-writing into frontEndUIChanges
+
+commit 01a9c236d9f6d4d76c8cc16be5445750c0fc427b
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Mon Nov 15 19:28:58 2021 -0600
+
+    Removed empty white button when there is no connections and added one button to search website on home page
+
+commit c9842cad8a9dc102ee18dfd9ee127ce53ee8a4fc
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Mon Nov 15 19:18:57 2021 -0600
+
+    Added Search Page
+
+commit 765b68c18859ad8e1f5eade33f6eb9026655a156
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 18:23:54 2021 -0600
+
+    acknowledgments
+
+commit 13de889337125d159ed897adaaea77a3900a2982
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Mon Nov 15 16:55:17 2021 -0600
+
+    Jest test changes
+
+commit f375b9e040d614991aadc3d603f39a21ea77d758
+Author: shyamp12041 <shyamp1204@utexas.edu>
+Date:   Mon Nov 15 15:57:07 2021 -0600
+
+    resolved user story
+
+commit 7e7f0cadac3cb3267b69907a6f58b8fd08e086cb
+Merge: 70e3aa2 ddef2b8
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Mon Nov 15 14:09:22 2021 -0600
+
+    fix merge
+
+commit 70e3aa2ef6bbaac46358f3092fd4b9715d7d1845
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Mon Nov 15 14:07:59 2021 -0600
+
+    search, sort, filter list changes almost complete
+
+commit ddef2b8caac56c595d8668c00247e01a993644c9
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Mon Nov 15 13:18:00 2021 -0600
+
+    added code to scroll back to top of page after changing pages in author table, books grid and publisher table pages
+
+commit 7c6aa68ca46104d1202d5fa219060fdb6ee9a953
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Mon Nov 15 10:15:51 2021 -0600
+
+    implmented rest of filters
+
+commit 0be07f940ba8c28f60675d7b69840afe19a1f8f4
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Mon Nov 15 09:28:25 2021 -0600
+
+    fixed sort order default
+
+commit 8af3a13095153f2c932ae9111ecc93804f47f66f
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 04:36:32 2021 -0600
+
+    added acknowledgements
+
+commit a2c56c2f30c36df411c1c60b0ff9e0d82e6d8b77
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 04:35:16 2021 -0600
+
+    fixed bug of author method getting called
+
+commit 4a06e4c3b5a990136503cba1311b5ea1cd59a5a8
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 04:31:49 2021 -0600
+
+    finished publisher search
+
+commit a3128ca056bbf7d45c0401f21b27401358f7e030
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 04:30:14 2021 -0600
+
+    added book search and fixed lower()
+
+commit f2f9bec018e588286df5c85b52d947ac49449cbe
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 04:21:13 2021 -0600
+
+    cleanup
+
+commit 8a3b1f3e8d7a149768bfa2c163cd5cc1d512fa02
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 04:20:44 2021 -0600
+
+    added todo comment to check for lowercased queries
+
+commit 2f4a083704c1aca4000b729eac575090551aa16f
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 04:17:05 2021 -0600
+
+    fixed lower function call
+
+commit 163b560ca2da5fc3f697ae7ebef306bc594ca2bd
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 04:13:41 2021 -0600
+
+    added other search parameters author
+
+commit d2a7e14f175da29690053494162286e3d61ced4b
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Mon Nov 15 04:08:23 2021 -0600
+
+    got author search working for names
+
+commit 078a7c8f54c7885e0445765c5f94557343b0c901
+Merge: 49a83b6 b9d64b9
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Mon Nov 15 00:45:25 2021 -0600
+
+    fixed merge
+
+commit 49a83b685239c9d79c5b28682322845940ee3211
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Mon Nov 15 00:44:00 2021 -0600
+
+    Publisher search filter sort added
+
+commit b9d64b9cb42b44e16fc7294620a7c43775fe8fcc
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Sun Nov 14 22:37:48 2021 -0600
+
+    Added rating components to book grid/book instance pages
+
+commit eeea614c1a0ca6045c1956fc4b42de4ec980c3e8
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Sun Nov 14 21:39:58 2021 -0600
+
+    Changes for sorting & filtering
+
+commit 1548de2933f5e8fcd40c27d8c63d62d54699f9d8
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Sun Nov 14 21:12:36 2021 -0600
+
+    author filterables
+
+commit 2069d6494ddf945719191ab888c69b22d4ef8dd5
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Sun Nov 14 21:00:10 2021 -0600
+
+    fixed wrong publisher call
+
+commit c7657054261d5ddb0ba6f7094d4711cc14752e36
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Sun Nov 14 18:14:14 2021 -0600
+
+    Close #77
+
+commit 7a96148397c58c8708324502dfcdc37d7f4ca5ba
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Sun Nov 14 16:34:26 2021 -0600
+
+    Added comments & refined logic
+
+commit 4dc25ba6109728e6618429647786876ccb740f65
+Author: Gregory Raper <gjraper@Gregs-1s--0s.local>
+Date:   Sun Nov 14 14:58:07 2021 -0600
+
+    Added Author search bar
+
+commit 02f225af25bc8962ee0c12c43cc999648d5e7eed
+Author: Gregory Raper <gjraper@Gregs-1s--0s.local>
+Date:   Sun Nov 14 14:18:18 2021 -0600
+
+    Added sorting and filtering buttons to Author
+
+commit dc53702cb0368e407930d744693f739851acdfd0
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Thu Nov 11 20:45:42 2021 -0600
+
+    Selenium Tests CI
+
+commit bc5266a13bae0f72e22681ca7b05f647a2d6c89e
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Thu Nov 11 20:42:24 2021 -0600
+
+    Selenium CI Changes
+
+commit 84c58e3a1e397c321d39ca7ab00ab494595c8858
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Thu Nov 11 20:36:53 2021 -0600
+
+    Selenium CI changes
+
+commit 47e81706dd3432751591ba4bfcb41f405847dc99
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Thu Nov 11 20:33:35 2021 -0600
+
+    Selenium CI changes
+
+commit 80140cbceffc229eaac5a8061d5f5488d9c7fdf2
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Thu Nov 11 20:25:06 2021 -0600
+
+    Selenium CI changes
+
+commit 780a2ed572495c1aca5846f0efedfe3ac64f24b1
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Nov 12 02:13:30 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 01da15cc690a02e8fd4b2c45344d99a677061aed
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Nov 12 02:04:31 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 69fbb55d07dcc1a0f9a7e389e78e69c2e6509db5
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Nov 12 02:03:47 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 246b4667bf1fa8c43faba07b3465ea19137a14bc
+Merge: 68d323e fe2447c
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Thu Nov 11 19:53:28 2021 -0600
+
+    merge changes
+
+commit 68d323eece9dda8f2797bdcea17bc934622dbd1d
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Thu Nov 11 19:51:49 2021 -0600
+
+    Changes for selenium CI
+
+commit fe2447c2f985188c65331a438ac88e70e6fb3b95
+Author: Pamela De La Cruz <pamvazquez1@gmail.com>
+Date:   Fri Nov 12 01:45:21 2021 +0000
+
+    Update GUITestCases.py: changed service = ChromeDriverManager().install() to (executable_path=r"./front-end/src/__tests__/chromedriver", options=options)
+
+commit b391a945efa6ff54fbca67d7c81dd0b6e0cdb27c
+Author: Pamela De La Cruz <pamvazquez1@gmail.com>
+Date:   Fri Nov 12 01:29:34 2021 +0000
+
+    Update GUITestCases.py
+
+commit 251547092cdc5dc36e679a6500a250e5cf0e3898
+Author: Pamela De La Cruz <pamvazquez1@gmail.com>
+Date:   Fri Nov 12 01:06:59 2021 +0000
+
+    Update GUITestCases.py
+
+commit 4f4913c7ddaf4f673adfea6c68f0dfe76a270db6
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Thu Nov 11 18:55:48 2021 -0600
+
+    Selenium pipeline changes
+
+commit fe86307b68d67502fb3a14bf418beb7fe0f7e499
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Thu Nov 11 18:54:17 2021 -0600
+
+    Added get by ids routes
+
+commit b162018aae5877db651761c78e97e4a1306782a2
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Nov 12 00:49:46 2021 +0000
+
+    Update GUITestCases.py
+
+commit 9161340d787b9d8d6bc8e3fa4da39f6b8ae0299f
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Nov 12 00:43:18 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit d16c90ef600d9656a5c9b3fb6dd7f4704f5e13cd
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Nov 12 00:41:26 2021 +0000
+
+    Update requirements.txt
+
+commit 7715c6a8108b557803d86616db98b571a401d3c4
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Nov 12 00:30:12 2021 +0000
+
+    Update requirements.txt
+
+commit a96cb09153c9932922273c8e1940c7a2443105ac
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Nov 12 00:23:43 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit d5fe31277c65c4cc899c56b013a69701818a90b1
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Nov 12 00:20:00 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit bfdfd99b4f770996f172ff6646c9556c61ecc75b
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Nov 12 00:09:58 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 79e1a3b0e6b4e3a7259aebac6de562583f26bd37
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Nov 12 00:09:32 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 76a1e40270a529f830dc812509dc37c461f29e7d
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Thu Nov 11 23:58:47 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit e8c7c9c8914b33ab6e8c32db403d91b62f7e1fb7
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Thu Nov 11 23:56:23 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit d11af86d53d0e91458018ce999b518d18a3d8829
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Thu Nov 11 23:28:16 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 6f542e24474978ce8efcbf707f3561c9d360164f
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Thu Nov 11 17:08:24 2021 -0600
+
+    Gitlab CI changes to run gui tests in pipeline
+
+commit b60cb64a70c20e15411ed017ac23e0180b6bb14b
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Thu Nov 11 16:52:53 2021 -0600
+
+    Small import changes
+
+commit db227cf6903618d40074760ba8bca972fb60f1be
+Merge: 09442f8 095dd7f
+Author: Cliff Xu <xu.cliffjun@gmail.com>
+Date:   Thu Nov 11 07:56:20 2021 +0000
+
+    Merge branch 'backEndSort' into 'dev'
+    
+    Back end sort
+    
+    See merge request JunLum/pride-in-writing!54
+
+commit 095dd7f0e4302284c952cc805a58e3feb5c0fb47
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Thu Nov 11 01:45:18 2021 -0600
+
+    reverted changes
+
+commit 795f096a06c6e119b2ee7bab8b61d0f7730a4213
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Thu Nov 11 01:36:33 2021 -0600
+
+    matched all other sorting
+
+commit 78b3e2ef2086a8a70e232f36541f11217c5935de
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Thu Nov 11 01:32:10 2021 -0600
+
+    changed how author sort manages queries
+
+commit fc84cd31af1b0b78c9fcc6e2281f19d00fca4dbd
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Wed Nov 10 16:58:09 2021 -0600
+
+    fixed book and publisher sort
+
+commit 2c0d76cec83d2ef6978ee54f38db9a9f4285a919
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Wed Nov 10 16:55:12 2021 -0600
+
+    fixed author sort to match project specs
+
+commit 94787d9c9659bc2a3bc0acf45aef01587249b5fc
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Wed Nov 10 12:30:43 2021 -0600
+
+    Changed homepage module pictures
+
+commit 16efa30be11ef36c483f8022dd00575048955d51
+Merge: 08e4da7 be7a380
+Author: Pamela De La Cruz <pamvazquez1@gmail.com>
+Date:   Wed Nov 10 03:59:04 2021 +0000
+
+    Merge branch 'frontEndUIChanges-HomePage' into 'frontEndUIChanges'
+    
+    Front end ui changes: Home page, instance page and books grid
+    
+    See merge request JunLum/pride-in-writing!53
+
+commit be7a3804d4ecf7de4c0fd2a9bdd4ba6b6378b040
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Tue Nov 9 21:39:54 2021 -0600
+
+    made titles of about us page bold
+
+commit df4ac5e79262adafe100d818793bafee54e06a34
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Tue Nov 9 21:28:21 2021 -0600
+
+    fixed css of books grid page
+
+commit 7f0b4408344a3cf4a471a1590a9ee4a691074e11
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Tue Nov 9 19:58:54 2021 -0600
+
+    new look for the instance pages
+
+commit 37d1a51d59394170c0b7ff788313c782ed821900
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Tue Nov 9 18:26:26 2021 -0600
+
+    renamed sort code
+
+commit 3aecff6948f8baeab2a8f137addd77d33a09c22f
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Tue Nov 9 18:20:02 2021 -0600
+
+    random lines
+
+commit 3b7fd3cec60b89cf0cacc95895d3046b253b896e
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Tue Nov 9 17:45:50 2021 -0600
+
+    Backend Publisher sorting
+
+commit 1b68c15636f524ecab26462ee528f986349a1a08
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Tue Nov 9 17:44:06 2021 -0600
+
+    Backend Book sorting
+
+commit c515380cd021ef10fe28a6d3854a702738581c0d
+Author: JunLum <xu.cliffjun@gmail.com>
+Date:   Tue Nov 9 17:24:11 2021 -0600
+
+    Backend Author sorting
+
+commit 90f0d0895980b8519b97c6b2c31bf36e25d0b914
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Mon Nov 8 17:26:36 2021 -0600
+
+    Added template of what homepage should look like, missing search bar and logic
+
+commit f4f9b0b786cbfff8f0a2e0d52067999f01070271
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Sat Nov 6 22:14:00 2021 -0500
+
+    Added models and footer to homepage
+
+commit 08e4da7b555fec4065d43976e59257d188e21ddc
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Wed Nov 3 16:41:31 2021 -0500
+
+    Removed front end searching/filtering/sorting moved books pagination to bottom
+
+commit 8ea362ab3334783e24af4b2cd699c4a8568e8c70
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Wed Nov 3 16:27:24 2021 -0500
+
+    Cleaned up About Us code
+
+commit 09442f88b95e311927864aa060767928f8d4fdf6
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Mon Nov 1 23:08:57 2021 +0000
+
+    Closes #63, Update README.md
+
+commit 8131522439120aabf1355dc682a66945f0a2e1d7
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Oct 29 05:51:45 2021 +0000
+
+    refactored code
+
+commit 68073269298ac242183408fbd89e141501d0450f
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Oct 29 05:37:36 2021 +0000
+
+    Update README.md
+
+commit bf4c57e8e9a33db0fcd54e47afc9aa14624409a9
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Fri Oct 29 00:36:43 2021 -0500
+
+    refactored code
+
+commit ebbf2b80636b0dd85ef9916acd24b2cfb61da0bc
+Merge: ea2fd79 c0bed0e
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Fri Oct 29 00:35:17 2021 -0500
+
+    Merge branch 'main' of https://gitlab.com/JunLum/pride-in-writing into main
+
+commit ea2fd79171e33e989bb85c1c28a48c35eb877b32
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Fri Oct 29 00:35:07 2021 -0500
+
+    refactored code
+
+commit c0bed0e8c021a6cb994970a70a70b72f9529ee45
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 04:53:38 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit fde40beed44c00336b0040ac6911dcf164c9ae63
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 04:37:43 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 4e15e9a2ae75171b674ecbec4a526fe2e78b93e4
+Merge: 168e237 57af313
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Oct 29 04:37:24 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Dev
+    
+    See merge request JunLum/pride-in-writing!51
+
+commit 168e237c76f85285df4d98b5f3a451fb285e1676
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 04:36:33 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 57af313e8f33f1c7c9b3f93bc243e2010faaff00
+Merge: 32d0ef8 94e448c
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Oct 29 04:26:20 2021 +0000
+
+    Merge branch 'main' into 'dev'
+    
+    # Conflicts:
+    #   front-end/src/App.tsx
+
+commit 32d0ef87a01c14bcd3382ac97402c40502d10400
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Oct 29 04:24:50 2021 +0000
+
+    Update README.md
+
+commit 167134174f77de77e6b6cd31d85681dc82970da6
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Thu Oct 28 23:22:24 2021 -0500
+
+    Added git log
+
 commit c11fec607b229930d5a5ec515a55713f636d3a7d
 Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
 Date:   Thu Oct 28 23:21:04 2021 -0500
 
     Final commit... hopefully
+
+commit 94e448c1860d8809cd4913ff3c91b6d39b8c63ee
+Author: Pamela De La Cruz <pamvazquez1@gmail.com>
+Date:   Fri Oct 29 04:15:57 2021 +0000
+
+    Upload Technical Report
+
+commit 7bfe2b5004028ef0f5a1455e33bb14bc698574d5
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 04:15:35 2021 +0000
+
+    Update tests.py
+
+commit aff2044a30b4c2824999789dabb7b0893d5817d7
+Author: Pamela De La Cruz <pamvazquez1@gmail.com>
+Date:   Fri Oct 29 04:12:47 2021 +0000
+
+    Update README.md
+
+commit cf7e70e10305ef54dfb60c9db240379f1b875956
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 04:11:43 2021 +0000
+
+    Update package.json
+
+commit 9dfaf117e57402d357e53812bf7b9938bfe1e821
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 03:54:47 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 44350592aff3f0d93acb9cc7b21f9ec3d4f570c1
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 03:54:36 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit cec382f8d379604a526f3b6b702d378347274a08
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 03:52:12 2021 +0000
+
+    Update tests.py
+
+commit 4dcddbc9cb4803ced001d02ed97493ab771fd2ad
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 03:46:27 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 6018c762a0d1c0622245baf145e74cb14fbae4a7
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 03:39:24 2021 +0000
+
+    Update tests.py
+
+commit 32cb1986fe400d83d71fa5893e862e91b4de570c
+Author: Pamela De La Cruz <pamvazquez1@gmail.com>
+Date:   Fri Oct 29 03:28:24 2021 +0000
+
+    Upload New File
+
+commit f2fa8d3694e9c39ee316a43070a647c2e1dcc403
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 03:24:38 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit edb1e35ab3a47f479ef08527a575836acca448fb
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Oct 29 03:17:03 2021 +0000
+
+    Update App.tsx, CALL API
+
+commit 27b8c3a19fe538c8c53009d06a8bdaf431419aaa
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 03:14:45 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 09a098d65ee877d6db157dd4da5abe418f6b756d
+Merge: cacb849 ca42096
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Oct 29 03:07:27 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Dev
+    
+    See merge request JunLum/pride-in-writing!50
 
 commit ca42096528e6a82c85c107223657b8fb8091857e
 Merge: 27193e0 43c21f7
@@ -17,6 +973,18 @@ Date:   Thu Oct 28 22:01:07 2021 -0500
 
     Added scraped data, added bio to publisher
 
+commit cacb84905cd2eeaf640feff05facc54856cbf82a
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 02:55:06 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 8884977b742aae9c3f007d63441387d4e323ed69
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 02:45:06 2021 +0000
+
+    Update .gitlab-ci.yml
+
 commit 43c21f72d0516fe41e4b77781c6d2f4058cd934c
 Merge: c166307 5937f73
 Author: Pamela De La Cruz <pamvazquez1@gmail.com>
@@ -28,17 +996,51 @@ Date:   Fri Oct 29 02:39:27 2021 +0000
     
     See merge request JunLum/pride-in-writing!49
 
+commit cbba47fad1629654a07631f0b0f85548d5281cb8
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 02:38:17 2021 +0000
+
+    Update tests.py
+
+commit bc751ff092ec43f4cfbfe1867409a98e79579a7c
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Fri Oct 29 02:37:25 2021 +0000
+
+    Update .gitlab-ci.yml
+
 commit 5937f7376b20a16583b0e27267a155fcf9d1ff6b
 Author: Pamela Vazquez <pamvazquez1@gmail.com>
 Date:   Thu Oct 28 21:31:34 2021 -0500
 
     Added description of APIs and Data Source
 
+commit 21469735739a3b2abce59f763fc3647c4e0d495c
+Merge: 511f2a6 c166307
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Oct 29 01:17:01 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Fixed issue in Publishers & Authors
+    
+    See merge request JunLum/pride-in-writing!48
+
 commit c166307210bbe555749f445f23246c0a6d672b83
 Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
 Date:   Thu Oct 28 20:10:19 2021 -0500
 
     Fixed issue in Publishers & Authors
+
+commit 511f2a6a3604b795b0f466cbbe004b458d3fdf40
+Merge: b09d972 49a2ac7
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Oct 29 00:51:56 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Api should work now
+    
+    See merge request JunLum/pride-in-writing!47
 
 commit 49a2ac78e06788253f1cb8003598b9daebb35af8
 Merge: 304c7c2 2eae888
@@ -53,11 +1055,173 @@ Date:   Thu Oct 28 19:45:23 2021 -0500
 
     Fixed API issues
 
+commit b09d9723e3bb2b2ebae778815edbd6615c96b5c4
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Fri Oct 29 00:13:56 2021 +0000
+
+    Update App.tsx
+
+commit 1049e985d05a5aea498ee8ac58f9352c23558ca9
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Thu Oct 28 23:56:01 2021 +0000
+
+    Update uwsgi.ini
+
+commit 8818db0fffc1f3a3cc6b500330ee9b6e6d8b0789
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Thu Oct 28 23:24:24 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit d9782e96bb125587ac54356d53018aca14c6aa8d
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 23:23:44 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit e8af94a19666f7964608779c2ac1689ab46f4c4c
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Thu Oct 28 23:13:49 2021 +0000
+
+    Enabled CORS, debugging
+
+commit a823636ca09f70b494722db0c4286fc2bb6d8100
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 23:10:45 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 68e1450a4484cbf0bc292a1baa196a895107ceaa
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 23:08:31 2021 +0000
+
+    Update requirements.txt
+
+commit f0d39ba009879e5284553b6f92790c4a8fc1bbcd
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 23:06:53 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 66b83bb4600339879c3d41be7cc5e3b9427ef4a0
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 22:57:01 2021 +0000
+
+    Update .gitlab-ci.yml
+
 commit 2eae8885cf334c8bcf62dd3a8a910bfb8d418fbf
 Author: Pamela Vazquez <pamvazquez1@gmail.com>
 Date:   Thu Oct 28 17:26:12 2021 -0500
 
     used json.parse to fix type error in authors/publishers page
+
+commit c70ee9ac29076f0406a7b55088fd43aa760526a1
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 22:19:16 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 8278509dd6e2fb7ceb5e97e016b2e2b2bdce2eb4
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 22:18:13 2021 +0000
+
+    Update requirements.txt
+
+commit f75280977be1815a404b261a909b33f941ee644d
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 22:08:36 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 42f047ad6f9855c6d014b260aedb66bf7c9c54df
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 22:07:12 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 0d2f06512f492e3e09a8372c44316e94f4b5dac8
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 22:07:09 2021 +0000
+
+    Update requirements.txt
+
+commit c4f2c43ce6d0a7beb567042a6ebe596146a716d6
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 21:52:50 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit b6b2a6567aebbf09f093250767a99ab7bb9cd4b5
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 21:52:28 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 6e6f4cb18785d7bc3b6acc697bfd03c79eac2bac
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 21:47:13 2021 +0000
+
+    Update requirements.txt
+
+commit 20e9f7b2c555741edb1d81ae784f1d55ad56f32f
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 21:33:28 2021 +0000
+
+    Update requirements.txt
+
+commit 1259a3f9f4adb9b8c5da40fe86e5a38f1e6f0e68
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 21:27:27 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit df7bd9ebfc7556c645d243cdea264e23ff5dc4f0
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 21:23:24 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 82c1ecf56a09b635a40202335d36fe0d6a84d27b
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 21:07:33 2021 +0000
+
+    Update postman.json
+
+commit 3cfb068c922233d9fad32a554af412a656abcb62
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 20:48:16 2021 +0000
+
+    Update postman.json
+
+commit 231348b94648d5f2bc89aec439c46a1706907a75
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 20:21:45 2021 +0000
+
+    Update postman.json
+
+commit c291faa2e22a5ead7099f487807e1219c74b5e09
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 20:02:12 2021 +0000
+
+    Update postman.json
+
+commit 1b959b4107b5c4db22741703a7731f467e79e3a9
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 19:48:35 2021 +0000
+
+    Update postman.json
+
+commit 0938365e17af080c094392e0711ea0cdbc11eb78
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 19:41:29 2021 +0000
+
+    Update postman.json
+
+commit 3ac4323dfb92aeb7f2756f21c8b3862931470d30
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 19:27:40 2021 +0000
+
+    Update postman.json
 
 commit ca8c79590d331b7cab501beb939d88cfd784d6fa
 Author: Gregory Raper <gjraper@wireless-10-146-86-247.public.utexas.edu>
@@ -65,11 +1229,40 @@ Date:   Thu Oct 28 14:22:50 2021 -0500
 
     Instance Pages finished, ready to fix API issue
 
+commit e9bbd589cf229985dacc6a0799044f10eb344e88
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 18:45:17 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 5a17d8ea986c17b28527e7064c8018914267c008
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 17:51:53 2021 +0000
+
+    Update postman.json
+
 commit ba73eddf992743fbbcb60a9260bb1f697b091cdc
 Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
 Date:   Thu Oct 28 12:31:11 2021 -0500
 
     Commented out API calls
+
+commit 22275ffd1dfbbf10f109f082b1b93c5b25adf3d5
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Thu Oct 28 17:29:45 2021 +0000
+
+    Update App.tsx
+
+commit d5e2ec22fada11040398755edc9d6cfc6cfa74d1
+Merge: 9755f66 81b6cc3
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Thu Oct 28 17:03:55 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Dev
+    
+    See merge request JunLum/pride-in-writing!46
 
 commit 81b6cc3e561eab807939345c1611128658ca8094
 Merge: 4aa6cd9 8eff622
@@ -83,6 +1276,12 @@ Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
 Date:   Thu Oct 28 11:55:52 2021 -0500
 
     Added package-lock, some instance page changes
+
+commit 9755f669c0833f99df136e424b1127f99ba15fa3
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 09:00:32 2021 +0000
+
+    Postman tests for each endpoint: still need to get postman ID
 
 commit 8eff6223d58f10553c618e268b17282648ddc6fa
 Merge: b52d285 f4ffe4e
@@ -119,17 +1318,70 @@ Date:   Thu Oct 28 02:59:33 2021 -0500
 
     corrected a tags
 
+commit 0a34078a97fa8b219310cb869217b0af91a85cac
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 07:55:46 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 2fc8e5131c1be5a58feb3f1d8264b71f14b59364
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 07:51:57 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 27002748c4d70c4e9b9a3229dba476c42af4763f
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 07:51:23 2021 +0000
+
+    Update .gitlab-ci.yml
+
 commit 2bfb2feeaee813772348c96a8e58ff502c63794a
 Author: Rodrigo Estrella <restrella@outlook.com>
 Date:   Thu Oct 28 02:44:35 2021 -0500
 
     added publisher bio
 
+commit 4bfa520ea7bdbf1c85bcd487c0bbfca952a08f5a
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 07:33:40 2021 +0000
+
+    Update .gitlab-ci.yml
+
 commit c4ed11e5149c8cb59e95d1b3ff3983aeb803e7bc
 Author: Rodrigo Estrella <restrella@outlook.com>
 Date:   Thu Oct 28 02:31:17 2021 -0500
 
     added bio of the authors
+
+commit 710f1a00960bc710343dbb4b9db0b45f9a7ad2f4
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 07:29:54 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 74592bb82580b99794a5931f09021b30d5621b90
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 07:24:47 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 131811a3c79bc8a41ff82c7c9671f7b998013dd4
+Author: Shyam K Patel <shyamp1204@utexas.edu>
+Date:   Thu Oct 28 07:24:17 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 187b51fa5d51737e366bef4f1dbe1c36bd771559
+Merge: a086d2a b52d285
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Thu Oct 28 07:21:28 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Dev
+    
+    See merge request JunLum/pride-in-writing!44
 
 commit b52d285a8ee48ceba8b2dc58fee55d1193a637f6
 Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
@@ -154,6 +1406,17 @@ Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
 Date:   Wed Oct 27 20:29:21 2021 -0500
 
     Dynamic Page Creation
+
+commit a086d2a08d02ecdfff5972e8178ea1ad4fa87870
+Merge: 20c4ac2 7ab0dc5
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Thu Oct 28 00:56:16 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Changed route data return
+    
+    See merge request JunLum/pride-in-writing!43
 
 commit 7ab0dc5bc5648b3b7e28aa1c54c84e21c2fe3841
 Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>

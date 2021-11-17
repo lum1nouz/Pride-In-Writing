@@ -3,10 +3,10 @@ import { Card } from "antd";
 import css from "./Books.module.css";
 import Book from "../../models/book-model";
 import Highlighter from "react-highlight-words";
-import 'antd/dist/antd.css';
-import Rating from '@mui/material/Rating';
+import "antd/dist/antd.css";
+import Rating from "@mui/material/Rating";
 
-function BookCard({ book, search }: { book: Book, search: string }) {
+function BookCard({ book, search }: { book: Book; search: string }) {
   return (
     <a id={"linkButton-" + book.book_id} href={"/book-" + book.book_id}>
       <Card
@@ -26,36 +26,57 @@ function BookCard({ book, search }: { book: Book, search: string }) {
           />
         }
       >
-        <Card.Meta title={<Highlighter 
-        searchWords={search.split(" ")}
-        textToHighlight= {book.name} 
-        /> } />
+        <Card.Meta
+          title={
+            <Highlighter
+              searchWords={search.split(" ")}
+              textToHighlight={book.name}
+            />
+          }
+        />
         <div className="cardStatsSection">
           <div> </div>
-          <div>{<Highlighter
-								// highlightClassName={styles.searchHighlight}
-								searchWords={search.split(" ")}
-								textToHighlight={"Genre:" +book.genre}
-							/>
-          } </div>
-          <div>{<Highlighter
-								// highlightClassName={styles.searchHighlight}
-								searchWords={search.split(" ")}
-								textToHighlight={"Year Published: " + book.year}
-							/> }
+          <div>
+            {
+              <Highlighter
+                // highlightClassName={styles.searchHighlight}
+                searchWords={search.split(" ")}
+                textToHighlight={"Genre:" + book.genre}
+              />
+            }{" "}
           </div>
-          <div>Rating: <Rating name="read-only" value={book.avg_rating} readOnly /> </div>
-          <div>Price: {<Highlighter
-								// highlightClassName={styles.searchHighlight}
-								searchWords={search.split(" ")}
-								textToHighlight={book.price + ""}
-							/> } 
+          <div>
+            {
+              <Highlighter
+                // highlightClassName={styles.searchHighlight}
+                searchWords={search.split(" ")}
+                textToHighlight={"Year Published: " + book.year}
+              />
+            }
           </div>
-          <div>Page Count: {<Highlighter
-								// highlightClassName={styles.searchHighlight}
-								searchWords={search.split(" ")}
-								textToHighlight={book.page_count + ""}
-							/> } </div>
+          <div>
+            Rating: <Rating name="read-only" value={book.avg_rating} readOnly />{" "}
+          </div>
+          <div>
+            Price:{" "}
+            {
+              <Highlighter
+                // highlightClassName={styles.searchHighlight}
+                searchWords={search.split(" ")}
+                textToHighlight={book.price + ""}
+              />
+            }
+          </div>
+          <div>
+            Page Count:{" "}
+            {
+              <Highlighter
+                // highlightClassName={styles.searchHighlight}
+                searchWords={search.split(" ")}
+                textToHighlight={book.page_count + ""}
+              />
+            }{" "}
+          </div>
         </div>
       </Card>
     </a>
