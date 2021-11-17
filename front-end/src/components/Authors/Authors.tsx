@@ -59,7 +59,7 @@ class Authors extends React.Component<props, state> {
     return (
       <tr key={data.author_id}>
         <td>
-          <a href={"/author-" + data.author_id}>
+          <a id={"linkButton-" + data.author_id} href={"/author-" + data.author_id}>
             {this.highlightText(data.author_name)}
           </a>
         </td>

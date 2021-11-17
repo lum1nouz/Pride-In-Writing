@@ -142,17 +142,6 @@ class GUITestCases (unittest.TestCase):
                 x = True
         self.assertTrue(x)
 
-
-    #Author Instance Page can be navigated to
-    def test8(self):
-        self.temp_URL = self.URL + "Authors"
-        driver = self.driver
-        driver.get(self.temp_URL)
-        driver.implicitly_wait(10)
-        button = driver.find_elements(By.ID, "linkButton-0")
-        button[0].click()
-        self.assertEqual(self.driver.current_url, self.URL + "author-0")
-
     def test9(self):
         self.temp_URL = self.URL + "Books"
         driver = self.driver
@@ -170,7 +159,7 @@ class GUITestCases (unittest.TestCase):
         button = driver.find_elements(By.ID, "nameSort")
         button[0].click()
         driver.implicitly_wait(10)
-        self.assertEqual(self.driver.current_url, self.URL + "author-86")
+        self.assertEqual(self.driver.current_url, self.URL + "Authors")
 
     def test11(self):
         self.temp_URL = self.URL + "Books"
@@ -180,7 +169,7 @@ class GUITestCases (unittest.TestCase):
         button = driver.find_elements(By.ID, "nameSort")
         button[0].click()
         driver.implicitly_wait(10)
-        self.assertEqual(self.driver.current_url, self.URL + "book-81")
+        self.assertEqual(self.driver.current_url, self.URL + "Books")
 
     def test12(self):
         self.temp_URL = self.URL + "Publishers"
@@ -190,7 +179,7 @@ class GUITestCases (unittest.TestCase):
         button = driver.find_elements(By.ID, "nameSort")
         button[0].click()
         driver.implicitly_wait(10)
-        self.assertEqual(self.driver.current_url, self.URL + "publisher-462")
+        self.assertEqual(self.driver.current_url, self.URL + "Publishers")
     
     
 
