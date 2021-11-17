@@ -1,7 +1,7 @@
 .parrallaxCont {
   margin-top: 0px;
   height: auto;
-  overflow:auto
+  overflow: auto;
 }
 
 .titleText {
@@ -27,5 +27,5 @@
   margin-right: 80px;
   /* TODO: Change this height to a % of the table selector */
   height: auto;
-  overflow:auto
+  overflow: auto;
 }

@@ -1,6 +1,21 @@
 import React from "react";
 import AddBox from "@material-ui/icons/AddBox";
-import {ArrowUpward, Check, ChevronLeft, ChevronRight, Clear, DeleteOutline, Edit, FilterList, FirstPage, LastPage, Remove, SaveAlt, Search, ViewColumn} from "@material-ui/icons";
+import {
+  ArrowUpward,
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Clear,
+  DeleteOutline,
+  Edit,
+  FilterList,
+  FirstPage,
+  LastPage,
+  Remove,
+  SaveAlt,
+  Search,
+  ViewColumn,
+} from "@material-ui/icons";
 import { forwardRef } from "react";
 
 export function stringToIntegerList(str: string | undefined): number[] {

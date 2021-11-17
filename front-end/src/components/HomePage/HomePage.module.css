@@ -1,22 +1,22 @@
 .downButton {
-	margin: 16px auto 0;
-	text-align: center;
-	color: #e0e0e0;
+  margin: 16px auto 0;
+  text-align: center;
+  color: #e0e0e0;
 }
 
 .downButtonIcon {
-	color: #e0e0e0;
-	font-size: 48px;
-	transform: translateY(0);
-	transition: transform 0.5s ease, color 0.25s ease;
+  color: #e0e0e0;
+  font-size: 48px;
+  transform: translateY(0);
+  transition: transform 0.5s ease, color 0.25s ease;
 }
 
 .downButtonIcon:hover {
-	transform: translateY(8px);
-	color: #40a9ff;
-	cursor: pointer;
+  transform: translateY(8px);
+  color: #40a9ff;
+  cursor: pointer;
 }
 
 .downButtonIcon:active {
-	transform: translateY(12px);
+  transform: translateY(12px);
 }

@@ -102,7 +102,7 @@ class Tests(TestCase):
     def test_publishers_instance(self):
         r = requests.get("https://prideinwriting.me/api/publishers/ids=0,1")
         assert r.status_code == 200
-        
+
     # Test the output when a not found publisher is queried
     def test_publishers_error(self):
         r = requests.get("https://api.prideinwriting.me/api/publishers/id=-1")

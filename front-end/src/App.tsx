@@ -13,7 +13,7 @@ import Publisher from "./models/publisher-model";
 import React, { useState, useEffect } from "react";
 import BookInstance from "./components/Books/BookInstance";
 import PublisherInstance from "./components/Publishers/PublisherInstance";
-import {stringToIntegerList} from "./common";
+import { stringToIntegerList } from "./common";
 import { render } from "react-dom";
 
 function createAuthor(a: Author) {
@@ -151,12 +151,28 @@ function App() {
   return (
     <div>
       {/* <Switch /> */}
-      <Route data-testid= "4444" exact path="/" component={HomePage} />
+      <Route data-testid="4444" exact path="/" component={HomePage} />
       <Route exact path="/AboutUs" component={AboutUs} />
-      <Route exact path="/SearchPage" render={(x) => <SearchPage.SearchPage />} />
-      <Route exact path="/Books" render={(x) =>  <Books dataLen={bookDataList.length}/> } />
-      <Route exact path="/Publishers" render={(x) =>  <Publishers dataLen={publDataList.length}/> } />
-      <Route exact path="/Authors" render={(x) =>  <Authors dataLen={authDataList.length}/> }  />
+      <Route
+        exact
+        path="/SearchPage"
+        render={(x) => <SearchPage.SearchPage />}
+      />
+      <Route
+        exact
+        path="/Books"
+        render={(x) => <Books dataLen={bookDataList.length} />}
+      />
+      <Route
+        exact
+        path="/Publishers"
+        render={(x) => <Publishers dataLen={publDataList.length} />}
+      />
+      <Route
+        exact
+        path="/Authors"
+        render={(x) => <Authors dataLen={authDataList.length} />}
+      />
       <div>
         {authDataList.map(function (author) {
           return (
@@ -191,7 +207,7 @@ function App() {
           );
         })}
       </div>
-      <p style={{color: "white"}}>testParagraph</p>
+      <p style={{ color: "white" }}>testParagraph</p>
     </div>
   );
 }
