@@ -61,6 +61,7 @@ function Books(props: props) {
 
   //Calls API 
   async function getData() {
+    console.log("https://api.prideinwriting.me/api/books" + createApiString(""))
     const authors = await fetch("https://api.prideinwriting.me/api/books" + createApiString(""))
       .then((response) => {
         return response.json();
@@ -158,7 +159,7 @@ function Books(props: props) {
   //First click sets to "desc" or descending order
   //Second click sets to "asc" or ascending order 
   function changeSort(col: number){
-    let lookup = ["name", "genres", "year", "avg_rating", "price", "page_count"]
+    let lookup = ["name", "genres", "avg_rating", "price", "page_count", "year"]
     let tempCategory = lookup[col]
     let tempValue = "descend"
     let check = curSort.value
@@ -200,7 +201,21 @@ function Books(props: props) {
               <span style={{ color: "#83B2FF" }}>s</span>
             </div>
             <Grid container spacing={5} style={{marginTop: 20}}>
-                  <Grid item xs={9}>
+                  <Grid item xs={1}>
+                  </Grid>
+                  <Grid item xs={2}>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <div> Sort Query: 
+                    <div> {curSort.category} </div>
+                    <div> {curSort.value} </div>
+                    </div>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <div> Filter Query: 
+                    <div> {curFilter.category} </div>
+                    <div> {curFilter.value} </div>
+                    </div>
                   </Grid>
                   <Grid item xs={2}>
                   <TextField variant="outlined" label="Search Books" onChange={(e) => handleSearchText(e)}> </TextField>
@@ -225,7 +240,7 @@ function Books(props: props) {
                     <Grid item xs={4}>
                     <div style={{margin: 10}}>
                       <h4>Genre</h4>
-                      <Button onClick={() => changeSort(2)} variant="outlined"> Sort </Button>
+                      <Button onClick={() => changeSort(1)} variant="outlined"> Sort </Button>
                       <Select
                             value="none"
                             label="Age"
@@ -259,8 +274,15 @@ function Books(props: props) {
                     <Grid item xs={4}>
                     <div style={{margin: 10}}>
                       <h4>Page Count</h4>
-                      <Button onClick={() => changeSort(5)} variant="outlined"> Sort </Button>
+                      <Button onClick={() => changeSort(4)} variant="outlined"> Sort </Button>
                       <TextField label = "Filter by Page Count" variant = "outlined" onChange = {(e) => handleFilterChange("page_count", e)} onKeyPress = {(e) => handleEnterKey(e)}> </TextField>
+                    </div>
+                    </Grid>
+                    <Grid item xs={4}>
+                    <div style={{margin: 10}}>
+                      <h4>Year</h4>
+                      <Button onClick={() => changeSort(5)} variant="outlined"> Sort </Button>
+                      <TextField label = "Filter by Year Published" variant = "outlined" onChange = {(e) => handleFilterChange("year", e)} onKeyPress = {(e) => handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>
                     </Grid>
@@ -278,7 +300,7 @@ function Books(props: props) {
                 </Grid>
               <div>
                 <div className={css.cardGrid}>
-                  {bookData.slice((page - 1) * 9, page * 9).map((book) => (
+                  {bookData.map((book) => (
                     <BookCard book={book} search={search} />
                   ))}
                 </div>

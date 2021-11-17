@@ -14,17 +14,17 @@ def search_publishers(search, all_publishers):
         # Publisher Name
         searches.append(Publisher.name.ilike("%{}%".format(term)))
         # Publisher Origin
-        searches.append(Publisher.origin.match(term))
+        searches.append(Publisher.origin.contains(term))
         # Publisher Publication Types
-        searches.append(Publisher.publication_types.match(term))
+        searches.append(Publisher.publication_types.contains(term))
         # Publisher Founded
-        searches.append(Publisher.founded.match(term))
+        searches.append(Publisher.founded.contains(term))
         # Publisher Parent Company
-        searches.append(Publisher.parent_comp.match(term))
+        searches.append(Publisher.parent_comp.contains(term))
         # Publisher HQ
-        searches.append(Publisher.headquarters.match(term))
+        searches.append(Publisher.headquarters.contains(term))
         # Publisher Website
-        searches.append(Publisher.website.match(term))
+        searches.append(Publisher.website.contains(term))
 
     all_publishers = all_publishers.filter(or_(*tuple(searches)))
 
