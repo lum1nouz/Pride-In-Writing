@@ -219,14 +219,14 @@ const axios = require("axios");
                 paddingRight: "5%",
               }}
             >
-              {highlightText(
+              {/* {highlightText(
                 `Displaying ${
                   authorItemCount > 0 ? (page - 1) * 10 + 1 : 0
                 }-${Math.min(
                   page * 10,
                   authorItemCount
                 )} of ${authorItemCount}`
-              )}
+              )} */}
             </div>
             <Bootstrap.Table
               table-bordered

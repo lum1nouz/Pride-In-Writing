@@ -97,12 +97,12 @@ def getAuthors():
     nationality = request.args.get('nationality')
     genre = request.args.get('genre')
     year_born = request.args.get('year_born')
-    name = request.args.get('name')
+    name = request.args.get('author_name')
+    booksPub = request.args.get('book_connections')
 
     # # Filter 
     if nationality is not None:
         # TODO: Need to change database to be all lower cased
-        nationality = nationality.lower()
         all_authors = all_authors.filter(Author.nationality.contains(nationality))
     if genre is not None:
         genre = genre.lower()
@@ -110,8 +110,10 @@ def getAuthors():
     if year_born is not None:
         all_authors = all_authors.filter(Author.year_born.contains(year_born))
     if name is not None:
-        name = name.lower()
+        name = name.replace("~", " ")
         all_authors = all_authors.filter(Author.author_name.contains(name))
+    if booksPub is not None:
+        all_authors = all_authors.filter(Author.book_connections.contains(booksPub))
 
     # # Sort
     if sort_by is not None and order is not None:
@@ -174,28 +176,28 @@ def getBooks():
     order = request.args.get('direction')
     search = request.args.get('search')
 
-    rating = request.args.get('rating')
-    genres = request.args.get('genre')
+    rating = request.args.get('avg_rating')
+    genres = request.args.get('genres')
+    name = request.args.get('name')
     year_published = request.args.get('year')
-    author = request.args.get('author')
     price = request.args.get('price')
     page_count = request.args.get('page_count')
 
     # Filter 
     if rating is not None:
-        all_books = all_books.filter(Book.avg_rating == rating)
+        all_books = all_books.filter(Book.avg_rating == str(rating))
     if genres is not None:
         genres = genres.lower()
         all_books = all_books.filter(Book.genres.contains(genres))
     if year_published is not None:
         all_books = all_books.filter(Book.year.contains(year_published))
-    if author is not None:
-        author = author.lower()
-        all_books = all_books.filter(Book.authors.contains(author))
+    if name is not None:
+        name = name.replace("~", " ")
+        all_books = all_books.filter(Book.name.contains(name))
     if price is not None:
         all_books = all_books.filter(Book.price == price)
     if page_count is not None:
-        all_books = all_books.filter(Book.page_count == page_count)
+        all_books = all_books.filter(Book.page_count == str(page_count))
 
     # Sort
     if sort_by is not None and order is not None:
@@ -259,19 +261,25 @@ def getPublishers():
     order = request.args.get('direction')
     search = request.args.get('search')
 
+    name = request.args.get('name')
     origin = request.args.get('origin')
-    pub_type = request.args.get('pub_type')
+    pub_type = request.args.get('publication_types')
     founded = request.args.get('founded')
+    authors = request.args.get('author_connections')
 
     # Filter
+    if name is not None:
+        name = name.replace("~", " ")
+        all_publishers = all_publishers.filter(Publisher.name.contains(name))
     if origin is not None:
-        origin = origin.lower()
+        origin = origin.replace("~", " ")
         all_publishers = all_publishers.filter(Publisher.origin == origin)
     if pub_type is not None:
-        pub_type = pub_type.lower()
         all_publishers = all_publishers.filter(Publisher.publication_types.contains(pub_type))
     if founded is not None:
         all_publishers = all_publishers.filter(Publisher.founded.contains(founded))
+    if authors is not None:
+        all_publishers = all_publishers.filter(Publisher.author_connections.contains(authors))
 
     # Sort
     if sort_by is not None and order is not None:

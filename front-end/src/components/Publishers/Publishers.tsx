@@ -138,9 +138,20 @@ class Publishers extends React.Component<props, state> {
     );
   };
 
+  async updatePage(value: number) {
+    console.log(value + "    " + this.state.page)
+    await this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: value, search: this.state.search})
+
+    if(this.state.search === ""){
+      console.log(this.state.page)
+      this.handleSubmit()
+      } else{
+      this.handleSearch()
+      }
+  }
+
   //Calls API 
   async getData() {
-    console.log("https://api.prideinwriting.me/api/publishers" + this.createApiString(""))
     const publishers = await fetch("https://api.prideinwriting.me/api/publishers" + this.createApiString(""))
       .then((response) => {
         return response.json();
@@ -158,7 +169,7 @@ class Publishers extends React.Component<props, state> {
     let sortString = ""
     let searchString = ""
     if(this.state.curFilter.category !== "" && this.state.curFilter.value !== "") {
-      filterString = "&" + this.state.curFilter.category + "=" + this.state.curFilter.value
+      filterString = ("&" + this.state.curFilter.category + "=" + this.state.curFilter.value).replaceAll(" ", "~")
     }
     if(this.state.curSort.category !== "") {
       let directionField = "&direction=" + this.state.curSort.value
@@ -170,7 +181,7 @@ class Publishers extends React.Component<props, state> {
     if(str !== "") {
       filterString = ""
       sortString = ""
-      searchString = "&search=" + str.replace(" ", "+").replace(",", "") 
+      searchString = "&search=" + str.replaceAll(" ", "+").replaceAll(",", "") 
     }
     return "?perPage=" + this.state.perPage + "&page=" + this.state.page + searchString + filterString + sortString;
   }
@@ -282,7 +293,19 @@ class Publishers extends React.Component<props, state> {
                 <span style={{ color: "#FF8650" }}>s</span>
               </div>
               <Grid container spacing={5} style={{marginTop: 20}}>
-                  <Grid item xs={9}>
+                  <Grid item xs={3}>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <div> Sort Query: 
+                    <div> {this.state.curSort.category} </div>
+                    <div> {this.state.curSort.value} </div>
+                    </div>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <div> Filter Query: 
+                    <div> {this.state.curFilter.category} </div>
+                    <div> {this.state.curFilter.value} </div>
+                    </div>
                   </Grid>
                   <Grid item xs={2}>
                   <TextField variant="outlined" label="Search Publishers" onChange={(e) => this.handleSearchText(e)}> </TextField>
@@ -325,11 +348,11 @@ class Publishers extends React.Component<props, state> {
                             label="Age"
                             onChange={(e) => this.handleSelectFilter(e, "publication_types")}
                           >
-                      <MenuItem value={"books"}>Books</MenuItem>
-                      <MenuItem value={"textbooks"}>Textbooks</MenuItem>
-                      <MenuItem value={"magazine"}>Magazine</MenuItem>
-                      <MenuItem value={"academic"}>Academic Resources</MenuItem>
-                      <MenuItem value={"journals"}>Journals</MenuItem>
+                      <MenuItem value={"Books"}>Books</MenuItem>
+                      <MenuItem value={"Textbooks"}>Textbooks</MenuItem>
+                      <MenuItem value={"Magazine"}>Magazine</MenuItem>
+                      <MenuItem value={"Academic"}>Academic Resources</MenuItem>
+                      <MenuItem value={"journal"}>Journals</MenuItem>
                       <MenuItem value={"none"}>Pick an option</MenuItem>
                     </Select>
                     </div>
@@ -440,9 +463,9 @@ class Publishers extends React.Component<props, state> {
                                         >
                                           {this.highlightText(
                                             `Displaying ${
-                                              this.props.dataLen > 0 ? (this.state.page - 1) * 10 + 1 : 0
+                                              this.props.dataLen > 0 ? (this.state.page - 1) * this.state.perPage + 1 : 0
                                             }-${Math.min(
-                                              this.state.page * 10,
+                                              this.state.page * this.state.perPage,
                                               this.props.dataLen
                                             )} of ${this.props.dataLen}`
                                           )}
@@ -471,12 +494,7 @@ class Publishers extends React.Component<props, state> {
                             defaultPage={1}
                             page={this.state.page}
                             onChange={(_, value) => {
-                              this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: value, search: this.state.search})
-                              if(this.state.search === ""){
-                                this.handleSubmit()
-                               } else{
-                                this.handleSearch()
-                               }
+                              this.updatePage(value)
                             }}
                             count={Math.ceil(this.props.dataLen / this.state.perPage)}
                             variant="outlined"
@@ -490,10 +508,6 @@ class Publishers extends React.Component<props, state> {
                               justifyContent: "flex-end",
                             }}
                           />
-
-
-
-
                 </div>
               </Paper>
             </div>

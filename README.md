@@ -25,7 +25,7 @@
 | ------ | ------ |
 | Phase 1 | Gregory Raper |
 | Phase 2 | Pamela Vazquez |
-| Phase 3 |  |
+| Phase 3 | Rodrigo Estrella |
 
 
 **Pipelines**
@@ -72,11 +72,11 @@ Phase 3:
 
 | Name | Estimate | Actual |
 | ------ | ------ | ------ |
-| Gregory Raper | 25 | |
-| Rodrigo Estrella | 24 | |
-| Cliff Xu | 25 | |
-| Pamela Vazquez De La Cruz | 20-25 | |
-| Shyam Patel | 30 | |
+| Gregory Raper | 25 | 20 |
+| Rodrigo Estrella | 24 | 20 |
+| Cliff Xu | 25 | 20 |
+| Pamela Vazquez De La Cruz | 20-25 | 20 |
+| Shyam Patel | 30 | 15 |
 
 
 **Comments**
@@ -98,4 +98,15 @@ One main thing that we did differentely in this phase was creating a spreadsheet
 
 
 Phase 3 Comments: 
-****INSERT PHASE 3 COMMENTS****
+https://gitlab.com/mehuldar/aroundtheworld/-/blob/splash-search/front-end/src/screens/Search/Search.js
+Search Page inspired from Around the World
+
+Overall this phase was a bit more challenging than we expected, but we ended up pulling through and finishing it up. Some of the most 
+challenging portions were developing the front and back end at the same time, dealing with design decisions we previously made in the front-end, 
+and adding highlighting on searches.
+
+One improvement we made this phase was an effort to start early and plan ahead. This went great, but we still saved a bit of work for the end,
+and were greatly helped by the extra day.
+
+Moving into phase 4, we will try to clean up some of the front-end code, and we may touch the backend database to make the searching/sorting/filtering
+more accurate with the data we web scrapped. 

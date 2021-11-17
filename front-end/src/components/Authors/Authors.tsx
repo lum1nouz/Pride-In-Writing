@@ -100,6 +100,18 @@ class Authors extends React.Component<props, state> {
     this.setState({ dataStore: await this.getData(), curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: this.state.page});
   }
 
+  async updatePage(value: number) {
+    console.log(value + "    " + this.state.page)
+    await this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: value, search: this.state.search})
+
+    if(this.state.search === ""){
+      console.log(this.state.page)
+      this.handleSubmit()
+      } else{
+      this.handleSearch()
+      }
+  }
+
   //Beware of using
   //State changes often with sorting/filtering
   componentDidUpdate() {
@@ -113,7 +125,7 @@ class Authors extends React.Component<props, state> {
     let sortString = ""
     let searchString = ""
     if(this.state.curFilter.category !== "" && this.state.curFilter.value !== "") {
-      filterString = "&" + this.state.curFilter.category + "=" + this.state.curFilter.value
+      filterString = ("&" + this.state.curFilter.category + "=" + this.state.curFilter.value).replaceAll(" ", "~")
     }
     if(this.state.curSort.category !== "") {
       let directionField = "&direction=" + this.state.curSort.value
@@ -125,7 +137,7 @@ class Authors extends React.Component<props, state> {
     if(str !== "") {
       filterString = ""
       sortString = ""
-      searchString = "&search=" + str.replace(" ", "+").replace(",", "") 
+      searchString = "&search=" + str.replaceAll(" ", "+").replaceAll(",", "") 
     }
     return "?perPage=" + this.state.perPage + "&page=" + this.state.page + searchString + filterString + sortString;
   }
@@ -238,6 +250,7 @@ class Authors extends React.Component<props, state> {
     return (
       <div>
         <Header />
+        
         <div>
           <Parallax strength={500} className={css.parrallaxCont}>
             <div style={{ fontWeight: "bold" }}>
@@ -251,7 +264,19 @@ class Authors extends React.Component<props, state> {
                 <span style={{ color: "#FC6C85" }}>s</span>
               </div>
               <Grid container spacing={5} style={{marginTop: 20}}>
-                  <Grid item xs={9}>
+                  <Grid item xs={3}>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <div> Sort Query: 
+                    <div> {this.state.curSort.category} </div>
+                    <div> {this.state.curSort.value} </div>
+                    </div>
+                  </Grid>
+                  <Grid item xs={3}>
+                    <div> Filter Query: 
+                    <div> {this.state.curFilter.category} </div>
+                    <div> {this.state.curFilter.value} </div>
+                    </div>
                   </Grid>
                   <Grid item xs={2}>
                   <TextField variant="outlined" label="Search Authors" onChange={(e) => this.handleSearchText(e)}> </TextField>
@@ -329,7 +354,7 @@ class Authors extends React.Component<props, state> {
                     <div style={{margin: 10}}>
                       <h4>Books Written</h4>
                       <Button onClick={() => this.changeSort(5)} variant="outlined"> Sort </Button>
-                      <TextField label = "Filter by Books Written" variant = "outlined" onChange = {(e) => this.handleFilterChange("booksPublished", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
+                      <TextField label = "Filter by Books Written" variant = "outlined" onChange = {(e) => this.handleFilterChange("book_connections", e)} onKeyPress = {(e) => this.handleEnterKey(e)}> </TextField>
                     </div>
                     </Grid>
                     </Grid>
@@ -448,12 +473,7 @@ class Authors extends React.Component<props, state> {
                             defaultPage={1}
                             page={this.state.page}
                             onChange={(_, value) => {
-                              this.setState({ dataStore: this.state.dataStore, curSort: this.state.curSort, curFilter: this.state.curFilter, perPage: this.state.perPage, page: value, search: this.state.search})
-                              if(this.state.search === ""){
-                                this.handleSubmit()
-                               } else{
-                                this.handleSearch()
-                               }
+                              this.updatePage(value)
                             }}
                             count={Math.ceil(this.props.dataLen / this.state.perPage)}
                             variant="outlined"

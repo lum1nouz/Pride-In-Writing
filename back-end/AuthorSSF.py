@@ -14,13 +14,13 @@ def search_authors(search, all_authors):
         # Author Name
         searches.append(Author.author_name.ilike("%{}%".format(term)))
         # Author Genre
-        searches.append(Author.genre.match(term))
+        searches.append(Author.genre.contains(term))
         # Author Nationality
-        searches.append(Author.nationality.match(term))
+        searches.append(Author.nationality.contains(term))
         # Author Notable Works
-        searches.append(Author.noteable_works.match(term))
+        searches.append(Author.noteable_works.contains(term))
         # Author year born
-        searches.append(Author.year_born.match(term))
+        searches.append(Author.year_born.contains(term))
 
     all_authors = all_authors.filter(or_(*tuple(searches)))
 
