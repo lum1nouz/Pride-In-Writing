@@ -23,9 +23,14 @@ class Tests(TestCase):
         d = r.json()
         assert len(d) > 0
 
-    # Test the sixth instance of the author by id
+    # Test the first instance of the author by id
     def test_authors_instance(self):
         r = requests.get("https://api.prideinwriting.me/api/authors/id=1")
+        assert r.status_code == 200
+
+    # Test multiple instances of the author by ids
+    def test_authors_instance(self):
+        r = requests.get("https://prideinwriting.me/api/authors/ids=0,1,2")
         assert r.status_code == 200
 
     # Test the output when a not found author is queried
@@ -53,9 +58,14 @@ class Tests(TestCase):
         d = r.json()
         assert len(d[0]) > 0
 
-    # Test the sixth instance of the books by id
+    # Test the first instance of the books by id
     def test_books_instance(self):
         r = requests.get("https://api.prideinwriting.me/api/books/id=1")
+        assert r.status_code == 200
+
+    # Test multiple instances of the books by ids
+    def test_books_instance(self):
+        r = requests.get("https://prideinwriting.me/api/books/ids=0,1,2,3,4")
         assert r.status_code == 200
 
     # Test the output when a not found book is queried
@@ -83,11 +93,16 @@ class Tests(TestCase):
         d = r.json()
         assert len(d[0]) > 0
 
-    # Test the sixth instance of the publisher by id
+    # Test the first instance of the publisher by id
     def test_publishers_instance(self):
         r = requests.get("https://api.prideinwriting.me/api/publishers/id=1")
         assert r.status_code == 200
 
+    # Test multiple instances of the publisher by ids
+    def test_publishers_instance(self):
+        r = requests.get("https://prideinwriting.me/api/publishers/ids=0,1")
+        assert r.status_code == 200
+        
     # Test the output when a not found publisher is queried
     def test_publishers_error(self):
         r = requests.get("https://api.prideinwriting.me/api/publishers/id=-1")
