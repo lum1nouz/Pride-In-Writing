@@ -158,7 +158,7 @@ class Publishers extends React.Component<props, state> {
     let sortString = ""
     let searchString = ""
     if(this.state.curFilter.category !== "" && this.state.curFilter.value !== "") {
-      filterString = "&" + this.state.curFilter.category + "=" + this.state.curFilter.value
+      filterString = ("&" + this.state.curFilter.category + "=" + this.state.curFilter.value).replace(" ", "~")
     }
     if(this.state.curSort.category !== "") {
       let directionField = "&direction=" + this.state.curSort.value

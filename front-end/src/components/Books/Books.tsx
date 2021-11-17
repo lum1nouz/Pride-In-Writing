@@ -91,7 +91,7 @@ function Books(props: props) {
     let sortString = ""
     let searchString = ""
     if(curFilter.category !== "" && curFilter.value !== "") {
-      filterString = "&" + curFilter.category + "=" + curFilter.value
+      filterString = ("&" + curFilter.category + "=" + curFilter.value).replace(" ", "~")
     }
     if(curSort.category !== "" ) {
       let directionField = "&direction=" + curSort.value

@@ -113,7 +113,7 @@ class Authors extends React.Component<props, state> {
     let sortString = ""
     let searchString = ""
     if(this.state.curFilter.category !== "" && this.state.curFilter.value !== "") {
-      filterString = "&" + this.state.curFilter.category + "=" + this.state.curFilter.value
+      filterString = ("&" + this.state.curFilter.category + "=" + this.state.curFilter.value).replace(" ", "~")
     }
     if(this.state.curSort.category !== "") {
       let directionField = "&direction=" + this.state.curSort.value
@@ -133,8 +133,7 @@ class Authors extends React.Component<props, state> {
   //Calls API 
   async getData() {
     // console.log("https://api.prideinwriting.me/api/authors" + this.createApiString(""))
-    // const authors = await fetch("https://api.prideinwriting.me/api/authors" + this.createApiString(""))
-    const authors = await fetch("localHost:5000/api/authors" + this.createApiString(""))
+    const authors = await fetch("https://api.prideinwriting.me/api/authors" + this.createApiString(""))
       .then((response) => {
         return response.json();
       })
