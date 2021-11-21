@@ -3,29 +3,13 @@ import { Paper } from "@material-ui/core";
 import Header from "../Header/Header";
 import css from "./Books.module.css";
 import { Parallax } from "react-parallax";
-import Card from "@material-ui/core/Card";
 import { CardContent } from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
-import Book from "../../models/book-model";
 import Author from "../../models/author-model";
 import Publisher from "../../models/publisher-model";
-import { stringToIntegerList } from "../../common";
 import Button from "@mui/material/Button";
 import Rating from "@mui/material/Rating";
-
-// function arrayToString(arr: String[]) {
-//   let tempData: string = "";
-//   if(!arr){
-//     return ""
-//   }
-
-//   arr.forEach((s) => {
-//     tempData = tempData + " " + s;
-//   });
-//   return tempData;
-// }
 
 type props = {
   id: number;

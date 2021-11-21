@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import { Paper, Button, Grid } from "@material-ui/core";
 import Header from "../Header/Header";
 import { Pagination } from "@mui/material";
@@ -8,6 +8,11 @@ import * as Bootstrap from "react-bootstrap";
 import Author from "../../models/author-model";
 import { stringToIntegerList } from "../../common";
 import { TextField, Select, MenuItem, SelectChangeEvent } from "@mui/material";
+
+type response = {
+  data: Author[]
+  count: number
+}
 
 type filter = {
   category: string;
@@ -19,9 +24,7 @@ type sort = {
   value: string;
 };
 
-type props = {
-  dataLen: number;
-};
+type props = { };
 
 type state = {
   dataStore: Author[];
@@ -30,6 +33,7 @@ type state = {
   perPage: number;
   page: number;
   search: string;
+  total: number;
 };
 
 class Authors extends React.Component<props, state> {
@@ -49,6 +53,7 @@ class Authors extends React.Component<props, state> {
       perPage: 15,
       page: 1,
       search: "",
+      total: 0
     };
   }
 
@@ -103,14 +108,9 @@ class Authors extends React.Component<props, state> {
       curFilter: this.state.curFilter,
       perPage: this.state.perPage,
       page: pageNum,
+      total: this.state.total
     });
-    this.setState({
-      dataStore: await this.getData(),
-      curSort: this.state.curSort,
-      curFilter: this.state.curFilter,
-      perPage: this.state.perPage,
-      page: this.state.page,
-    });
+    await this.getData()
   }
 
   async updatePage(value: number) {
@@ -180,8 +180,7 @@ class Authors extends React.Component<props, state> {
 
   //Calls API
   async getData() {
-    // console.log("https://api.prideinwriting.me/api/authors" + this.createApiString(""))
-    const authors = await fetch(
+    const authors: response = await fetch(
       "https://api.prideinwriting.me/api/authors" + this.createApiString("")
     )
       .then((response) => {
@@ -191,12 +190,20 @@ class Authors extends React.Component<props, state> {
         console.log(err);
         return {};
       });
-    return authors;
+      this.setState({
+        dataStore: authors.data,
+        curSort: this.state.curSort,
+        curFilter: this.state.curFilter,
+        perPage: this.state.perPage,
+        page: this.state.page,
+        search: this.state.search,
+        total: authors.count
+      });
   }
 
   //Calls search route on API
   async getDataForSearch(search: string) {
-    const authors = await fetch(
+    const authors: response = await fetch(
       "https://api.prideinwriting.me/api/authors" + this.createApiString(search)
     )
       .then((response) => {
@@ -206,7 +213,15 @@ class Authors extends React.Component<props, state> {
         console.log(err);
         return {};
       });
-    return authors;
+      this.setState({
+        dataStore: authors.data,
+        curSort: this.state.curSort,
+        curFilter: this.state.curFilter,
+        perPage: this.state.perPage,
+        page: this.state.page,
+        search: this.state.search,
+        total: authors.count
+      });
   }
 
   //Logic used to indicate sorting order
@@ -303,14 +318,7 @@ class Authors extends React.Component<props, state> {
 
   //Handles the submit button for updating the data
   async handleSubmit() {
-    this.setState({
-      dataStore: await this.getData(),
-      curSort: this.state.curSort,
-      curFilter: this.state.curFilter,
-      perPage: this.state.perPage,
-      page: this.state.page,
-      search: this.state.search,
-    });
+    await this.getData()
   }
 
   //Used by search Text field
@@ -330,14 +338,7 @@ class Authors extends React.Component<props, state> {
 
   //Calls API search
   async handleSearch() {
-    this.setState({
-      dataStore: await this.getDataForSearch(this.state.search),
-      curSort: this.state.curSort,
-      curFilter: this.state.curFilter,
-      perPage: this.state.perPage,
-      page: this.state.page,
-      search: this.state.search,
-    });
+    await this.getDataForSearch(this.state.search)
   }
 
   render() {
@@ -645,13 +646,13 @@ class Authors extends React.Component<props, state> {
                     >
                       {this.highlightText(
                         `Displaying ${
-                          this.props.dataLen > 0
+                          this.state.total > 0
                             ? (this.state.page - 1) * this.state.perPage + 1
                             : 0
                         }-${Math.min(
                           this.state.page * this.state.perPage,
-                          this.props.dataLen
-                        )} of ${this.props.dataLen}`
+                          this.state.total
+                        )} of ${this.state.total}`
                       )}
                     </div>
                     <Bootstrap.Table
@@ -685,7 +686,7 @@ class Authors extends React.Component<props, state> {
                     onChange={(_, value) => {
                       this.updatePage(value);
                     }}
-                    count={Math.ceil(this.props.dataLen / this.state.perPage)}
+                    count={Math.ceil(this.state.total / this.state.perPage)}
                     variant="outlined"
                     color="primary"
                     showFirstButton

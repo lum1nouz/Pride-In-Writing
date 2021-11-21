@@ -4,9 +4,7 @@ import Header from "../Header/Header";
 import css from "./Publishers.module.css";
 import { Parallax } from "react-parallax";
 import { CardContent } from "@material-ui/core";
-import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
 import Author from "../../models/author-model";
 import Book from "../../models/book-model";
 import Button from "@mui/material/Button";
@@ -29,16 +27,6 @@ type props = {
 type state = {
   bookCon: Book[];
   autCon: Author[];
-};
-
-const styles = {
-  media: {
-    width: 600,
-    height: 200,
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
 };
 
 class PublisherInstance extends React.Component<props, state> {

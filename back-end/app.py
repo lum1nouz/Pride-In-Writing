@@ -146,7 +146,7 @@ def getAuthors():
     else:
         result = authors_schema.dump(all_authors)
 
-    return authors_schema.jsonify(result)
+    return {"data": result, "count": all_authors.count()}
 
 
 @app.route("/api/authors/id=<id>", methods=["GET"])
@@ -234,7 +234,7 @@ def getBooks():
     else:
         result = books_schema.dump(all_books)
 
-    return books_schema.jsonify(result)
+    return {"data": result, "count": all_books.count()}
 
 
 @app.route("/api/books/id=<id>", methods=["GET"])
@@ -323,7 +323,7 @@ def getPublishers():
     else:
         result = publishers_schema.dump(all_publishers)
 
-    return publishers_schema.jsonify(result)
+    return {"data": result, "count": all_publishers.count()}
 
 
 @app.route("/api/publishers/id=<id>", methods=["GET"])

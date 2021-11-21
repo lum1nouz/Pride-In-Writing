@@ -6,7 +6,6 @@ import { Parallax } from "react-parallax";
 import { CardContent } from "@material-ui/core";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
-import { Link } from "react-router-dom";
 import Book from "../../models/book-model";
 import Publisher from "../../models/publisher-model";
 import Button from "@mui/material/Button";
