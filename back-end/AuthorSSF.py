@@ -16,7 +16,7 @@ def search_authors(search, all_authors):
         # Author Genre
         searches.append(Author.genre.contains(term))
         # Author Nationality
-        searches.append(Author.nationality.contains(term))
+        searches.append(Author.nationality.ilike("%{}%".format(term)))
         # Author Notable Works
         searches.append(Author.noteable_works.contains(term))
         # Author year born

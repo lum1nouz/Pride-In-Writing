@@ -130,7 +130,6 @@ def getAuthors():
 
     # Search
     if search is not None:
-        search = search.lower()
         all_authors = search_authors(search, all_authors)
 
     # Page = Current Page Number
@@ -218,7 +217,6 @@ def getBooks():
 
     # Search
     if search is not None:
-        search = search.lower()
         all_books = search_books(search, all_books)
 
     # Page = Current Page Number
@@ -307,7 +305,6 @@ def getPublishers():
 
     # Search
     if search is not None:
-        search = search.lower()
         all_publishers = search_publishers(search, all_publishers)
 
     # Page = Current Page Number
