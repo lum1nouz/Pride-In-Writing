@@ -29,18 +29,18 @@ pages:
 #     - CI=false npm run build
 #     - echo "Build complete."
 
-# deploy_production:
-#   image: python:3.6-stretch
-#   only:
-#     variables:
-#       - $CI_COMMIT_BRANCH == "main"
-#   stage: deploy
-#   before_script:
-#     - pip install awsebcli --upgrade --user
-#     - git checkout main
-#   script:
-#     - cd back-end
-#     - /root/.local/bin/eb deploy prideinwriting-api-prod
+deploy_production:
+  image: python:3.6-stretch
+  only:
+    variables:
+      - $CI_COMMIT_BRANCH == "main"
+  stage: deploy
+  before_script:
+    - pip install awsebcli --upgrade --user
+    - git checkout main
+  script:
+    - cd back-end
+    - /root/.local/bin/eb deploy prideinwriting-api-prod
 
 # postman_tests:
 #   stage: test
