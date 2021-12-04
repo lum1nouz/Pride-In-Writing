@@ -1,46 +1,17 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import { Paper, Button, Grid, TextField } from "@material-ui/core";
 import { Select, MenuItem, SelectChangeEvent } from "@mui/material";
-import { TablePagination } from "@material-ui/core";
 import { Pagination } from "@mui/material";
 import * as Bootstrap from "react-bootstrap";
 import Header from "../Header/Header";
 import css from "./Publishers.module.css";
 import { Parallax } from "react-parallax";
-import MaterialTable from "material-table";
 import Publisher from "../../models/publisher-model";
-import { stringToIntegerList, tableIcons } from "../../common";
+import { stringToIntegerList} from "../../common";
 
-type rowdata = {
-  publisher: ReactElement;
-  country: string;
-  types: string;
-  authorsPublished: number | undefined;
-  founded: string;
-  id: number;
-};
-
-function mapData(data: Publisher[]) {
-  let newData: rowdata[] = [];
-  data.forEach(function (data) {
-    newData.push({
-      publisher: (
-        <a
-          id={"linkButton-" + data.publisher_id}
-          href={"/publisher-" + data.publisher_id}
-        >
-          {" "}
-          {data.name}{" "}
-        </a>
-      ),
-      country: data.headquarters,
-      types: data.publication_types,
-      authorsPublished: stringToIntegerList(data.author_connections).length,
-      founded: data.founded,
-      id: data.publisher_id,
-    });
-  });
-  return newData;
+type response = {
+  data: Publisher[]
+  count: number
 }
 
 type filter = {
@@ -64,6 +35,7 @@ type state = {
   perPage: number;
   page: number;
   search: string;
+  total: number;
 };
 
 class Publishers extends React.Component<props, state> {
@@ -83,6 +55,7 @@ class Publishers extends React.Component<props, state> {
       perPage: 15,
       page: 1,
       search: "",
+      total: 0
     };
   }
 
@@ -99,13 +72,7 @@ class Publishers extends React.Component<props, state> {
       perPage: this.state.perPage,
       page: pageNum,
     });
-    this.setState({
-      dataStore: await this.getData(),
-      curSort: this.state.curSort,
-      curFilter: this.state.curFilter,
-      perPage: this.state.perPage,
-      page: this.state.page,
-    });
+    await this.getData()
   }
 
   //Beware of using
@@ -169,9 +136,10 @@ class Publishers extends React.Component<props, state> {
     }
   }
 
-  //Calls API
+    //Calls API
   async getData() {
-    const publishers = await fetch(
+    // "https://api.prideinwriting.me/api/authors" + this.createApiString("")
+    const publishers: response = await fetch(
       "https://api.prideinwriting.me/api/publishers" + this.createApiString("")
     )
       .then((response) => {
@@ -181,7 +149,15 @@ class Publishers extends React.Component<props, state> {
         console.log(err);
         return {};
       });
-    return publishers;
+      this.setState({
+        dataStore: publishers.data,
+        curSort: this.state.curSort,
+        curFilter: this.state.curFilter,
+        perPage: this.state.perPage,
+        page: this.state.page,
+        search: this.state.search,
+        total: publishers.count
+      });
   }
 
   //Used to build API request
@@ -225,7 +201,7 @@ class Publishers extends React.Component<props, state> {
 
   //Calls search route on API
   async getDataForSearch(search: string) {
-    const authors = await fetch(
+    const publishers: response = await fetch(
       "https://api.prideinwriting.me/api/publishers" +
         this.createApiString(search)
     )
@@ -236,7 +212,15 @@ class Publishers extends React.Component<props, state> {
         console.log(err);
         return {};
       });
-    return authors;
+      this.setState({
+        dataStore: publishers.data,
+        curSort: this.state.curSort,
+        curFilter: this.state.curFilter,
+        perPage: this.state.perPage,
+        page: this.state.page,
+        search: this.state.search,
+        total: publishers.count
+      });
   }
 
   //Logic used to indicate sorting order
@@ -332,14 +316,7 @@ class Publishers extends React.Component<props, state> {
 
   //Handles the submit button for updating the data
   async handleSubmit() {
-    this.setState({
-      dataStore: await this.getData(),
-      curSort: this.state.curSort,
-      curFilter: this.state.curFilter,
-      perPage: this.state.perPage,
-      page: this.state.page,
-      search: this.state.search,
-    });
+    await this.getData()
   }
 
   //Used by search Text field
@@ -359,14 +336,7 @@ class Publishers extends React.Component<props, state> {
 
   //Calls API search
   async handleSearch() {
-    this.setState({
-      dataStore: await this.getDataForSearch(this.state.search),
-      curSort: this.state.curSort,
-      curFilter: this.state.curFilter,
-      perPage: this.state.perPage,
-      page: this.state.page,
-      search: this.state.search,
-    });
+    this.getDataForSearch(this.state.search)
   }
 
   render() {
@@ -660,13 +630,13 @@ class Publishers extends React.Component<props, state> {
                     >
                       {this.highlightText(
                         `Displaying ${
-                          this.props.dataLen > 0
+                          this.state.total > 0
                             ? (this.state.page - 1) * this.state.perPage + 1
                             : 0
                         }-${Math.min(
                           this.state.page * this.state.perPage,
-                          this.props.dataLen
-                        )} of ${this.props.dataLen}`
+                          this.state.total
+                        )} of ${this.state.total}`
                       )}
                     </div>
                     <Bootstrap.Table
@@ -703,7 +673,7 @@ class Publishers extends React.Component<props, state> {
                     onChange={(_, value) => {
                       this.updatePage(value);
                     }}
-                    count={Math.ceil(this.props.dataLen / this.state.perPage)}
+                    count={Math.ceil(this.state.total / this.state.perPage)}
                     variant="outlined"
                     color="primary"
                     showFirstButton

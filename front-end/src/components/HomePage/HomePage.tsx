@@ -1,4 +1,4 @@
-import React, { createRef } from "react";
+import React from "react";
 import Header from "../Header/Header";
 import css from "./HomePage.module.css";
 import booksPics from "../../Assets/booksPic.png";
@@ -11,32 +11,10 @@ import Typography from "@material-ui/core/Typography";
 import { CardActionArea } from "@mui/material";
 import authorStockImg from "../../Assets/authorImg.jpg";
 import bookStockImg from "../../Assets/bookImg.jpg";
-import publisherStockImg from "../../Assets/publisherImg.jpg";
 import penguinLogoImg from "../../Assets/penguinLogo.webp";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
-
-const styles = {
-  parrallaxCont: {
-    margintop: 100,
-    height: 1000,
-  },
-  paperCont: {
-    marginTop: 200,
-    marginLeft: 80,
-    marginRight: 80,
-    height: 1200,
-  },
-
-  pride: {
-    fontSize: "50px",
-  },
-
-  mission: {
-    fontSize: "30px",
-  },
-};
 
 type props = {};
 

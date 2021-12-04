@@ -1,10 +1,9 @@
-import css from "./App.module.css";
 import HomePage from "./components/HomePage/HomePage";
 import AboutUs from "./components/AboutUs/AboutUs";
 import Books from "./components/Books/Books";
 import Publishers from "./components/Publishers/Publishers";
 import Authors from "./components/Authors/Authors";
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import AuthorsInstance from "./components/Authors/AuthorsInstance";
 import Author from "./models/author-model";
 import Book from "./models/book-model";
@@ -14,7 +13,19 @@ import React, { useState, useEffect } from "react";
 import BookInstance from "./components/Books/BookInstance";
 import PublisherInstance from "./components/Publishers/PublisherInstance";
 import { stringToIntegerList } from "./common";
-import { render } from "react-dom";
+
+type responseA = {
+  data: Author[]
+  count: number
+}
+type responseB = {
+  data: Book[]
+  count: number
+}
+type responseP = {
+  data: Publisher[]
+  count: number
+}
 
 function createAuthor(a: Author) {
   return (
@@ -80,20 +91,13 @@ function createPublisher(a: Publisher) {
   );
 }
 
-const config = {
-  headers: {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
-  },
-};
-
 function App() {
   let [authDataList, setAuthDataList] = useState<Author[]>([]);
   let [bookDataList, setBookDataList] = useState<Book[]>([]);
   let [publDataList, setPublDataList] = useState<Publisher[]>([]);
 
   async function getAuthorsData() {
-    const authors = await fetch(`https://api.prideinwriting.me/api/authors`)
+    const authors: responseA = await fetch(`https://api.prideinwriting.me/api/authors`)
       .then((response) => {
         return response.json();
       })
@@ -101,11 +105,11 @@ function App() {
         console.log(err);
         return {};
       });
-    return authors as Author[];
+    return authors.data as Author[];
   }
 
   async function getBooksData() {
-    const books = await fetch(`https://api.prideinwriting.me/api/books`)
+    const books: responseB = await fetch(`https://api.prideinwriting.me/api/books`)
       .then((response) => {
         return response.json();
       })
@@ -113,13 +117,11 @@ function App() {
         console.log(err);
         return {};
       });
-    return books as Book[];
+    return books.data as Book[];
   }
 
   async function getPublisherData() {
-    const publishers = await fetch(
-      `https://api.prideinwriting.me/api/publishers`
-    )
+    const publishers: responseP = await fetch(`https://api.prideinwriting.me/api/publishers`)
       .then((response) => {
         return response.json();
       })
@@ -127,7 +129,7 @@ function App() {
         console.log(err);
         return {};
       });
-    return publishers as Publisher[];
+    return publishers.data as Publisher[];
   }
 
   useEffect(() => {
@@ -161,7 +163,7 @@ function App() {
       <Route
         exact
         path="/Books"
-        render={(x) => <Books dataLen={bookDataList.length} />}
+        render={(x) => <Books/>}
       />
       <Route
         exact
@@ -171,7 +173,7 @@ function App() {
       <Route
         exact
         path="/Authors"
-        render={(x) => <Authors dataLen={authDataList.length} />}
+        render={(x) => <Authors/>}
       />
       <div>
         {authDataList.map(function (author) {

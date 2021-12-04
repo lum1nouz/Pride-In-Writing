@@ -1,9 +1,8 @@
 import React from "react";
 import { CardContent } from "@material-ui/core";
 import Header from "../Header/Header";
-import { Paper, Button } from "@material-ui/core";
-import { Parallax, Background } from "react-parallax";
-import bgPhoto from "../../Assets/bgPhoto.jpg";
+import { Paper } from "@material-ui/core";
+import { Parallax } from "react-parallax";
 import Card from "@material-ui/core/Card";
 import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";

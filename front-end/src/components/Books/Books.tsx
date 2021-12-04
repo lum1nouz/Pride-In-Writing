@@ -11,6 +11,11 @@ import Book from "../../models/book-model";
 import BookCard from "./BookCard";
 import { TextField, Select, MenuItem, SelectChangeEvent } from "@mui/material";
 
+type response = {
+  data: Book[]
+  count: number
+}
+
 type filter = {
   category: string;
   value: string;
@@ -21,9 +26,7 @@ type sort = {
   value: string;
 };
 
-type props = {
-  dataLen: number;
-};
+type props = {};
 
 function Books(props: props) {
   const [bookData, setBookData] = useState<Book[]>([]);
@@ -39,6 +42,7 @@ function Books(props: props) {
   });
   const [curSort, setCurSort] = useState<sort>({ category: "", value: "" });
   const [search, setSearch] = useState("");
+  const [total, setTotal] = useState(0)
   const perPage = 9;
 
   useEffect(() => {
@@ -65,10 +69,7 @@ function Books(props: props) {
 
   //Calls API
   async function getData() {
-    console.log(
-      "https://api.prideinwriting.me/api/books" + createApiString("")
-    );
-    const authors = await fetch(
+    const books: response = await fetch(
       "https://api.prideinwriting.me/api/books" + createApiString("")
     )
       .then((response) => {
@@ -78,12 +79,14 @@ function Books(props: props) {
         console.log(err);
         return {};
       });
-    return authors;
+    
+    setTotal(books.count)
+    return books.data;
   }
 
   //Calls search route on API
   async function getDataForSearch(srch: string) {
-    const authors = await fetch(
+    const books: response = await fetch(
       "https://api.prideinwriting.me/api/books" + createApiString(srch)
     )
       .then((response) => {
@@ -93,7 +96,9 @@ function Books(props: props) {
         console.log(err);
         return {};
       });
-    return authors;
+    
+    setTotal(books.count)
+    return books.data;
   }
 
   //Used to build API request
@@ -436,7 +441,7 @@ function Books(props: props) {
                     }}
                   >
                     Displaying {(page - 1) * 9 + 1} -
-                    {Math.min(page * 9, props.dataLen)} of {props.dataLen}
+                    {Math.min(page * 9, total)} of {total}
                   </div>
                   <div
                     style={{
@@ -458,7 +463,7 @@ function Books(props: props) {
                             behavior: "smooth",
                           });
                         }}
-                        count={Math.ceil(props.dataLen / 9)}
+                        count={Math.ceil(total / 9)}
                         variant="outlined"
                         color="primary"
                         style={{ alignSelf: "center" }}
