@@ -132,7 +132,7 @@ export function SearchPage() {
       axios
         .get("https://api.prideinwriting.me/api/authors" + urlParams)
         .then((response) => {
-          setAuthorData(response.data);
+          setAuthorData(response.data.data);
           setAuthorItemCount(response.data.count);
           setLoading(false);
         })
@@ -148,7 +148,7 @@ export function SearchPage() {
       axios
         .get("https://api.prideinwriting.me/api/books" + urlParams)
         .then((response) => {
-          setBookData(response.data);
+          setBookData(response.data.data);
           setBookItemCount(response.data.count);
           setLoading(false);
         })
@@ -164,7 +164,7 @@ export function SearchPage() {
       axios
         .get("https://api.prideinwriting.me/api/publishers" + urlParams)
         .then((response) => {
-          setPublisherData(response.data);
+          setPublisherData(response.data.data);
           setPublisherItemCount(response.data.count);
           setLoading(false);
         })
@@ -209,14 +209,14 @@ export function SearchPage() {
                     paddingRight: "5%",
                   }}
                 >
-                  {/* {highlightText(
+                  {highlightText(
                 `Displaying ${
                   authorItemCount > 0 ? (page - 1) * 10 + 1 : 0
                 }-${Math.min(
                   page * 10,
                   authorItemCount
                 )} of ${authorItemCount}`
-              )} */}
+              )}
                 </div>
                 <Bootstrap.Table
                   table-bordered
@@ -244,10 +244,10 @@ export function SearchPage() {
                     paddingRight: "5%",
                   }}
                 >
-                  {/* Displaying{" "}
+                  Displaying{" "}
             {bookItemCount > 0 ? (page - 1) * 9 + 1 : 0}-
             {Math.min(page * 9, bookItemCount)} of {" "}
-            {bookItemCount} */}
+            {bookItemCount}
                 </div>
                 <div className="cardGrid">
                   {bookData.map((book) => (
@@ -313,7 +313,7 @@ export function SearchPage() {
                   defaultPage={1}
                   page={page}
                   onChange={(_, value) => setPage(value)}
-                  count={Math.ceil(publisherItemCount / 10)}
+                  count={Math.ceil(Math.max(authorItemCount, bookItemCount, publisherItemCount) / 10)}
                   variant="outlined"
                   color="primary"
                   showFirstButton
