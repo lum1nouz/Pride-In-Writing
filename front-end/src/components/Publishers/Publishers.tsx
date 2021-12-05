@@ -25,7 +25,6 @@ type sort = {
 };
 
 type props = {
-  dataLen: number;
 };
 
 type state = {

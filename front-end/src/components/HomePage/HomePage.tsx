@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import { CardActionArea } from "@mui/material";
 import authorStockImg from "../../Assets/authorImg.jpg";
 import bookStockImg from "../../Assets/bookImg.jpg";
-import penguinLogoImg from "../../Assets/penguinLogo.webp";
+import penguinLogoImg from "../../Assets/penguinLogoImg.png";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
