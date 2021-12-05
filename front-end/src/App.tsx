@@ -13,6 +13,8 @@ import React, { useState, useEffect } from "react";
 import BookInstance from "./components/Books/BookInstance";
 import PublisherInstance from "./components/Publishers/PublisherInstance";
 import { stringToIntegerList } from "./common";
+import OurVisualization from "./components/OurVisualization/OurVisualization"
+import TheirVisualization from "./components/TheirVisualization/TheirVisualization"
 
 type responseA = {
   data: Author[]
@@ -155,6 +157,8 @@ function App() {
       {/* <Switch /> */}
       <Route data-testid="4444" exact path="/" component={HomePage} />
       <Route exact path="/AboutUs" component={AboutUs} />
+      <Route exact path="/OurVisualization" component={OurVisualization} />
+      <Route exact path="/TheirVisualization" component={TheirVisualization} />
       <Route
         exact
         path="/SearchPage"
@@ -168,7 +172,7 @@ function App() {
       <Route
         exact
         path="/Publishers"
-        render={(x) => <Publishers dataLen={publDataList.length} />}
+        render={(x) => <Publishers/>}
       />
       <Route
         exact

@@ -110,3 +110,14 @@ and were greatly helped by the extra day.
 
 Moving into phase 4, we will try to clean up some of the front-end code, and we may touch the backend database to make the searching/sorting/filtering
 more accurate with the data we web scrapped. 
+
+Phase 4 Comments:
+Code for visualizations inspired by:
+Music Now 
+https://gitlab.com/brandtswan/musicnow/-/tree/dev/frontend/src/views/Visualizations/OurVisualizations
+
+Overall this phase was a bit more challenging than we expected. Given we are all at the end of the semester, we faced alot of issues with our free time and have really had to try to finish this phase up.
+
+We fixed the pagination implementation from the last phase, added the visualizations, and made some other small changes. 
+
+Leaving this project, there are a couple other small changes we would've liked to make, but overall we are super proud of the process and the final outcome! 

@@ -108,6 +108,26 @@ class Header extends React.Component<props, state> {
                   <p>About Us</p>
                 </div>
               </Button>
+              <Button
+                id="OurVisualization-button"
+                component={Link}
+                to="/OurVisualization"
+                style={{ width: 200 }}
+              >
+                <div style={{ fontWeight: "bold", color: "white" }}>
+                  <p>Our Visualization</p>
+                </div>
+              </Button>
+              <Button
+                id="TheirVisualization-button"
+                component={Link}
+                to="/TheirVisualization"
+                style={{ width: 200 }}
+              >
+                <div style={{ fontWeight: "bold", color: "white" }}>
+                  <p>Their Visualization</p>
+                </div>
+              </Button>
             </ListItem>
           </List>
         </Toolbar>
