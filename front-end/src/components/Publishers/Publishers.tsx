@@ -7,12 +7,12 @@ import Header from "../Header/Header";
 import css from "./Publishers.module.css";
 import { Parallax } from "react-parallax";
 import Publisher from "../../models/publisher-model";
-import { stringToIntegerList} from "../../common";
+import { stringToIntegerList } from "../../common";
 
 type response = {
-  data: Publisher[]
-  count: number
-}
+  data: Publisher[];
+  count: number;
+};
 
 type filter = {
   category: string;
@@ -24,8 +24,7 @@ type sort = {
   value: string;
 };
 
-type props = {
-};
+type props = {};
 
 type state = {
   dataStore: Publisher[];
@@ -54,7 +53,7 @@ class Publishers extends React.Component<props, state> {
       perPage: 15,
       page: 1,
       search: "",
-      total: 0
+      total: 0,
     };
   }
 
@@ -71,7 +70,7 @@ class Publishers extends React.Component<props, state> {
       perPage: this.state.perPage,
       page: pageNum,
     });
-    await this.getData()
+    await this.getData();
   }
 
   //Beware of using
@@ -135,7 +134,7 @@ class Publishers extends React.Component<props, state> {
     }
   }
 
-    //Calls API
+  //Calls API
   async getData() {
     // "https://api.prideinwriting.me/api/authors" + this.createApiString("")
     const publishers: response = await fetch(
@@ -148,15 +147,15 @@ class Publishers extends React.Component<props, state> {
         console.log(err);
         return {};
       });
-      this.setState({
-        dataStore: publishers.data,
-        curSort: this.state.curSort,
-        curFilter: this.state.curFilter,
-        perPage: this.state.perPage,
-        page: this.state.page,
-        search: this.state.search,
-        total: publishers.count
-      });
+    this.setState({
+      dataStore: publishers.data,
+      curSort: this.state.curSort,
+      curFilter: this.state.curFilter,
+      perPage: this.state.perPage,
+      page: this.state.page,
+      search: this.state.search,
+      total: publishers.count,
+    });
   }
 
   //Used to build API request
@@ -211,15 +210,15 @@ class Publishers extends React.Component<props, state> {
         console.log(err);
         return {};
       });
-      this.setState({
-        dataStore: publishers.data,
-        curSort: this.state.curSort,
-        curFilter: this.state.curFilter,
-        perPage: this.state.perPage,
-        page: this.state.page,
-        search: this.state.search,
-        total: publishers.count
-      });
+    this.setState({
+      dataStore: publishers.data,
+      curSort: this.state.curSort,
+      curFilter: this.state.curFilter,
+      perPage: this.state.perPage,
+      page: this.state.page,
+      search: this.state.search,
+      total: publishers.count,
+    });
   }
 
   //Logic used to indicate sorting order
@@ -315,7 +314,7 @@ class Publishers extends React.Component<props, state> {
 
   //Handles the submit button for updating the data
   async handleSubmit() {
-    await this.getData()
+    await this.getData();
   }
 
   //Used by search Text field
@@ -335,7 +334,7 @@ class Publishers extends React.Component<props, state> {
 
   //Calls API search
   async handleSearch() {
-    this.getDataForSearch(this.state.search)
+    this.getDataForSearch(this.state.search);
   }
 
   render() {

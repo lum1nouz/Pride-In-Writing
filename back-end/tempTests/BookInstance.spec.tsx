@@ -5,7 +5,7 @@ import BookInstance from "../components/Books/BookInstance";
 import Book from "../models/book-model";
 import stringToIntegerList from "../common";
 
-require('jest-fetch-mock').enableMocks()
+require("jest-fetch-mock").enableMocks();
 
 const a: Book = {
   book_id: 0,

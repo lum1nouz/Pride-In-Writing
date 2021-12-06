@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import App from "../App";
 
-require('jest-fetch-mock').enableMocks()
+require("jest-fetch-mock").enableMocks();
 
 test("renders app", () => {
   render(

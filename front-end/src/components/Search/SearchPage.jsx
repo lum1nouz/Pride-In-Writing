@@ -210,13 +210,13 @@ export function SearchPage() {
                   }}
                 >
                   {highlightText(
-                `Displaying ${
-                  authorItemCount > 0 ? (page - 1) * 10 + 1 : 0
-                }-${Math.min(
-                  page * 10,
-                  authorItemCount
-                )} of ${authorItemCount}`
-              )}
+                    `Displaying ${
+                      authorItemCount > 0 ? (page - 1) * 10 + 1 : 0
+                    }-${Math.min(
+                      page * 10,
+                      authorItemCount
+                    )} of ${authorItemCount}`
+                  )}
                 </div>
                 <Bootstrap.Table
                   table-bordered
@@ -244,10 +244,8 @@ export function SearchPage() {
                     paddingRight: "5%",
                   }}
                 >
-                  Displaying{" "}
-            {bookItemCount > 0 ? (page - 1) * 9 + 1 : 0}-
-            {Math.min(page * 9, bookItemCount)} of {" "}
-            {bookItemCount}
+                  Displaying {bookItemCount > 0 ? (page - 1) * 9 + 1 : 0}-
+                  {Math.min(page * 9, bookItemCount)} of {bookItemCount}
                 </div>
                 <div className="cardGrid">
                   {bookData.map((book) => (
@@ -313,7 +311,13 @@ export function SearchPage() {
                   defaultPage={1}
                   page={page}
                   onChange={(_, value) => setPage(value)}
-                  count={Math.ceil(Math.max(authorItemCount, bookItemCount, publisherItemCount) / 10)}
+                  count={Math.ceil(
+                    Math.max(
+                      authorItemCount,
+                      bookItemCount,
+                      publisherItemCount
+                    ) / 10
+                  )}
                   variant="outlined"
                   color="primary"
                   showFirstButton

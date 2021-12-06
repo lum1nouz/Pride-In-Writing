@@ -12,9 +12,9 @@ import BookCard from "./BookCard";
 import { TextField, Select, MenuItem, SelectChangeEvent } from "@mui/material";
 
 type response = {
-  data: Book[]
-  count: number
-}
+  data: Book[];
+  count: number;
+};
 
 type filter = {
   category: string;
@@ -42,7 +42,7 @@ function Books(props: props) {
   });
   const [curSort, setCurSort] = useState<sort>({ category: "", value: "" });
   const [search, setSearch] = useState("");
-  const [total, setTotal] = useState(0)
+  const [total, setTotal] = useState(0);
   const perPage = 9;
 
   useEffect(() => {
@@ -79,8 +79,8 @@ function Books(props: props) {
         console.log(err);
         return {};
       });
-    
-    setTotal(books.count)
+
+    setTotal(books.count);
     return books.data;
   }
 
@@ -96,8 +96,8 @@ function Books(props: props) {
         console.log(err);
         return {};
       });
-    
-    setTotal(books.count)
+
+    setTotal(books.count);
     return books.data;
   }
 
@@ -440,8 +440,8 @@ function Books(props: props) {
                       justifyContent: "center",
                     }}
                   >
-                    Displaying {(page - 1) * 9 + 1} -
-                    {Math.min(page * 9, total)} of {total}
+                    Displaying {(page - 1) * 9 + 1} -{Math.min(page * 9, total)}{" "}
+                    of {total}
                   </div>
                   <div
                     style={{

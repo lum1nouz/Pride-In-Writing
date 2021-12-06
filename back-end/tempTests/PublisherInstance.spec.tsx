@@ -5,7 +5,7 @@ import PublisherInstance from "../components/Publishers/PublisherInstance";
 import Publisher from "../models/publisher-model";
 import stringToIntegerList from "../common";
 
-require('jest-fetch-mock').enableMocks()
+require("jest-fetch-mock").enableMocks();
 
 const a: Publisher = {
   publisher_id: 0,

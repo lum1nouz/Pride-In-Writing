@@ -115,7 +115,7 @@ class Header extends React.Component<props, state> {
                 style={{ width: 200 }}
               >
                 <div style={{ fontWeight: "bold", color: "white" }}>
-                  <p>Our Visualization</p>
+                  <p>Visualizations</p>
                 </div>
               </Button>
               <Button
@@ -125,7 +125,7 @@ class Header extends React.Component<props, state> {
                 style={{ width: 200 }}
               >
                 <div style={{ fontWeight: "bold", color: "white" }}>
-                  <p>Their Visualization</p>
+                  <p>Provider Visualizations</p>
                 </div>
               </Button>
             </ListItem>
