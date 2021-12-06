@@ -14,7 +14,7 @@ class Tests(TestCase):
         r = requests.get("https://api.prideinwriting.me/api/authors")
         assert r.status_code == 200
         d = r.json()
-        assert len(d) == 119
+        assert len(d) == 2
 
     # Test the first instance of the authors list
     def test_authors_first(self):
@@ -49,14 +49,14 @@ class Tests(TestCase):
         r = requests.get("https://api.prideinwriting.me/api/books")
         assert r.status_code == 200
         d = r.json()
-        assert len(d) == 445
+        assert len(d) == 2
 
     # Test the first instance of the books list
     def test_books_first(self):
         r = requests.get("https://api.prideinwriting.me/api/books")
         assert r.status_code == 200
         d = r.json()
-        assert len(d[0]) > 0
+        assert len(d) > 0
 
     # Test the first instance of the books by id
     def test_books_instance(self):
@@ -84,14 +84,14 @@ class Tests(TestCase):
         r = requests.get("https://api.prideinwriting.me/api/publishers")
         assert r.status_code == 200
         d = r.json()
-        assert len(d) == 463
+        assert len(d) == 2
 
     # Test the first instance of the publishers list
     def test_publishers_first(self):
         r = requests.get("https://api.prideinwriting.me/api/publishers")
         assert r.status_code == 200
         d = r.json()
-        assert len(d[0]) > 0
+        assert len(d) > 0
 
     # Test the first instance of the publisher by id
     def test_publishers_instance(self):

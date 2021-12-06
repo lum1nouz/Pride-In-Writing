@@ -26,6 +26,7 @@
 | Phase 1 | Gregory Raper |
 | Phase 2 | Pamela Vazquez |
 | Phase 3 | Rodrigo Estrella |
+| Phase 4 | Cliff Xu |
 
 
 **Pipelines**
@@ -77,6 +78,16 @@ Phase 3:
 | Cliff Xu | 25 | 20 |
 | Pamela Vazquez De La Cruz | 20-25 | 20 |
 | Shyam Patel | 30 | 15 |
+
+Phase 4: 
+
+| Name | Estimate | Actual |
+| ------ | ------ | ------ |
+| Gregory Raper | 15 | 15 |
+| Rodrigo Estrella | 5 | 5 |
+| Cliff Xu | 5 | 5 |
+| Pamela Vazquez De La Cruz | 10 | 10 |
+| Shyam Patel | 5 | 5 |
 
 
 **Comments**

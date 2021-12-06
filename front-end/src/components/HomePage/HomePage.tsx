@@ -109,6 +109,23 @@ class HomePage extends React.Component<props, state> {
             >
               <img src={booksPics} style={{ objectFit: "cover" }}></img>
             </Grid>
+            <Grid
+              item
+              xs={5}
+              style={{
+                backgroundColor: "white",
+                height: "400px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative",
+              }}
+            >
+             <iframe width="420" height="315"
+                  src="https://www.youtube.com/embed/zMLv20wuqmc">
+              </iframe>
+
+            </Grid>
           </Grid>
 
           <div className={css.downButton}>
