@@ -13,21 +13,21 @@ import React, { useState, useEffect } from "react";
 import BookInstance from "./components/Books/BookInstance";
 import PublisherInstance from "./components/Publishers/PublisherInstance";
 import { stringToIntegerList } from "./common";
-import OurVisualization from "./components/OurVisualization/OurVisualization"
-import TheirVisualization from "./components/TheirVisualization/TheirVisualization"
+import OurVisualization from "./components/OurVisualization/OurVisualization";
+import TheirVisualization from "./components/TheirVisualization/TheirVisualization";
 
 type responseA = {
-  data: Author[]
-  count: number
-}
+  data: Author[];
+  count: number;
+};
 type responseB = {
-  data: Book[]
-  count: number
-}
+  data: Book[];
+  count: number;
+};
 type responseP = {
-  data: Publisher[]
-  count: number
-}
+  data: Publisher[];
+  count: number;
+};
 
 function createAuthor(a: Author) {
   return (
@@ -99,7 +99,9 @@ function App() {
   let [publDataList, setPublDataList] = useState<Publisher[]>([]);
 
   async function getAuthorsData() {
-    const authors: responseA = await fetch(`https://api.prideinwriting.me/api/authors`)
+    const authors: responseA = await fetch(
+      `https://api.prideinwriting.me/api/authors`
+    )
       .then((response) => {
         return response.json();
       })
@@ -111,7 +113,9 @@ function App() {
   }
 
   async function getBooksData() {
-    const books: responseB = await fetch(`https://api.prideinwriting.me/api/books`)
+    const books: responseB = await fetch(
+      `https://api.prideinwriting.me/api/books`
+    )
       .then((response) => {
         return response.json();
       })
@@ -123,7 +127,9 @@ function App() {
   }
 
   async function getPublisherData() {
-    const publishers: responseP = await fetch(`https://api.prideinwriting.me/api/publishers`)
+    const publishers: responseP = await fetch(
+      `https://api.prideinwriting.me/api/publishers`
+    )
       .then((response) => {
         return response.json();
       })
@@ -164,21 +170,9 @@ function App() {
         path="/SearchPage"
         render={(x) => <SearchPage.SearchPage />}
       />
-      <Route
-        exact
-        path="/Books"
-        render={(x) => <Books/>}
-      />
-      <Route
-        exact
-        path="/Publishers"
-        render={(x) => <Publishers/>}
-      />
-      <Route
-        exact
-        path="/Authors"
-        render={(x) => <Authors/>}
-      />
+      <Route exact path="/Books" render={(x) => <Books />} />
+      <Route exact path="/Publishers" render={(x) => <Publishers />} />
+      <Route exact path="/Authors" render={(x) => <Authors />} />
       <div>
         {authDataList.map(function (author) {
           return (

@@ -1,8 +1,174 @@
+commit 56c47a0f0b0234734b56629af6ec6d71fc8ef83b
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Sun Dec 5 23:18:40 2021 -0600
+
+    Back end test changes, Youtube embeded, starting final procedure
+
+commit 47dbc14be972681285644bea70303739ad7f43c7
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Mon Dec 6 02:18:24 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 27829ce363945a02a929cb4ad11eaf7cf5fad137
+Merge: e8a3344 a5cacd7
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Mon Dec 6 02:17:51 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    visualizations finished
+    
+    See merge request JunLum/pride-in-writing!72
+
+commit a5cacd7f8165146694018e2724ec417b9edfab33
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Sun Dec 5 20:12:16 2021 -0600
+
+    visualizations finished
+
+commit e8a334416675dc301d715e0ddd771d0f5b205fb6
+Merge: fdd581c d369d76
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Sun Dec 5 22:11:22 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Dev
+    
+    See merge request JunLum/pride-in-writing!71
+
+commit d369d76e309767e8c72f850ceef7784a8cfc6790
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Sun Dec 5 22:03:02 2021 +0000
+
+    Update .gitlab-ci.yml
+
+commit 4c83f827f64df9f4653db613433dd0b59492252f
+Merge: 52d9087 3f5ca27
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Sun Dec 5 15:46:30 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/JunLum/pride-in-writing into dev
+
+commit 52d908764a339dd95629cbbb1107884f329741f6
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Sun Dec 5 15:46:26 2021 -0600
+
+    Visualizations added
+
+commit 3f5ca270078b920139b7578ce1110047e2324a7a
+Merge: 422ee74 04bb155
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Sun Dec 5 14:18:03 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/JunLum/pride-in-writing into dev
+
+commit 422ee74670f3074aa7d41e41650257e6b03e7d1a
+Author: Pamela Vazquez <pamvazquez1@gmail.com>
+Date:   Sun Dec 5 14:17:14 2021 -0600
+
+    Added new publishes img and changed books card background color to white
+
+commit 04bb155cca0ee119f95abf7e6fe709f1486ad986
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Sat Dec 4 21:43:09 2021 -0600
+
+    Uncommented Pipeline
+
+commit ab98ba1e9741be8bf8dab3bdb1ed1afde68cb720
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Sat Dec 4 21:42:32 2021 -0600
+
+    Search page change
+
+commit fdd581c65b3827b4cad2351e9e49816eb47451bb
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Sat Dec 4 06:21:47 2021 +0000
+
+    uncomment api deploy
+
+commit fda8c32db5877364557ad3f8c9c1929de524f506
+Merge: 2adfd13 b65b063
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Sat Dec 4 06:10:09 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Dev
+    
+    See merge request JunLum/pride-in-writing!69
+
+commit b65b0639a88d11c7a5aebeeea18f2e361916496b
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Sat Dec 4 00:05:16 2021 -0600
+
+    Commented out pipeline
+
+commit 23b7df2eb4f461b3b7453e63a08c9b41b3856dc7
+Merge: a042ae0 2adfd13
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Sat Nov 20 19:03:05 2021 -0600
+
+    Merge branch 'dev' of https://gitlab.com/JunLum/pride-in-writing into dev
+
+commit a042ae0d802664360edbf5f2404370dd745093e9
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Sat Nov 20 19:02:56 2021 -0600
+
+    Pagination fix
+
+commit 2adfd13876f7db4b5eb7894605f586a902f36c40
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 22:06:53 2021 -0600
+
+    Final commit. Git SHA
+
+commit 2ce7f890cf0764698e19a6769b1c62b9c5b728ce
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 21:46:22 2021 -0600
+
+    Fixed
+
+commit 16f1b9242cd775a8727b556274437b280e53ef23
+Merge: 1d3932a dab82c9
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Wed Nov 17 03:13:31 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Dev
+    
+    See merge request JunLum/pride-in-writing!68
+
+commit 1d3932a7e406d81fd6c0682b6e2aefe0e1156993
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Wed Nov 17 03:11:04 2021 +0000
+
+    Allowed uppercase searches
+
+commit dab82c98fbaf6acf401d519e49299bec0049bba2
+Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
+Date:   Tue Nov 16 20:55:36 2021 -0600
+
+    Black & prettier added
+
 commit 1e5716709083d4d7374eb3a6864a60da88ee9ffa
 Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
 Date:   Tue Nov 16 20:47:27 2021 -0600
 
     Changed selenium testing to work
+
+commit 4fb5d3e06f17c2cbe02de1b02ca1f209b83e6730
+Merge: 3eba47e d43d4fc
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Wed Nov 17 02:42:56 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Dev
+    
+    See merge request JunLum/pride-in-writing!67
 
 commit d43d4fc1e60d3c71b9b60bb6be28a0569e04a034
 Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
@@ -54,6 +220,23 @@ Date:   Tue Nov 16 17:57:21 2021 -0600
 
     Selenium tests updated, ci changed
 
+commit 3eba47ecbea38302ce6a2db6cfba4d813caaa89e
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Tue Nov 16 23:56:21 2021 +0000
+
+    Update Authors.tsx
+
+commit 2fdb9f3105cdb332def745831a155de2789cf7b8
+Merge: c354d1c 5cc1ef3
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Tue Nov 16 23:41:25 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Dev
+    
+    See merge request JunLum/pride-in-writing!66
+
 commit 5cc1ef30ae438148443927e305e613273248055a
 Merge: 8319b3e e84eae5
 Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
@@ -85,6 +268,17 @@ Date:   Tue Nov 16 16:52:31 2021 -0600
 
     changed some == to contains
 
+commit c354d1c60943d89d9016639b3c7cb0bcaee3bdc5
+Merge: 6da10fa da14e96
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Tue Nov 16 22:45:14 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Dev
+    
+    See merge request JunLum/pride-in-writing!65
+
 commit da14e964cc20d4490b9142460ffaf057eede7602
 Merge: a3e3960 67d9a60
 Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>
@@ -115,6 +309,17 @@ Date:   Tue Nov 16 16:03:10 2021 -0600
 
     more filters
 
+commit 6da10facbe20e12696698b710afb20f1c3ea743c
+Merge: c02fc08 3413315
+Author: Rodrigo Estrella <restrella@outlook.com>
+Date:   Tue Nov 16 19:29:16 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Issue with continuity with pagination
+    
+    See merge request JunLum/pride-in-writing!63
+
 commit 3413315e4b35cf76026943fdbc101ae4ed04cefd
 Author: Rodrigo Estrella <restrella@outlook.com>
 Date:   Tue Nov 16 13:18:58 2021 -0600
@@ -133,11 +338,41 @@ Date:   Tue Nov 16 11:00:16 2021 -0600
 
     paging changes, small fixes, more needed
 
+commit c02fc084109cac9d3a6880e1631c521304d46786
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Tue Nov 16 15:55:10 2021 +0000
+
+    comment out tests for deployment
+
+commit ae1d1fed45be38cdfb1f7e2e0a16f6715c2697f6
+Merge: 02cd104 3aca2d7
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Tue Nov 16 15:40:12 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    fix nonetype method call
+    
+    See merge request JunLum/pride-in-writing!62
+
 commit 3aca2d7632b18b5c58cf08a5a954748188668a68
 Author: Rodrigo Estrella <restrella@outlook.com>
 Date:   Tue Nov 16 01:44:21 2021 -0600
 
     fix nonetype method call
+
+commit 02cd104a9d02ce03ff71254a6a73382174ebe11b
+Merge: 24ec54e 186f5a7
+Author: gregoryraper <gjraper@gmail.com>
+Date:   Tue Nov 16 07:16:02 2021 +0000
+
+    Merge branch 'dev' into 'main'
+    
+    Update GUITestCases.py: changed service = ChromeDriverManager().install() to...
+    
+    Closes #63 and #77
+    
+    See merge request JunLum/pride-in-writing!61
 
 commit 186f5a75b4c684c75d0668eb5a81ad63a98d36bf
 Author: Gregory Raper <gjraper@Gregs-1s--0s.attlocal.net>

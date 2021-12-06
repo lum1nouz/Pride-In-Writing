@@ -61,7 +61,7 @@ describe("Render Basic Components", () => {
   test("Books page renders without crashing", () => {
     <BrowserRouter>
       render(
-      <Books/>
+      <Books />
       ); expect(screen.getByText('Displaying')).toBeInTheDocument();
     </BrowserRouter>;
   });
@@ -70,7 +70,7 @@ describe("Render Basic Components", () => {
   test("Books page renders fully without crashing", () => {
     <BrowserRouter>
       render(
-      <Books/>
+      <Books />
       ); expect(screen.getByText('B')).toBeInTheDocument();
     </BrowserRouter>;
   });
@@ -79,7 +79,7 @@ describe("Render Basic Components", () => {
   test("Authors page renders fully without crashing", () => {
     <BrowserRouter>
       render(
-      <Authors/>
+      <Authors />
       ); expect(screen.getByText('A')).toBeInTheDocument();
     </BrowserRouter>;
   });
@@ -88,7 +88,7 @@ describe("Render Basic Components", () => {
   test("Authors page fully renders without crashing", () => {
     <BrowserRouter>
       render(
-      <Authors/>
+      <Authors />
       ); expect(screen.getByText('u')).toBeInTheDocument();
     </BrowserRouter>;
   });
@@ -97,7 +97,7 @@ describe("Render Basic Components", () => {
   test("Publisher page renders without crashing", () => {
     <BrowserRouter>
       render(
-      <Publishers/>
+      <Publishers />
       ); expect(screen.getByText('P')).toBeInTheDocument();
     </BrowserRouter>;
   });
@@ -106,7 +106,7 @@ describe("Render Basic Components", () => {
   test("Authors page renders Search without crashing", () => {
     <BrowserRouter>
       render(
-      <Authors/>
+      <Authors />
       ); expect(screen.getByText('Search')).toBeInTheDocument();
     </BrowserRouter>;
   });
@@ -115,7 +115,7 @@ describe("Render Basic Components", () => {
   test("Books page renders Search without crashing", () => {
     <BrowserRouter>
       render(
-      <Books/>
+      <Books />
       ); expect(screen.getByText('Search')).toBeInTheDocument();
     </BrowserRouter>;
   });
@@ -124,7 +124,7 @@ describe("Render Basic Components", () => {
   test("Publishers page renders Search without crashing", () => {
     <BrowserRouter>
       render(
-      <Publishers/>
+      <Publishers />
       ); expect(screen.getByText('Search')).toBeInTheDocument();
     </BrowserRouter>;
   });

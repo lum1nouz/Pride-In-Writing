@@ -10,9 +10,9 @@ import { stringToIntegerList } from "../../common";
 import { TextField, Select, MenuItem, SelectChangeEvent } from "@mui/material";
 
 type response = {
-  data: Author[]
-  count: number
-}
+  data: Author[];
+  count: number;
+};
 
 type filter = {
   category: string;
@@ -24,7 +24,7 @@ type sort = {
   value: string;
 };
 
-type props = { };
+type props = {};
 
 type state = {
   dataStore: Author[];
@@ -53,7 +53,7 @@ class Authors extends React.Component<props, state> {
       perPage: 15,
       page: 1,
       search: "",
-      total: 0
+      total: 0,
     };
   }
 
@@ -108,9 +108,9 @@ class Authors extends React.Component<props, state> {
       curFilter: this.state.curFilter,
       perPage: this.state.perPage,
       page: pageNum,
-      total: this.state.total
+      total: this.state.total,
     });
-    await this.getData()
+    await this.getData();
   }
 
   async updatePage(value: number) {
@@ -190,15 +190,15 @@ class Authors extends React.Component<props, state> {
         console.log(err);
         return {};
       });
-      this.setState({
-        dataStore: authors.data,
-        curSort: this.state.curSort,
-        curFilter: this.state.curFilter,
-        perPage: this.state.perPage,
-        page: this.state.page,
-        search: this.state.search,
-        total: authors.count
-      });
+    this.setState({
+      dataStore: authors.data,
+      curSort: this.state.curSort,
+      curFilter: this.state.curFilter,
+      perPage: this.state.perPage,
+      page: this.state.page,
+      search: this.state.search,
+      total: authors.count,
+    });
   }
 
   //Calls search route on API
@@ -213,15 +213,15 @@ class Authors extends React.Component<props, state> {
         console.log(err);
         return {};
       });
-      this.setState({
-        dataStore: authors.data,
-        curSort: this.state.curSort,
-        curFilter: this.state.curFilter,
-        perPage: this.state.perPage,
-        page: this.state.page,
-        search: this.state.search,
-        total: authors.count
-      });
+    this.setState({
+      dataStore: authors.data,
+      curSort: this.state.curSort,
+      curFilter: this.state.curFilter,
+      perPage: this.state.perPage,
+      page: this.state.page,
+      search: this.state.search,
+      total: authors.count,
+    });
   }
 
   //Logic used to indicate sorting order
@@ -318,7 +318,7 @@ class Authors extends React.Component<props, state> {
 
   //Handles the submit button for updating the data
   async handleSubmit() {
-    await this.getData()
+    await this.getData();
   }
 
   //Used by search Text field
@@ -338,7 +338,7 @@ class Authors extends React.Component<props, state> {
 
   //Calls API search
   async handleSearch() {
-    await this.getDataForSearch(this.state.search)
+    await this.getDataForSearch(this.state.search);
   }
 
   render() {
