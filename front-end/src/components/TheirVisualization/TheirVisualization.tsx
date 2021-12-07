@@ -222,6 +222,9 @@ class TheirVisualization extends React.Component<props, state> {
                 position: "relative",
               }}
             >
+
+            <h3> Countries by Continent </h3>  
+
               <ResponsiveContainer width="100%" height={600}>
                 <BarChart
                   width={700}
